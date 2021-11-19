@@ -1,8 +1,8 @@
 const {
   Model,
-} = require('DataTypes');
+} = require('sequelize');
 
-module.exports = (DataTypes, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   class Book extends Model {
     static associate({ Room }) {
       this.belongsTo(Room, { foreignKey: 'roomId' });
@@ -47,7 +47,7 @@ module.exports = (DataTypes, DataTypes) => {
       type: DataTypes.TEXT,
     },
   }, {
-    DataTypes,
+    sequelize,
     modelName: 'Book',
   });
   return Book;
