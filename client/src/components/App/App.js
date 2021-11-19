@@ -11,12 +11,11 @@ import Admin from '../Admin/Admin';
 
 import Ticker from '../Ticker/Ticker.jsx';
 import Navigation from '../Navigation/Navigation.jsx';
+import WhyWe from '../WhyWe/WhyWe.jsx';
 
 function App() {
   const [isAdmin] = useState(true);
   return (
-       
-
     <>
     {
     !isAdmin
@@ -24,6 +23,7 @@ function App() {
     <Switch>
       <Route path='/' exact>hello</Route>
       <div>
+        <WhyWe/>
         <Ticker/>
         <Navigation />
       </div>
