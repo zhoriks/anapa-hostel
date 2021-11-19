@@ -10,10 +10,13 @@ import Settings from '../Settings/Settings';
 import Admin from '../Admin/Admin';
 
 import Ticker from '../Ticker/Ticker.jsx';
+import Navigation from '../Navigation/Navigation.jsx';
 
 function App() {
   const [isAdmin] = useState(true);
   return (
+       
+
     <>
     {
     !isAdmin
@@ -22,6 +25,7 @@ function App() {
       <Route path='/' exact>hello</Route>
       <div>
         <Ticker/>
+        <Navigation />
       </div>
     </Switch>
   </BrowserRouter>
