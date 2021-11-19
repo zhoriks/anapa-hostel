@@ -4,6 +4,9 @@ body {
 
 .bookingWelcomeContainer {
   position: relative;
+  max-width: 835px;
+  top: 150px;
+  left: 50px;
 }
 
 .bookingWelcomeSvg {
