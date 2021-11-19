@@ -7,13 +7,14 @@
 .startLeftContainer {
   width: 70%;
   padding: 10px;
+  height: 50%;
  }
 
 .startRightContainer {
   width: 30%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
 } 
 
-.blay {
-  border: 1px solid red;
-}
