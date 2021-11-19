@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 87%;
+  margin-right: 20px;
+}
+.icon {
+  margin-right: 25px;
+}
+.select {
+  font-size: smaller;
+  height: 35px;
+  width: fit-content;
+  border: none;
+  border-radius: 10px;
+}
+.icon_navbar {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}

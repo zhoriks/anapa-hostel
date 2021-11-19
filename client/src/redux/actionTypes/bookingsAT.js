@@ -1,0 +1,6 @@
+const actionTypesBookings = {
+  INIT_BOOKINGS_START: 'INIT_BOOKINGS_START',
+  INIT_BOOKINGS_SUCCESS: 'INIT_BOOKINGS_SUCCESS',
+  INIT_BOOKINGS_ERROR: 'INIT_BOOKINGS_ERROR',
+};
+export default actionTypesBookings;
