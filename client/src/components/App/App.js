@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Bookings from '../Bookings/Bookings';
@@ -7,6 +8,8 @@ import Guest from '../Guest/Guest';
 import Rooms from '../Rooms/Rooms';
 import Settings from '../Settings/Settings';
 import Admin from '../Admin/Admin';
+
+import Ticker from '../Ticker/Ticker.jsx';
 
 function App() {
   const [isAdmin] = useState(true);
@@ -17,6 +20,9 @@ function App() {
       ? <BrowserRouter>
     <Switch>
       <Route path='/' exact>hello</Route>
+      <div>
+        <Ticker/>
+      </div>
     </Switch>
   </BrowserRouter>
       : <BrowserRouter>
