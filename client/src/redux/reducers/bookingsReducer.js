@@ -10,7 +10,7 @@ const bookingsReducer = (state = initialState, action) => {
     case actionTypesBookings.INIT_BOOKINGS_START:
       return {
         ...state,
-        list: [...action.payload],
+        error: null,
       };
     case actionTypesBookings.INIT_BOOKINGS_SUCCESS:
       return {

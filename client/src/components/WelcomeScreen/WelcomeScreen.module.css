@@ -1,0 +1,83 @@
+/* стили всего блока (стили для формы прописаны в компоненте формы!) */
+.welcomeScreenContainer {
+  position: relative;
+  width: 100%;
+  min-height: 615px;
+  border-radius: 50px;
+  background-color: #566a6e;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-color: transparent;
+  border-style: solid;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
+  /* background-image: url('https://static.tildacdn.com/tild6536-3161-4164-b332-376134313931/Frame_1_2.svg'); */
+}
+
+/* стили блок с описанием отеля  */
+.nameBlock {
+  position: absolute;
+  top: 15%;
+  left: 4%;
+  width: 47%;
+  height: 47%;
+  opacity: 1;
+  /* transform: translateX(-14.375px) translateY(-1.4375px) rotate(-1.4375deg); */
+}
+
+.containerNameBlock {
+  position: relative;
+}
+
+.textNameBlock {
+  position: absolute;
+  top: 10%;
+  left: 60px;
+  width: 60%;
+}
+
+.textNameBlock h2 {
+  font-size: 2.3em;
+  color: rgb(29, 165, 175);
+}
+
+.textNameBlock p {
+  margin-top: 5%;
+  width: 80%;
+  font-size: 1.1em;
+}
+
+/* стили блока со предложением скидки */
+.offerDiscount {
+  border-radius: 30px;
+  background-color: #ffffff;
+  background-position: center center;
+  border-color: transparent;
+  border-style: solid;
+  width: 22%;
+  height: 33%;
+  position: absolute;
+  top: 17%;
+  right: 15%;
+}
+
+.offerDiscount img {
+  width: 85%;
+  height: 70%;
+  border-radius: 25px;
+  margin: 15px 18px 5px 18px;
+}
+
+.offerDiscount h3 {
+  margin: 0 11%;
+  font-size: 1rem;
+  font-weight: bold;
+  color: dimgray;
+}
+
+.offerDiscount p {
+  margin: 0 11%;
+  font-size: 0.8rem;
+  color: dimgray;
+}

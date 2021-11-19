@@ -4,8 +4,6 @@ import phone from './img/phone.gif';
 import telegram from './img/telegram.png';
 import whatsapp from './img/whatsapp.png';
 
-// поле body с текстом статьи для JSON Placeholder
-
 function Navigation() {
   const [hidden, setHidden] = useState(true);
   // eslint-disable-next-line consistent-return

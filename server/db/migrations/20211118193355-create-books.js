@@ -35,10 +35,11 @@ module.exports = {
         type: Sequelize.TEXT,
         defaultValue: 'Ожидает подтверждения',
       },
-      roomId: {
+      RoomId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Rooms',
+          key: 'id',
         },
       },
       comment: {

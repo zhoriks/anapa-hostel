@@ -1,6 +1,9 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import actionTypesBookings from '../actionTypes/bookingsAT';
 import actionTypesLogin from '../actionTypes/loginAT';
+import actionTypesLogout from '../actionTypes/logoutAT';
+import actionTypesRooms from '../actionTypes/roomsAT';
+import actionTypesSession from '../actionTypes/sessionAT';
 
 async function fetchData({
   url, method, headers, body,
@@ -15,10 +18,10 @@ async function fetchData({
   return data;
 }
 
-async function* fetchBookings() {
+function* fetchBookings() {
   try {
     const bookings = yield call(fetchData, {
-      url: '',
+      url: 'http://localhost:5001/admin/booking',
     });
     yield put({ type: actionTypesBookings.INIT_BOOKINGS_SUCCESS, payload: bookings });
   } catch (error) {
@@ -26,9 +29,20 @@ async function* fetchBookings() {
   }
 }
 
+function* fetchRooms() {
+  try {
+    const rooms = yield call(fetchData, {
+      url: 'http://localhost:5001/admin/rooms',
+    });
+    yield put({ type: actionTypesRooms.INIT_ROOMS_SUCCESS, payload: rooms });
+  } catch (error) {
+    yield put({ type: actionTypesRooms.INIT_ROOMS_ERROR, payload: error });
+  }
+}
+
 function* fetchLogin(action) {
   try {
-    const { isAdmin } = yield call(fetchData, {
+    const { isAdmin, session } = yield call(fetchData, {
       url: 'http://localhost:5001/admin',
       method: 'POST',
       headers: {
@@ -39,15 +53,47 @@ function* fetchLogin(action) {
         password: action.payload.password,
       }),
     });
-    yield put({ type: actionTypesLogin.LOGIN_SUCCESS, payload: isAdmin });
+    yield put({ type: actionTypesLogin.LOGIN_SUCCESS, payload: { isAdmin, session } });
   } catch (error) {
     yield put({ type: actionTypesLogin.LOGIN_ERROR, payload: error });
+  }
+}
+function* fetchLogout() {
+  try {
+    const { isAdmin } = yield call(fetchData, {
+      url: 'http://localhost:5001/admin/logout',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    yield put({ type: actionTypesLogout.LOGOUT_SUCCESS, payload: isAdmin });
+  } catch (error) {
+    yield put({ type: actionTypesLogout.LOGOUT_ERROR, payload: error });
+  }
+}
+
+function* checkSession() {
+  try {
+    const { isAdmin, session } = yield call(fetchData, {
+      url: 'http://localhost:5001/session',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    yield put({ type: actionTypesSession.CHECK_SESSION_SUCCESS, payload: { isAdmin, session } });
+  } catch (error) {
+    yield put({ type: actionTypesSession.CHECK_SESSION_ERROR, payload: error });
   }
 }
 
 function* watchActions() {
   yield takeEvery(actionTypesBookings.INIT_BOOKINGS_START, fetchBookings);
   yield takeEvery(actionTypesLogin.LOGIN_START, fetchLogin);
+  yield takeEvery(actionTypesLogout.LOGOUT_START, fetchLogout);
+  yield takeEvery(actionTypesSession.CHECK_SESSION_START, checkSession);
+  yield takeEvery(actionTypesRooms.INIT_ROOMS_START, fetchRooms);
 }
 
 export default watchActions;

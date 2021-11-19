@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Book extends Model {
     static associate({ Room }) {
-      this.belongsTo(Room, { foreignKey: 'roomId' });
+      this.belongsTo(Room);
     }
   }
   Book.init({
@@ -37,10 +37,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       defaultValue: 'Ожидает подтверждения',
     },
-    roomId: {
+    RoomId: {
       type: DataTypes.INTEGER,
       references: {
         model: 'Room',
+        key: 'id',
       },
     },
     comment: {
