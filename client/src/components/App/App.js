@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Navbar from '../Navbar/Navbar';
@@ -9,18 +10,21 @@ import Rooms from '../Rooms/Rooms';
 import Settings from '../Settings/Settings';
 import Admin from '../Admin/Admin';
 
+import HomeView from '../HomeView/HomeView.jsx';
+
 function App() {
   const isAdmin = useSelector((state) => state.login.isAdmin);
+
   return (
     <>
     {
     !isAdmin
       ? <BrowserRouter>
     <Switch>
-      <Route path='/' exact>hello</Route>
+      <Route path='/' exact component={HomeView} />
       <Route path='/admin' exact component={Admin} />
     </Switch>
-  </BrowserRouter>
+    </BrowserRouter>
       : <BrowserRouter>
     <Navbar />
     <Switch>
