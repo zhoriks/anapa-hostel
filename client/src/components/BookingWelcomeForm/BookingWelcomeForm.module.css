@@ -1,0 +1,89 @@
+body {
+  background: dimgray;
+}
+
+.bookingWelcomeContainer {
+  position: relative;
+}
+
+.bookingWelcomeSvg {
+  width:871;
+  height:237; 
+  fill:none; 
+}
+
+.bookingLabel {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  color: rgb(95, 95, 102)
+}
+
+.bookingLabelTitle {
+  font-size: 24px;
+}
+
+.bookingWelcomeForm {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
+}
+
+.bookingWelcomeFormInput {
+  color:#1a1a1a;
+  border:1px solid #f0f0f0; 
+  background-color:#fff; 
+  border-radius:20px; 
+  font-size:16px;
+  font-weight:400;
+  height:50px;
+  margin-right: 3vh;
+  min-width: 70px;
+}
+
+.bookingWelcomeFormButton{
+  color:#fff;
+  background-color:#566a6e;
+  border-radius:20px;
+  border: none;
+  font-weight:600;
+  font-size:14px;
+  width:160px;
+  height:54px;
+  padding:0 15px;
+  display:block;
+  margin-left: 30px;
+}
+
+.bookingWelcomeFormElement {
+  position: relative;
+  max-width: 200px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+label {
+  position: absolute;
+  bottom: 59px;
+  left: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  color: grey;
+}
+
+.icon:before {
+  content: '';
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  right: 0;
+  margin: auto 0;
+  width: 25px;
+  height: 25px;
+  background: url('https://cdn-icons-png.flaticon.com/512/74/74472.png') no-repeat;
+  background-size: cover;
+}
