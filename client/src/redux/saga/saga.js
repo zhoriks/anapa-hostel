@@ -2,6 +2,7 @@ import { takeEvery, call, put } from 'redux-saga/effects';
 import actionTypesBookings from '../actionTypes/bookingsAT';
 import actionTypesLogin from '../actionTypes/loginAT';
 import actionTypesLogout from '../actionTypes/logoutAT';
+import actionTypesSession from '../actionTypes/sessionAT';
 
 async function fetchData({
   url, method, headers, body,
@@ -60,10 +61,26 @@ function* fetchLogout() {
   }
 }
 
+function* checkSession() {
+  try {
+    const { isAdmin, session } = yield call(fetchData, {
+      url: 'http://localhost:5001/session',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    yield put({ type: actionTypesSession.CHECK_SESSION_SUCCESS, payload: { isAdmin, session } });
+  } catch (error) {
+    yield put({ type: actionTypesSession.CHECK_SESSION_ERROR, payload: error });
+  }
+}
+
 function* watchActions() {
   yield takeEvery(actionTypesBookings.INIT_BOOKINGS_START, fetchBookings);
   yield takeEvery(actionTypesLogin.LOGIN_START, fetchLogin);
   yield takeEvery(actionTypesLogout.LOGOUT_START, fetchLogout);
+  yield takeEvery(actionTypesSession.CHECK_SESSION_START, checkSession);
 }
 
 export default watchActions;

@@ -5,7 +5,7 @@ const logout = async (req, res) => {
       return res.status(500).json({ message: 'Ошибка при удалении сессии' });
     }
     res.clearCookie('user_sid');
-    res.json({ isAdmin: false });
+    res.json({ isAdmin: false, session: {} });
   });
 };
 

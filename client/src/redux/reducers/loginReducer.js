@@ -1,5 +1,6 @@
 import actionTypesLogin from '../actionTypes/loginAT';
 import actionTypesLogout from '../actionTypes/logoutAT';
+import actionTypesSession from '../actionTypes/sessionAT';
 
 const initialState = {
   isAdmin: false,
@@ -39,6 +40,22 @@ const loginReducer = (state = initialState, action) => {
         session: {},
       };
     case actionTypesLogout.LOGOUT_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+      };
+    case actionTypesSession.CHECK_SESSION_START:
+      return {
+        ...state,
+        error: null,
+      };
+    case actionTypesSession.CHECK_SESSION_SUCCESS:
+      return {
+        ...state,
+        isAdmin: action.payload.isAdmin,
+        session: action.payload.session,
+      };
+    case actionTypesSession.CHECK_SESSION_ERROR:
       return {
         ...state,
         error: action.payload,
