@@ -1,23 +1,25 @@
-import actionTypesBookings from '../actionTypes/bookingsAT';
+import actionTypesRooms from '../actionTypes/roomsAT';
 
 const initialState = {
   list: [],
   error: null,
 };
+
 // eslint-disable-next-line default-param-last
-const bookingsReducer = (state = initialState, action) => {
+const roomsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypesBookings.INIT_BOOKINGS_START:
+    case actionTypesRooms.INIT_ROOMS_START:
       return {
         ...state,
         error: null,
       };
-    case actionTypesBookings.INIT_BOOKINGS_SUCCESS:
+    case actionTypesRooms.INIT_ROOMS_SUCCESS:
+      console.log(action.payload);
       return {
         ...state,
         list: [...action.payload],
       };
-    case actionTypesBookings.INIT_BOOKINGS_ERROR:
+    case actionTypesRooms.INIT_ROOMS_ERROR:
       return {
         ...state,
         error: action.payload,
@@ -28,4 +30,4 @@ const bookingsReducer = (state = initialState, action) => {
   }
 };
 
-export default bookingsReducer;
+export default roomsReducer;
