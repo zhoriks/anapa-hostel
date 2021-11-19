@@ -14,6 +14,7 @@ import HomeView from '../HomeView/HomeView.jsx';
 import Logout from '../Logout/Logout';
 import actionTypesSession from '../../redux/actionTypes/sessionAT';
 import bookingsAction from '../../redux/actionCreators/bookingsAC';
+import roomAction from '../../redux/actionCreators/roomAC';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function App() {
   useEffect(() => {
     dispatch({ type: actionTypesSession.CHECK_SESSION_START });
     dispatch(bookingsAction.initBookingsStart());
+    dispatch(roomAction.initRoomStart());
   }, [dispatch]);
 
   return (

@@ -1,26 +1,31 @@
 import React from 'react';
 import s from './SingleRoom.module.css';
 
-const SingleRoom = () => (
+const SingleRoom = ({
+  name, fullness, number, type,
+}) => {
+  console.log(name, fullness, number, type);
+  return (
     <div className={s.container}>
       <div className={s.img_container}>
         <img src="/room.jpeg" alt="" className={s.img} />
         <span className={s.status}>Availible</span>
-        <span className={s.room_name}>Name</span>
+        <span className={s.room_name}>{name}</span>
       </div>
       <div className={s.row_container}>
-        <span>3.4</span>
-        <span>reviews</span>
+        <span>Fullness</span>
+        <span>{fullness}</span>
       </div>
       <div className={s.row_container}>
-        <span>Floor</span>
-        <span>G-05</span>
+        <span>Number of beds</span>
+        <span>{number}</span>
       </div>
       <div className={s.row_container}>
-        <span>Bed type</span>
-        <span>Double Bed</span>
+        <span>Type</span>
+        <span>{type}</span>
       </div>
     </div>
-);
+  );
+};
 
 export default SingleRoom;
