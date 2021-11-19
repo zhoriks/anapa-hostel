@@ -1,7 +1,9 @@
+/* стоит, чтобы видеть некоторые белые элементы, нудно не забыть удалить */
 body {
   background: dimgray;
 }
 
+/* container, связан стилями с родительским элементом - WELCOME_SCRINE */
 .bookingWelcomeContainer {
   position: relative;
   max-width: 835px;
@@ -9,12 +11,14 @@ body {
   left: 75px;
 }
 
+/* форма для формы бронирования */
 .bookingWelcomeSvg {
   max-width:871;
   max-height:250; 
   fill:none; 
 }
 
+/* стили заголовков формы */
 .bookingLabel {
   position: absolute;
   top: 50px;
@@ -26,6 +30,7 @@ body {
   font-size: 24px;
 }
 
+/* стили формы */
 .bookingWelcomeForm {
   position: absolute;
   bottom: 20px;
@@ -66,6 +71,7 @@ body {
   max-width: 200px;
 }
 
+/* нужно, чтобы скрыть label у кнопки */
 .hidden {
   visibility: hidden;
 }
@@ -78,6 +84,7 @@ label {
   color: grey;
 }
 
+/* добавляет иконку с человеком в инпут кол-ва гостей */
 .icon:before {
   content: '';
   position: absolute;

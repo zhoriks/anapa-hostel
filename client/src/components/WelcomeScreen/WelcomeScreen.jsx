@@ -11,8 +11,11 @@ export default function WelcomeScreen() {
   return (
     <div className={styles.welcomeScreenContainer}>
 
+      {/* блок с описанием отеля  */}
       <div className={styles.nameBlock}>
         <div className={styles.containerNameBlock}>
+          {/* попытка сделать этот блок анимированным с помощью сторонней библиотеки
+          react-animate-on-scroll и animate.css */}
           <ScrollAnimation animateIn='animate__rotateOutUpLeft'
             animateOut='animate__rotateInDownLeft'
             duration={3} initiallyVisible={true} animateOnce={false}>
@@ -26,14 +29,14 @@ export default function WelcomeScreen() {
         </div>
       </div>
 
-      {/* <div className={styles.containerOfferDiscount}> */}
+      {/* блок со предложением скидки */}
       <div className={styles.offerDiscount}>
         <img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/ef/13/95/utesov-hotel.jpg" alt="" />
         <h3>Дарим скидку 10%</h3>
         <p>в честь открытия</p>
       </div>
-      {/* </div> */}
 
+      {/* вставка элемента формы */}
       <BookingWelcomeForm />
     </div >
   );

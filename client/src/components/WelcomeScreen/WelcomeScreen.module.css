@@ -1,3 +1,4 @@
+/* стили всего блока (стили для формы прописаны в компоненте формы!) */
 .welcomeScreenContainer {
   position: relative;
   width: 100%;
@@ -14,6 +15,7 @@
   /* background-image: url('https://static.tildacdn.com/tild6536-3161-4164-b332-376134313931/Frame_1_2.svg'); */
 }
 
+/* стили блок с описанием отеля  */
 .nameBlock {
   position: absolute;
   top: 75px;
@@ -44,6 +46,7 @@
   font-size: 1.1em;
 }
 
+/* стили блока со предложением скидки */
 .offerDiscount {
   border-radius: 30px;
   background-color: #ffffff;
