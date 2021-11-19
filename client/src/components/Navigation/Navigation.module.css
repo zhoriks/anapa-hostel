@@ -1,0 +1,67 @@
+.navigationBlock{
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content:space-evenly;
+  margin: 1% auto;
+  font-family: 'Ubuntu',Arial,sans-serif;
+}
+.nav{
+  width: 60%;
+  justify-content: center;
+  padding: 0;
+}
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: auto;
+  justify-content: center;
+  padding: 0;
+}
+
+.nav a {
+  padding: 10px 30px; /* Поля вокруг текста */
+  text-decoration: none; /* Убираем подчёркивание */
+  display: block; /* Блочная ссылка */
+  white-space: nowrap; /* Запрещаем перенос текста */
+  color: #1a1a1a;
+  font-size: 16px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+ }
+ .nav a:hover {
+  color:grey; /* Цвет фона при наведении */
+ }
+
+.numberText{
+  color: #1a1a1a;
+  font-size: 20px;
+  white-space: nowrap; 
+ }
+ .logo{
+   display: flex;
+   width: 50px;
+   height: 50px;
+ }
+.Messengers{
+   width: 10%;
+   display: flex;
+   justify-content: space-between;
+ }
+
+.icons{
+  width: 40px;
+  height: 40px;
+}
+
+.iconsHidden {
+  width: 40px;
+  height: 40px;
+  visibility: hidden;
+}
+.iconsHiddenOn {
+  width: 40px;
+  height: 40px;
+  visibility: visible;
+}
+
