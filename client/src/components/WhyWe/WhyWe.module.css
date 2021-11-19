@@ -1,0 +1,69 @@
+.container {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.leftSide {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-basis: 50%;
+}
+
+.leftSideTitle {
+  font-size: 35px;
+  line-height: 1.55;
+}
+
+.leftSideDescription {
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.55;
+  margin: 5% 0;
+}
+
+.rightSide {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.rightSideItem {
+  width: 35%;
+  margin: 2.5% 2.5%;
+  display: flex;
+  align-items:flex-start;
+  justify-content: center;
+}
+
+.rightSideItem:hover {
+  transform: scale(1.07);
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgb(190, 190, 190, 0.5);
+}
+
+.rightSideItemImg {
+  max-width: 35%;
+  max-height: 35%;
+  margin: 10% 5% 0 10%;
+}
+
+.rightSideItemDivTitle {
+  font-size: 16px;
+  text-align: justify;
+  margin: 10% 0 3% 0;
+}
+
+.rightSideItemDivDescription {
+  display: block;
+  margin: 0 15% 10% 0;
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.55;
+}
+
