@@ -2,15 +2,15 @@ const bcrypt = require('bcrypt');
 const { Admin } = require('../db/models');
 
 // eslint-disable-next-line consistent-return
-const login = async (req, res) => {
+const loginAdmin = async (req, res) => {
   const {
-    username,
+    login,
     password,
   } = req.body;
 
   const user = await Admin.findOne({
     where: {
-      login: username,
+      login,
     },
   });
 
@@ -24,5 +24,5 @@ const login = async (req, res) => {
 };
 
 module.exports = {
-  login,
+  loginAdmin,
 };
