@@ -14,13 +14,13 @@ export default function MapYandex() {
   ];
 
   return (
-    <div className={styles.mapContainer} id="map">
+    <div className={styles.mapContainer} id="map" >
       <YMaps>
         <Map defaultState={mapData} width={350} height={275}>
           {coordinates.map((coordinate) => <Placemark geometry={coordinate} />)}
         </Map>
       </YMaps>
-    </div>
+    </div >
   );
 }
 
