@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 0 3%;
 }
 
 .startLeftContainer {
@@ -15,6 +16,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  height: 50%;
+ /* justify-content: space-between; */
+  height: 100%;
 } 
 
