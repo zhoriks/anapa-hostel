@@ -17,10 +17,10 @@ async function fetchData({
   return data;
 }
 
-async function* fetchBookings() {
+function* fetchBookings() {
   try {
     const bookings = yield call(fetchData, {
-      url: '',
+      url: 'http://localhost:5001/admin/booking',
     });
     yield put({ type: actionTypesBookings.INIT_BOOKINGS_SUCCESS, payload: bookings });
   } catch (error) {

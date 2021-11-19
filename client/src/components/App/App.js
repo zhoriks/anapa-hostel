@@ -13,6 +13,7 @@ import Admin from '../Admin/Admin';
 import HomeView from '../HomeView/HomeView.jsx';
 import Logout from '../Logout/Logout';
 import actionTypesSession from '../../redux/actionTypes/sessionAT';
+import bookingsAction from '../../redux/actionCreators/bookingsAC';
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ function App() {
 
   useEffect(() => {
     dispatch({ type: actionTypesSession.CHECK_SESSION_START });
+    dispatch(bookingsAction.initBookingsStart());
   }, [dispatch]);
 
   return (
