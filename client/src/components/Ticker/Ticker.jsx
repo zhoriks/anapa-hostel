@@ -6,7 +6,7 @@ function Ticker() {
   return (
     <section>
       <div className={styles.group}>
-        <div class={styles.row}>
+        <div className={styles.row}>
           <span>Море, горы, свежий воздух</span>
           <span>Бархатный песок</span>
           <span>Приезжайте к нам в Анапу</span>
