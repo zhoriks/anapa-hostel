@@ -1,28 +1,28 @@
 const {
   Model,
-} = require('sequelize');
+} = require('DataTypes');
 
-module.exports = (sequelize, DataTypes) => {
-  class Books extends Model {
-    static associate(models) {
-      // define association here
+module.exports = (DataTypes, DataTypes) => {
+  class Book extends Model {
+    static associate({ Room }) {
+      this.belongsTo(Room, { foreignKey: 'roomId' });
     }
   }
-  Books.init({
+  Book.init({
     guestName: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
     checkInDate: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: true,
     },
     checkOutDate: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: true,
     },
     categoryRoom: {
-      type: DataTypes.DATE,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     guestsNumber: {
@@ -30,22 +30,25 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     telephone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     status: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.TEXT,
       defaultValue: 'Ожидает подтверждения',
     },
     roomId: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'Room',
+      },
     },
     comment: {
-      type: DataTypes.text,
+      type: DataTypes.TEXT,
     },
   }, {
-    sequelize,
-    modelName: 'Books',
+    DataTypes,
+    modelName: 'Book',
   });
-  return Books;
+  return Book;
 };

@@ -3,12 +3,12 @@ const {
 } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Books extends Model {
-    static associate(models) {
-      // define association here
+  class Room extends Model {
+    static associate({ Book }) {
+      this.belongsTo(Book, { foreignKey: 'roomId' });
     }
   }
-  Books.init({
+  Room.init({
     type: {
       type: DataTypes.TEXT,
       allowNull: true,
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {
     sequelize,
-    modelName: 'Books',
+    modelName: 'Room',
   });
-  return Books;
+  return Room;
 };

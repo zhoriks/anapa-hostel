@@ -12,15 +12,15 @@ module.exports = {
         allowNull: true,
       },
       checkInDate: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: true,
       },
       checkOutDate: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
         allowNull: true,
       },
       categoryRoom: {
-        type: Sequelize.DATE,
+        type: Sequelize.TEXT,
         allowNull: true,
       },
       guestsNumber: {
@@ -28,18 +28,21 @@ module.exports = {
         allowNull: true,
       },
       telephone: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.TEXT,
         allowNull: true,
       },
       status: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.TEXT,
         defaultValue: 'Ожидает подтверждения',
       },
       roomId: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'Rooms',
+        },
       },
       comment: {
-        type: Sequelize.text,
+        type: Sequelize.TEXT,
       },
       createdAt: {
         allowNull: false,
