@@ -11,6 +11,7 @@ import Settings from '../Settings/Settings';
 import Admin from '../Admin/Admin';
 
 import HomeView from '../HomeView/HomeView.jsx';
+import Logout from '../Logout/Logout';
 
 function App() {
   const isAdmin = useSelector((state) => state.login.isAdmin);
@@ -32,6 +33,7 @@ function App() {
       <Route path='/admin/guest' exact component={Guest} />
       <Route path='/admin/rooms' exact component={Rooms} />
       <Route path='/admin/settings' exact component={Settings} />
+      <Route path='/admin/logout' exact component={Logout} />
     </Switch>
     </BrowserRouter>
   }

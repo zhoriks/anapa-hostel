@@ -1,6 +1,7 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import actionTypesBookings from '../actionTypes/bookingsAT';
 import actionTypesLogin from '../actionTypes/loginAT';
+import actionTypesLogout from '../actionTypes/logoutAT';
 
 async function fetchData({
   url, method, headers, body,
@@ -44,10 +45,25 @@ function* fetchLogin(action) {
     yield put({ type: actionTypesLogin.LOGIN_ERROR, payload: error });
   }
 }
+function* fetchLogout() {
+  try {
+    const { isAdmin } = yield call(fetchData, {
+      url: 'http://localhost:5001/admin/logout',
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    yield put({ type: actionTypesLogout.LOGOUT_SUCCESS, payload: isAdmin });
+  } catch (error) {
+    yield put({ type: actionTypesLogout.LOGOUT_ERROR, payload: error });
+  }
+}
 
 function* watchActions() {
   yield takeEvery(actionTypesBookings.INIT_BOOKINGS_START, fetchBookings);
   yield takeEvery(actionTypesLogin.LOGIN_START, fetchLogin);
+  yield takeEvery(actionTypesLogout.LOGOUT_START, fetchLogout);
 }
 
 export default watchActions;
