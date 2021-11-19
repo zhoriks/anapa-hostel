@@ -2,7 +2,7 @@ import WhyWe from '../WhyWe/WhyWe.jsx';
 import Ticker from '../Ticker/Ticker.jsx';
 import Benefits from '../Benefits/Benefits.jsx';
 import Navigation from '../Navigation/Navigation.jsx';
-// import OneBenefit from '../OneBenefit/OneBenefit.jsx';
+import StartScreen from '../StartScreen/StartScreen.jsx';
 
 function HomeView() {
   return (
@@ -11,6 +11,7 @@ function HomeView() {
     <WhyWe />
     <Ticker/>
     <Benefits />
+    <StartScreen />
     </>
   );
 }

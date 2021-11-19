@@ -9,11 +9,11 @@ const GuestListNavbar = () => (
       <AiOutlineSearch className={s.icon} />
       <AiFillBell className={s.icon} />
       <select className={s.select} aria-label="Default select example">
-        <option selected>February 8th, 2021</option>
+        <option>February 8th, 2021</option>
         <option value="1">Date</option>
       </select>
       <select className={s.select} aria-label="Default select example">
-        <option selected>RU</option>
+        <option>RU</option>
         <option value="1">EN</option>
       </select>
       </div>

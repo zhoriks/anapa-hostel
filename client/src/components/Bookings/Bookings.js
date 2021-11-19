@@ -6,6 +6,7 @@ const Bookings = () => {
   // const bookings = useSelector((state) => state.booking.list);
   const client = [
     {
+      id: 1,
       guestName: 'Дмитрий',
       telephone: '+79825091864',
       checkInDate: 'Oct 29th, 2020',
@@ -15,6 +16,7 @@ const Bookings = () => {
       status: 'Ожидает подтверждения',
     },
     {
+      id: 2,
       guestName: 'Дмитрий',
       telephone: '+79825091864',
       checkInDate: 'Oct 29th, 2020',
@@ -24,6 +26,7 @@ const Bookings = () => {
       status: 'Ожидает подтверждения',
     },
     {
+      id: 3,
       guestName: 'Дмитрий',
       telephone: '+79825091864',
       checkInDate: 'Oct 29th, 2020',
@@ -33,6 +36,7 @@ const Bookings = () => {
       status: 'Ожидает подтверждения',
     },
     {
+      id: 4,
       guestName: 'Дмитрий',
       telephone: '+79825091864',
       checkInDate: 'Oct 29th, 2020',
@@ -55,7 +59,7 @@ const Bookings = () => {
       </div>
 
       {client.map((el) => (
-        <div className={s.client_info}>
+        <div className={s.client_info} key={el.id}>
           <p>{el.guestName}</p>
           <p>{el.telephone}</p>
           <p>{el.checkInDate}</p>

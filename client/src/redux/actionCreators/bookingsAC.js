@@ -1,7 +1,7 @@
 import actionTypesBookings from '../actionTypes/bookingsAT';
 
 const bookingsAction = {
-  initBookings: () => ({ type: actionTypesBookings.INIT_BOOKINGS }),
+  initBookingsStart: () => ({ type: actionTypesBookings.INIT_BOOKINGS_START }),
 };
 
 export default bookingsAction;

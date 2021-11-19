@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
-
+// import { useHistory } from 'react-router';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../Navbar/Navbar';
 import Bookings from '../Bookings/Bookings';
 import Guest from '../Guest/Guest';
@@ -10,13 +11,21 @@ import Settings from '../Settings/Settings';
 import Admin from '../Admin/Admin';
 
 import HomeView from '../HomeView/HomeView.jsx';
+import Logout from '../Logout/Logout';
+import actionTypesSession from '../../redux/actionTypes/sessionAT';
 
 function App() {
-  const [isAdmin] = useState(false);
+  const dispatch = useDispatch();
+  const admin = useSelector((state) => state.login.session.admin);
+
+  useEffect(() => {
+    dispatch({ type: actionTypesSession.CHECK_SESSION_START });
+  }, [dispatch]);
+
   return (
     <>
     {
-    !isAdmin
+    !admin
       ? <BrowserRouter>
     <Switch>
       <Route path='/' exact component={HomeView} />
@@ -26,10 +35,11 @@ function App() {
       : <BrowserRouter>
     <Navbar />
     <Switch>
-      <Route path='/' exact component={Bookings} />
-      <Route path='/guest' exact component={Guest} />
-      <Route path='/rooms' exact component={Rooms} />
-      <Route path='/settings' exact component={Settings} />
+      <Route path='/admin' exact component={Bookings} />
+      <Route path='/admin/guest' exact component={Guest} />
+      <Route path='/admin/rooms' exact component={Rooms} />
+      <Route path='/admin/settings' exact component={Settings} />
+      <Route path='/admin/logout' exact component={Logout} />
     </Switch>
     </BrowserRouter>
   }
