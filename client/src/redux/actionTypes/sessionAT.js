@@ -1,0 +1,7 @@
+const actionTypesSession = {
+  CHECK_SESSION_START: 'CHECK_SESSION_START',
+  CHECK_SESSION_SUCCESS: 'CHECK_SESSION_SUCCESS',
+  CHECK_SESSION_ERROR: 'CHECK_SESSION_ERROR',
+};
+
+export default actionTypesSession;
