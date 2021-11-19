@@ -4,12 +4,14 @@ const SessionFileStore = require('session-file-store')(session);
 const cors = require('cors');
 const dotenv = require('dotenv');
 
+const indexRouter = require('./routes/index.router');
+
 const app = express();
 
 dotenv.config();
 
 const {
-  PORT = 5000,
+  PORT = 5001,
   SESSION_SECRET = 'my_secret',
 } = process.env;
 
@@ -36,6 +38,8 @@ app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use('/', indexRouter);
 
 app.listen(PORT, () => {
   console.log(`Server started on PORT: ${PORT}`);
