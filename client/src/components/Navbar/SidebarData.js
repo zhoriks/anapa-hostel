@@ -6,25 +6,25 @@ import * as IoIcons from 'react-icons/io';
 const SidebarData = [
   {
     title: 'Bookings',
-    path: '/',
+    path: '/admin',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text',
   },
   {
     title: 'Guest',
-    path: '/guest',
+    path: '/admin/guest',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text',
   },
   {
     title: 'Rooms',
-    path: '/rooms',
+    path: '/admin/rooms',
     icon: <AiIcons.AiOutlineKey />,
     cName: 'nav-text',
   },
   {
     title: 'Settings',
-    path: '/settings',
+    path: '/admin/settings',
     icon: <AiIcons.AiOutlineSetting />,
     cName: 'nav-text',
   },
