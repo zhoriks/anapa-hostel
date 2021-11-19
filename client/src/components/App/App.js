@@ -9,26 +9,20 @@ import Rooms from '../Rooms/Rooms';
 import Settings from '../Settings/Settings';
 import Admin from '../Admin/Admin';
 
-import Ticker from '../Ticker/Ticker.jsx';
-import Navigation from '../Navigation/Navigation.jsx';
-import WhyWe from '../WhyWe/WhyWe.jsx';
+import HomeView from '../HomeView/HomeView.jsx';
 
 function App() {
-  const [isAdmin] = useState(true);
+  const [isAdmin] = useState(false);
   return (
     <>
     {
     !isAdmin
       ? <BrowserRouter>
     <Switch>
-      <Route path='/' exact>hello</Route>
-      <div>
-        <WhyWe/>
-        <Ticker/>
-        <Navigation />
-      </div>
+      <Route path='/' exact component={HomeView} />
+      <Route path='/admin' exact component={Admin} />
     </Switch>
-  </BrowserRouter>
+    </BrowserRouter>
       : <BrowserRouter>
     <Navbar />
     <Switch>
@@ -36,7 +30,6 @@ function App() {
       <Route path='/guest' exact component={Guest} />
       <Route path='/rooms' exact component={Rooms} />
       <Route path='/settings' exact component={Settings} />
-      <Route path='/admin' exact component={Admin} />
     </Switch>
     </BrowserRouter>
   }

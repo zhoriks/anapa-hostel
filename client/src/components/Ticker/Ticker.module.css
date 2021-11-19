@@ -24,7 +24,7 @@ section {
 }
 section .group {
   width: 100vw;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: -webkit- flex;
   /* Safari */
   display: flex;
