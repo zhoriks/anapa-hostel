@@ -8,21 +8,22 @@ const checkDate = async (req, res) => {
     category,
   } = req.body;
 
-  try {
-    const books = await Book.findAll({
-      where: {
-        checkOutDate: {
-          [Op.between]: [checkInDate, checkOutDate],
-        },
-        categoryRoom: category,
+  const books = await Book.findAll({
+    where: {
+      checkOutDate: {
+        [Op.between]: [checkInDate, checkOutDate],
       },
-    });
-    if (books.length) {
-      res.status(200).json(books);
-    }
-  } catch (error) {
-    res.status(404).json({ error: 'error' });
-  }
+      categoryRoom: category,
+    },
+  });
+
+  const rooms = await Room.findAll({
+    where: {
+      type: 'Эконом',
+    },
+  });
+
+  res.status(200).json(rooms);
 };
 
 module.exports = {

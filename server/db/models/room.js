@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Room extends Model {
     static associate({ Book }) {
-      this.belongsTo(Book, { foreignKey: 'roomId' });
+      this.hasOne(Book);
     }
   }
   Room.init({
