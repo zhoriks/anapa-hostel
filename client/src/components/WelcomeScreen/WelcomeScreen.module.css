@@ -18,8 +18,8 @@
 /* стили блок с описанием отеля  */
 .nameBlock {
   position: absolute;
-  top: 75px;
-  left: 20px;
+  top: 15%;
+  left: 4%;
   width: 47%;
   height: 47%;
   opacity: 1;
@@ -32,9 +32,9 @@
 
 .textNameBlock {
   position: absolute;
-  top: 5px;
+  top: 10%;
   left: 60px;
-  width: 80%;
+  width: 60%;
 }
 
 .textNameBlock h2 {
@@ -43,6 +43,8 @@
 }
 
 .textNameBlock p {
+  margin-top: 5%;
+  width: 80%;
   font-size: 1.1em;
 }
 
@@ -53,27 +55,29 @@
   background-position: center center;
   border-color: transparent;
   border-style: solid;
-  width: 250px;
-  height: 180px;
+  width: 22%;
+  height: 33%;
   position: absolute;
-  top: 130px;
-  right: 70px;
+  top: 17%;
+  right: 15%;
 }
 
 .offerDiscount img {
-  width: 80%;
-  height: 60%;
+  width: 85%;
+  height: 70%;
   border-radius: 25px;
-  margin: 15px 25px 0 25px;
+  margin: 15px 18px 5px 18px;
 }
 
 .offerDiscount h3 {
-  margin: 0 27px;
-  font-size: 18px;
+  margin: 0 11%;
+  font-size: 1rem;
+  font-weight: bold;
   color: dimgray;
 }
 
 .offerDiscount p {
-  margin: 0 27px;
+  margin: 0 11%;
+  font-size: 0.8rem;
   color: dimgray;
 }

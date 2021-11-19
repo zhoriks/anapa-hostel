@@ -6,10 +6,10 @@ import StartScreen from '../StartScreen/StartScreen.jsx';
 function HomeView() {
   return (
     <>
-    <Navigation />
-    <WhyWe />
-    <Ticker/>
-    <StartScreen />
+      <Navigation />
+      <StartScreen />
+      <Ticker />
+      <WhyWe />
     </>
   );
 }
