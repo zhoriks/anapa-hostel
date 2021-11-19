@@ -29,7 +29,7 @@ async function* fetchBookings() {
 
 function* fetchLogin(action) {
   try {
-    const { isAdmin } = yield call(fetchData, {
+    const { isAdmin, session } = yield call(fetchData, {
       url: 'http://localhost:5001/admin',
       method: 'POST',
       headers: {
@@ -40,7 +40,7 @@ function* fetchLogin(action) {
         password: action.payload.password,
       }),
     });
-    yield put({ type: actionTypesLogin.LOGIN_SUCCESS, payload: isAdmin });
+    yield put({ type: actionTypesLogin.LOGIN_SUCCESS, payload: { isAdmin, session } });
   } catch (error) {
     yield put({ type: actionTypesLogin.LOGIN_ERROR, payload: error });
   }

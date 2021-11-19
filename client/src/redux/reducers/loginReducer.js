@@ -3,6 +3,7 @@ import actionTypesLogout from '../actionTypes/logoutAT';
 
 const initialState = {
   isAdmin: false,
+  session: {},
   error: null,
 };
 
@@ -17,7 +18,8 @@ const loginReducer = (state = initialState, action) => {
     case actionTypesLogin.LOGIN_SUCCESS:
       return {
         ...state,
-        isAdmin: action.payload,
+        isAdmin: action.payload.isAdmin,
+        session: action.payload.session,
       };
     case actionTypesLogin.LOGIN_ERROR:
       return {
@@ -34,6 +36,7 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         isAdmin: action.payload,
+        session: {},
       };
     case actionTypesLogout.LOGOUT_ERROR:
       return {
