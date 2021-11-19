@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import bookingsReducer from './bookingsReducer';
 
 const rootReducer = combineReducers({
-  title: () => 'example',
+  booking: bookingsReducer,
 });
 
 export default rootReducer;
