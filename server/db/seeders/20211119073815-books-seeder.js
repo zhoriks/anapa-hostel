@@ -1,0 +1,60 @@
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert('Books', [{
+      guestName: 'Дмитрий',
+      checkInDate: '2021-12-12',
+      checkOutDate: '2021-12-15',
+      categoryRoom: 'Комфорт',
+      guestsNumber: '2',
+      telephone: '+79825091864',
+      status: 'Ожидает подтверждения',
+      roomId: '3',
+      comment: 'Пусто',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      guestName: 'Константин',
+      checkInDate: '2021-11-15',
+      checkOutDate: '2021-12-20',
+      categoryRoom: 'Эконом',
+      guestsNumber: '3',
+      telephone: '+79825121864',
+      status: 'Проживает',
+      roomId: '1',
+      comment: 'Душный тип',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      guestName: 'Эдуард',
+      checkInDate: '2021-11-20',
+      checkOutDate: '2021-12-21',
+      categoryRoom: 'Люкс',
+      guestsNumber: '2',
+      telephone: '+79825091864',
+      status: 'Проживает',
+      roomId: '5',
+      comment: 'Нормальный тип',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      guestName: 'Екатерина',
+      checkInDate: '2021-11-23',
+      checkOutDate: '2021-11-26',
+      categoryRoom: 'Люкс',
+      guestsNumber: '1',
+      telephone: '+79825093456',
+      status: 'Подтверждено',
+      roomId: '6',
+      comment: 'Предоплата 50%',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }], {});
+  },
+
+  down: async (queryInterface, Sequelize) => {
+
+  },
+};
