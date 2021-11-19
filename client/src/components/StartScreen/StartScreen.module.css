@@ -1,0 +1,20 @@
+.startContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.startLeftContainer {
+  width: 70%;
+  padding: 10px;
+  height: 50%;
+ }
+
+.startRightContainer {
+  width: 30%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+} 
+
