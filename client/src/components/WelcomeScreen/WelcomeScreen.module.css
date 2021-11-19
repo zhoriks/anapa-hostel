@@ -10,7 +10,8 @@
   background-attachment: fixed;
   border-color: transparent;
   border-style: solid;
-  background-image: url('https://static.tildacdn.com/tild6536-3161-4164-b332-376134313931/Frame_1_2.svg');
+  background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
+  /* background-image: url('https://static.tildacdn.com/tild6536-3161-4164-b332-376134313931/Frame_1_2.svg'); */
 }
 
 .nameBlock {
@@ -21,4 +22,55 @@
   height: 47%;
   opacity: 1;
   /* transform: translateX(-14.375px) translateY(-1.4375px) rotate(-1.4375deg); */
+}
+
+.containerNameBlock {
+  position: relative;
+}
+
+.textNameBlock {
+  position: absolute;
+  top: 5px;
+  left: 60px;
+  width: 80%;
+}
+
+.textNameBlock h2 {
+  font-size: 2.3em;
+  color: rgb(29, 165, 175);
+}
+
+.textNameBlock p {
+  font-size: 1.1em;
+}
+
+.offerDiscount {
+  border-radius: 30px;
+  background-color: #ffffff;
+  background-position: center center;
+  border-color: transparent;
+  border-style: solid;
+  width: 250px;
+  height: 180px;
+  position: absolute;
+  top: 130px;
+  right: 70px;
+}
+
+.offerDiscount img {
+  width: 80%;
+  height: 60%;
+  border-radius: 25px;
+  margin: 15px 25px 0 25px;
+}
+
+.offerDiscount h3 {
+  margin: 0 27px;
+  font-size: 18px;
+  color: dimgray;
+}
+
+.offerDiscount p {
+  margin: 0 27px;
+  color: dimgray;
 }
