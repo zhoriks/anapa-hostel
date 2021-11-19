@@ -1,0 +1,19 @@
+.startContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.startLeftContainer {
+  width: 70%;
+  padding: 10px;
+ }
+
+.startRightContainer {
+  width: 30%;
+  padding: 10px;
+} 
+
+.blay {
+  border: 1px solid red;
+}

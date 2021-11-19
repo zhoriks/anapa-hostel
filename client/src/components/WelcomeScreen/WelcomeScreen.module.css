@@ -1,6 +1,7 @@
-.welcomeScrineContainer {
+.welcomeScreenContainer {
   position: relative;
-  min-height: 400px;
+  width: 100%;
+  min-height: 615px;
   border-radius: 50px;
   background-color: #566a6e;
   background-position: center top;
@@ -10,4 +11,14 @@
   border-color: transparent;
   border-style: solid;
   background-image: url('https://static.tildacdn.com/tild6536-3161-4164-b332-376134313931/Frame_1_2.svg');
+}
+
+.nameBlock {
+  position: absolute;
+  top: 75px;
+  left: 20px;
+  width: 47%;
+  height: 47%;
+  opacity: 1;
+  /* transform: translateX(-14.375px) translateY(-1.4375px) rotate(-1.4375deg); */
 }

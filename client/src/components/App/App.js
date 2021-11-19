@@ -1,10 +1,10 @@
+import StartScreen from '../StartScreen/StartScreen.jsx';
 import './App.css';
-import WelcomeScrine from '../WelcomeScrine/WelcomeScrine.jsx';
 
 function App() {
   return (
     <div>
-      <WelcomeScrine />
+      <StartScreen />
     </div>
   );
 }

@@ -5,19 +5,19 @@ body {
 .bookingWelcomeContainer {
   position: relative;
   max-width: 835px;
-  top: 150px;
-  left: 50px;
+  top: 350px;
+  left: 75px;
 }
 
 .bookingWelcomeSvg {
-  width:871;
-  height:237; 
+  max-width:871;
+  max-height:250; 
   fill:none; 
 }
 
 .bookingLabel {
   position: absolute;
-  top: 70px;
+  top: 50px;
   left: 50px;
   color: rgb(95, 95, 102)
 }
@@ -28,7 +28,7 @@ body {
 
 .bookingWelcomeForm {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   left: 50px;
   display: flex;
   justify-content: flex-start;
