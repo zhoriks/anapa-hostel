@@ -28,6 +28,12 @@ const SidebarData = [
     icon: <AiIcons.AiOutlineSetting />,
     cName: 'nav-text',
   },
+  {
+    title: 'Logout',
+    path: '/admin/logout',
+    icon: <AiIcons.AiOutlineLogout />,
+    cName: 'nav-text',
+  },
 ];
 
 export default SidebarData;
