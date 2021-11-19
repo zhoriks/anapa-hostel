@@ -18,9 +18,9 @@ const loginAdmin = async (req, res) => {
     const isSame = await bcrypt.compare(password, user.password);
     if (isSame) {
       req.session.admin = { admin: user.login };
-      return res.json({ isAdmin: true });
+      return res.json({ isAdmin: true, session: req.session.admin });
     }
-  } else return res.json({ isAdmin: false });
+  } else return res.json({ isAdmin: false, session: {} });
 };
 
 module.exports = {

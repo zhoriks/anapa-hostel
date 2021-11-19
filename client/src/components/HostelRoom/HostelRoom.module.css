@@ -1,0 +1,66 @@
+.container{
+  display: flex;
+  justify-content:center;
+  align-items: flex-end;
+  width: 380px;
+  height: 380px;
+  margin: 1%;
+  background-color: burlywood;
+  border-radius: 30px;
+  transition: .7s;
+}
+.container:hover {
+  margin-bottom: 25px; /* Цвет фона при наведении */
+  transition: .7s;
+ }
+
+.nestedContainer{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 50%;
+  background-color:white;
+  margin: 5%;
+  border-radius: 30px;
+  opacity: 0.9;
+
+}
+
+.textContainer{
+  width: 80%;
+  margin: 7% auto 0%;
+  font-size: 16px;
+  line-height: 1.55;
+  font-family: 'Ubuntu',Arial,sans-serif;
+}
+
+.textContainerHeader{
+  font-size: 18px;
+  margin: 0 auto 3%;
+}
+.buttonContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.buttonHostelRoom{
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  border-width: 1px;
+  border-radius: 20px;
+  width: 35%;
+  height: 75%;
+  background-color: #566a6e;
+}
+.textContainerPrice{
+  display: flex;
+  align-items: center;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  font-size: 20px;
+  width: 35%;
+}
+
+.textContainerBody{
+  margin: 0;
+}

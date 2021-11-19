@@ -1,0 +1,58 @@
+.benefitsTitle {
+  margin-top: 5%;
+  margin-left: 22%;
+  display: flex;
+  flex-direction: column;
+}
+
+.benefitsContainer {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topLine {
+  margin-bottom: 1%;
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bottomLine {
+  margin-right: 10%;
+  width: 43%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.contactDiv {
+  margin-left: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contactDivText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10%;
+}
+
+.contactDivPhone {
+  transition: .3s;
+}
+
+.contactDivPhone:hover {
+  transform: scale(1.07);
+  transition: .3s;
+}
+
+.contactDivPhoneNumber {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}

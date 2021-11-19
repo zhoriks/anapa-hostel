@@ -1,0 +1,21 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  /* align-items: center; */
+  width: 61%;
+  height: 500px;
+}
+.containerCard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 450px;
+}
+.titleText{
+  color: #1a1a1a;
+  font-size: 18px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+}
