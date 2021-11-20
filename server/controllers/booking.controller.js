@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const { Book } = require('../db/models');
 
 const allBooking = async (req, res) => {
@@ -10,4 +11,17 @@ const allBooking = async (req, res) => {
   }
 };
 
-module.exports = allBooking;
+const livingNowBooking = async (req, res) => {
+  try {
+    const booking = await Book.findAll({
+      where: {
+        status: 'Проживает',
+      },
+    });
+    res.status(200).json(booking);
+  } catch (error) {
+    res.status(404).json({ error: 'error' });
+  }
+};
+
+module.exports = { allBooking, livingNowBooking };

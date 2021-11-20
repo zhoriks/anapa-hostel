@@ -1,7 +1,9 @@
 const router = require('express').Router();
-const allBooking = require('../controllers/booking.controller');
+const { allBooking, livingNowBooking } = require('../controllers/booking.controller');
 
-router.route('/')
-  .get(allBooking);
+// Все бронирования
+router.get('/', allBooking);
+// Бронирования которые сейчас проживают
+router.get('/now', livingNowBooking);
 
 module.exports = router;
