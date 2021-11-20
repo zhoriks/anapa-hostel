@@ -8,7 +8,7 @@ const Rooms = () => {
   return (
     <div className={s.main_container}>
       <div className={s.container}>
-        {rooms.map((el) => <SingleRoom name={el.name}
+        {rooms.map((el) => <SingleRoom key={el.id} name={el.name}
         fullness={el.fullness} type={el.type} number={el.numberOfBeds}/>)}
       </div>
     </div>
