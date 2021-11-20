@@ -54,7 +54,7 @@ export default function BookingFormGuestData() {
 
       <div className={styles.addInfoFromGuest}>
         <h5>Время заезда и выезда</h5>
-        <p>Стандартное время заезда — 14:00, выезда — 12:00.</p>
+        <p>Стандартное время заезда — <b>14:00</b>, выезда — <b>12:00</b>.</p>
       </div>
 
       <div className={styles.addInfoFromGuest}>
@@ -66,6 +66,7 @@ export default function BookingFormGuestData() {
         </textarea>
       </div>
 
+      <button type="submit" className={styles.bookingBtn}>Забронировать</button>
     </div>
   );
 }

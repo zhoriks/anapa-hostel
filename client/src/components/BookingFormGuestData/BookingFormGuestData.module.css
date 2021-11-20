@@ -11,7 +11,7 @@
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   margin-left: 0.5%;
 }
 
@@ -147,5 +147,52 @@ h5 {
 /* стили для доп информации в форме */
 
 .addInfoFromGuest {
-  
+  align-self: flex-start;
+  margin: 0.5rem; 
+  width: 100%;
+}
+
+.addInfoFromGuest h5 {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.addInfoFromGuest p {
+  font-size: 0.75rem;
+  margin-left: 0.5%;
+}
+
+.addInfoFromGuest textarea {
+  margin-top: 0.5%;
+  text-overflow: ellipsis;
+  padding: 0.45rem 0.6rem;
+  line-height: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  width: 0;
+  min-width: 99%;
+  background: #fff none;
+  border: none;
+  font-size: 0.75rem;
+  overflow: hidden;
+  min-height: 3.9rem;
+  height: 100%;
+  border-radius: 0.15rem;
+  resize: none;
+}
+
+.bookingBtn {
+  align-self: flex-end;
+  margin-right: 0.3%;
+  color: #ffffff;
+  background-color: #4c77c7;
+  height: 2rem;
+  border: 0 none;
+  font-size: 1rem;
+  padding: 0 3%;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-weight: 700;
+  border-radius: 0.5rem;
 }
