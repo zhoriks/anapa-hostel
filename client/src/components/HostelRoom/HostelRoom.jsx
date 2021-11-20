@@ -3,7 +3,6 @@ import { BiRuble } from 'react-icons/bi';
 import styles from './HostelRoom.module.css';
 
 function HostelRoom({ item }) {
-  console.log(item.img);
   return (
     <div className={styles.container} style={{ backgroundImage: `url(${item.img})` }}>
       <div className={styles.nestedContainer}>
