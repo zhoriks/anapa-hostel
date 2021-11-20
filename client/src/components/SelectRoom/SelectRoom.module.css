@@ -7,7 +7,6 @@
 .dateContainer {
   display: flex;
   align-items: center;
-  border: 1px solid black;
   justify-content: flex-start;
   height: 120px;
   background-color: #bdbdbd;
@@ -38,7 +37,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  border: 1px solid black;
   width: 100%;
   height: fit-content;
   padding: 20px;
