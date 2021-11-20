@@ -5,6 +5,14 @@
   flex-direction: column;
 }
 
+.benefitsTitleBig {
+  color: #1a1a1a;
+  font-size: 2.188rem;
+  font-weight: bold;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+}
+
 .benefitsContainer {
   display: flex;
   flex-direction: column;
