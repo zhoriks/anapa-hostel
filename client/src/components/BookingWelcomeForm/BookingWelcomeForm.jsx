@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import actionTypesBookingForm from '../../redux/actionCreators/bookingFormAC';
+import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
 
 // подключение модульного CSS
 import styles from './BookingWelcomeForm.module.css';
@@ -18,7 +18,7 @@ export default function BookingWelcomeForm() {
       guestNumber: event.target.guestNumber.value,
     };
 
-    dispatch(actionTypesBookingForm.findPlace(searchData));
+    dispatch(bookingFormAction.includeDataFromStartForm(searchData));
   };
 
   return (
@@ -34,7 +34,7 @@ export default function BookingWelcomeForm() {
         <div className={styles.bookingLabelSubTitle}>гарантированное заселение</div>
       </div>
 
-      <form onSubmit={() => handleSubmit()} className={styles.bookingWelcomeForm}>
+      <form onSubmit={handleSubmit} className={styles.bookingWelcomeForm}>
         <div className={styles.bookingWelcomeFormElement}>
           {/* default value для даты заезда и выезда - неоптимальное решение,
           ** не сработает при переходе c 30/31 дня на 1 день месяца и с декабря на январь */}

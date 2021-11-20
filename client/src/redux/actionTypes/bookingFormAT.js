@@ -1,5 +1,5 @@
 const actionTypesBookingForm = {
-  FIND_PLACE_START: 'FIND_PLACE_START',
+  INCLUDE_DATA_FROM_START_FORM: 'INCLUDE_DATA_FROM_START_FORM',
 };
 
 export default actionTypesBookingForm;

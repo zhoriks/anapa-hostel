@@ -1,7 +1,10 @@
 import actionTypesBookingForm from '../actionTypes/bookingFormAT';
 
 const bookingFormAction = {
-  findPlace: () => ({ type: actionTypesBookingForm.FIND_PLACE_START }),
+  includeDataFromStartForm: (payload) => ({
+    type: actionTypesBookingForm.INCLUDE_DATA_FROM_START_FORM,
+    payload,
+  }),
 };
 
 export default bookingFormAction;

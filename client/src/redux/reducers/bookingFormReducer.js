@@ -8,7 +8,7 @@ const initialState = {
 // eslint-disable-next-line default-param-last
 const bookingFormReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypesBookingForm.FIND_PLACE_START:
+    case actionTypesBookingForm.INCLUDE_DATA_FROM_START_FORM:
       return {
         ...state,
         list: {
