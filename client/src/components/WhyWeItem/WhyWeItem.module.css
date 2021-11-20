@@ -1,0 +1,49 @@
+.rightSideItem {
+  width: 21.25rem;
+  height: 8.75rem;
+  margin: 2.5% 2.5%;
+  display: flex;
+  align-items:flex-start;
+  justify-content: center;
+  transition: .7s;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgb(190, 190, 190, 0.5);
+}
+
+.rightSideItem:hover {
+  transform: scale(1.07);
+  transition: .7s;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgb(190, 190, 190, 0.5);
+}
+
+.rightSideItemImg {
+  max-width: 3.125rem;
+  max-height: 3.125rem;
+  margin: 10% auto;
+}
+
+.rightSideItemDiv {
+  margin: 3% auto;
+}
+
+.rightSideItemDivTitle {
+  width: 13.5rem;
+  height: 1.625rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-align: justify;
+  margin: 10% 0 3% 0;
+}
+
+.rightSideItemDivDescription {
+  width: 13.5rem;
+  height: 3rem;
+  display: block;
+  margin: 0 auto;
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.55;
+}
+
