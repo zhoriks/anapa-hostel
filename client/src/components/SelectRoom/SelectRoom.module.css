@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(240, 240, 240);
+  font-size: 30px;
+}
+.dateContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 120px;
+  background-color: #bdbdbd;
+}
+.date {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  margin-left: 50px;
+  padding: 10px;
+  padding-right: 30px;
+  border-radius: 20px;
+}
+.chooseRoom {
+  text-align: center;
+  padding: 10px;
+  color: rgba(61,61,61,.8);
+}
+.dateText {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.icon {
+  margin-right: 15px;
+}
+.roomContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  justify-content: space-between;
+}
