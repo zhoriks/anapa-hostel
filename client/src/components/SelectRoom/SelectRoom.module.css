@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(240, 240, 240);
-  font-size: 50px;
+  font-size: 30px;
 }
 .dateContainer {
   display: flex;
   align-items: center;
   border: 1px solid black;
   justify-content: flex-start;
-  height: 150px;
+  height: 120px;
   background-color: #bdbdbd;
 }
 .date {
@@ -23,7 +23,7 @@
 }
 .chooseRoom {
   text-align: center;
-  padding: 25px;
+  padding: 10px;
   color: rgba(61,61,61,.8);
 }
 .dateText {
@@ -33,4 +33,14 @@
 }
 .icon {
   margin-right: 15px;
+}
+.roomContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  justify-content: space-between;
 }
