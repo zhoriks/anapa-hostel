@@ -48,9 +48,9 @@ function Benefits() {
     <>
     <div className={styles.benefitsTitle}>
       <span style={{
-        display: 'block', marginLeft: '2px', marginBottom: '1%', color: 'grey',
+        display: 'block', marginLeft: '2px', marginBottom: '1%', color: 'grey', fontSize: '1rem',
       }}>Вне зависимости от выбранного номера</span>
-      <h1>Вы получаете</h1>
+      <h1 className={styles.benefitsTitleBig}>Вы получаете</h1>
     </div>
     <div className={styles.benefitsContainer}>
       <div className={styles.topLine}>
