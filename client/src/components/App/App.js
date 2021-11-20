@@ -15,6 +15,7 @@ import Logout from '../Logout/Logout';
 import actionTypesSession from '../../redux/actionTypes/sessionAT';
 import bookingsAction from '../../redux/actionCreators/bookingsAC';
 import roomAction from '../../redux/actionCreators/roomAC';
+import SelectRoom from '../SelectRoom/SelectRoom.jsx';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
     <Switch>
       <Route path='/' exact component={HomeView} />
       <Route path='/admin' exact component={Admin} />
+      <Route path='/select-room' exact component={SelectRoom} />
     </Switch>
     </BrowserRouter>
       : <BrowserRouter>

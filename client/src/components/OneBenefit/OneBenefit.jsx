@@ -1,11 +1,10 @@
 import styles from './OneBenefit.module.css';
-import success from '../data/img/success.png';
 
-function OneBenefit() {
+function OneBenefit({ item }) {
   return (
     <div className={styles.benefit}>
-      <img src={success} className={styles.benefitImg} alt="" />
-      <span className={styles.benefitDescription}>Lorem ipsum dolor sit amet</span>
+      <img src={item.img} className={styles.benefitImg} alt="" />
+      <span className={styles.benefitDescription}>{item.description}</span>
     </div>
   );
 }

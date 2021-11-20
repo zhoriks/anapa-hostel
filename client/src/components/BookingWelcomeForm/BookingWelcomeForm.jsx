@@ -22,11 +22,17 @@ export default function BookingWelcomeForm() {
           {/* default value для даты заезда и выезда - неоптимальное решение,
           ** не сработает при переходе c 30/31 дня на 1 день месяца и с декабря на январь */}
           <label htmlFor="bookingWelcomeFormArrivalDate">Дата заезда:</label>
-          <input name="bookingWelcomeFormArrivalDate" type="date" defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`} className={styles.bookingWelcomeFormInput} />
+          <input name="bookingWelcomeFormArrivalDate" type="date"
+            defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
+            min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
+            className={styles.bookingWelcomeFormInput} />
         </div>
         <div className={styles.bookingWelcomeFormElement}>
           <label htmlFor="bookingWelcomeFormDepartureDate">Дата выезда:</label>
-          <input type="date" defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`} className={styles.bookingWelcomeFormInput} />
+          <input type="date"
+            defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`}
+            min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`}
+            className={styles.bookingWelcomeFormInput} />
         </div>
         {/* пока стоят минимально возможное число гостей - 1 и максимально возможное - 15 */}
         <div className={styles.bookingWelcomeFormElement}>

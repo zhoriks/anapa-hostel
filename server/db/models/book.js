@@ -9,9 +9,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Book.init({
-    guestName: {
+    guestFirstName: {
       type: DataTypes.TEXT,
       allowNull: true,
+    },
+    guestLastName: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    guestPatronymic: {
+      type: DataTypes.TEXT,
     },
     checkInDate: {
       type: DataTypes.DATEONLY,
@@ -27,6 +34,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     guestsNumber: {
       type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    email: {
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     telephone: {
