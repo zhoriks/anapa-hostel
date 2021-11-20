@@ -1,17 +1,24 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import actionTypesBookingForm from '../../redux/actionCreators/bookingFormAC';
 
 // подключение модульного CSS
 import styles from './BookingWelcomeForm.module.css';
 
 export default function BookingWelcomeForm() {
+  const dispatch = useDispatch();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // { arrivalDate: null, departureDate: null, guestNumber: null }
-    // const searchData = {
-    //   arrivalDate: event.target.arrivalDate.value,
-    //   departureDate: event.target.departureDate.value,
-    //   guestNumber: event.target.guestNumber.value,
-    // };
+
+    const searchData = {
+      arrivalDate: event.target.arrivalDate.value,
+      departureDate: event.target.departureDate.value,
+      guestNumber: event.target.guestNumber.value,
+    };
+
+    dispatch(actionTypesBookingForm.findPlace(searchData));
   };
 
   return (
