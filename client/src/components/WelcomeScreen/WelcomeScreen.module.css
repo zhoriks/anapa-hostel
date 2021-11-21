@@ -25,10 +25,10 @@
 /* стили блок с описанием отеля  */
 .nameBlock {
   position: absolute;
-  top: 15%;
+  top: 13%;
   left: 4%;
-  width: 47%;
-  height: 47%;
+  width: 50%;
+  height: 60%;
   opacity: 1;
   /* transform: translateX(-14.375px) translateY(-1.4375px) rotate(-1.4375deg); */
 }
@@ -37,41 +37,49 @@
   position: relative;
 }
 
+.containerNameBlock img {
+  position: relative;
+  max-height: 350px;
+  max-width: 350px;
+}
+
 .textNameBlock {
   position: absolute;
   top: 10%;
-  left: 60px;
+  left: 9.5%;
+  padding: 0 3%;
   width: 60%;
 }
 
 .textNameBlock h2 {
-  font-size: 2.3em;
+  font-size: 2.1rem;
   color: rgb(29, 165, 175);
 }
 
 .textNameBlock p {
   margin-top: 5%;
-  width: 80%;
-  font-size: 1.1em;
+  width: 100%;
+  font-size: 1.1rem;
+  line-height: 1.2rem;
 }
 
 /* стили блока со предложением скидки */
 .offerDiscount {
-  border-radius: 30px;
+  border-radius: 1.563rem;
   background-color: #ffffff;
   background-position: center center;
   border-color: transparent;
   border-style: solid;
-  width: 22%;
-  height: 33%;
+  width: 28%;
+  height: 35%;
   position: absolute;
   top: 17%;
-  right: 15%;
+  right: 10%;
 }
 
 .offerDiscount img {
   width: 85%;
-  height: 70%;
+  height: 65%;
   border-radius: 25px;
   margin: 15px 18px 5px 18px;
 }
@@ -87,4 +95,14 @@
   margin: 0 11%;
   font-size: 0.8rem;
   color: dimgray;
+}
+
+@media (max-width: 1425px) {
+  .textNameBlock h2 {
+    font-size: 1.8rem;
+  }
+  
+  .textNameBlock p {
+    font-size: 1rem;
+  }
 }

@@ -18,7 +18,7 @@ export default function WelcomeScreen() {
           react-animate-on-scroll и animate.css */}
           <ScrollAnimation animateIn='animate__rotateOutUpLeft'
             animateOut='animate__rotateInDownLeft'
-            duration={3} initiallyVisible={true} animateOnce={false}>
+            duration={4} initiallyVisible={true} animateOnce={false}>
             <img src="https://static.tildacdn.com/tild3865-3761-4365-b163-656664386539/Rectangle_86.svg"
               alt="block" />
             <div className={styles.textNameBlock}>

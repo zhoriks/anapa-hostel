@@ -2,22 +2,22 @@
 .bookingWelcomeContainer {
   position: relative;
   max-width: 52.188rem;
-  width: 70%;
+  width: 80%;
 }
 
 /* доп стили для позиционирования элемента с формой и svg внутри большого welcome-div'а */
 .helperForPosition {
   width: 100%;
   position: absolute;
-  left: 10%;
+  left: 9%;
   bottom: 8%;
 }
 
 /* форма для формы бронирования */
 .bookingWelcomeSvg {
   fill:none; 
-  max-width: 52.188rem;
-  max-height: 15.625rem;
+  max-width: 62.188rem;
+  max-height: 29.625rem;
 }
 
 .flexContainer {
@@ -118,7 +118,7 @@ label {
   background-size: cover;
 }
 
-@media (max-width: 1450px) {
+@media (max-width: 1425px) {
   .bookingLabelTitle {
     font-size: 1rem;
   }
