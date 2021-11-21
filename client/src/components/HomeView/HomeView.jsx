@@ -4,6 +4,7 @@ import WhyWe from '../WhyWe/WhyWe.jsx';
 import Ticker from '../Ticker/Ticker.jsx';
 import HostelRooms from '../HostelRooms/HostelRooms.jsx';
 import Benefits from '../Benefits/Benefits.jsx';
+import ReviewTicker from '../ReviewTicker/ReviewTicker.jsx';
 
 function HomeView() {
   return (
@@ -14,6 +15,7 @@ function HomeView() {
       <WhyWe />
       <HostelRooms/>
       <Benefits/>
+      <ReviewTicker/>
     </>
   );
 }

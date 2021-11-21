@@ -1,0 +1,198 @@
+.guestDataContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: 3% auto;
+  background: rgba(61,61,61,.09);
+  color: #3d3d3d;
+  padding: 0.9rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+  margin-left: 0.5%;
+}
+
+/* стили для доп комментариев */
+.linedInfo {
+  overflow: hidden;
+  text-align: center;
+  font-size: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.linedInfo:before,
+.linedInfo:after {
+    content: "-----------------------------------------------------------------------------------------------------------------";
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    height: 0.2px;
+    background-color: #3d3d3d50;
+    position: relative;
+}
+
+.linedInfo:before {
+  margin-left: -100%;
+  left: -14px;
+}
+.linedInfo:after {
+  margin-right: -100%;
+  right: -14px;
+}
+
+/* Стили для информации, которая подтянется из стейта или БД */
+.bookingDataFromState {
+  align-self: flex-start;
+  width: 95%;
+  margin: 3% 3%;
+  background-color: rgba(61,61,61,.09);
+  border-top: 3px solid #3d3d3d;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.datesAndGuestsData {
+  display: flex;
+  width: 100%;
+  margin: 0 1%;
+}
+
+.datesAndGuestsData div {
+  margin-right: 3%;
+}
+
+.totalPriceData {
+  margin: 0 1%;
+}
+
+/* стили для контантных данных гостя */
+.contactData {
+  background: white;
+  border-radius: 0.3rem;
+  box-shadow: 0px 0px 0px transparent;
+  border: 1px solid white;
+  padding: 0.8rem;
+  margin: 0 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.alertBooking {
+  font-size: 0.8rem;
+  /* line-height: .6rem; */
+  border: 1px solid #4c77c7;
+  color: #4c77c7;
+  border-radius: 0.15rem;
+  padding: 0.45rem 0.6rem;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.guestDataForm {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.6rem 0 1rem 0;
+}
+
+.guestDataForm input {
+  margin: 0.5rem 0.8rem 0.5rem 0;
+  width: 12.9rem;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+  /* line-height: .9rem; */
+  padding: 0 0.3rem 0 0.6rem;
+  box-shadow: inset 0 0 0 0 transparent, 0 -1px 0 0 rgb(0 0 0 / 27%), 0 0 0 1px hsl(0deg 0% 45% / 27%);
+  border: 0.5px solid white;
+  border-radius: 0.15rem;
+}
+
+.guestDataForm input:hover {
+  border: 0.5px solid #4c77c7;
+  box-shadow: inset 0 0 0 0 transparent, 0 -1px 0 0 rgb(0 0 0 / 15%), 0 0 0 1px hsl(0deg 0% 45% / 15%);
+}
+
+/* чек-боксы */
+
+.checkboxInfo {
+  background-color: rgba(61,61,61,.09);
+  border-radius: 0.15rem;
+  outline: none;
+  padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.checkboxInfo input {
+  flex: 0 0 auto;
+  padding: 0;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 0.1rem;
+}
+
+.checkboxInfo span {
+  margin-left: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.checkboxInfo:hover {
+  background-color: rgba(166, 222, 240, 0.123);
+}
+
+/* стили для доп информации в форме */
+
+.addInfoFromGuest {
+  align-self: flex-start;
+  margin: 0.5rem; 
+  width: 100%;
+}
+
+.addInfoFromGuest h5 {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.addInfoFromGuest p {
+  font-size: 0.75rem;
+  margin-left: 0.5%;
+}
+
+.addInfoFromGuest textarea {
+  margin-top: 0.5%;
+  text-overflow: ellipsis;
+  padding: 0.45rem 0.6rem;
+  line-height: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  width: 0;
+  min-width: 99%;
+  background: #fff none;
+  border: none;
+  font-size: 0.75rem;
+  overflow: hidden;
+  min-height: 3.9rem;
+  height: 100%;
+  border-radius: 0.15rem;
+  resize: none;
+}
+
+.bookingBtn {
+  align-self: flex-end;
+  margin-right: 0.3%;
+  color: #ffffff;
+  background-color: #4c77c7;
+  height: 2rem;
+  border: 0 none;
+  font-size: 1rem;
+  padding: 0 3%;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-weight: 700;
+  border-radius: 0.5rem;
+}

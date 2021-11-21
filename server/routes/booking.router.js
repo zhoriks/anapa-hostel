@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { allBooking, livingNowBooking, changeBooking } = require('../controllers/booking.controller');
+const { allBooking, livingNowBooking, createNewBooking, changeBooking } = require('../controllers/booking.controller');
 
 // Все бронирования
 router.get('/', allBooking);
@@ -7,5 +7,7 @@ router.get('/', allBooking);
 router.get('/now', livingNowBooking);
 // Бронирования, которые должен изменить админ
 router.put('/change', changeBooking);
+// Создать бронирование
+router.post('/', createNewBooking);
 
 module.exports = router;
