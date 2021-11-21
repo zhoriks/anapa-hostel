@@ -52,13 +52,16 @@ h5 {
 
 /* Стили для информации, которая подтянется из стейта или БД */
 .bookingDataFromState {
+  padding: 0 3%;
   align-self: flex-start;
-  width: 95%;
-  margin: 3% 3%;
+  width: 100%;
+  margin: 3% 0;
+  font-size: 0.9rem;
+  font-weight: bold;
   background-color: rgba(61,61,61,.09);
-  border-top: 3px solid #3d3d3d;
+  /* border-top: 3px solid #3d3d3d;
   border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px; */
 }
 
 .datesAndGuestsData {
