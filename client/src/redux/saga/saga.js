@@ -94,6 +94,7 @@ function* watchActions() {
   yield takeEvery(actionTypesLogout.LOGOUT_START, fetchLogout);
   yield takeEvery(actionTypesSession.CHECK_SESSION_START, checkSession);
   yield takeEvery(actionTypesRooms.INIT_ROOMS_START, fetchRooms);
+  // yield takeEvery(actionTypesBookings.EDIT_FORM_START, fetchRooms);
 }
 
 export default watchActions;

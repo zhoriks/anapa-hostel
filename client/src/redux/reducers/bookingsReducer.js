@@ -2,6 +2,7 @@ import actionTypesBookings from '../actionTypes/bookingsAT';
 
 const initialState = {
   list: [],
+  editForm: false,
   error: null,
 };
 // eslint-disable-next-line default-param-last
@@ -21,6 +22,12 @@ const bookingsReducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+      };
+    case actionTypesBookings.EDIT_FORM_START:
+      return {
+        ...state,
+        editForm: true,
+        error: null,
       };
 
     default:
