@@ -32,7 +32,7 @@ function* fetchBookings() {
 function* changeBookings(action) {
   try {
     const bookings = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/booking',
+      url: '',
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

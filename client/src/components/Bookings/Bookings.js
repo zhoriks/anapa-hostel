@@ -1,11 +1,28 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import actionTypesBookings from '../../redux/actionTypes/bookingsAT';
 // import bookingsAction from '../../redux/actionCreators/bookingsAC';
 import s from './Bookings.module.css';
 
 const Bookings = () => {
   // const bookings = useSelector((state) => state.booking.list);
+  const dispatch = useDispatch();
   const editForm = useSelector((state) => state.booking.editForm);
+  const [comment, setComment] = useState('');
+  const handleCommentChange = (e) => {
+    setComment(e.target.value);
+  };
+
+  const [status, setStatus] = useState('');
+  const handleStatusChange = (e) => {
+    setStatus(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: actionTypesBookings.EDIT_FORM_SUBMIT_STOP, payload: { comment, status } });
+  };
+
   const client = [
     {
       id: 1,
@@ -61,14 +78,17 @@ const Bookings = () => {
       </div>
 
       {client.map((el) => (
-        <form className={s.client_info} key={el.id}>
+        <form className={s.client_info} key={el.id} onSubmit={handleSubmit}>
           <p>{el.guestName}</p>
           <p>{el.telephone}</p>
           <p>{el.checkInDate}</p>
           <p>{el.checkOutDate}</p>
-          {!editForm ? <p>{el.comment}</p> : <input type='text'></input>}
+          {!editForm ? <p>{el.comment}</p>
+            : <input type='text' value={comment} onChange={handleCommentChange} ></input>}
           <p>{el.categoryRoom}</p>
-          {!editForm ? <p className={s.pending}>{el.status}</p> : <input type='text'></input>}
+          {!editForm ? <p className={s.pending}>{el.status}</p>
+            : <input type='text' value={status} onChange={handleStatusChange} ></input>}
+          {editForm && <button type="submit">Отправить</button>}
         </form>
       ))}
     </div>

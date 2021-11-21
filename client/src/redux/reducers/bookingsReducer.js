@@ -29,18 +29,18 @@ const bookingsReducer = (state = initialState, action) => {
         editForm: !state.editForm,
         error: null,
       };
-    case actionTypesBookings.EDIT_FORM_STOP:
+    case actionTypesBookings.EDIT_FORM_SUBMIT_STOP:
       return {
         ...state,
         editForm: false,
         error: null,
       };
-    case actionTypesBookings.EDIT_FORM_SUCCESS:
+    case actionTypesBookings.EDIT_FORM_SUBMIT_SUCCESS:
       return {
         ...state,
         list: [...action.payload],
       };
-    case actionTypesBookings.EDIT_FORM_ERROR:
+    case actionTypesBookings.EDIT_FORM_SUBMIT_ERROR:
       return {
         ...state,
         error: action.payload,
