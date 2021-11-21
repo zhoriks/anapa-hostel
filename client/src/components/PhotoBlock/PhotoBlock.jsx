@@ -1,5 +1,6 @@
 import React from 'react';
-import PhotoBlockGestZone from '../PhotoBlockGestZone/PhotoBlockGestZone.jsx';
+// import PhotoBlockGestZone from '../PhotoBlockGestZone/PhotoBlockGestZone.jsx';
+import PhotoBlockUniversal from '../PhotoBlockUniversal/PhotoBlockUniversal.jsx';
 // import PhotoBlockRestZone from '../PhotoBlockRestZone/PhotoBlockRestZone.jsx';
 import styles from './PhotoBlock.module.css';
 
@@ -22,7 +23,7 @@ function PhotoBlock() {
           </button>
         </div>
       <div className={styles.photoBlockCardsPhoto}>
-        <PhotoBlockGestZone/>
+        <PhotoBlockUniversal/>
       </div>
     </div>
   );
