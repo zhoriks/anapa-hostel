@@ -29,6 +29,26 @@ function* fetchBookings() {
   }
 }
 
+function* changeBookings(action) {
+  try {
+    const bookings = yield call(fetchData, {
+      url: '',
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: {
+        id: action.payload.id,
+        comment: action.payload.comment,
+        status: action.payload.status,
+      },
+    });
+    yield put({ type: actionTypesBookings.EDIT_FORM_SUCCESS, payload: bookings });
+  } catch (error) {
+    yield put({ type: actionTypesBookings.EDIT_FORM_ERROR, payload: error });
+  }
+}
+
 function* fetchRooms() {
   try {
     const rooms = yield call(fetchData, {
@@ -94,6 +114,7 @@ function* watchActions() {
   yield takeEvery(actionTypesLogout.LOGOUT_START, fetchLogout);
   yield takeEvery(actionTypesSession.CHECK_SESSION_START, checkSession);
   yield takeEvery(actionTypesRooms.INIT_ROOMS_START, fetchRooms);
+  yield takeEvery(actionTypesBookings.EDIT_FORM_SUBMIT_STOP, changeBookings);
 }
 
 export default watchActions;
