@@ -25,7 +25,11 @@
 }
 
 .bookingLabelTitle {
-  font-size: 1.5em;
+  font-size: 1.5rem;
+}
+
+.bookingLabelSubTitle {
+  font-size: 1rem;
 }
 
 /* стили формы */
