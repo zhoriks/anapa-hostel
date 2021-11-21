@@ -5,7 +5,7 @@ import actionTypesBookings from '../../redux/actionTypes/bookingsAT';
 import s from './Bookings.module.css';
 
 const Bookings = () => {
-  // const bookings = useSelector((state) => state.booking.list);
+  const bookings = useSelector((state) => state.booking.list);
   const dispatch = useDispatch();
   const editForm = useSelector((state) => state.booking.editForm);
   const [comment, setComment] = useState('');
@@ -23,48 +23,48 @@ const Bookings = () => {
     dispatch({ type: actionTypesBookings.EDIT_FORM_SUBMIT_STOP, payload: { comment, status } });
   };
 
-  const client = [
-    {
-      id: 1,
-      guestName: 'Дмитрий',
-      telephone: '+79825091864',
-      checkInDate: 'Oct 29th, 2020',
-      checkOutDate: 'Oct 31th, 2020',
-      comment: 'Пусто',
-      categoryRoom: 'Queen A-2345',
-      status: 'Ожидает подтверждения',
-    },
-    {
-      id: 2,
-      guestName: 'Дмитрий',
-      telephone: '+79825091864',
-      checkInDate: 'Oct 29th, 2020',
-      checkOutDate: 'Oct 31th, 2020',
-      comment: 'Пусто',
-      categoryRoom: 'Queen A-2345',
-      status: 'Ожидает подтверждения',
-    },
-    {
-      id: 3,
-      guestName: 'Дмитрий',
-      telephone: '+79825091864',
-      checkInDate: 'Oct 29th, 2020',
-      checkOutDate: 'Oct 31th, 2020',
-      comment: 'Пусто',
-      categoryRoom: 'Queen A-2345',
-      status: 'Ожидает подтверждения',
-    },
-    {
-      id: 4,
-      guestName: 'Дмитрий',
-      telephone: '+79825091864',
-      checkInDate: 'Oct 29th, 2020',
-      checkOutDate: 'Oct 31th, 2020',
-      comment: 'Пусто',
-      categoryRoom: 'Queen A-2345',
-      status: 'Ожидает подтверждения',
-    },
-  ];
+  // const client = [
+  //   {
+  //     id: 1,
+  //     guestName: 'Дмитрий',
+  //     telephone: '+79825091864',
+  //     checkInDate: 'Oct 29th, 2020',
+  //     checkOutDate: 'Oct 31th, 2020',
+  //     comment: 'Пусто',
+  //     categoryRoom: 'Queen A-2345',
+  //     status: 'Ожидает подтверждения',
+  //   },
+  //   {
+  //     id: 2,
+  //     guestName: 'Дмитрий',
+  //     telephone: '+79825091864',
+  //     checkInDate: 'Oct 29th, 2020',
+  //     checkOutDate: 'Oct 31th, 2020',
+  //     comment: 'Пусто',
+  //     categoryRoom: 'Queen A-2345',
+  //     status: 'Ожидает подтверждения',
+  //   },
+  //   {
+  //     id: 3,
+  //     guestName: 'Дмитрий',
+  //     telephone: '+79825091864',
+  //     checkInDate: 'Oct 29th, 2020',
+  //     checkOutDate: 'Oct 31th, 2020',
+  //     comment: 'Пусто',
+  //     categoryRoom: 'Queen A-2345',
+  //     status: 'Ожидает подтверждения',
+  //   },
+  //   {
+  //     id: 4,
+  //     guestName: 'Дмитрий',
+  //     telephone: '+79825091864',
+  //     checkInDate: 'Oct 29th, 2020',
+  //     checkOutDate: 'Oct 31th, 2020',
+  //     comment: 'Пусто',
+  //     categoryRoom: 'Queen A-2345',
+  //     status: 'Ожидает подтверждения',
+  //   },
+  // ];
   return (
     <div className={s.bookings_main}>
       <div className={s.navbar}>
@@ -77,7 +77,7 @@ const Bookings = () => {
         <h3>Status</h3>
       </div>
 
-      {client.map((el) => (
+      {bookings.map((el) => (
         <form className={s.client_info} key={el.id} onSubmit={handleSubmit}>
           <p>{el.guestName}</p>
           <p>{el.telephone}</p>

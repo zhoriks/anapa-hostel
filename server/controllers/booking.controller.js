@@ -24,4 +24,19 @@ const livingNowBooking = async (req, res) => {
   }
 };
 
-module.exports = { allBooking, livingNowBooking };
+const changeBooking = async (req, res) => {
+  try {
+    const { comment, status } = req.body;
+    console.log(comment, status);
+    const booking = await Book.findAll({
+      where: {
+        status: 'Проживает',
+      },
+    });
+    res.status(200).json(booking);
+  } catch (error) {
+    res.status(404).json({ error: 'error' });
+  }
+};
+
+module.exports = { allBooking, livingNowBooking, changeBooking };
