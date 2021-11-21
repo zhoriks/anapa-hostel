@@ -89,11 +89,11 @@ const Bookings = () => {
           <p>{el.checkInDate}</p>
           <p>{el.checkOutDate}</p>
           {!editForm ? <p>{el.comment}</p>
-            : <input type='text' name='comment' /* value={comment} onChange={handleCommentChange} */ ></input>}
+            : <input type='text' name='comment' className={s.formInput} /* value={comment} onChange={handleCommentChange} */ ></input>}
           <p>{el.categoryRoom}</p>
           {!editForm ? <p className={s.pending}>{el.status}</p>
-            : <input type='text' name='status' /* value={status} onChange={handleStatusChange} */ ></input>}
-          {editForm && <button type="submit">Отправить</button>}
+            : <input type='text' name='status' className={s.formInput} /* value={status} onChange={handleStatusChange} */ ></input>}
+          {editForm && <button className={s.submitFormButton} type="submit">Отправить</button>}
         </form>
       ))}
     </div>

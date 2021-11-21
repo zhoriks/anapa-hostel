@@ -43,3 +43,20 @@ p {
   background-color: #95f0e4;
   color: #000000
 }
+.submitFormButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  width: 100px;
+  height: 45px;
+  background-color: #f5ef9f;
+  color: #000000
+}
+.formInput {
+  max-width: 110px;
+} 
