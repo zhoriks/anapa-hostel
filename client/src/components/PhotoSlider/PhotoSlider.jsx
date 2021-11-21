@@ -31,9 +31,9 @@ export default function PhotoSlider() {
   return (
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
-        {images.map((img) => (
+        {images.map((img, index) => (
           <div>
-            <img src={img.src} alt='hotel' />
+            <img key={index} src={img.src} alt='hotel' />
           </div>
         ))}
       </Slider>
