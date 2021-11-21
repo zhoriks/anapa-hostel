@@ -1,0 +1,42 @@
+.photoBlockRestZone{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.RestZoneLeftBlockLower{
+  display: flex;
+  flex-direction: row;
+}
+
+.RestZoneLeftBlockUpperPhoto{
+  background-color: aquamarine;
+  border-radius: 30px;
+  margin: 7.5px;
+  width: 780px;
+  height: 320px;
+}
+
+.LeftBlockLowerLeftPhoto{
+  background-color:burlywood;
+  border-radius: 30px;
+  margin: 7.5px;
+  width: 380px;
+  height: 220px;
+}
+
+.LeftBlockLowerRightPhoto{
+  background-color:coral;
+  border-radius: 30px;
+  margin: 7.5px;
+  width: 380px;
+  height: 220px;
+}
+
+.RestZoneRightPhoto{
+  background-color:forestgreen;
+  border-radius: 30px;
+  margin: 7.5px;
+  width: 370px;
+  height: 560px;
+ 
+}
