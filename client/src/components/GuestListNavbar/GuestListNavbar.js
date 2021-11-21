@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import actionTypesBookings from '../../redux/actionTypes/bookingsAT';
 import s from './GuestListNavbar.module.css';
 
+const currentDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
+
 const GuestListNavbar = () => {
   const dispatch = useDispatch();
   const changeToEditState = () => {
@@ -16,8 +18,7 @@ const GuestListNavbar = () => {
       <AiOutlineSearch className={s.icon} />
       <AiFillBell className={s.icon} />
       <select className={s.select} aria-label="Default select example">
-        <option>February 8th, 2021</option>
-        <option value="1">Date</option>
+        <option>{currentDate}</option>
       </select>
       <button onClick={changeToEditState} className={s.select}>Редактировать</button>
       </div>

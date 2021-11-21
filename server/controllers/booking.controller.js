@@ -26,14 +26,21 @@ const livingNowBooking = async (req, res) => {
 
 const changeBooking = async (req, res) => {
   try {
-    const { comment, status } = req.body;
-    console.log(comment, status);
-    const booking = await Book.findAll({
+    const { id, comment, status } = req.body;
+    // console.log(comment, status, id, 'COMMENT STATUS ID');
+    const booking = await Book.findOne({
       where: {
-        status: 'Проживает',
+        id,
       },
     });
-    res.status(200).json(booking);
+    // booking.update({ comment, status });
+    booking.comment = comment;
+    booking.status = status;
+    // booking.save();
+    const bookings = await Book.findAll({
+    });
+    // console.log(booking[0].comment, 'BOOKING');
+    res.status(200).json(bookings);
   } catch (error) {
     res.status(404).json({ error: 'error' });
   }

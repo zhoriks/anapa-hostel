@@ -32,20 +32,20 @@ function* fetchBookings() {
 function* changeBookings(action) {
   try {
     const bookings = yield call(fetchData, {
-      url: '',
+      url: 'http://localhost:5001/admin/booking/change',
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: {
+      body: JSON.stringify({
         id: action.payload.id,
         comment: action.payload.comment,
         status: action.payload.status,
-      },
+      }),
     });
-    yield put({ type: actionTypesBookings.EDIT_FORM_SUCCESS, payload: bookings });
+    yield put({ type: actionTypesBookings.EDIT_FORM_SUBMIT_SUCCESS, payload: bookings });
   } catch (error) {
-    yield put({ type: actionTypesBookings.EDIT_FORM_ERROR, payload: error });
+    yield put({ type: actionTypesBookings.EDIT_FORM_SUBMIT_ERROR, payload: error });
   }
 }
 

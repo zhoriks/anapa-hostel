@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import actionTypesBookings from '../../redux/actionTypes/bookingsAT';
 // import bookingsAction from '../../redux/actionCreators/bookingsAC';
@@ -8,19 +8,24 @@ const Bookings = () => {
   const bookings = useSelector((state) => state.booking.list);
   const dispatch = useDispatch();
   const editForm = useSelector((state) => state.booking.editForm);
-  const [comment, setComment] = useState('');
-  const handleCommentChange = (e) => {
-    setComment(e.target.value);
-  };
+  // const [comment, setComment] = useState('');
+  // const handleCommentChange = (e) => {
+  //   setComment(e.target.value);
+  // };
 
-  const [status, setStatus] = useState('');
-  const handleStatusChange = (e) => {
-    setStatus(e.target.value);
-  };
+  // const [status, setStatus] = useState('');
+  // const handleStatusChange = (e) => {
+  //   setStatus(e.target.value);
+  // };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, id) => {
     e.preventDefault();
-    dispatch({ type: actionTypesBookings.EDIT_FORM_SUBMIT_STOP, payload: { comment, status } });
+    const { comment, status } = e.target;
+    // console.log(id, comment.value, status.value);
+    dispatch({
+      type: actionTypesBookings.EDIT_FORM_SUBMIT_STOP,
+      payload: { id, comment: comment.value, status: status.value },
+    });
   };
 
   // const client = [
@@ -78,16 +83,16 @@ const Bookings = () => {
       </div>
 
       {bookings.map((el) => (
-        <form className={s.client_info} key={el.id} onSubmit={handleSubmit}>
-          <p>{el.guestName}</p>
+        <form className={s.client_info} key={el.id} onSubmit={(e) => handleSubmit(e, el.id)}>
+          <p>{el.guestFirstName}</p>
           <p>{el.telephone}</p>
           <p>{el.checkInDate}</p>
           <p>{el.checkOutDate}</p>
           {!editForm ? <p>{el.comment}</p>
-            : <input type='text' value={comment} onChange={handleCommentChange} ></input>}
+            : <input type='text' name='comment' /* value={comment} onChange={handleCommentChange} */ ></input>}
           <p>{el.categoryRoom}</p>
           {!editForm ? <p className={s.pending}>{el.status}</p>
-            : <input type='text' value={status} onChange={handleStatusChange} ></input>}
+            : <input type='text' name='status' /* value={status} onChange={handleStatusChange} */ ></input>}
           {editForm && <button type="submit">Отправить</button>}
         </form>
       ))}
