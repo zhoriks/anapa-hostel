@@ -10,7 +10,7 @@
   transition: .7s;
 }
 .container:hover {
-  margin-bottom: 25px; /* Цвет фона при наведении */
+  margin-bottom: 25px; 
   transition: .7s;
  }
 
