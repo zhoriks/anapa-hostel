@@ -22,6 +22,8 @@
   margin: 0.469rem;
   width: 23.125rem;
   height: 13.75rem;
+  background-size: cover;
+  background-position: center center;
 }
 
 .UniversalLowerPhoto{
@@ -30,4 +32,6 @@
   margin: 0.469rem;
   width: 15rem;
   height: 9.438rem;
+  background-size: cover;
+  background-position: center center;
 }

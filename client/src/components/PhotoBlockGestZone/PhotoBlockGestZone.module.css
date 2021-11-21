@@ -6,10 +6,13 @@
 
 .GestZoneRightPhoto{
   background-color:forestgreen;
+  background-size: cover;
   border-radius: 1.875rem;
   margin: 0.469rem;
   width: 35.6rem;
   height: 20.8rem;
+  background-size: cover;
+  background-position: center center;
 }
 .GestZoneLeftPhoto{
   background-color:blueviolet;
@@ -17,4 +20,6 @@
   margin: 0.469rem;
   width: 35.6rem;
   height: 20.8rem;
+  background-size: cover;
+  background-position: center center;
 }
