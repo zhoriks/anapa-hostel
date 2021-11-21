@@ -23,11 +23,27 @@ const bookingsReducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
       };
-    case actionTypesBookings.EDIT_FORM_START:
+    case actionTypesBookings.EDIT_FORM_TOGGLE_BUTTON:
       return {
         ...state,
-        editForm: true,
+        editForm: !state.editForm,
         error: null,
+      };
+    case actionTypesBookings.EDIT_FORM_STOP:
+      return {
+        ...state,
+        editForm: false,
+        error: null,
+      };
+    case actionTypesBookings.EDIT_FORM_SUCCESS:
+      return {
+        ...state,
+        list: [...action.payload],
+      };
+    case actionTypesBookings.EDIT_FORM_ERROR:
+      return {
+        ...state,
+        error: action.payload,
       };
 
     default:
