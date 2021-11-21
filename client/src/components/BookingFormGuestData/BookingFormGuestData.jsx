@@ -1,16 +1,21 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import styles from './BookingFormGuestData.module.css';
 
 export default function BookingFormGuestData() {
+  // const dispatch = useDispatch();
+  const dataAboutBooking = useSelector((state) => state.bookingForm.list);
+
   return (
     <div className={styles.guestDataContainer}>
       <h3>Введите данные гостей</h3>
 
       <div className={styles.bookingDataFromState}>
         <div className={styles.datesAndGuestsData}>
-          <div>Даты брони из стейта</div>
-          <div>Кол-во гостей из стейта</div>
+          <div>{dataAboutBooking.arrivalDate} -
+            {dataAboutBooking.departureDate}</div>
+          <div>Гостей: {dataAboutBooking.guestNumber} </div>
         </div>
         <div className={styles.totalPriceData}>Общая стоимость:</div>
       </div>
