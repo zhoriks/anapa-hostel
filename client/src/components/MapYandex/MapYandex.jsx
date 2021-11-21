@@ -5,7 +5,7 @@ import styles from './MapYandex.module.css';
 export default function MapYandex() {
   const mapData = {
     center: [44.89091166, 37.31396083],
-    zoom: 6,
+    zoom: 10,
   };
 
   const coordinates = [
@@ -16,7 +16,7 @@ export default function MapYandex() {
   return (
     <div className={styles.mapContainer} id="map" >
       <YMaps>
-        <Map defaultState={mapData} width={'100%'} height={275}>
+        <Map defaultState={mapData} width={'100%'} height={'100%'}>
           {coordinates.map((coordinate) => <Placemark geometry={coordinate} />)}
         </Map>
       </YMaps>
