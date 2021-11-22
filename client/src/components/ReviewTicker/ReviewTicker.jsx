@@ -1,6 +1,7 @@
 import ReviewItem from '../ReviewItem/ReviewItem.jsx';
 import styles from './ReviewTicker.module.css';
 import user from '../data/img/user.png';
+import ReviewForm from '../ReviewForm/ReviewForm.jsx';
 
 // Компонент, отвечающий за бегущую строку с отзывами
 
@@ -117,6 +118,7 @@ function ReviewTicker() {
         }
         </div>
       </div>
+      <ReviewForm/>
     </section>
   );
 }

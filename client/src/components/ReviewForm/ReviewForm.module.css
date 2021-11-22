@@ -1,0 +1,132 @@
+.imageDiv {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
+  background-size: cover;
+  height: 14rem;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.modal {
+  font-size: 12px;
+  height: 18.75rem;
+}
+.modal > .header {
+  color: #1a1a1a;
+  font-size: 1.563rem;
+  font-weight: bold;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 1rem;
+  text-align: center;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 1.875rem;
+  right: -10px;
+  top: -10px;
+  font-size: 2.25rem;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid white;
+}
+
+.reviewButton {
+  width: 12.5rem;
+  height: 3.75rem;
+  line-height: 1.55;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-width: 1px;
+  border-radius: 20px;
+  border-color: transparent;
+  border-style: solid;
+  background-color: #e3e3e3;
+  transition: .7s;
+}
+
+.reviewButton:hover {
+  background-color: #009bac;
+  color: white;
+  transform: scale(1.07);
+  transition: .7s;
+}
+
+.button {
+  margin-top: 1.5rem;
+  width: 29.375rem;
+  height: 4.375rem;
+  line-height: 1.55;
+  font-size: 1rem;
+  font-weight: 500;
+  border-width: 1px;
+  border-radius: 20px;
+  border-color: transparent;
+  border-style: solid;
+  background-color: #009bac;
+  color: white;
+  transition: .7s;
+}
+
+.button:hover {
+  background-color: #2e387f;
+  color: white;
+  transition: .7s;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.reviewFormName, .reviewFormPhone {
+  width: 29.375rem;
+  height: 3.75rem;
+  border: 1px solid lightgray;
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.reviewFormTextArea {
+  width: 29.375rem;
+  height: 6.375rem;
+  border: 1px solid lightgray;
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+.reviewFormName:focus, 
+.reviewFormPhone:focus, 
+.reviewFormTextArea:focus {
+  outline: none;
+}
+
+/* .reviewFormPhone {
+  width: 29.375rem;
+  height: 3.75rem;
+} */
