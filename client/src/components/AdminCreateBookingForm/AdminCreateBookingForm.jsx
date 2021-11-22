@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import NumberFormat from 'react-number-format';
 import actionTypesBookings from '../../redux/actionTypes/bookingsAT';
 import s from './AdminCreateBookingForm.module.css';
 
@@ -69,7 +70,8 @@ const AdminCreateBookingForm = () => {
         <div className={s.row}>
           <span>Контактные данные</span>
           <input type="email" name='email' placeholder='Email' />
-          <input type="text" name='phoneNumber' placeholder='Телефон' />
+          {/* <input type="text" name='phoneNumber' placeholder='Телефон' /> */}
+          <NumberFormat name="phoneNumber" format="+7 (###) ###-####" mask="_" type="text" placeholder='+ 7 (___) ___-____' />
         </div>
         <div className={s.row}>
           <span>Комментарий</span>
