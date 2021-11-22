@@ -17,8 +17,8 @@ function HomeView() {
       <WhyWe />
       <HostelRooms />
       <Benefits />
-      <PhotoBlock/>
-      <ReviewTicker/>
+      <PhotoBlock />
+      <ReviewTicker />
       <BookingFormGuestData />
     </>
   );
