@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
 
@@ -60,7 +61,7 @@ export default function BookingWelcomeForm() {
         </div>
         <div className={styles.bookingWelcomeFormElement}>
           <label htmlFor="bookingWelcomeFormButton" className={styles.hidden}>This is a button</label>
-          <button type="submit" className={styles.bookingWelcomeFormButton}>Найти номер</button>
+          <button type="submit" className={styles.bookingWelcomeFormButton}><Link to='/select-room' style={{ textDecoration: 'none', color: 'white' }}>Найти номер</Link></button>
         </div>
       </form>
     </div>

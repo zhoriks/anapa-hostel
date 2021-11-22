@@ -1,10 +1,12 @@
 import React from 'react';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { AiFillCalendar } from 'react-icons/ai';
+import { useSelector } from 'react-redux';
 import styles from './SelectRoom.module.css';
 import SelectedRoom from '../SelectedRoom/SelectedRoom.jsx';
 
 const SelectRoom = () => {
+  const date = useSelector((state) => state.bookingForm.list);
   const rooms = [
     {
       id: 1,
@@ -34,9 +36,10 @@ const SelectRoom = () => {
         <div className={styles.dateContainer}>
           <div className={styles.date}>
             <span className={styles.dateText}>
-              <AiFillCalendar className={styles.icon} /> 20 ноября - 21 ноября</span>
+              <AiFillCalendar className={styles.icon} />
+              с {date.arrivalDate} по {date.departureDate}</span>
             <span className={styles.dateText}>
-              <BsFillPersonFill className={styles.icon} /> 2 гостя</span>
+              <BsFillPersonFill className={styles.icon} /> {date.guestNumber} гостя</span>
           </div>
         </div>
         <span className={styles.chooseRoom}>Выберите номер</span>
