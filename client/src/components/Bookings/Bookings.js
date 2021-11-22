@@ -8,15 +8,6 @@ const Bookings = () => {
   const bookings = useSelector((state) => state.booking.list);
   const dispatch = useDispatch();
   const editForm = useSelector((state) => state.booking.editForm);
-  // const [comment, setComment] = useState('');
-  // const handleCommentChange = (e) => {
-  //   setComment(e.target.value);
-  // };
-
-  // const [status, setStatus] = useState('');
-  // const handleStatusChange = (e) => {
-  //   setStatus(e.target.value);
-  // };
 
   const handleSubmit = (e, id) => {
     e.preventDefault();
@@ -27,49 +18,6 @@ const Bookings = () => {
       payload: { id, comment: comment.value, status: status.value },
     });
   };
-
-  // const client = [
-  //   {
-  //     id: 1,
-  //     guestName: 'Дмитрий',
-  //     telephone: '+79825091864',
-  //     checkInDate: 'Oct 29th, 2020',
-  //     checkOutDate: 'Oct 31th, 2020',
-  //     comment: 'Пусто',
-  //     categoryRoom: 'Queen A-2345',
-  //     status: 'Ожидает подтверждения',
-  //   },
-  //   {
-  //     id: 2,
-  //     guestName: 'Дмитрий',
-  //     telephone: '+79825091864',
-  //     checkInDate: 'Oct 29th, 2020',
-  //     checkOutDate: 'Oct 31th, 2020',
-  //     comment: 'Пусто',
-  //     categoryRoom: 'Queen A-2345',
-  //     status: 'Ожидает подтверждения',
-  //   },
-  //   {
-  //     id: 3,
-  //     guestName: 'Дмитрий',
-  //     telephone: '+79825091864',
-  //     checkInDate: 'Oct 29th, 2020',
-  //     checkOutDate: 'Oct 31th, 2020',
-  //     comment: 'Пусто',
-  //     categoryRoom: 'Queen A-2345',
-  //     status: 'Ожидает подтверждения',
-  //   },
-  //   {
-  //     id: 4,
-  //     guestName: 'Дмитрий',
-  //     telephone: '+79825091864',
-  //     checkInDate: 'Oct 29th, 2020',
-  //     checkOutDate: 'Oct 31th, 2020',
-  //     comment: 'Пусто',
-  //     categoryRoom: 'Queen A-2345',
-  //     status: 'Ожидает подтверждения',
-  //   },
-  // ];
   return (
     <div className={s.bookings_main}>
       <div className={s.navbar}>
@@ -90,7 +38,7 @@ const Bookings = () => {
           <div>{el.checkOutDate}</div>
           <div>{el.categoryRoom}</div>
           {!editForm ? <div>{el.comment}</div>
-            : <input type='text' name='comment' className={s.formInput} /* value={comment} onChange={handleCommentChange} */ ></input>}
+            : <input type='text' required name='comment' className={s.formInput} ></input>}
           {!editForm ? <div className={s.pending}>{el.status}</div>
             : <select className={s.select} name='status' aria-label="Default select example">
               <option value="Проживает">Проживает</option>
