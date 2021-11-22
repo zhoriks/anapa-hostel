@@ -10,6 +10,9 @@ export default function PhotoSlider() {
     { src: 'https://n1s1.elle.ru/35/b8/55/35b8559602ac5d8c6bc92edc1b3e0258/400x266_1_8b9c2d37da8264afdde48005d01561a8@940x626_0xc35dbb80_1647494901513177195.jpeg' },
     { src: 'https://hotels.sletat.ru/i/f/104248_4.jpg' },
     { src: 'https://avatars.mds.yandex.net/get-zen_doc/4453741/pub_60b9e1bf61893124cb2ff993_60b9e794931ee526e130c8f7/scale_1200' },
+    { src: 'https://s3.yugopolis.ru/media/data/img/e598bdb4003718e46d9dc3cf7d27acb2/245990.jpg' },
+    { src: 'https://vashotel-a.akamaihd.net/0000000278097108/0c193ffa1f67f0ed1654ef1da9213aef.jpg' },
+    { src: 'https://www.multitour.ru/files/imgs/15980e8de784a80b495f96a91e6584a4662ad102.jpeg' },
   ];
 
   const settings = {
@@ -28,9 +31,9 @@ export default function PhotoSlider() {
   return (
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
-        {images.map((img) => (
+        {images.map((img, index) => (
           <div>
-            <img src={img.src} alt='hotel' />
+            <img key={index} src={img.src} alt='hotel' />
           </div>
         ))}
       </Slider>

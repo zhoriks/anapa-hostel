@@ -1,7 +1,19 @@
 import actionTypesBookingForm from '../actionTypes/bookingFormAT';
 
 const initialState = {
-  list: { arrivalDate: null, departureDate: null, guestNumber: null },
+  list: {
+    arrivalDate: null,
+    departureDate: null,
+    guestNumber: null,
+    surname: null,
+    name: null,
+    patronymic: null,
+    email: null,
+    phone: null,
+    wantPhoneNotice: false,
+    wandGetAds: false,
+    guestComment: null,
+  },
   error: null,
 };
 
@@ -16,6 +28,22 @@ const bookingFormReducer = (state = initialState, action) => {
           arrivalDate: action.payload.arrivalDate,
           departureDate: action.payload.departureDate,
           guestNumber: action.payload.guestNumber,
+        },
+      };
+
+    case actionTypesBookingForm.ADD_DATA_FROM_PERSONAL_INF_FORM:
+      return {
+        ...state,
+        list: {
+          ...state.list,
+          surname: action.payload.surname,
+          name: action.payload.name,
+          patronymic: action.payload.patronymic,
+          email: action.payload.email,
+          phone: action.payload.phone,
+          wantPhoneNotice: action.payload.wantPhoneNotice,
+          wandGetAds: action.payload.wandGetAds,
+          guestComment: action.payload.guestComment,
         },
       };
 
