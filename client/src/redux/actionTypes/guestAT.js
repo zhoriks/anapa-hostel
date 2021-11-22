@@ -1,0 +1,6 @@
+const actionTypesGuest = {
+  INIT_GUESTS_START: 'INIT_GUESTS_START',
+  INIT_GUESTS_SUCCESS: 'INIT_GUESTS_SUCCESS',
+  INIT_GUESTS_ERROR: 'INIT_GUESTS_ERROR',
+};
+export default actionTypesGuest;

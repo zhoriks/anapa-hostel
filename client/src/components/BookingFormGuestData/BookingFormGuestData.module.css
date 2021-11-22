@@ -10,7 +10,7 @@
   padding: 0.9rem;
 }
 
-h3 {
+.guestDataContainer h3 {
   color:#2e387f;
   font-size: 1.2rem;
 }
@@ -72,6 +72,11 @@ h3 {
 
 .datesAndGuestsData div {
   margin-right: 3%;
+  min-width: 12.5rem;
+}
+
+.datesAndGuestsData .icon {
+  margin-right: 5%;
 }
 
 .totalPriceData {

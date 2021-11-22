@@ -17,7 +17,7 @@ export default function MapYandex() {
     <div className={styles.mapContainer} id="map" >
       <YMaps>
         <Map defaultState={mapData} width={'100%'} height={'100%'}>
-          {coordinates.map((coordinate) => <Placemark geometry={coordinate} />)}
+          {coordinates.map((coordinate, index) => <Placemark key={index} geometry={coordinate} />)}
         </Map>
       </YMaps>
     </div >

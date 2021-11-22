@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
+import actionTypesBookingForm from '../../redux/actionTypes/bookingFormAT';
 
 // подключение модульного CSS
 import styles from './BookingWelcomeForm.module.css';
@@ -9,6 +10,7 @@ import styles from './BookingWelcomeForm.module.css';
 export default function BookingWelcomeForm() {
   const dispatch = useDispatch();
 
+  // отпраляем данные в стейт
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -19,6 +21,7 @@ export default function BookingWelcomeForm() {
     };
 
     dispatch(bookingFormAction.includeDataFromStartForm(searchData));
+    dispatch({ type: actionTypesBookingForm.SEND_DATES_IN_DB_START, payload: searchData });
   };
 
   return (

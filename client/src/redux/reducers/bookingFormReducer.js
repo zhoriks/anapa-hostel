@@ -13,6 +13,7 @@ const initialState = {
     wantPhoneNotice: false,
     wandGetAds: false,
     guestComment: null,
+    vacantRooms: [],
   },
   error: null,
 };
@@ -45,6 +46,27 @@ const bookingFormReducer = (state = initialState, action) => {
           wandGetAds: action.payload.wandGetAds,
           guestComment: action.payload.guestComment,
         },
+      };
+
+    case actionTypesBookingForm.SEND_DATES_IN_DB_START:
+      return {
+        ...state,
+        error: null,
+      };
+
+    case actionTypesBookingForm.SEND_DATES_IN_DB_SUCCESS:
+      return {
+        ...state,
+        list: {
+          ...state.list,
+          vacantRooms: [...state.list.vacantRooms, action.payload],
+        },
+      };
+
+    case actionTypesBookingForm.SEND_DATES_IN_DB_ERROR:
+      return {
+        ...state,
+        error: action.payload,
       };
 
     default:
