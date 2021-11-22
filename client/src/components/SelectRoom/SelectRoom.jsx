@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { AiFillCalendar } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 import styles from './SelectRoom.module.css';
 import SelectedRoom from '../SelectedRoom/SelectedRoom.jsx';
+import BookingWelcomeForm from '../BookingWelcomeForm/BookingWelcomeForm.jsx';
 
 const SelectRoom = () => {
+  // тут мы заносим в стейт да/нет - будет ли отрисовываться форма с выбором других дат,
+  // если все текущие даты заняты
+  const [showForm, setShowForm] = useState(false);
   const date = useSelector((state) => state.bookingForm.list);
   const vacantRooms = useSelector((state) => state.bookingForm.list.vacantRooms);
 
@@ -53,11 +57,22 @@ const SelectRoom = () => {
       <div className={styles.roomContainer}>
         {
           !vacantRooms.length
-            ? <div>К сожалению, нет свободных номеров на выбранные вами даты</div>
+            ? <div className={styles.noVacantRoomsBackground}>
+              <div className={styles.noVacantRoomsContainer}>
+                <div className={styles.noVacantRoomsText}>
+                  К сожалению, нет свободных номеров на выбранные вами даты
+                </div>
+                <div className={styles.noVacantRoomsLink} onClick={() => setShowForm(true)}>
+                  Выбрать другие даты
+                </div>
+                {showForm
+                  ? <div className={styles.noVacantRoomsForm}><BookingWelcomeForm /></div>
+                  : <></>}
+              </div>
+            </div>
             : (
               <>
                 {
-                  // vacantRooms.map((el) => <SelectedRoom />)
                   vacantRooms.map((room) => <SelectedRoom
                     key={room.id}
                     type={room.type}

@@ -7,6 +7,7 @@ import HostelRooms from '../HostelRooms/HostelRooms.jsx';
 import Benefits from '../Benefits/Benefits.jsx';
 import ReviewTicker from '../ReviewTicker/ReviewTicker.jsx';
 import BookingFormGuestData from '../BookingFormGuestData/BookingFormGuestData.jsx';
+import SelectRoom from '../SelectRoom/SelectRoom.jsx';
 
 function HomeView() {
   return (
@@ -20,6 +21,7 @@ function HomeView() {
       <PhotoBlock />
       <ReviewTicker />
       <BookingFormGuestData />
+      <SelectRoom />
     </>
   );
 }
