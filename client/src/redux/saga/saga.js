@@ -49,6 +49,34 @@ function* changeBookings(action) {
     yield put({ type: actionTypesBookings.EDIT_FORM_SUBMIT_ERROR, payload: error });
   }
 }
+function* createBooking(action) {
+  try {
+    const bookings = yield call(fetchData, {
+      url: 'http://localhost:5001/admin/booking',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        guestFirstName: action.payload.guestFirstName,
+        guestLastName: action.payload.guestLastName,
+        guestPatronymic: action.payload.guestPatronymic,
+        checkInDate: action.payload.checkInDate,
+        checkOutDate: action.payload.checkOutDate,
+        categoryRoom: action.payload.categoryRoom,
+        guestsNumber: action.payload.guestsNumber,
+        email: action.payload.email,
+        telephone: action.payload.telephone,
+        status: action.payload.status,
+        RoomId: action.payload.RoomId,
+        comment: action.payload.comment,
+      }),
+    });
+    yield put({ type: actionTypesBookings.CREATE_BOOKING_SUCCESS, payload: bookings });
+  } catch (error) {
+    yield put({ type: actionTypesBookings.CREATE_BOOKING_ERROR, payload: error });
+  }
+}
 
 function* fetchRooms() {
   try {
@@ -128,6 +156,7 @@ function* watchActions() {
   yield takeEvery(actionTypesRooms.INIT_ROOMS_START, fetchRooms);
   yield takeEvery(actionTypesBookings.EDIT_FORM_SUBMIT_STOP, changeBookings);
   yield takeEvery(actionTypesGuest.INIT_GUESTS_START, fetchGuests);
+  yield takeEvery(actionTypesBookings.CREATE_BOOKING_START, createBooking);
 }
 
 export default watchActions;

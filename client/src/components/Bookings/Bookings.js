@@ -12,7 +12,6 @@ const Bookings = () => {
   const handleSubmit = (e, id) => {
     e.preventDefault();
     const { comment, status } = e.target;
-    // console.log(id, comment.value, status.value);
     dispatch({
       type: actionTypesBookings.EDIT_FORM_SUBMIT_STOP,
       payload: { id, comment: comment.value, status: status.value },

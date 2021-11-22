@@ -4,7 +4,6 @@ import s from '../Bookings/Bookings.module.css';
 
 const Guest = () => {
   const guests = useSelector((state) => state.guest.list);
-  console.log(guests);
   return (
     <div className={s.bookings_main}>
       <div className={s.navbar}>
