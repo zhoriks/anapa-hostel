@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+p {
+  font-size: 1rem;
+}
+
+.popup-content {
+  width: 33.75rem;
+  height: 47.75rem;
+  padding: 0;
+  border: 0;
+}

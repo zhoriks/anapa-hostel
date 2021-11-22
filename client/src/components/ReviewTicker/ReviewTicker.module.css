@@ -34,6 +34,7 @@ section {
 
 section .group {
   margin-top: 4.688rem;
+  margin-bottom: 3.125rem;
   width: 100vw;
   /* min-height: 100vh; */
   display: -webkit- flex;
