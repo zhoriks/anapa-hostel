@@ -61,7 +61,7 @@ export default function BookingFormGuestData() {
           <form onSubmit={handleSubmit}>
             <div className={styles.guestDataForm}>
               <div>
-                <input name="surname" type="text" placeholder="Фамилия" autoFocus="true" required />
+                <input name="surname" type="text" placeholder="Фамилия" autoFocus={true} required />
                 <input name="name" type="text" placeholder="Имя" required />
                 <input name="patronymic" type="text" placeholder="Отчество" />
               </div>
