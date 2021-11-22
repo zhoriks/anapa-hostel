@@ -26,6 +26,10 @@ h3 {
   border: 1px solid rgb(146, 146, 146);;
   padding: 10px;
 }
+.client_info div {
+  width: 170px;
+  margin-left: 4%;
+}
 p {
   margin: 5px 0;
   font-size: 15px;
@@ -48,7 +52,7 @@ p {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  
+  padding: 5px;
   border-radius: 10px;
   border: none;
   text-align: center;
@@ -59,4 +63,9 @@ p {
 }
 .formInput {
   max-width: 110px;
+  margin: 0 20px;
 } 
+.select {
+  width: 110px;
+  margin: 0 20px;
+}

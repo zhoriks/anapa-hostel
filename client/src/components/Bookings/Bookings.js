@@ -77,22 +77,26 @@ const Bookings = () => {
         <h3>Telephone</h3>
         <h3>Check in</h3>
         <h3>Check out</h3>
-        <h3>Request</h3>
         <h3>Room type</h3>
+        <h3>Request</h3>
         <h3>Status</h3>
       </div>
 
       {bookings.map((el) => (
         <form className={s.client_info} key={el.id} onSubmit={(e) => handleSubmit(e, el.id)}>
-          <p>{el.guestFirstName}</p>
-          <p>{el.telephone}</p>
-          <p>{el.checkInDate}</p>
-          <p>{el.checkOutDate}</p>
-          {!editForm ? <p>{el.comment}</p>
+          <div>{el.guestFirstName}</div>
+          <div>{el.telephone}</div>
+          <div>{el.checkInDate}</div>
+          <div>{el.checkOutDate}</div>
+          <div>{el.categoryRoom}</div>
+          {!editForm ? <div>{el.comment}</div>
             : <input type='text' name='comment' className={s.formInput} /* value={comment} onChange={handleCommentChange} */ ></input>}
-          <p>{el.categoryRoom}</p>
-          {!editForm ? <p className={s.pending}>{el.status}</p>
-            : <input type='text' name='status' className={s.formInput} /* value={status} onChange={handleStatusChange} */ ></input>}
+          {!editForm ? <div className={s.pending}>{el.status}</div>
+            : <select className={s.select} name='status' aria-label="Default select example">
+              <option value="Проживает">Проживает</option>
+              <option value="Подтверждено">Подтверждено</option>
+              <option value="Ожидает подтвержения">Ожидает подтвержения</option>
+            </select>}
           {editForm && <button className={s.submitFormButton} type="submit">Отправить</button>}
         </form>
       ))}
@@ -101,3 +105,5 @@ const Bookings = () => {
 };
 
 export default Bookings;
+// {/* <input type='text' name='status' className={s.formInput} /* value={status}
+//  onChange={handleStatusChange} */></input> */}
