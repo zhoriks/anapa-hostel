@@ -2,17 +2,7 @@ import React from 'react';
 import { BiRuble } from 'react-icons/bi';
 import styles from './HostelRoom.module.css';
 
-// import economyImg from '../HostelRooms/img/12.jpeg';
-
 function HostelRoom({ item }) {
-  // const item = {
-  //   titleText: 'Эконом',
-  //   bodyText: 'Тут будет краткое описание номеров.',
-  //   price: 900,
-  //   id: 1,
-  //   img: economyImg,
-  // };
-
   return (
     <div className={styles.container} style={{ backgroundImage: `url(${item.img})` }}>
       <div className={styles.nestedContainer}>

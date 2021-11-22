@@ -1,0 +1,37 @@
+.photoBlockRestZone{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.UniversalUpperBlock{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.UniversalLowerBlock{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.UniversalUpperPhoto{
+  background-color:rgb(51, 70, 165);
+  border-radius: 1.875rem;
+  margin: 0.469rem;
+  width: 23.125rem;
+  height: 13.75rem;
+  background-size: cover;
+  background-position: center center;
+}
+
+.UniversalLowerPhoto{
+  background-color:forestgreen;
+  border-radius: 1.875rem;
+  margin: 0.469rem;
+  width: 15rem;
+  height: 9.438rem;
+  background-size: cover;
+  background-position: center center;
+}

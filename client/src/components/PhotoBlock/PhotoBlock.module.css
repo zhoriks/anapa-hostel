@@ -1,0 +1,68 @@
+.photoBlockMain{
+  display:flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+}
+.photoBlockTitle p{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 2.188rem;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  margin: 0 0 2.813rem;
+}
+.photoBlockTextBody{
+  display: flex;
+  justify-content: center;
+}
+.photoBlockButtons{
+  display: flex;
+  justify-content:center;
+  margin: 2.813rem auto 2.5rem;
+}
+
+.photoBlockButton{
+  color: #1a1a1a;
+  font-size: 0.813rem;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  border-radius: 0.938rem;
+  border:0;
+  margin: 0 0.469rem 0;
+  background-color: #e3e3e3;
+  width: 8.125rem;
+  height: 3.125rem;
+}
+.photoBlockButton:hover {
+  background-color:rgb(37, 91, 37);
+  color:white;
+ }
+
+.photoBlockButton p{
+  margin: 0;
+}
+.photoBlockButtonsBig{
+  color: #1a1a1a;
+  font-size: 0.813rem;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  border-radius: 0.938rem;
+  border:0;
+  margin: 0 0.469rem 0;
+  background-color: #e3e3e3;
+  width: 14.375rem;
+  height: 3.125rem;
+}
+
+.photoBlockButtonsBig:hover {
+  background-color:rgb(64, 64, 189);
+  color:white;
+ }
+
+.photoBlockCardsPhoto{
+  height: 34.375rem;
+}
+p {
+  margin: 0;
+  text-align: center;
+}
