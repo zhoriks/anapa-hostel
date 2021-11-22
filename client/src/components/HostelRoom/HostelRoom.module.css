@@ -10,6 +10,7 @@
   transition: .7s;
 }
 .container:hover {
+  margin-bottom: 25px; 
   transform: translate(0, -5%);
   transition: .7s;
  }
