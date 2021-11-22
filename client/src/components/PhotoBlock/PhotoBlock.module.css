@@ -35,7 +35,7 @@
   height: 3.125rem;
 }
 .photoBlockButton:hover {
-  background-color:rgb(37, 91, 37);
+  background-color:#009bac;
   color:white;
  }
 
@@ -55,7 +55,7 @@
 }
 
 .photoBlockButtonsBig:hover {
-  background-color:rgb(64, 64, 189);
+  background-color:#2e387f;
   color:white;
  }
 
