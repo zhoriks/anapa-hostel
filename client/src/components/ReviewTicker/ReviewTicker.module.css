@@ -63,8 +63,8 @@ section .group .row {
           animation-timing-function: linear;
   -webkit-animation-name: ticker;
           animation-name: ticker;
-  -webkit-animation-duration: 35s;
-          animation-duration: 35s;
+  -webkit-animation-duration: 90s;
+          animation-duration: 90s;
 }
 
 section .group .row:nth-child(even) {
