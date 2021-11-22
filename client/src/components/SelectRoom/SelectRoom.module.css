@@ -1,14 +1,45 @@
+.pageWrapper{
+  margin: 0 3%;
+}
 .header {
   display: flex;
   flex-direction: column;
   background-color: rgb(240, 240, 240);
   font-size: 1.8rem;
 }
+.title{
+  display: flex;
+  justify-content: center;
+  font-family: 'Formular', sans-serif;
+  padding: 2% 0;
+}
+.title h2 {
+  padding: 0 0.9%;
+  font-size: 1.8rem;
+  color: #2e387f;
+}
+/* добавление полосок слева и справа от заголовка */
+.title::before, .title::after{
+  background: url(data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNGM3N2M3IiBkPSJNMCw5TDYsMCIgc3Ryb2tlLXdpZHRoPSIxcHgiPjwvcGF0aD4KPC9zdmc+Cg==);
+  background-position: 50% 50%;
+  background-repeat: repeat-x;
+  content: '';
+  display: inline-block;
+  width: 41%;
+  height: 1.4em;
+  box-sizing: border-box;
+}
+.title::before{
+  margin-left: -100%;
+}
+.title::after{
+  margin-right: -100%;
+}
 .dateContainer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 7.5rem;
+  height: 5rem;
   background-color: #bdbdbd;
 }
 .date {
@@ -16,9 +47,27 @@
   align-items: center;
   background-color: #fff;
   margin-left: 3.125rem;
-  padding: 0.625rem;
-  padding-right: 1.875rem;
+  padding: 0.6rem;
+  font-size: 1.3rem;
+  padding-right: 1.7rem;
   border-radius: 1.25rem;
+}
+.changeDatesBtn {
+  margin-left: 1%;
+  color: #ffffff;
+  background-color: #009bac;
+  height: 3.149rem;
+  border: 0 none;
+  font-size: 1rem;
+  padding: 0 1%;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-weight: 700;
+  border-radius: 1.25rem;
+}
+.changeDatesBtn:hover{
+  background: linear-gradient(to top right, #2e387f, #009bac);
 }
 .chooseRoom {
   text-align: center;
@@ -42,7 +91,6 @@
   padding: 1.25rem;
   justify-content: space-between;
 }
-
 .noVacantRoomsBackground {
   background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
   background-size:cover;
@@ -85,5 +133,6 @@
   top: 70%;
   width: 100%;
   margin-top: 3%;
+  transform: scale(1.16);
 }
 
