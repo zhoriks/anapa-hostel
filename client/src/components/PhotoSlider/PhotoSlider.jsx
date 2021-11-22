@@ -20,7 +20,7 @@ export default function PhotoSlider() {
     arrows: false,
     autoplay: true,
     focusOnSelect: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     // тут нужно будет прописать код этих точек в css
     dotsClass: 'slick-dots slick-thumb',
     infinite: true,
@@ -32,8 +32,8 @@ export default function PhotoSlider() {
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
         {images.map((img, index) => (
-          <div>
-            <img key={index} src={img.src} alt='hotel' />
+          <div key={index} >
+            <img src={img.src} alt='hotel' />
           </div>
         ))}
       </Slider>

@@ -98,7 +98,7 @@
   visibility: hidden;
 }
 
-label {
+.bookingWelcomeFormElement label {
   position: absolute;
   bottom: 105%;
   left: 10%;
