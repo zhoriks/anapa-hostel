@@ -16,6 +16,8 @@ import bookingsAction from '../../redux/actionCreators/bookingsAC';
 import roomAction from '../../redux/actionCreators/roomAC';
 import SelectRoom from '../SelectRoom/SelectRoom.jsx';
 import guestAction from '../../redux/actionCreators/guestAC';
+
+import actionTypesBookingForm from '../../redux/actionTypes/bookingFormAT';
 import reviewsTickerAction from '../../redux/actionCreators/reviewsTickerAC';
 import AdminCreateBookingForm from '../AdminCreateBookingForm/AdminCreateBookingForm.jsx';
 
@@ -28,6 +30,7 @@ function App() {
     dispatch(bookingsAction.initBookingsStart());
     dispatch(guestAction.initGuestsStart());
     dispatch(roomAction.initRoomStart());
+    dispatch({ type: actionTypesBookingForm.SEND_DATES_IN_DB_START });
     dispatch(reviewsTickerAction.getReviewsFromDB());
   }, [dispatch]);
 

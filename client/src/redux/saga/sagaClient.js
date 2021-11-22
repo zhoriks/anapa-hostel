@@ -18,7 +18,7 @@ async function fetchData({
 function* fetchRooms(action) {
   try {
     const vacantRooms = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/booking',
+      url: 'http://localhost:5001/admin/checkdate',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
