@@ -1,5 +1,6 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import actionTypesBookings from '../actionTypes/bookingsAT';
+import actionTypesGuest from '../actionTypes/guestAT';
 import actionTypesLogin from '../actionTypes/loginAT';
 import actionTypesLogout from '../actionTypes/logoutAT';
 import actionTypesRooms from '../actionTypes/roomsAT';
@@ -60,6 +61,17 @@ function* fetchRooms() {
   }
 }
 
+function* fetchGuests() {
+  try {
+    const bookings = yield call(fetchData, {
+      url: 'http://localhost:5001/admin/booking/now',
+    });
+    yield put({ type: actionTypesGuest.INIT_GUESTS_SUCCESS, payload: bookings });
+  } catch (error) {
+    yield put({ type: actionTypesGuest.INIT_GUESTS_ERROR, payload: error });
+  }
+}
+
 function* fetchLogin(action) {
   try {
     const { isAdmin, session } = yield call(fetchData, {
@@ -115,6 +127,7 @@ function* watchActions() {
   yield takeEvery(actionTypesSession.CHECK_SESSION_START, checkSession);
   yield takeEvery(actionTypesRooms.INIT_ROOMS_START, fetchRooms);
   yield takeEvery(actionTypesBookings.EDIT_FORM_SUBMIT_STOP, changeBookings);
+  yield takeEvery(actionTypesGuest.INIT_GUESTS_START, fetchGuests);
 }
 
 export default watchActions;

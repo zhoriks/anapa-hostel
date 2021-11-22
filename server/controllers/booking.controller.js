@@ -1,4 +1,4 @@
-const { Op } = require('sequelize');
+// const { Op } = require('sequelize');
 const { Book } = require('../db/models');
 
 const allBooking = async (req, res) => {
