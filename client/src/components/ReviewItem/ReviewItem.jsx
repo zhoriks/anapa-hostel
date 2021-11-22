@@ -1,16 +1,16 @@
 import styles from './ReviewItem.module.css';
-// import user from '../data/img/user.png';
+import user from '../data/img/user.png';
 
 function ReviewItem({ item }) {
   return (
     <div className={styles.reviewItemContainer}>
       <span className={styles.reviewDescription}>
-        {item.description}
+        {item.comment}
       </span>
       <div className={styles.reviewPerson}>
-        <img className={styles.reviewPersonImg} src={item.img} alt="" />
+        <img className={styles.reviewPersonImg} src={user} alt="" />
         <div className={styles.reviewPersonData}>
-          <span>{item.name}</span><br/>
+          <span>{item.guestName}</span><br/>
           <span>{item.occupation}</span>
         </div>
       </div>

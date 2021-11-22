@@ -16,6 +16,7 @@ import bookingsAction from '../../redux/actionCreators/bookingsAC';
 import roomAction from '../../redux/actionCreators/roomAC';
 import SelectRoom from '../SelectRoom/SelectRoom.jsx';
 import guestAction from '../../redux/actionCreators/guestAC';
+import reviewsTickerAction from '../../redux/actionCreators/reviewsTickerAC';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
     dispatch(bookingsAction.initBookingsStart());
     dispatch(guestAction.initGuestsStart());
     dispatch(roomAction.initRoomStart());
+    dispatch(reviewsTickerAction.getReviewsFromDB());
   }, [dispatch]);
 
   return (
