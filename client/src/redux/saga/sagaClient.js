@@ -1,5 +1,6 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import actionTypesBookingForm from '../actionTypes/bookingFormAT';
+import actionTypesReviewsTicker from '../actionTypes/reviewsTickerAT';
 
 async function fetchData({
   url, method, headers, body,
@@ -38,8 +39,20 @@ function* fetchRooms(action) {
   }
 }
 
+function* fetchReviews() {
+  try {
+    const reviews = yield call(fetchData, {
+      url: 'http://localhost:5001/comments',
+    });
+    yield put({ type: actionTypesReviewsTicker.GET_REVIEWS_FROM_DB_SUCCESS, payload: reviews });
+  } catch (error) {
+    yield put({ type: actionTypesReviewsTicker.GET_REVIEWS_FROM_DB_ERROR, payload: error });
+  }
+}
+
 function* watchActionsClient() {
   yield takeEvery(actionTypesBookingForm.SEND_DATES_IN_DB_START, fetchRooms);
+  yield takeEvery(actionTypesReviewsTicker.GET_REVIEWS_FROM_DB_START, fetchReviews);
 }
 
 export default watchActionsClient;
