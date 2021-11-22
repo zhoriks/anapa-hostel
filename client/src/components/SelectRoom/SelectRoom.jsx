@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { AiFillCalendar } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
+
 import styles from './SelectRoom.module.css';
+import dateToTextFormat from '../data/functions/dateToTextFormat';
+
 import Navigation from '../Navigation/Navigation.jsx';
 import SelectedRoom from '../SelectedRoom/SelectedRoom.jsx';
 import BookingWelcomeForm from '../BookingWelcomeForm/BookingWelcomeForm.jsx';
@@ -59,7 +62,9 @@ const SelectRoom = () => {
             <div className={styles.date}>
               <span className={styles.dateText}>
                 <AiFillCalendar className={styles.icon} />
-                {date.arrivalDate}&nbsp;&mdash;&nbsp;{date.departureDate}
+                {dateToTextFormat(date.arrivalDate)}
+                &nbsp;&mdash;&nbsp;
+                {dateToTextFormat(date.departureDate)}
               </span>
               <span className={styles.dateText}>
                 Гостей:&nbsp;<BsFillPersonFill className={styles.icon} />{date.guestNumber}
@@ -70,7 +75,7 @@ const SelectRoom = () => {
             </button>
             {/* нужно модальное окно для изменения дат! */}
           </div>
-          <span className={styles.chooseRoom}>Выберите номер</span>
+          <span className={styles.chooseRoom}>Выберите номер:</span>
           <hr />
         </header>
 
