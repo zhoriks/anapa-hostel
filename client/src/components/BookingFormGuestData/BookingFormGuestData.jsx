@@ -5,24 +5,13 @@ import NumberFormat from 'react-number-format';
 import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
 
 import styles from './BookingFormGuestData.module.css';
-import months from '../data/helpData/months';
+// функция для приведения даты в стейте в более читаемый вид формата '20 Ноября' вместо 2021-11-20
+import dateToTextFormat from '../data/functions/dateToTextFormat';
 
 export default function BookingFormGuestData() {
   const dispatch = useDispatch();
   // получаем уже имеющиеся данные о бронировании из стейта
   const dataAboutBooking = useSelector((state) => state.bookingForm.list);
-
-  // функция для приведения даты в стейте в более читаемый вид формата '20 Ноября' вместо 2021-11-20
-  const getBookingDate = (fullDate) => {
-    if (!fullDate) {
-      return 'no info';
-    }
-    const day = fullDate.split('-')[2];
-    const month = fullDate.split('-')[1];
-    const monthText = months[month];
-    const textFormatDate = `${day} ${monthText}`;
-    return textFormatDate;
-  };
 
   // отправляем данные из формы в стейт
   const handleSubmit = (event) => {
@@ -49,8 +38,8 @@ export default function BookingFormGuestData() {
       <div className={styles.bookingDataFromState}>
         <div className={styles.datesAndGuestsData}>
           <div>
-            {getBookingDate(dataAboutBooking.arrivalDate)}&nbsp;&mdash;&nbsp;
-            {getBookingDate(dataAboutBooking.departureDate)}
+            {dateToTextFormat(dataAboutBooking.arrivalDate)}&nbsp;&mdash;&nbsp;
+            {dateToTextFormat(dataAboutBooking.departureDate)}
           </div>
           <div>Гостей: {dataAboutBooking.guestNumber} </div>
         </div>
@@ -72,11 +61,12 @@ export default function BookingFormGuestData() {
           <form onSubmit={handleSubmit}>
             <div className={styles.guestDataForm}>
               <div>
-                <input name="surname" type="text" placeholder="Фамилия" required />
+                <input name="surname" type="text" placeholder="Фамилия" autoFocus="true" required />
                 <input name="name" type="text" placeholder="Имя" required />
                 <input name="patronymic" type="text" placeholder="Отчество" />
               </div>
               <div>
+                {/* тут сторонняя библиотека для подставления номера в нужном формате  */}
                 <input name="email" type="email" placeholder="Электронная почта (email)" inputMode="email" required />
                 <NumberFormat name="phone" format="+7 (###) ###-####" mask="_" type="tel" placeholder='+ 7 (___) ___-____' />
               </div>
