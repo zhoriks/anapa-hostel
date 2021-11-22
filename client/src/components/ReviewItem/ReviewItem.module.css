@@ -1,0 +1,35 @@
+.reviewItemContainer {
+  border: 1px solid grey;
+  width: 25rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  border-radius: 30px;
+}
+
+.reviewDescription {
+  width: 20rem;
+  /* height: 3rem; */
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.reviewPerson {
+  margin: 1.25rem 1.5rem 0 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.reviewPersonImg {
+  max-width: 3rem;
+  max-height: 3rem;
+}
+
+.reviewPersonData {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  text-align: start;
+}
