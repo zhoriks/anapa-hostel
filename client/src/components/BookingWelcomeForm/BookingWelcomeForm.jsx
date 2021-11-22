@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
 import actionTypesBookingForm from '../../redux/actionTypes/bookingFormAT';
@@ -9,6 +10,7 @@ import styles from './BookingWelcomeForm.module.css';
 
 export default function BookingWelcomeForm() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   // отпраляем данные в стейт
   const handleSubmit = (event) => {
@@ -22,6 +24,7 @@ export default function BookingWelcomeForm() {
 
     dispatch(bookingFormAction.includeDataFromStartForm(searchData));
     dispatch({ type: actionTypesBookingForm.SEND_DATES_IN_DB_START, payload: searchData });
+    history.push('/select-room');
   };
 
   return (
@@ -65,7 +68,9 @@ export default function BookingWelcomeForm() {
             </div>
             <div className={styles.bookingWelcomeFormElement}>
               <label htmlFor="bookingWelcomeFormButton" className={styles.hidden}>This is a button</label>
-              <button type="submit" className={styles.bookingWelcomeFormButton}>Найти номер</button>
+              <button type="submit" className={styles.bookingWelcomeFormButton}>
+                Найти номер
+              </button>
             </div>
           </form>
         </div>
