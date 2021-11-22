@@ -61,7 +61,6 @@ const bookingFormReducer = (state = initialState, action) => {
           ...state.list,
           vacantRooms: [...state.list.vacantRooms, action.payload],
         },
-
       };
 
     case actionTypesBookingForm.SEND_DATES_IN_DB_ERROR:

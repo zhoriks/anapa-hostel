@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import NumberFormat from 'react-number-format';
+import { AiFillCalendar } from 'react-icons/ai';
+import { BsFillPersonFill } from 'react-icons/bs';
 
 import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
 
@@ -38,10 +40,13 @@ export default function BookingFormGuestData() {
       <div className={styles.bookingDataFromState}>
         <div className={styles.datesAndGuestsData}>
           <div>
-            {dateToTextFormat(dataAboutBooking.arrivalDate)}&nbsp;&mdash;&nbsp;
+            <AiFillCalendar className={styles.icon} />
+            {dateToTextFormat(dataAboutBooking.arrivalDate)}
+            &nbsp;&mdash;&nbsp;
             {dateToTextFormat(dataAboutBooking.departureDate)}
           </div>
-          <div>Гостей: {dataAboutBooking.guestNumber} </div>
+          <div><BsFillPersonFill className={styles.icon} />
+            Гостей: {dataAboutBooking.guestNumber} </div>
         </div>
         <div className={styles.totalPriceData}>Общая стоимость:</div>
       </div>
@@ -107,6 +112,6 @@ export default function BookingFormGuestData() {
           </form>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
