@@ -1,9 +1,26 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
 
 // подключение модульного CSS
 import styles from './BookingWelcomeForm.module.css';
 
 export default function BookingWelcomeForm() {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const searchData = {
+      arrivalDate: event.target.arrivalDate.value,
+      departureDate: event.target.departureDate.value,
+      guestNumber: event.target.guestNumber.value,
+    };
+
+    dispatch(bookingFormAction.includeDataFromStartForm(searchData));
+  };
+
   return (
     <div className={styles.bookingWelcomeContainer}>
 
@@ -17,25 +34,33 @@ export default function BookingWelcomeForm() {
         <div className={styles.bookingLabelSubTitle}>гарантированное заселение</div>
       </div>
 
-      <form className={styles.bookingWelcomeForm}>
+      <form onSubmit={handleSubmit} className={styles.bookingWelcomeForm}>
         <div className={styles.bookingWelcomeFormElement}>
           {/* default value для даты заезда и выезда - неоптимальное решение,
           ** не сработает при переходе c 30/31 дня на 1 день месяца и с декабря на январь */}
-          <label htmlFor="bookingWelcomeFormArrivalDate">Дата заезда:</label>
-          <input name="bookingWelcomeFormArrivalDate" type="date" defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`} className={styles.bookingWelcomeFormInput} />
+          <label htmlFor="arrivalDate">Дата заезда:</label>
+          <input name="arrivalDate" type="date"
+            defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
+            min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
+            className={styles.bookingWelcomeFormInput} />
         </div>
         <div className={styles.bookingWelcomeFormElement}>
-          <label htmlFor="bookingWelcomeFormDepartureDate">Дата выезда:</label>
-          <input type="date" defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`} className={styles.bookingWelcomeFormInput} />
+          <label htmlFor="departureDate">Дата выезда:</label>
+          <input name="departureDate" type="date"
+            defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`}
+            min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`}
+            className={styles.bookingWelcomeFormInput} />
         </div>
         {/* пока стоят минимально возможное число гостей - 1 и максимально возможное - 15 */}
         <div className={styles.bookingWelcomeFormElement}>
-          <label htmlFor="bookingWelcomeFormGuestNumber" className={styles.icon}>Гости:</label>
-          <input type="number" max="15" min="1" defaultValue="2" className={styles.bookingWelcomeFormInput} />
+          <label htmlFor="guestNumber" className={styles.icon}>Гости:</label>
+          <input name="guestNumber" type="number"
+            max="15" min="1" defaultValue="2"
+            className={styles.bookingWelcomeFormInput} />
         </div>
         <div className={styles.bookingWelcomeFormElement}>
           <label htmlFor="bookingWelcomeFormButton" className={styles.hidden}>This is a button</label>
-          <button className={styles.bookingWelcomeFormButton}>Найти номер</button>
+          <button type="submit" className={styles.bookingWelcomeFormButton}>Найти номер</button>
         </div>
       </form>
     </div>

@@ -3,9 +3,7 @@ import s from './SingleRoom.module.css';
 
 const SingleRoom = ({
   name, fullness, number, type,
-}) => {
-  console.log(name, fullness, number, type);
-  return (
+}) => (
     <div className={s.container}>
       <div className={s.img_container}>
         <img src="/room.jpeg" alt="" className={s.img} />
@@ -25,7 +23,6 @@ const SingleRoom = ({
         <span>{type}</span>
       </div>
     </div>
-  );
-};
+);
 
 export default SingleRoom;

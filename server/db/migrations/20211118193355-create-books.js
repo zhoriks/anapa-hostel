@@ -7,9 +7,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      guestName: {
+      guestFirstName: {
         type: Sequelize.TEXT,
         allowNull: true,
+      },
+      guestLastName: {
+        type: Sequelize.TEXT,
+        allowNull: true,
+      },
+      guestPatronymic: {
+        type: Sequelize.TEXT,
       },
       checkInDate: {
         type: Sequelize.DATEONLY,
@@ -25,6 +32,10 @@ module.exports = {
       },
       guestsNumber: {
         type: Sequelize.INTEGER,
+        allowNull: true,
+      },
+      email: {
+        type: Sequelize.TEXT,
         allowNull: true,
       },
       telephone: {

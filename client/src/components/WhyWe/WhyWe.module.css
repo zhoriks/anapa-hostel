@@ -1,69 +1,37 @@
 .container {
-  width: 60%;
-  margin: 3% auto;
+  width: 100%;
+  margin: 3.125rem auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
 }
 
 .leftSide {
-  margin: 0 0 0 3%;
+  margin: 0 0 0 10.313rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  flex-basis: 50%;
 }
 
 .leftSideTitle {
-  font-size: 35px;
+  width: 19.563rem;
+  height: 6.75rem;
+  font-size: 2.188rem;
+  font-weight: bold;
   line-height: 1.55;
 }
 
 .leftSideDescription {
-  font-size: 16px;
+  width: 18.75rem;
+  height: 6rem;
+  font-size: 1rem;
   text-align: justify;
   line-height: 1.55;
   margin: 5% 0;
 }
 
 .rightSide {
+  margin: 0 10% 0 0;
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
 }
-
-.rightSideItem {
-  width: 35%;
-  margin: 2.5% 2.5%;
-  display: flex;
-  align-items:flex-start;
-  justify-content: center;
-}
-
-.rightSideItem:hover {
-  transform: scale(1.07);
-  background: white;
-  border-radius: 30px;
-  box-shadow: 0 5px 15px rgb(190, 190, 190, 0.5);
-}
-
-.rightSideItemImg {
-  max-width: 35%;
-  max-height: 35%;
-  margin: 10% 5% 0 10%;
-}
-
-.rightSideItemDivTitle {
-  font-size: 16px;
-  text-align: justify;
-  margin: 10% 0 3% 0;
-}
-
-.rightSideItemDivDescription {
-  display: block;
-  margin: 0 15% 10% 0;
-  font-size: 16px;
-  text-align: justify;
-  line-height: 1.55;
-}
-
