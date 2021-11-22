@@ -1,0 +1,111 @@
+.mainBlock{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 250px 0;
+}
+
+.leftBlock{
+  display: flex;
+  align-items: flex-end;
+  width: 415px;
+  height: 430px;
+  background-color:red;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-image: url('./imgLowerBlock/fon.jpeg');
+}
+.imgasLeft{
+  width: 250px;
+  margin-left: 150px;
+  background-size: cover;
+  background-position: center center;
+}
+.imgasLeftPalm{
+  width: 100px;
+  margin-left: 150px;
+  background-size: cover;
+  background-position: center center;
+}
+.stockBlock{
+  display: flex;
+  flex-direction:column;
+  width: 569px;
+  height: 430px;
+  background-color:#012675;
+  border-radius: 30px;
+}
+
+.imgBow{
+  width: 287px;
+  height: 277px;
+}
+.mapBlock{
+  width: 215px;
+  height: 430px;
+  background-color:green;
+  border-radius: 30px;
+  transition: .7s;
+}
+
+.mapBlock:hover {
+  margin-bottom: 25px; 
+  transform: translate(0, -5%);
+  transition: .7s;
+ }
+
+.rightBlock{
+  width: 180px;
+  height: 430px;
+  background-color:pink;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-image: url('./imgLowerBlock/fon.jpeg');
+
+}
+
+.title{
+  margin: 15% 0 0 15%;
+  line-height: 1,7;
+  color: #fefcfc;
+  font-size: 22px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  font-weight: 600;
+  text-align: left;
+}
+
+.bodyText{
+  margin: 5% 0 0 15%;
+  line-height: 2;
+  color: #fefcfc;
+  font-size: 15px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  text-align: left;
+}
+
+.button{
+  margin: 7% 0 0 15%;
+  width: 220px;
+  height: 70px;
+  border-radius: 30px;
+  background-color: #fefcfc;
+  background-position: center center;
+  border: none;
+}
+.button:hover{
+  background-color:#fefcfcdd;
+  color:#fefcfc;
+  border: none;
+}
+.buttonText{
+  color: #012675;
+  font-size: 15px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  font-weight: 600;
+}
