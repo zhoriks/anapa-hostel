@@ -16,6 +16,7 @@ import bookingsAction from '../../redux/actionCreators/bookingsAC';
 import roomAction from '../../redux/actionCreators/roomAC';
 import SelectRoom from '../SelectRoom/SelectRoom.jsx';
 import guestAction from '../../redux/actionCreators/guestAC';
+import AdminCreateBookingForm from '../AdminCreateBookingForm/AdminCreateBookingForm.jsx';
 
 function App() {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ function App() {
       <Route path='/admin/guest' exact component={Guest} />
       <Route path='/admin/rooms' exact component={Rooms} />
       <Route path='/admin/logout' exact component={Logout} />
+      <Route path='/admin/create-booking' exact component={AdminCreateBookingForm} />
     </Switch>
     </BrowserRouter>
   }
