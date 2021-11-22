@@ -4,6 +4,7 @@ const { Book } = require('../db/models');
 const allBooking = async (req, res) => {
   try {
     const booking = await Book.findAll({
+      order: [['updatedAt', 'DESC']],
     });
     res.status(200).json(booking);
   } catch (error) {
@@ -26,16 +27,25 @@ const livingNowBooking = async (req, res) => {
 
 const changeBooking = async (req, res) => {
   try {
-    const { comment, status } = req.body;
-    console.log(comment, status);
-    const booking = await Book.findAll({
-      where: {
-        status: 'Проживает',
-      },
+    const { id, comment, status } = req.body;
+    // console.log(comment, status, id, 'COMMENT STATUS ID');
+
+    await Book.update(
+      { comment, status },
+      { where: { id } },
+    );
+    // booking.update({ comment, status });
+    // booking[0].comment = comment;
+    // booking.status = status;
+    // booking.save();
+    const bookings = await Book.findAll({
+      order: [['updatedAt', 'DESC']],
     });
-    res.status(200).json(booking);
+    // console.log(booking[0].comment, 'BOOKING');
+    // res.status(200).json(bookings);
+    res.status(200).json(bookings);
   } catch (error) {
-    res.status(404).json({ error: 'error' });
+    res.status(404).json({ updated: false, error: error.message });
   }
 };
 
@@ -75,4 +85,6 @@ const createNewBooking = async (req, res) => {
   }
 };
 
-module.exports = { allBooking, livingNowBooking, createNewBooking, changeBooking };
+module.exports = {
+  allBooking, livingNowBooking, createNewBooking, changeBooking,
+};

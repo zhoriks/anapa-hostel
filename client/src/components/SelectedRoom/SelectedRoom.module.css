@@ -1,10 +1,10 @@
 .card {
-  margin: 30px;
+  margin: 1.875rem;
   border: 1px solid rgb(180, 179, 179);
   height: 55vh; 
   width: 45vh;
   position: relative;
-  border-radius: 5px;
+  border-radius: 0.313rem;
 }
 .card:hover {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -13,13 +13,13 @@
   margin: 0;
   width: 45vh;
   height: 27vh; 
-  border-radius: 5px 5px 0 0;
+  border-radius: 0.313rem 0.313rem 0 0;
 }
 .bottomText {
   display: flex;
   position: absolute;
   bottom: 0;
-  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -31,7 +31,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .middleText {
   display: flex;
@@ -39,13 +39,13 @@
   width: 30vh;
 }
 .roomName {
-  margin: 20px 0 15px 0;
+  margin: 1.25rem 0 0.938rem 0;
   font-weight: bolder
 }
 .buttonChoose {
   border: none;
   background-color: #626262;
   color: white;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 0.625rem;
+  border-radius: 0.313rem;
 }

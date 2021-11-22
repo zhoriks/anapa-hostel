@@ -5,12 +5,19 @@
   align-items: center;
   width: 87%;
   margin-right: 20px;
+  color: white  ;
 }
 .icon {
+  height: 22px;
+  width: 22px;
   margin-right: 25px;
+  cursor: pointer;
 }
 .select {
+  display: flex;
+  align-items: center;
   font-size: smaller;
+  padding: 10px;
   height: 35px;
   width: fit-content;
   border: none;

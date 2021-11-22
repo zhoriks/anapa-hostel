@@ -2,27 +2,27 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(240, 240, 240);
-  font-size: 30px;
+  font-size: 1.8rem;
 }
 .dateContainer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 120px;
+  height: 7.5rem;
   background-color: #bdbdbd;
 }
 .date {
   display: flex;
   align-items: center;
   background-color: #fff;
-  margin-left: 50px;
-  padding: 10px;
-  padding-right: 30px;
-  border-radius: 20px;
+  margin-left: 3.125rem;
+  padding: 0.625rem;
+  padding-right: 1.875rem;
+  border-radius: 1.25rem;
 }
 .chooseRoom {
   text-align: center;
-  padding: 10px;
+  padding: 0.625rem;
   color: rgba(61,61,61,.8);
 }
 .dateText {
@@ -31,7 +31,7 @@
   align-items: center;
 }
 .icon {
-  margin-right: 15px;
+  margin-right: 0.938rem;
 }
 .roomContainer {
   display: flex;
@@ -39,6 +39,6 @@
   flex-wrap: wrap;
   width: 100%;
   height: fit-content;
-  padding: 20px;
+  padding: 1.25rem;
   justify-content: space-between;
 }
