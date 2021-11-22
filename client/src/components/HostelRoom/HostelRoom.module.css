@@ -10,7 +10,6 @@
   transition: .7s;
 }
 .container:hover {
-  margin-bottom: 25px; 
   transform: translate(0, -5%);
   transition: .7s;
  }
@@ -30,8 +29,7 @@
 }
 
 .textContainer{
-  width: 80%;
-  margin: 7% auto 0%;
+  margin: 7% 0 0 9%;
   font-size: 1rem;
   line-height: 1.55;
   font-family: 'Ubuntu',Arial,sans-serif;

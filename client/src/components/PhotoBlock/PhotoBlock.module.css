@@ -59,10 +59,22 @@
   color:white;
  }
 
-.photoBlockCardsPhoto{
+/* .photoBlockCardsPhoto{
   height: 34.375rem;
+} */
+
+.photoBlockBigTitle {
+  margin: 3.125rem auto;
+  text-align: center;
+  color: #1a1a1a;
+  font-size: 2.188rem;
+  font-weight: bold;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
 }
-p {
+
+.photoBlockParagraph {
   margin: 0;
   text-align: center;
+  
 }

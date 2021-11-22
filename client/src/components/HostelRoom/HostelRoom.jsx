@@ -4,7 +4,7 @@ import styles from './HostelRoom.module.css';
 
 function HostelRoom({ item }) {
   return (
-    <div className={styles.container} style={{ backgroundImage: `url(${item.img})` }}>
+    <div className={styles.container} style={{ backgroundImage: `url(${item.img})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}>
       <div className={styles.nestedContainer}>
         <div className={styles.textContainer}>
           <p className={styles.textContainerHeader}>{item.titleText}</p>

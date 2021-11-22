@@ -63,10 +63,10 @@ function PhotoBlock() {
   return (
     <div className={styles.photoBlockMain}>
        <div className={styles.photoBlockTitle}>
-        <p>Фотографии и настроение</p>
+        <h1 className={styles.photoBlockBigTitle}>Фотографии и настроение</h1>
         </div>
         <div className={styles.photoBlockTextBody}>
-        <p>Мы создаем для наших гостей атмосферу
+        <p className={styles.photoBlockParagraph}>Мы создаем для наших гостей атмосферу
          отдыха, <br/> обеспечивая всем необходимым.</p>
         </div>
         <div className={styles.photoBlockButtons}>
