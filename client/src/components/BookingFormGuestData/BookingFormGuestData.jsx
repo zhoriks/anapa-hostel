@@ -5,6 +5,7 @@ import { AiFillCalendar } from 'react-icons/ai';
 import { BsFillPersonFill } from 'react-icons/bs';
 
 import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
+import actionTypesBookingForm from '../../redux/actionTypes/bookingFormAT';
 
 import styles from './BookingFormGuestData.module.css';
 // функция для приведения даты в стейте в более читаемый вид формата '20 Ноября' вместо 2021-11-20
@@ -31,6 +32,12 @@ export default function BookingFormGuestData() {
     };
 
     dispatch(bookingFormAction.addDataFromPersonalInfForm(searchData));
+
+    // отправляем данные о бронировании из стейта и формы в базу данных
+    dispatch({
+      type: actionTypesBookingForm.SEND_BOOKINFO_IN_DB_START,
+      payload: { dataAboutBooking, searchData },
+    });
   };
 
   return (
