@@ -1,0 +1,49 @@
+.photoBlockRestZone{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.RestZoneLeftBlockLower{
+  display: flex;
+  flex-direction: row;
+}
+
+.RestZoneLeftBlockUpperPhoto{
+  background-color: aquamarine;
+  border-radius: 1.875rem;
+  margin: 0.469rem;
+  width: 48.75rem;
+  height: 20rem;
+  background-size: cover;
+  background-position: center center;
+}
+
+.LeftBlockLowerLeftPhoto{
+  background-color:burlywood;
+  border-radius: 1.875rem;
+  margin: 0.469rem;
+  width: 23.75rem;
+  height: 13.75rem;
+  background-size: cover;
+  background-position: center center;
+}
+
+.LeftBlockLowerRightPhoto{
+  background-color:coral;
+  border-radius: 1.875rem;
+  margin: 0.469rem;
+  width: 23.75rem;
+  height: 13.75rem;
+  background-size: cover;
+  background-position: center center;
+}
+
+.RestZoneRightPhoto{
+  background-color:forestgreen;
+  border-radius: 1.875rem;
+  margin: 0.469rem;
+  width: 23.125rem;
+  height: 35rem;
+  background-size: cover;
+  background-position: center center;
+}

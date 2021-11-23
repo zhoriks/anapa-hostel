@@ -2,65 +2,75 @@
   display: flex;
   justify-content:center;
   align-items: flex-end;
-  width: 380px;
-  height: 380px;
+  width: 23.75rem;
+  height: 23.75rem;
   margin: 1%;
   background-color: burlywood;
   border-radius: 30px;
   transition: .7s;
 }
 .container:hover {
-  margin-bottom: 25px; /* Цвет фона при наведении */
+  transform: translate(0, -5%);
   transition: .7s;
  }
 
 .nestedContainer{
   display: flex;
   flex-direction: column;
-  width: 90%;
-  height: 50%;
+  width: 21.875rem;
+  height: 11.875rem;
   background-color:white;
   margin: 5%;
   border-radius: 30px;
-  opacity: 0.9;
+}
 
+.nestedContainer:hover {
+  transform: translate(0, 0);
 }
 
 .textContainer{
-  width: 80%;
-  margin: 7% auto 0%;
-  font-size: 16px;
+  margin: 7% 0 0 9%;
+  font-size: 1rem;
   line-height: 1.55;
   font-family: 'Ubuntu',Arial,sans-serif;
 }
 
 .textContainerHeader{
-  font-size: 18px;
+  width: 19.625rem;
+  height: 1.875rem;
+  font-size: 1.125rem;
+  font-weight: bold;
   margin: 0 auto 3%;
 }
+
 .buttonContainer{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
+
 .buttonHostelRoom{
   color: #ffffff;
-  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
   font-family: 'Ubuntu',Arial,sans-serif;
   border-width: 1px;
   border-radius: 20px;
-  width: 35%;
-  height: 75%;
+  width: 7.7rem;
+  height: 3.125rem;
   background-color: #566a6e;
 }
+
 .textContainerPrice{
   display: flex;
   align-items: center;
   font-family: 'Ubuntu',Arial,sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   width: 35%;
 }
 
 .textContainerBody{
+  width: 18.5rem;
+  height: 2.875rem;
   margin: 0;
 }

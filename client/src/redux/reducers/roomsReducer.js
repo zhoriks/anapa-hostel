@@ -14,7 +14,6 @@ const roomsReducer = (state = initialState, action) => {
         error: null,
       };
     case actionTypesRooms.INIT_ROOMS_SUCCESS:
-      console.log(action.payload);
       return {
         ...state,
         list: [...action.payload],

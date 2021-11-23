@@ -2,15 +2,22 @@
 .welcomeScreenContainer {
   position: relative;
   width: 100%;
-  min-height: 615px;
-  border-radius: 50px;
-  background-color: #566a6e;
+  /* min-height: 615px; */
+  min-height: 35.438rem;
+  border-radius: 3.125rem;
+  background-color: rgb(29, 165, 175);
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   border-color: transparent;
   border-style: solid;
+  /* background-image: url('https://get.wallhere.com/photo/artwork-minimalism-sky-mountains-mist-horizon-simple-blue-background-1803151.jpg'); */
+  /* background-image: url('https://phonoteka.org/uploads/posts/2021-04/1618485901_50-p-goluboi-mramor-fon-50.jpg'); */
+  /* box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.226); */
+  /* background-image: url('https://www.sei-fachschule.ch/wp-content/uploads/2019/12/Klarheit-im-inneren@2x.jpg'); */
+  /* background-image: url('https://i.pinimg.com/originals/1f/de/93/1fde9330b44919e7a44363e1cbaacbc6.jpg'); */
+  /* background-image: url(../data/img/small-background.jpeg); */
   background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
   /* background-image: url('https://static.tildacdn.com/tild6536-3161-4164-b332-376134313931/Frame_1_2.svg'); */
 }
@@ -18,10 +25,10 @@
 /* стили блок с описанием отеля  */
 .nameBlock {
   position: absolute;
-  top: 15%;
+  top: 13%;
   left: 4%;
-  width: 47%;
-  height: 47%;
+  width: 50%;
+  height: 60%;
   opacity: 1;
   /* transform: translateX(-14.375px) translateY(-1.4375px) rotate(-1.4375deg); */
 }
@@ -30,41 +37,49 @@
   position: relative;
 }
 
+.containerNameBlock img {
+  position: relative;
+  max-height: 350px;
+  max-width: 350px;
+}
+
 .textNameBlock {
   position: absolute;
   top: 10%;
-  left: 60px;
+  left: 9.5%;
+  padding: 0 3%;
   width: 60%;
 }
 
 .textNameBlock h2 {
-  font-size: 2.3em;
+  font-size: 2.1rem;
   color: rgb(29, 165, 175);
 }
 
 .textNameBlock p {
   margin-top: 5%;
-  width: 80%;
-  font-size: 1.1em;
+  width: 100%;
+  font-size: 1.1rem;
+  line-height: 1.2rem;
 }
 
 /* стили блока со предложением скидки */
 .offerDiscount {
-  border-radius: 30px;
+  border-radius: 1.563rem;
   background-color: #ffffff;
   background-position: center center;
   border-color: transparent;
   border-style: solid;
-  width: 22%;
-  height: 33%;
+  width: 28%;
+  height: 35%;
   position: absolute;
   top: 17%;
-  right: 15%;
+  right: 10%;
 }
 
 .offerDiscount img {
   width: 85%;
-  height: 70%;
+  height: 65%;
   border-radius: 25px;
   margin: 15px 18px 5px 18px;
 }
@@ -80,4 +95,14 @@
   margin: 0 11%;
   font-size: 0.8rem;
   color: dimgray;
+}
+
+@media (max-width: 1425px) {
+  .textNameBlock h2 {
+    font-size: 1.8rem;
+  }
+  
+  .textNameBlock p {
+    font-size: 1rem;
+  }
 }

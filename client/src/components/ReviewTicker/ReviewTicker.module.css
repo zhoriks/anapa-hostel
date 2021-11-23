@@ -1,0 +1,78 @@
+/* Анимационная логика и стили компонента, отвечающего за бегущую строку */
+
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700&display=swap");
+@-webkit-keyframes ticker {
+  0% {
+    transform: translate3d(25%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-25%, 0, 0);
+  }
+}
+@keyframes ticker {
+  0% {
+    transform: translate3d(25%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-25%, 0, 0);
+  }
+}
+section {
+  margin-top: 4.688rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.titleDivBig {
+  color: #1a1a1a;
+  font-size: 2.188rem;
+  font-weight: bold;
+  font-family: 'Formular', sans-serif;
+  /* font-family: 'Ubuntu',Arial,sans-serif; */
+  line-height: 1.55;
+}
+
+section .group {
+  margin-top: 4.688rem;
+  margin-bottom: 3.125rem;
+  width: 100vw;
+  /* min-height: 100vh; */
+  display: -webkit- flex;
+  /* Safari */
+  display: flex;
+  /* Safari */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+section .group .row {
+  margin-bottom: 1.5rem;
+  width: 400vw;
+  display: -webkit- flex;
+  /* Safari */
+  display: flex;
+  /* Safari */
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  transform: translate3d(25%, 0, 0);
+  /* white-space: nowrap; */
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-name: ticker;
+          animation-name: ticker;
+  -webkit-animation-duration: 90s;
+          animation-duration: 90s;
+}
+
+section .group .row:nth-child(even) {
+  animation-direction: reverse;
+}
+
+section .group .row span {
+  text-align: start;
+}

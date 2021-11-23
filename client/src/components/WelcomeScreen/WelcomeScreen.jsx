@@ -16,9 +16,9 @@ export default function WelcomeScreen() {
         <div className={styles.containerNameBlock}>
           {/* попытка сделать этот блок анимированным с помощью сторонней библиотеки
           react-animate-on-scroll и animate.css */}
-          <ScrollAnimation animateIn='animate__rotateOutUpLeft'
-            animateOut='animate__rotateInDownLeft'
-            duration={3} initiallyVisible={true} animateOnce={false}>
+          <ScrollAnimation animateIn='animate__jackInTheBox'
+            // animateOut='animate__rotateInDownLeft'
+            duration={4} initiallyVisible={true} animateOnce={false}>
             <img src="https://static.tildacdn.com/tild3865-3761-4365-b163-656664386539/Rectangle_86.svg"
               alt="block" />
             <div className={styles.textNameBlock}>

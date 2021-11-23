@@ -5,7 +5,6 @@ import s from './Rooms.module.css';
 
 const Rooms = () => {
   const rooms = useSelector((state) => state.room.list);
-  console.log(rooms);
   return (
     <div className={s.main_container}>
       <div className={s.container}>
