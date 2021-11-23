@@ -76,13 +76,14 @@ export default function BookingFormGuestData() {
                 Гостей: {dataAboutBooking.guestNumber} </div>
             </div>
             <div className={styles.totalPriceData}>
-              Общая стоимость:
+              Общая стоимость:&nbsp;&nbsp;
               {totalSumForBooking(
                 dataAboutBooking.arrivalDate,
                 dataAboutBooking.departureDate,
                 dataAboutBooking.selectedRoom.price,
                 dataAboutBooking.guestNumber,
               )}
+              &nbsp;&#x20bd;
             </div>
           </div>
 
