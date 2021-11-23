@@ -103,11 +103,30 @@ function* fetchGuests() {
 function* fetchReviews() {
   try {
     const reviews = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/comments',
+      url: 'http://localhost:5001/admin/review',
     });
     yield put({ type: actionTypesAdminReviews.INIT_REVIEWS_SUCCESS, payload: reviews });
   } catch (error) {
     yield put({ type: actionTypesGuest.INIT_GUESTS_ERROR, payload: error });
+  }
+}
+
+function* editReviews(action) {
+  try {
+    const reviews = yield call(fetchData, {
+      url: 'http://localhost:5001/admin/review',
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        idReview: action.payload.id,
+        status: action.payload.moderate,
+      }),
+    });
+    yield put({ type: actionTypesAdminReviews.EDIT_REVIEWS_SUCCESS, payload: reviews });
+  } catch (error) {
+    yield put({ type: actionTypesAdminReviews.EDIT_REVIEWS_ERROR, payload: error });
   }
 }
 
@@ -169,6 +188,7 @@ function* watchActions() {
   yield takeEvery(actionTypesGuest.INIT_GUESTS_START, fetchGuests);
   yield takeEvery(actionTypesBookings.CREATE_BOOKING_START, createBooking);
   yield takeEvery(actionTypesAdminReviews.INIT_REVIEWS_START, fetchReviews);
+  yield takeEvery(actionTypesAdminReviews.EDIT_REVIEWS_START, editReviews);
 }
 
 export default watchActions;

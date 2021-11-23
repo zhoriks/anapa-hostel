@@ -25,7 +25,7 @@ const SidebarData = [
   },
   {
     title: 'Reviews',
-    path: '/admin/comments',
+    path: '/admin/reviews',
     icon: <GoCommentDiscussion />,
     cName: 'nav-text',
   },
