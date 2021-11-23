@@ -22,7 +22,7 @@ const SelectedRoom = ({ selectedItem }) => {
           <span className={styles.roomName}>&nbsp;{selectedItem.name}</span>
         </div>
         <div>
-          <span>18 кв.м.</span>
+          <span>{selectedItem.price / 75} кв.м.</span>
           <span>до {selectedItem.numberOfBeds} мест</span>
         </div>
         <div className={styles.bottomText}>
