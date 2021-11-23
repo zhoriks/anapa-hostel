@@ -1,5 +1,5 @@
 .reviewItemContainer {
-  border: 1px solid grey;
+  border: 1px solid rgb(209, 170, 126);
   width: 25rem;
   height: 10rem;
   display: flex;
@@ -7,6 +7,14 @@
   justify-content: center;
   /* align-items: center; */
   border-radius: 30px;
+}
+
+.reviewItemContainer:nth-child(2n) {
+  border: 1px solid #2e387f;
+}
+
+.reviewItemContainer:nth-child(3n) {
+  border: 1px solid #009bac;
 }
 
 .reviewDescription {
