@@ -27,9 +27,9 @@ function* fetchRooms(action) {
       // эти данные полетят на бэк,
       // чтобы там в контроллере реализовался поиск свободных номеров на эти даты и кол-во человек
       body: JSON.stringify({
-        arrivalDate: action.payload.arrivalDate,
-        departureDate: action.payload.departureDate,
-        guestNumber: action.payload.guestNumber,
+        checkInDate: action.payload.arrivalDate,
+        checkOutDate: action.payload.departureDate,
+        guestsNumber: action.payload.guestNumber,
       }),
     });
     // тут на бэке происходит магия и в checkdates.controller ищутся свободные номера
