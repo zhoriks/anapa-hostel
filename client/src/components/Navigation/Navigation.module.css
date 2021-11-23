@@ -100,6 +100,11 @@
   background-position: center;
   display: inline-block;
 }
+
+.logo:hover{
+  cursor: pointer;
+}
+
 .phoneBlock{
   background-color:white;
   border: 0.125rem solid #009bac;
