@@ -1,0 +1,54 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #060b26;
+  width: 950px;
+  padding: 40px;
+  background-color: #A8AEBF;
+}
+.clientInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  width: 200px;
+  background-color: #F0F0F2;
+}
+.review {
+  background-color: #F0F0F2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  border-left: 1px solid black;
+  padding: 30px;
+}
+.clientInfo span {
+  margin: 0;
+}
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+}
+.button {
+  border: none;
+  cursor: pointer;
+  padding: 10px 25px;
+  border-radius: 15px;
+  color: black
+}
+.buttonDecline {
+  background-color: #dd6d6d;
+}
+.buttonAccept {
+  background-color: #d0ec8d;
+  margin-right: 40px;
+}
