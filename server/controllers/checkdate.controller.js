@@ -1,36 +1,67 @@
 const { Op } = require('sequelize');
+const Sequelize = require('sequelize');
 const { Book, Room } = require('../db/models');
 
 const checkDate = async (req, res) => {
+  // Обьявляем массив доступных номеров
+  const aviableRooms = [];
+  const unAviableRooms = [];
   const {
     checkInDate,
-    category,
+    checkOutDate,
     guestsNumber,
   } = req.body;
 
-  const books = await Book.findAll({
-    where: {
-      checkInDate: {
-        [Op.gte]: checkInDate,
+  try {
+    // Список всех комнта
+    const rooms = await Room.findAll();
+
+    // Высчитываем количество гостей в номерах на эти даты
+    const occupiedRooms = await Book.findAll({
+      where: {
+        [Op.or]: [{
+          checkInDate: { [Op.lte]: checkInDate },
+          checkOutDate: { [Op.gte]: checkOutDate },
+        },
+        {
+          checkInDate: { [Op.gte]: checkInDate },
+          checkOutDate: { [Op.lte]: checkOutDate },
+        }],
       },
-      categoryRoom: category,
-    },
-    incluxde: Room,
-  });
+      attributes: [
+        [Sequelize.fn('SUM', Sequelize.col('Book.guestsNumber')), 'totalGuestsAmount'],
+      ],
+      include: [
+        {
+          model: Room,
+        },
+      ],
+      group: ['Room.id'],
+    });
+    // Проверяем доступность номеров на заданное количество людей
+    occupiedRooms.forEach((book) => {
+      if (Number(book.dataValues.totalGuestsAmount)
+      + Number(guestsNumber)
+      <= Number(book.Room.numberOfBeds)) {
+        aviableRooms.push(book.Room);
+      } else {
+        unAviableRooms.push(book.Room);
+      }
+    });
 
-  const rooms = await Room.findAll({
-    where: {
-      type: category,
-    },
-  });
+    // Проверяем пустые номера
+    rooms.forEach((room) => {
+      if ((!aviableRooms.find((element) => element.id === room.id))
+     && (!unAviableRooms.find((element) => element.id === room.id))) {
+        aviableRooms.push(room);
+      }
+    });
 
-  const allRoomsBad = rooms.reduce((acc, room) => acc + room.numberOfBeds, 0);
-  const allPeopleLive = books.reduce((acc, book) => acc + book.guestsNumber, 0);
-
-  if (allRoomsBad > allPeopleLive + guestsNumber) {
-    return res.status(200).json({ message: 'Мы можем подселить вас на эти даты' });
+    // Отправляем ответ
+    return res.status(200).json({ aviableRooms });
+  } catch (error) {
+    res.status(500).json({ error });
   }
-  res.status(200).json({ message: 'Мы не можем подселить вас на эти даты' });
 };
 
 module.exports = {
