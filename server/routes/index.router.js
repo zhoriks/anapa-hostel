@@ -5,7 +5,8 @@ const bookingRouter = require('./booking.router');
 const roomsRouter = require('./rooms.router');
 const checkdateRouter = require('./checkdate.router');
 const sessionRouter = require('./session.router');
-const commentsRouter = require('./comments.router');
+const reviewsRouter = require('./reviews.router');
+const newReviewRouter = require('./newReview.router');
 
 router.use('/admin', loginRouter);
 router.use('/admin/logout', logoutRouter);
@@ -13,6 +14,7 @@ router.use('/admin/booking', bookingRouter);
 router.use('/admin/checkdate', checkdateRouter);
 router.use('/admin/rooms', roomsRouter);
 router.use('/session', sessionRouter);
-router.use('/comments', commentsRouter);
+router.use('/comments', reviewsRouter);
+router.use('/post-new-review', newReviewRouter);
 
 module.exports = router;
