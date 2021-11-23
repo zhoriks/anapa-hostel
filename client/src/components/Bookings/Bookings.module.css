@@ -23,7 +23,7 @@ h3 {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid rgb(146, 146, 146);;
+  border-bottom: 1px solid rgb(146, 146, 146);;
   padding: 10px;
 }
 .client_info div {
