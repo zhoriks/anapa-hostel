@@ -2,6 +2,7 @@ const { Op } = require('sequelize');
 const Sequelize = require('sequelize');
 const { Book, Room } = require('../db/models');
 
+// eslint-disable-next-line consistent-return
 const checkDate = async (req, res) => {
   // Обьявляем массив доступных номеров
   const aviableRooms = [];
@@ -41,8 +42,8 @@ const checkDate = async (req, res) => {
     // Проверяем доступность номеров на заданное количество людей
     occupiedRooms.forEach((book) => {
       if (Number(book.dataValues.totalGuestsAmount)
-      + Number(guestsNumber)
-      <= Number(book.Room.numberOfBeds)) {
+        + Number(guestsNumber)
+        <= Number(book.Room.numberOfBeds)) {
         aviableRooms.push(book.Room);
       } else {
         unAviableRooms.push(book.Room);
@@ -52,7 +53,7 @@ const checkDate = async (req, res) => {
     // Проверяем пустые номера
     rooms.forEach((room) => {
       if ((!aviableRooms.find((element) => element.id === room.id))
-     && (!unAviableRooms.find((element) => element.id === room.id))) {
+        && (!unAviableRooms.find((element) => element.id === room.id))) {
         aviableRooms.push(room);
       }
     });
