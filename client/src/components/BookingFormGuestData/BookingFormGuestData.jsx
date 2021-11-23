@@ -13,6 +13,7 @@ import styles from './BookingFormGuestData.module.css';
 // функция для приведения даты в стейте в более читаемый вид формата '20 Ноября' вместо 2021-11-20
 import dateToTextFormat from '../data/functions/dateToTextFormat';
 import totalSumForBooking from '../data/functions/totalSumForBooking';
+import useLocalStorage from '../data/helpData/useLocalStorage';
 
 export default function BookingFormGuestData() {
   const dispatch = useDispatch();
@@ -20,6 +21,13 @@ export default function BookingFormGuestData() {
   // получаем уже имеющиеся данные о бронировании из стейта
   const dataAboutBooking = useSelector((state) => state.bookingForm.list);
   const successBooking = useSelector((state) => state.bookingForm.success);
+  // local Storage
+  const [surname, setSurname] = useLocalStorage('surname', '');
+  const [name, setName] = useLocalStorage('name', '');
+  const [patronymic, setPatronymic] = useLocalStorage('patronymic', '');
+  const [email, setEmail] = useLocalStorage('email', '');
+  const [phone, setPhone] = useLocalStorage('phone', '');
+  const [guestComment, setGuestComment] = useLocalStorage('guestComment', '');
 
   // отправляем данные из формы в стейт
   const handleSubmit = (event) => {
@@ -42,6 +50,7 @@ export default function BookingFormGuestData() {
       type: actionTypesBookingForm.SEND_BOOKINFO_IN_DB_START,
       payload: { dataAboutBooking, searchData },
     });
+    localStorage.clear();
   };
 
   return (
@@ -102,14 +111,14 @@ export default function BookingFormGuestData() {
               <form onSubmit={handleSubmit}>
                 <div className={styles.guestDataForm}>
                   <div>
-                    <input name="surname" type="text" placeholder="Фамилия" autoFocus={true} required />
-                    <input name="name" type="text" placeholder="Имя" required />
-                    <input name="patronymic" type="text" placeholder="Отчество" />
+                    <input name="surname" type="text" placeholder="Фамилия" value={surname} onChange={(e) => setSurname(e.target.value)} autoFocus={true} required />
+                    <input name="name" type="text" placeholder="Имя" required value={name} onChange={(e) => setName(e.target.value)} />
+                    <input name="patronymic" type="text" placeholder="Отчество" value={patronymic} onChange={(e) => setPatronymic(e.target.value)} />
                   </div>
                   <div>
                     {/* тут сторонняя библиотека для подставления номера в нужном формате  */}
-                    <input name="email" type="email" placeholder="Электронная почта (email)" inputMode="email" required />
-                    <NumberFormat name="phone" format="+7 (###) ###-####" mask="_" type="tel" placeholder='+ 7 (___) ___-____' />
+                    <input name="email" type="email" placeholder="Электронная почта (email)" inputMode="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <NumberFormat name="phone" format="+7 (###) ###-####" mask="_" type="tel" placeholder='+ 7 (___) ___-____' value={phone} onChange={(e) => setPhone(e.target.value)} />
                   </div>
                 </div>
 
@@ -137,7 +146,9 @@ export default function BookingFormGuestData() {
                   <textarea
                     name="guestComment" rows="1"
                     placeholder="Если у вас есть дополнительные пожелания, пожалуйста, дайте нам знать.
-        Мы постараемся учесть ваши пожелания при наличии такой возможности.">
+        Мы постараемся учесть ваши пожелания при наличии такой возможности."
+                    value={guestComment} onChange={(e) => setGuestComment(e.target.value)}
+                  >
                   </textarea>
                 </div>
 
