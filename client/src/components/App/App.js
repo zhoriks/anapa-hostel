@@ -5,9 +5,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../Navbar/Navbar';
 import Bookings from '../Bookings/Bookings';
-import Guest from '../Guest/Guest';
+import Guest from '../Guest/Guest.jsx';
 import Rooms from '../Rooms/Rooms';
-import Settings from '../Settings/Settings';
 import Admin from '../Admin/Admin';
 
 import HomeView from '../HomeView/HomeView.jsx';
@@ -16,6 +15,11 @@ import actionTypesSession from '../../redux/actionTypes/sessionAT';
 import bookingsAction from '../../redux/actionCreators/bookingsAC';
 import roomAction from '../../redux/actionCreators/roomAC';
 import SelectRoom from '../SelectRoom/SelectRoom.jsx';
+import guestAction from '../../redux/actionCreators/guestAC';
+
+import actionTypesBookingForm from '../../redux/actionTypes/bookingFormAT';
+import reviewsTickerAction from '../../redux/actionCreators/reviewsTickerAC';
+import AdminCreateBookingForm from '../AdminCreateBookingForm/AdminCreateBookingForm.jsx';
 
 function App() {
   const dispatch = useDispatch();
@@ -24,7 +28,10 @@ function App() {
   useEffect(() => {
     dispatch({ type: actionTypesSession.CHECK_SESSION_START });
     dispatch(bookingsAction.initBookingsStart());
+    dispatch(guestAction.initGuestsStart());
     dispatch(roomAction.initRoomStart());
+    dispatch({ type: actionTypesBookingForm.SEND_DATES_IN_DB_START });
+    dispatch(reviewsTickerAction.getReviewsFromDB());
   }, [dispatch]);
 
   return (
@@ -44,8 +51,8 @@ function App() {
       <Route path='/admin' exact component={Bookings} />
       <Route path='/admin/guest' exact component={Guest} />
       <Route path='/admin/rooms' exact component={Rooms} />
-      <Route path='/admin/settings' exact component={Settings} />
       <Route path='/admin/logout' exact component={Logout} />
+      <Route path='/admin/create-booking' exact component={AdminCreateBookingForm} />
     </Switch>
     </BrowserRouter>
   }

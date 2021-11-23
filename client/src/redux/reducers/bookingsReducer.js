@@ -45,6 +45,22 @@ const bookingsReducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
       };
+    case actionTypesBookings.CREATE_BOOKING_START:
+      return {
+        ...state,
+        editForm: false,
+        error: null,
+      };
+    case actionTypesBookings.CREATE_BOOKING_SUCCESS:
+      return {
+        ...state,
+        list: [...action.payload],
+      };
+    case actionTypesBookings.CREATE_BOOKING_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+      };
 
     default:
       return state;

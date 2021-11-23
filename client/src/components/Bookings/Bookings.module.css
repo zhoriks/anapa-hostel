@@ -26,6 +26,10 @@ h3 {
   border: 1px solid rgb(146, 146, 146);;
   padding: 10px;
 }
+.client_info div {
+  width: 170px;
+  margin-left: 4%;
+}
 p {
   margin: 5px 0;
   font-size: 15px;
@@ -40,6 +44,28 @@ p {
   text-align: center;
   width: 140px;
   height: 50px;
-  background-color: #95f0e4;
+  background-color: #aab9e0;
+  color: #000000;
+}
+.submitFormButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  width: 100px;
+  height: 45px;
+  background-color: #f5ef9f;
   color: #000000
+}
+.formInput {
+  max-width: 110px;
+  margin: 0 20px;
+} 
+.select {
+  width: 110px;
+  margin: 0 20px;
 }

@@ -34,6 +34,7 @@ section {
 
 section .group {
   margin-top: 4.688rem;
+  margin-bottom: 3.125rem;
   width: 100vw;
   /* min-height: 100vh; */
   display: -webkit- flex;
@@ -63,8 +64,8 @@ section .group .row {
           animation-timing-function: linear;
   -webkit-animation-name: ticker;
           animation-name: ticker;
-  -webkit-animation-duration: 35s;
-          animation-duration: 35s;
+  -webkit-animation-duration: 90s;
+          animation-duration: 90s;
 }
 
 section .group .row:nth-child(even) {

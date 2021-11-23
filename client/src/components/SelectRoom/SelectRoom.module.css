@@ -2,27 +2,27 @@
   display: flex;
   flex-direction: column;
   background-color: rgb(240, 240, 240);
-  font-size: 30px;
+  font-size: 1.8rem;
 }
 .dateContainer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 120px;
+  height: 7.5rem;
   background-color: #bdbdbd;
 }
 .date {
   display: flex;
   align-items: center;
   background-color: #fff;
-  margin-left: 50px;
-  padding: 10px;
-  padding-right: 30px;
-  border-radius: 20px;
+  margin-left: 3.125rem;
+  padding: 0.625rem;
+  padding-right: 1.875rem;
+  border-radius: 1.25rem;
 }
 .chooseRoom {
   text-align: center;
-  padding: 10px;
+  padding: 0.625rem;
   color: rgba(61,61,61,.8);
 }
 .dateText {
@@ -31,7 +31,7 @@
   align-items: center;
 }
 .icon {
-  margin-right: 15px;
+  margin-right: 0.938rem;
 }
 .roomContainer {
   display: flex;
@@ -39,6 +39,51 @@
   flex-wrap: wrap;
   width: 100%;
   height: fit-content;
-  padding: 20px;
+  padding: 1.25rem;
   justify-content: space-between;
 }
+
+.noVacantRoomsBackground {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
+  background-size:cover;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 3.125rem;
+  min-height: 31.25rem;
+}
+
+.noVacantRoomsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1% auto;
+  min-height: 95%;
+  width: 98%;
+  position: relative;
+  border-radius: 3.125rem;
+  background-color: white;
+}
+
+.noVacantRoomsText {
+  margin-top: 3%;
+  font-size: 1.2rem;
+}
+
+.noVacantRoomsLink {
+  color: #009bac;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.noVacantRoomsLink:hover {
+  color: #2e387f;
+  text-decoration: underline;
+}
+
+.noVacantRoomsForm{
+  position: absolute;
+  top: 70%;
+  width: 100%;
+  margin-top: 3%;
+}
+

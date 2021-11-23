@@ -23,12 +23,6 @@ const SidebarData = [
     cName: 'nav-text',
   },
   {
-    title: 'Settings',
-    path: '/admin/settings',
-    icon: <AiIcons.AiOutlineSetting />,
-    cName: 'nav-text',
-  },
-  {
     title: 'Logout',
     path: '/admin/logout',
     icon: <AiIcons.AiOutlineLogout />,

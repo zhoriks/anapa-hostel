@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { allBooking, livingNowBooking, createNewBooking, changeBooking } = require('../controllers/booking.controller');
+const {
+  allBooking, livingNowBooking, createNewBooking, changeBooking,
+} = require('../controllers/booking.controller');
 
 // Все бронирования
 router.get('/', allBooking);

@@ -1,9 +1,10 @@
-const { Op } = require('sequelize');
+// const { Op } = require('sequelize');
 const { Book } = require('../db/models');
 
 const allBooking = async (req, res) => {
   try {
     const booking = await Book.findAll({
+      order: [['updatedAt', 'DESC']],
     });
     res.status(200).json(booking);
   } catch (error) {
@@ -17,6 +18,7 @@ const livingNowBooking = async (req, res) => {
       where: {
         status: 'Проживает',
       },
+      order: [['updatedAt', 'DESC']],
     });
     res.status(200).json(booking);
   } catch (error) {
@@ -26,16 +28,18 @@ const livingNowBooking = async (req, res) => {
 
 const changeBooking = async (req, res) => {
   try {
-    const { comment, status } = req.body;
-    console.log(comment, status);
-    const booking = await Book.findAll({
-      where: {
-        status: 'Проживает',
-      },
+    const { id, comment, status } = req.body;
+
+    await Book.update(
+      { comment, status },
+      { where: { id } },
+    );
+    const bookings = await Book.findAll({
+      order: [['updatedAt', 'DESC']],
     });
-    res.status(200).json(booking);
+    res.status(200).json(bookings);
   } catch (error) {
-    res.status(404).json({ error: 'error' });
+    res.status(404).json({ updated: false, error: error.message });
   }
 };
 
@@ -55,7 +59,7 @@ const createNewBooking = async (req, res) => {
     comment,
   } = req.body;
   try {
-    const booking = await Book.create({
+    await Book.create({
       guestFirstName,
       guestLastName,
       guestPatronymic,
@@ -69,10 +73,15 @@ const createNewBooking = async (req, res) => {
       RoomId,
       comment,
     });
-    res.status(200).json(booking);
+    const bookings = await Book.findAll({
+      order: [['updatedAt', 'DESC']],
+    });
+    res.status(200).json(bookings);
   } catch (error) {
-    res.status(404).json({ error: 'error' });
+    res.status(404).json({ error });
   }
 };
 
-module.exports = { allBooking, livingNowBooking, createNewBooking, changeBooking };
+module.exports = {
+  allBooking, livingNowBooking, createNewBooking, changeBooking,
+};
