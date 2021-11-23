@@ -20,5 +20,4 @@ router.use('/session', sessionRouter);
 router.use('/reviews', reviewsRouter);
 router.use('/post-new-booking', bookingFormRouter);
 
-
 module.exports = router;

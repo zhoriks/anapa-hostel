@@ -2,6 +2,7 @@ import React from 'react';
 // import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
+import { GoCommentDiscussion } from 'react-icons/go';
 
 const SidebarData = [
   {
@@ -20,6 +21,12 @@ const SidebarData = [
     title: 'Rooms',
     path: '/admin/rooms',
     icon: <AiIcons.AiOutlineKey />,
+    cName: 'nav-text',
+  },
+  {
+    title: 'Reviews',
+    path: '/admin/comments',
+    icon: <GoCommentDiscussion />,
     cName: 'nav-text',
   },
   {

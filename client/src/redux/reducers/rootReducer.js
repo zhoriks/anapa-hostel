@@ -6,6 +6,7 @@ import loginReducer from './loginReducer';
 import roomsReducer from './roomsReducer';
 import reviewsTickerReducer from './reviewsTickerReducer';
 import reviewsFormReducer from './reviewsFormReducer';
+import adminReviewsReducer from './adminReviewsReducer';
 
 const rootReducer = combineReducers({
   booking: bookingsReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   guest: guestReducer,
   reviews: reviewsTickerReducer,
   newReview: reviewsFormReducer,
+  adminReviews: adminReviewsReducer,
 });
 
 export default rootReducer;
