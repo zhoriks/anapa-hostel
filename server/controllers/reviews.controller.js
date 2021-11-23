@@ -27,7 +27,9 @@ const newReview = async (req, res) => {
 
 const allReviews = async (req, res) => {
   try {
-    const reviews = await Review.findAll();
+    const reviews = await Review.findAll({
+      order: [['updatedAt', 'DESC']],
+    });
     res.status(200).json(reviews);
   } catch (error) {
     res.status(404).json({ error: 'error' });
@@ -39,14 +41,26 @@ const editReview = async (req, res) => {
     idReview,
     status,
   } = req.body;
+  let inverseStatus;
+  if (status === 'true') {
+    inverseStatus = false;
+  } else {
+    inverseStatus = true;
+  }
   try {
-    const reviews = await Review.update({
-      where: { idReview },
-      moderate: !status,
+    await Review.update(
+      { moderate: (inverseStatus) },
+      {
+        where: { id: idReview },
+      },
+    );
+    const reviews = await Review.findAll({
+      order: [['updatedAt', 'DESC']],
     });
+    console.log(reviews);
     res.status(200).json(reviews);
   } catch (error) {
-    res.status(404).json({ error: 'error' });
+    res.status(404).json({ error: error.message });
   }
 };
 

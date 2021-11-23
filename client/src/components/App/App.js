@@ -58,7 +58,7 @@ function App() {
       <Route path='/admin/rooms' exact component={Rooms} />
       <Route path='/admin/logout' exact component={Logout} />
       <Route path='/admin/create-booking' exact component={AdminCreateBookingForm} />
-      <Route path='/admin/comments' exact component={Reviews} />
+      <Route path='/admin/reviews' exact component={Reviews} />
     </Switch>
     </BrowserRouter>
   }

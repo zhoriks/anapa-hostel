@@ -4,7 +4,7 @@ const { allReviews, editReview } = require('../controllers/reviews.controller');
 // Получить список всех отзывов
 router.get('/', allReviews);
 
-// Добавить отзыв
+// Добавить отзы
 router.put('/', editReview);
 
 module.exports = router;

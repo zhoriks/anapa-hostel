@@ -23,6 +23,21 @@ const adminReviewsReducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
       };
+    case actionTypesAdminReviews.EDIT_REVIEWS_START:
+      return {
+        ...state,
+        error: null,
+      };
+    case actionTypesAdminReviews.EDIT_REVIEWS_SUCCESS:
+      return {
+        ...state,
+        list: [...action.payload],
+      };
+    case actionTypesAdminReviews.EDIT_REVIEWS_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+      };
 
     default:
       return state;
