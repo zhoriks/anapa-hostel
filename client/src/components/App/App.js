@@ -20,6 +20,7 @@ import guestAction from '../../redux/actionCreators/guestAC';
 import actionTypesBookingForm from '../../redux/actionTypes/bookingFormAT';
 import reviewsTickerAction from '../../redux/actionCreators/reviewsTickerAC';
 import AdminCreateBookingForm from '../AdminCreateBookingForm/AdminCreateBookingForm.jsx';
+import BookingFormGuestData from '../BookingFormGuestData/BookingFormGuestData.jsx';
 import Reviews from '../Reviews/Reviews.jsx';
 import adminReviewsAction from '../../redux/actionCreators/adminReviewsAC';
 
@@ -46,6 +47,7 @@ function App() {
       <Route path='/' exact component={HomeView} />
       <Route path='/admin' exact component={Admin} />
       <Route path='/select-room' exact component={SelectRoom} />
+      <Route path='/final-booking' exact component={BookingFormGuestData} />
     </Switch>
     </BrowserRouter>
       : <BrowserRouter>

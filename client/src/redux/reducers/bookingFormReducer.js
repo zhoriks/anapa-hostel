@@ -14,6 +14,7 @@ const initialState = {
     wandGetAds: false,
     guestComment: null,
     vacantRooms: [],
+    selectedRoom: null,
   },
   error: null,
 };
@@ -45,6 +46,15 @@ const bookingFormReducer = (state = initialState, action) => {
           wantPhoneNotice: action.payload.wantPhoneNotice,
           wandGetAds: action.payload.wandGetAds,
           guestComment: action.payload.guestComment,
+        },
+      };
+
+    case actionTypesBookingForm.ADD_SELECTED_ROOM_FROM_FORM:
+      return {
+        ...state,
+        list: {
+          ...state.list,
+          selectedRoom: action.payload,
         },
       };
 
