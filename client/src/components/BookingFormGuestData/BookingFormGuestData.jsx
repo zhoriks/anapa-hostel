@@ -35,7 +35,7 @@ export default function BookingFormGuestData() {
 
   return (
     <div className={styles.guestDataContainer}>
-      <h3>Введите данные гостей</h3>
+      <div className={styles.guestDataTitle}><h3>Введите данные гостей</h3></div>
 
       <div className={styles.bookingDataFromState}>
         <div className={styles.datesAndGuestsData}>

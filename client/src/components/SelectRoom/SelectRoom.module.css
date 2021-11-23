@@ -11,12 +11,13 @@
   display: flex;
   justify-content: center;
   font-family: 'Formular', sans-serif;
-  padding: 2% 0;
+  padding: 1.5% 0 1% 0;
 }
 .title h2 {
-  padding: 0 0.9%;
-  font-size: 1.8rem;
+  padding: 0.3% 0.9%;
+  font-size: 1.6rem;
   color: #2e387f;
+  font-weight: 400;
 }
 /* добавление полосок слева и справа от заголовка */
 .title::before, .title::after{
@@ -39,7 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 5rem;
+  height: 4rem;
   background-color: #bdbdbd;
 }
 .date {
@@ -48,15 +49,15 @@
   background-color: #fff;
   margin-left: 3.125rem;
   padding: 0.6rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   padding-right: 1.7rem;
-  border-radius: 1.25rem;
+  border-radius: 1.2rem;
 }
 .changeDatesBtn {
   margin-left: 1%;
   color: #ffffff;
   background-color: #009bac;
-  height: 3.149rem;
+  height: 2.9rem;
   border: 0 none;
   font-size: 1rem;
   padding: 0 1%;
@@ -64,7 +65,7 @@
   white-space: nowrap;
   vertical-align: middle;
   font-weight: 700;
-  border-radius: 1.25rem;
+  border-radius: 1.2rem;
 }
 .changeDatesBtn:hover{
   background: linear-gradient(to top right, #2e387f, #009bac);
@@ -73,7 +74,7 @@
   text-align: center;
   padding: 0.625rem;
   padding-bottom: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: rgba(61,61,61,.8);
 }
 .dateText {
@@ -82,7 +83,7 @@
   align-items: center;
 }
 .icon {
-  margin-right: 0.938rem;
+  margin-right: 0.4rem;
 }
 .roomContainer {
   display: flex;
@@ -94,12 +95,13 @@
   justify-content: space-between;
 }
 .noVacantRoomsBackground {
-  background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
-  background-size:cover;
+  /* background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
+  background-size:cover; */
   width: 80%;
   margin: 0 auto;
   border-radius: 3.125rem;
   min-height: 31.25rem;
+  border: 2px solid #2e387f;
 }
 
 .noVacantRoomsContainer {

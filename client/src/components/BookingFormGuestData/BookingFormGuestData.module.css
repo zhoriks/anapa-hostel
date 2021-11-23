@@ -3,16 +3,44 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 60%;
+  width: 70%;
   margin: 3% auto;
   background: rgba(61,61,61,.09);
   color: #3d3d3d;
-  padding: 0.9rem;
+  padding: 1.3rem;
 }
 
-.guestDataContainer h3 {
+.guestDataTitle h3 {
   color:#2e387f;
   font-size: 1.2rem;
+  font-weight: 400;
+  font-family: 'Formular', sans-serif;
+  padding: 0;
+  margin: 0 2%;
+}
+
+.guestDataTitle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guestDataTitle::before, .guestDataTitle::after{
+  background: url(data:image/svg+xml;base64,CjxzdmcgaGVpZ2h0PSI5IiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoJPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNGM3N2M3IiBkPSJNMCw5TDYsMCIgc3Ryb2tlLXdpZHRoPSIxcHgiPjwvcGF0aD4KPC9zdmc+Cg==);
+  background-position: 50% 50%;
+  background-repeat: repeat-x;
+  content: '';
+  display: inline-block;
+  width: 38%;
+  height: 1.4em;
+  box-sizing: border-box;
+}
+.guestDataTitle::before{
+  margin-left: -100%;
+}
+.guestDataTitle::after{
+  margin-right: -100%;
 }
 
 .formContainer h5 {

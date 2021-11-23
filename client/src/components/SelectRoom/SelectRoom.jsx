@@ -67,7 +67,7 @@ const SelectRoom = () => {
                 {dateToTextFormat(date.departureDate)}
               </span>
               <span className={styles.dateText}>
-                Гостей:&nbsp;<BsFillPersonFill className={styles.icon} />{date.guestNumber}
+                <BsFillPersonFill className={styles.icon} />Гостей:&nbsp;{date.guestNumber}
               </span>
             </div>
             <button className={styles.changeDatesBtn}
