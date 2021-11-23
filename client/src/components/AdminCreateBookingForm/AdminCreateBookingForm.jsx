@@ -1,12 +1,25 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import NumberFormat from 'react-number-format';
 import actionTypesBookings from '../../redux/actionTypes/bookingsAT';
 import s from './AdminCreateBookingForm.module.css';
+import useLocalStorage from '../data/helpData/useLocalStorage';
 
 const AdminCreateBookingForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const [firstName, setFirstName] = useLocalStorage('firstName', '');
+  const [lastName, setLastName] = useLocalStorage('lastName', '');
+  const [patronymic, setPatronymic] = useLocalStorage('patronymic', '');
+  const [categoryRoom, setCategoryRoom] = useLocalStorage('categoryRoom', '');
+  const [guestsNumber, setGuestsNumber] = useLocalStorage('guestsNumber', '');
+  const [email, setEmail] = useLocalStorage('email', '');
+  const [telephone, setTelephone] = useLocalStorage('telephone', '');
+  const [status, setStatus] = useLocalStorage('status', '');
+  const [RoomId, setRoomiId] = useLocalStorage('RoomId', '');
+  const [comment, setComment] = useLocalStorage('comment', '');
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const clientData = {
@@ -24,6 +37,7 @@ const AdminCreateBookingForm = () => {
       comment: e.target.comment.value,
     };
     dispatch({ type: actionTypesBookings.CREATE_BOOKING_START, payload: clientData });
+    localStorage.clear();
     history.push('/admin');
   };
   return (
@@ -31,9 +45,9 @@ const AdminCreateBookingForm = () => {
       <form className={s.form} onSubmit={handleSubmit}>
         <div className={s.row}>
           <span>ФИО</span>
-          <input type="text" name='firstName' placeholder='Имя' />
-          <input type="text" name='lastName' placeholder='Фамилия' />
-          <input type="text" name='patronymic' placeholder='Отчество' />
+          <input type="text" name='firstName' placeholder='Имя' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+          <input type="text" name='lastName' placeholder='Фамилия' value={lastName} onChange={(e) => setLastName(e.target.value)} />
+          <input type="text" name='patronymic' placeholder='Отчество' value={patronymic} onChange={(e) => setPatronymic(e.target.value)}/>
         </div>
 
         <div className={s.row}>
@@ -49,17 +63,17 @@ const AdminCreateBookingForm = () => {
         </div>
         <div className={s.row}>
           <span>Данные для хостела</span>
-          <input type="number" name='guestsNumber' placeholder='Гости' />
-          <input type="text" name='RoomId' placeholder='Номер комнаты' />
+          <input type="number" name='guestsNumber' placeholder='Гости' value={guestsNumber} onChange={(e) => setGuestsNumber(e.target.value)} />
+          <input type="text" name='RoomId' placeholder='Номер комнаты' value={RoomId} onChange={(e) => setRoomiId(e.target.value)} />
         </div>
         <div className={s.row}>
-          <select name='categoryRoom'>
+          <select name='categoryRoom' value={categoryRoom} onChange={(e) => setCategoryRoom(e.target.value)}>
             <option>Категория комнаты</option>
             <option value="Эконом">Эконом</option>
             <option value="Комфорт">Комфорт</option>
             <option value="Люкс">Люкс</option>
           </select>
-          <select name='status'>
+          <select name='status' value={status} onChange={(e) => setStatus(e.target.value)}>
             <option>Статус</option>
             <option value="Ожидает подтвержения">Ожидает подтвержения</option>
             <option value="Подтверждено">Подтверждено</option>
@@ -68,12 +82,12 @@ const AdminCreateBookingForm = () => {
         </div>
         <div className={s.row}>
           <span>Контактные данные</span>
-          <input type="email" name='email' placeholder='Email' />
-          <input type="text" name='phoneNumber' placeholder='Телефон' />
+          <input type="email" name='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+          <NumberFormat name="phoneNumber" format="+7 (###) ###-####" mask="_" type="text" placeholder='+ 7 (___) ___-____' value={telephone} onChange={(e) => setTelephone(e.target.value)}/>
         </div>
         <div className={s.row}>
           <span>Комментарий</span>
-          <textarea name='comment'></textarea>
+          <textarea name='comment' value={comment} onChange={(e) => setComment(e.target.value)}></textarea>
         </div>
         <div className={s.buttonContainer}>
           <button type='submit' className={s.submit}>Отправить</button>
