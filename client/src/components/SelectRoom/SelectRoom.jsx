@@ -18,17 +18,6 @@ const SelectRoom = () => {
   const date = useSelector((state) => state.bookingForm.list);
   const vacantRooms = useSelector((state) => state.bookingForm.list.vacantRooms);
 
-  // клиент меняет даты по желанию
-  // const changeDatesByWish = () => {
-  //   setShowForm(true);
-  // };
-
-  // клиент меняет даты из-за отсутствия мест
-  // const changeDatesByNeed = () => {
-  //   setShowForm(true);
-  //   setHasVacantRooms(false);
-  // };
-
   // const rooms = [
   //   {
   //     id: 1,
@@ -73,9 +62,16 @@ const SelectRoom = () => {
             <button className={styles.changeDatesBtn}
               onClick={() => setShowForm(true)}>Изменить даты
             </button>
-            {/* нужно модальное окно для изменения дат! */}
+            {/* нужно модальное окно для изменения дат? */}
           </div>
-          <span className={styles.chooseRoom}>Выберите номер:</span>
+          <div className={styles.chooseRoom}>
+            <span>Выберите категорию номера:</span>
+            <select className={styles.chooseRoomSelector}>
+              <option>Эконом</option>
+              <option>Комфорт</option>
+              <option>Люкс</option>
+            </select>
+          </div>
           <hr />
         </header>
 
