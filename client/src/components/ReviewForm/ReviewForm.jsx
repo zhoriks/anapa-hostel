@@ -11,7 +11,7 @@ function ReviewForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-
+    // получаем данные из формы-отзыва, которая реализована в модальном окне
     const reviewData = {
       guestName: event.target.name.value,
       guestTelephone: event.target.phone.value,
@@ -22,7 +22,8 @@ function ReviewForm() {
   }
 
   return (
-
+    // если отзыв уже был отправлен и в стейте у ключа newReview значение true
+    // то тогда отрисуется модалка с благодарностью и без возможности отправки ного отзыва
     reviewSent
       ? <Popup
         trigger={<button className={styles.reviewButton}> Оставить отзыв </button>}
@@ -54,6 +55,7 @@ function ReviewForm() {
           </>
         )}
       </Popup>
+      // если отзыв еще не был отправлен, то отрисуется модалка с формой отправки отзыва
       : <Popup
         trigger={<button className={styles.reviewButton}> Оставить отзыв </button>}
         modal
