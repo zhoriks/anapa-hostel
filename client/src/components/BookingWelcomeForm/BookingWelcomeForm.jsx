@@ -15,7 +15,6 @@ export default function BookingWelcomeForm() {
   // отпраляем данные в стейт
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const searchData = {
       arrivalDate: event.target.arrivalDate.value,
       departureDate: event.target.departureDate.value,

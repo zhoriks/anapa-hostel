@@ -14,8 +14,9 @@ const SelectRoom = () => {
   // тут мы заносим в стейт да/нет - будет ли отрисовываться форма с выбором других дат,
   // если все текущие даты заняты
   const [showForm, setShowForm] = useState(false);
+  // const [wantOtherDates, setWantOtherDates] = useState(false);
   // тут изменение select - катерогии номеров
-  const [typeRoom, setTypeRoom] = useState('Эконом');
+  const [typeRoom, setTypeRoom] = useState('Все');
   // const [hasVacantRooms, setHasVacantRooms] = useState(true);
   const date = useSelector((state) => state.bookingForm.list);
   const vacantRooms = useSelector((state) => state.bookingForm.list.vacantRooms);
@@ -39,8 +40,7 @@ const SelectRoom = () => {
                 <BsFillPersonFill className={styles.icon} />Гостей:&nbsp;{date.guestNumber}
               </span>
             </div>
-            <button className={styles.changeDatesBtn}
-              onClick={() => setShowForm(true)}>Изменить даты
+            <button className={styles.changeDatesBtn}>Изменить даты
             </button>
             {/* нужно модальное окно для изменения дат? */}
           </div>
@@ -48,6 +48,7 @@ const SelectRoom = () => {
             <span>Выберите категорию номера:</span>
             <select className={styles.chooseRoomSelector}
               onChange={(event) => setTypeRoom(event.target.value)}>
+              <option value="All">Все</option>
               <option value="Эконом">Эконом</option>
               <option value="Комфорт">Комфорт</option>
               <option value="Люкс">Люкс</option>
@@ -68,31 +69,37 @@ const SelectRoom = () => {
                     Выбрать другие даты
                   </div>
                   {showForm
-                    ? <div className={styles.noVacantRoomsForm}><BookingWelcomeForm /></div>
+                    ? <div className={styles.noVacantRoomsForm}>
+                      <BookingWelcomeForm />
+                    </div>
                     : <></>}
                 </div>
               </div>
               : (
                 <>
-                  {
-                    roomsByType.map((room) => <SelectedRoom
+                  {typeRoom === 'All'
+                    ? <>{vacantRooms.map((room) => <SelectedRoom
                       key={room.id}
                       selectedItem={room}
-                    />)
+                    />)} </>
+                    : <>
+                      {!roomsByType.length
+                        ? <div>
+                          <div>К сожалению, номеров категории {typeRoom} не осталось</div>
+                          <div>Выберите, пожалуйста, другую категорию или даты бронирования</div>
+                        </div>
+                        : <>
+                          {
+                            roomsByType.map((room) => <SelectedRoom
+                              key={room.id}
+                              selectedItem={room}
+                            />)
+                          }
+                        </>
+                      }
+                    </>
                   }
                 </>
-                // чтобы вытащить все номера без селекта по категориям, раскоментируй этот код:
-                // <>
-                //   {
-                //     vacantRooms.map((room) => <SelectedRoom
-                //       key={room.id}
-                //       type={room.type}
-                //       name={room.name}
-                //       numberOfBeds={room.numberOfBeds}
-                //       price={room.price}
-                //     />)
-                //   }
-                // </>
               )
           }
         </div>

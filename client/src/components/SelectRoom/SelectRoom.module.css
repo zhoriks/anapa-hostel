@@ -96,14 +96,13 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   height: fit-content;
   padding: 1.25rem;
   justify-content: space-between;
 }
 .noVacantRoomsBackground {
-  /* background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
-  background-size:cover; */
   width: 80%;
   margin: 0 auto;
   border-radius: 3.125rem;
