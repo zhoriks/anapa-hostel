@@ -16,6 +16,7 @@ const initialState = {
     vacantRooms: [],
     selectedRoom: null,
   },
+  success: false,
   error: null,
 };
 
@@ -79,6 +80,12 @@ const bookingFormReducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+      };
+
+    case actionTypesBookingForm.SEND_BOOKINFO_IN_DB_SUCCESS:
+      return {
+        ...state,
+        success: true,
       };
 
     default:
