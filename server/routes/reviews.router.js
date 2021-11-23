@@ -1,8 +1,10 @@
 const router = require('express').Router();
-const { allReviews } = require('../controllers/reviews.controller');
+const { newReview, allViewReviews } = require('../controllers/reviews.controller');
 
-router.route('/')
-// Получить список всех коментариев
-  .get(allReviews);
+// Получить список всех модерированых отзывов
+router.get('/', allViewReviews);
+
+// Добавить отзыв
+router.post('/', newReview);
 
 module.exports = router;
