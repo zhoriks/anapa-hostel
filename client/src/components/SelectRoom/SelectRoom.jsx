@@ -77,10 +77,7 @@ const SelectRoom = () => {
                   {
                     roomsByType.map((room) => <SelectedRoom
                       key={room.id}
-                      type={room.type}
-                      name={room.name}
-                      numberOfBeds={room.numberOfBeds}
-                      price={room.price}
+                      selectedItem={room}
                     />)
                   }
                 </>

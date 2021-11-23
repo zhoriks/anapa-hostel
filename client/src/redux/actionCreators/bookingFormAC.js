@@ -10,6 +10,11 @@ const bookingFormAction = {
     type: actionTypesBookingForm.ADD_DATA_FROM_PERSONAL_INF_FORM,
     payload,
   }),
+
+  addSelectedRoomFromForm: (payload) => ({
+    type: actionTypesBookingForm.ADD_SELECTED_ROOM_FROM_FORM,
+    payload,
+  }),
 };
 
 export default bookingFormAction;

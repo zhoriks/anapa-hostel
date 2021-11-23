@@ -20,6 +20,7 @@ import guestAction from '../../redux/actionCreators/guestAC';
 import actionTypesBookingForm from '../../redux/actionTypes/bookingFormAT';
 import reviewsTickerAction from '../../redux/actionCreators/reviewsTickerAC';
 import AdminCreateBookingForm from '../AdminCreateBookingForm/AdminCreateBookingForm.jsx';
+import BookingFormGuestData from '../BookingFormGuestData/BookingFormGuestData.jsx';
 
 function App() {
   const dispatch = useDispatch();
@@ -36,26 +37,27 @@ function App() {
 
   return (
     <>
-    {
-    !admin
-      ? <BrowserRouter>
-    <Switch>
-      <Route path='/' exact component={HomeView} />
-      <Route path='/admin' exact component={Admin} />
-      <Route path='/select-room' exact component={SelectRoom} />
-    </Switch>
-    </BrowserRouter>
-      : <BrowserRouter>
-    <Navbar />
-    <Switch>
-      <Route path='/admin' exact component={Bookings} />
-      <Route path='/admin/guest' exact component={Guest} />
-      <Route path='/admin/rooms' exact component={Rooms} />
-      <Route path='/admin/logout' exact component={Logout} />
-      <Route path='/admin/create-booking' exact component={AdminCreateBookingForm} />
-    </Switch>
-    </BrowserRouter>
-  }
+      {
+        !admin
+          ? <BrowserRouter>
+            <Switch>
+              <Route path='/' exact component={HomeView} />
+              <Route path='/admin' exact component={Admin} />
+              <Route path='/select-room' exact component={SelectRoom} />
+              <Route path='/final-booking' exact component={BookingFormGuestData} />
+            </Switch>
+          </BrowserRouter>
+          : <BrowserRouter>
+            <Navbar />
+            <Switch>
+              <Route path='/admin' exact component={Bookings} />
+              <Route path='/admin/guest' exact component={Guest} />
+              <Route path='/admin/rooms' exact component={Rooms} />
+              <Route path='/admin/logout' exact component={Logout} />
+              <Route path='/admin/create-booking' exact component={AdminCreateBookingForm} />
+            </Switch>
+          </BrowserRouter>
+      }
     </>
   );
 }
