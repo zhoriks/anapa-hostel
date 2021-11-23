@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styles from './Navigation.module.css';
 // import phone from './img/phone.gif';
 // import phoneStatic from './img/phoneStatic.png';
@@ -9,11 +10,12 @@ import arrow from './img/arrow.png';
 
 function Navigation() {
   const [hidden, setHidden] = useState(true);
+  const history = useHistory();
   // eslint-disable-next-line consistent-return
   const handelClick = () => setHidden(!hidden);
   return (
     <div className={styles.navigationBlock}>
-      <div className={styles.logo}><div className={styles.logo} style={{ backgroundImage: `url(${logo})` }}></div></div>
+      <div className={styles.logo}><div className={styles.logo} style={{ backgroundImage: `url(${logo})` }} onClick={() => history.push('/')}></div></div>
       <nav className={styles.nav}>
         <ul>
           <li><a href="#1">О нас</a></li>
