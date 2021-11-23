@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import s from './Review.module.css';
 
 const Reviews = () => {
+  const [display, setDisplay] = useState(false);
   const reviews = useSelector((state) => state.adminReviews.list);
-  // console.log(reviews);
+  const handleClickAccept = () => {
+    setDisplay(true);
+  };
+  const handleClickDecline = () => {
+    setDisplay(false);
+  };
   return (
     <div className={s.mainContainer}>
       {reviews.map((el) => (
@@ -16,8 +22,14 @@ const Reviews = () => {
           <div className={s.review}>
             <p>{el.comment}</p>
             <div className={s.buttonGroup}>
-              <button className={`${s.button} ${s.buttonAccept}`}>Принять</button>
-              <button className={`${s.button} ${s.buttonDecline}`}>Отклонить</button>
+              {display
+                ? <button className={`${s.button} ${s.buttonAccept}`}>Принято</button>
+                : <button className={`${s.button} ${s.buttonAccept}`} onClick={handleClickAccept}>Принять</button>
+              }
+              {display
+                ? <button className={`${s.button} ${s.buttonDecline}`} onClick={handleClickDecline}>Отклонить</button>
+                : <button className={`${s.button} ${s.buttonDecline}`}>Отклонено</button>
+              }
             </div>
           </div>
         </div>
