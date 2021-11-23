@@ -9,6 +9,16 @@ const Bookings = () => {
   const dispatch = useDispatch();
   const editForm = useSelector((state) => state.booking.editForm);
 
+  const findCurrentBookingComment = (id) => {
+    const book = bookings.filter((el) => id === el.id);
+    return book[0].comment;
+  };
+
+  const findCurrentBookingStatus = (id) => {
+    const book = bookings.filter((el) => id === el.id);
+    return book[0].status;
+  };
+
   const handleSubmit = (e, id) => {
     e.preventDefault();
     const { comment, status } = e.target;
@@ -37,9 +47,9 @@ const Bookings = () => {
           <div>{el.checkOutDate}</div>
           <div>{el.categoryRoom}</div>
           {!editForm ? <div>{el.comment}</div>
-            : <input type='text' required name='comment' className={s.formInput} ></input>}
+            : <input type='text' name='comment' required className={s.formInput} defaultValue={findCurrentBookingComment(el.id)} ></input>}
           {!editForm ? <div className={s.pending}>{el.status}</div>
-            : <select className={s.select} name='status' aria-label="Default select example">
+            : <select className={s.select} name='status' aria-label="Default select example" defaultValue={findCurrentBookingStatus(el.id)}>
               <option value="Проживает">Проживает</option>
               <option value="Подтверждено">Подтверждено</option>
               <option value="Ожидает подтвержения">Ожидает подтвержения</option>
