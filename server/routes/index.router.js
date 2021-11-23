@@ -5,16 +5,19 @@ const bookingRouter = require('./booking.router');
 const roomsRouter = require('./rooms.router');
 const checkdateRouter = require('./checkdate.router');
 const sessionRouter = require('./session.router');
+const adminReviewsRouter = require('./adminReview.router');
 const reviewsRouter = require('./reviews.router');
 const newReviewRouter = require('./newReview.router');
+const bookingFormRouter = require('./bookingForm.router');
 
 router.use('/admin', loginRouter);
 router.use('/admin/logout', logoutRouter);
 router.use('/admin/booking', bookingRouter);
 router.use('/admin/checkdate', checkdateRouter);
 router.use('/admin/rooms', roomsRouter);
+router.use('/admin/review', adminReviewsRouter);
 router.use('/session', sessionRouter);
-router.use('/admin/comments', reviewsRouter);
-router.use('/post-new-review', newReviewRouter);
+router.use('/reviews', reviewsRouter);
+router.use('/post-new-booking', bookingFormRouter);
 
 module.exports = router;

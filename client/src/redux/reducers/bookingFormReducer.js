@@ -55,11 +55,13 @@ const bookingFormReducer = (state = initialState, action) => {
       };
 
     case actionTypesBookingForm.SEND_DATES_IN_DB_SUCCESS:
+      // eslint-disable-next-line no-case-declarations
+      const array = [...action.payload.aviableRooms];
       return {
         ...state,
         list: {
           ...state.list,
-          vacantRooms: [...state.list.vacantRooms, action.payload],
+          vacantRooms: array,
         },
       };
 

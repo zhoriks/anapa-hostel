@@ -3,10 +3,10 @@ const {
 } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Comment extends Model {
+  class Review extends Model {
     static associate(models) {}
   }
-  Comment.init({
+  Review.init({
     guestName: {
       type: DataTypes.TEXT,
       allowNull: true,
@@ -15,17 +15,17 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    guestPhoto: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
     comment: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
+    moderate: {
+      type: DataTypes.TEXT,
+      defaultValue: false,
+    },
   }, {
     sequelize,
-    modelName: 'Comment',
+    modelName: 'Review',
   });
-  return Comment;
+  return Review;
 };
