@@ -12,6 +12,7 @@ import actionTypesBookingForm from '../../redux/actionTypes/bookingFormAT';
 import styles from './BookingFormGuestData.module.css';
 // функция для приведения даты в стейте в более читаемый вид формата '20 Ноября' вместо 2021-11-20
 import dateToTextFormat from '../data/functions/dateToTextFormat';
+import totalSumForBooking from '../data/functions/totalSumForBooking';
 
 export default function BookingFormGuestData() {
   const dispatch = useDispatch();
@@ -50,15 +51,15 @@ export default function BookingFormGuestData() {
         ? <div style={{
           display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '4.688rem',
         }}>
-            <div className={styles.topStockBlock}></div>
-            <div className={styles.stockBlock}>
-              <p className={styles.title}>Бронирование прошло успешно!</p>
-              <p className={styles.bodyText}>Ожидайте звонка менеджера для подтверждения.</p>
-              <button className={styles.button} onClick={() => history.push('/')}>
-                <p className={styles.buttonText}>На главную</p>
-              </button>
-            </div>
+          <div className={styles.topStockBlock}></div>
+          <div className={styles.stockBlock}>
+            <p className={styles.title}>Бронирование прошло успешно!</p>
+            <p className={styles.bodyText}>Ожидайте звонка менеджера для подтверждения.</p>
+            <button className={styles.button} onClick={() => history.push('/')}>
+              <p className={styles.buttonText}>На главную</p>
+            </button>
           </div>
+        </div>
 
         : <div className={styles.guestDataContainer}>
           <div className={styles.guestDataTitle}><h3>Введите данные гостей</h3></div>
@@ -74,7 +75,14 @@ export default function BookingFormGuestData() {
               <div><BsFillPersonFill className={styles.icon} />
                 Гостей: {dataAboutBooking.guestNumber} </div>
             </div>
-            <div className={styles.totalPriceData}>Общая стоимость:</div>
+            <div className={styles.totalPriceData}>
+              Общая стоимость:
+              {totalSumForBooking(
+                dataAboutBooking.arrivalDate,
+                dataAboutBooking.departureDate,
+                1500,
+              )}
+            </div>
           </div>
 
           <div className={styles.linedInfo}>Пожалуйста, заполните следующие данные</div>
