@@ -1,14 +1,14 @@
 const { Comment } = require('../db/models');
 
-const allComments = async (req, res) => {
+const allReviews = async (req, res) => {
   try {
-    const comments = await Comment.findAll();
-    res.status(200).json(comments);
+    const reviews = await Comment.findAll();
+    res.status(200).json(reviews);
   } catch (error) {
     res.status(404).json({ error: 'error' });
   }
 };
 
 module.exports = {
-  allComments,
+  allReviews,
 };

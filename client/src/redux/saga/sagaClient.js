@@ -1,6 +1,7 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import actionTypesBookingForm from '../actionTypes/bookingFormAT';
 import actionTypesReviewsTicker from '../actionTypes/reviewsTickerAT';
+import actionTypesReviewsForm from '../actionTypes/reviewsFormAT';
 
 async function fetchData({
   url, method, headers, body,
@@ -50,9 +51,30 @@ function* fetchReviews() {
   }
 }
 
+function* newReviewAdd(action) {
+  try {
+    yield call(fetchData, {
+      url: 'http://localhost:5001/post-new-review',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        guestName: action.payload.guestName,
+        guestTelephone: action.payload.guestTelephone,
+        comment: action.payload.review,
+      }),
+    });
+    yield put({ type: actionTypesReviewsForm.SEND_REVIEWS_IN_DB_SUCCESS });
+  } catch (error) {
+    yield put({ type: actionTypesReviewsForm.SEND_REVIEWS_IN_DB_ERROR, payload: error });
+  }
+}
+
 function* watchActionsClient() {
   yield takeEvery(actionTypesBookingForm.SEND_DATES_IN_DB_START, fetchRooms);
   yield takeEvery(actionTypesReviewsTicker.GET_REVIEWS_FROM_DB_START, fetchReviews);
+  yield takeEvery(actionTypesReviewsForm.SEND_REVIEWS_IN_DB_START, newReviewAdd);
 }
 
 export default watchActionsClient;

@@ -20,6 +20,17 @@
   text-align: center;
   margin-top: 1.5rem;
 }
+
+.modal > .headerSent {
+  color: #1a1a1a;
+  font-size: 1.563rem;
+  font-weight: bold;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+  text-align: center;
+  margin-top: 25%;
+}
+
 .modal > .content {
   width: 100%;
   padding: 10px 5px;
