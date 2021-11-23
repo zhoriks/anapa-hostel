@@ -14,33 +14,13 @@ const SelectRoom = () => {
   // тут мы заносим в стейт да/нет - будет ли отрисовываться форма с выбором других дат,
   // если все текущие даты заняты
   const [showForm, setShowForm] = useState(false);
+  // тут изменение select - катерогии номеров
+  const [typeRoom, setTypeRoom] = useState('Эконом');
   // const [hasVacantRooms, setHasVacantRooms] = useState(true);
   const date = useSelector((state) => state.bookingForm.list);
   const vacantRooms = useSelector((state) => state.bookingForm.list.vacantRooms);
+  const roomsByType = vacantRooms.filter((room) => room.type === typeRoom);
 
-  // const rooms = [
-  //   {
-  //     id: 1,
-  //     type: 'Эконом',
-  //     name: 'Lastochka',
-  //     numberOfBeds: '8',
-  //     price: '1500',
-  //   },
-  //   {
-  //     id: 2,
-  //     type: 'Эконом',
-  //     name: 'Morshoy briz',
-  //     numberOfBeds: '8',
-  //     price: '1500',
-  //   },
-  //   {
-  //     id: 3,
-  //     type: 'Комфорт',
-  //     name: 'Voshod',
-  //     numberOfBeds: '4',
-  //     price: '3000',
-  //   },
-  // ];
   return (
     <>
       <Navigation />
@@ -66,10 +46,11 @@ const SelectRoom = () => {
           </div>
           <div className={styles.chooseRoom}>
             <span>Выберите категорию номера:</span>
-            <select className={styles.chooseRoomSelector}>
-              <option>Эконом</option>
-              <option>Комфорт</option>
-              <option>Люкс</option>
+            <select className={styles.chooseRoomSelector}
+              onChange={(event) => setTypeRoom(event.target.value)}>
+              <option value="Эконом">Эконом</option>
+              <option value="Комфорт">Комфорт</option>
+              <option value="Люкс">Люкс</option>
             </select>
           </div>
           <hr />
@@ -94,7 +75,7 @@ const SelectRoom = () => {
               : (
                 <>
                   {
-                    vacantRooms.map((room) => <SelectedRoom
+                    roomsByType.map((room) => <SelectedRoom
                       key={room.id}
                       type={room.type}
                       name={room.name}
@@ -103,6 +84,18 @@ const SelectRoom = () => {
                     />)
                   }
                 </>
+                // чтобы вытащить все номера без селекта по категориям, раскоментируй этот код:
+                // <>
+                //   {
+                //     vacantRooms.map((room) => <SelectedRoom
+                //       key={room.id}
+                //       type={room.type}
+                //       name={room.name}
+                //       numberOfBeds={room.numberOfBeds}
+                //       price={room.price}
+                //     />)
+                //   }
+                // </>
               )
           }
         </div>
