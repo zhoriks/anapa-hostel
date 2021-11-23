@@ -1,4 +1,5 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
+import actionTypesAdminReviews from '../actionTypes/adminReviewsAT';
 import actionTypesBookings from '../actionTypes/bookingsAT';
 import actionTypesGuest from '../actionTypes/guestAT';
 import actionTypesLogin from '../actionTypes/loginAT';
@@ -22,7 +23,7 @@ async function fetchData({
 function* fetchBookings() {
   try {
     const bookings = yield call(fetchData, {
-      url: '/admin/booking',
+      url: 'http://localhost:5001/admin/booking',
     });
     yield put({ type: actionTypesBookings.INIT_BOOKINGS_SUCCESS, payload: bookings });
   } catch (error) {
@@ -99,6 +100,16 @@ function* fetchGuests() {
     yield put({ type: actionTypesGuest.INIT_GUESTS_ERROR, payload: error });
   }
 }
+function* fetchReviews() {
+  try {
+    const reviews = yield call(fetchData, {
+      url: 'http://localhost:5001/admin/comments',
+    });
+    yield put({ type: actionTypesAdminReviews.INIT_REVIEWS_SUCCESS, payload: reviews });
+  } catch (error) {
+    yield put({ type: actionTypesGuest.INIT_GUESTS_ERROR, payload: error });
+  }
+}
 
 function* fetchLogin(action) {
   try {
@@ -157,6 +168,7 @@ function* watchActions() {
   yield takeEvery(actionTypesBookings.EDIT_FORM_SUBMIT_STOP, changeBookings);
   yield takeEvery(actionTypesGuest.INIT_GUESTS_START, fetchGuests);
   yield takeEvery(actionTypesBookings.CREATE_BOOKING_START, createBooking);
+  yield takeEvery(actionTypesAdminReviews.INIT_REVIEWS_START, fetchReviews);
 }
 
 export default watchActions;

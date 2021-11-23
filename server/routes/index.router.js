@@ -14,7 +14,7 @@ router.use('/admin/booking', bookingRouter);
 router.use('/admin/checkdate', checkdateRouter);
 router.use('/admin/rooms', roomsRouter);
 router.use('/session', sessionRouter);
-router.use('/comments', reviewsRouter);
+router.use('/admin/comments', reviewsRouter);
 router.use('/post-new-review', newReviewRouter);
 
 module.exports = router;
