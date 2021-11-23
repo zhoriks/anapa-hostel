@@ -7,7 +7,6 @@ const checkdateRouter = require('./checkdate.router');
 const sessionRouter = require('./session.router');
 const adminReviewsRouter = require('./adminReview.router');
 const reviewsRouter = require('./reviews.router');
-const newReviewRouter = require('./newReview.router');
 const bookingFormRouter = require('./bookingForm.router');
 
 router.use('/admin', loginRouter);
