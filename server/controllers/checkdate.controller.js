@@ -3,61 +3,65 @@ const Sequelize = require('sequelize');
 const { Book, Room } = require('../db/models');
 
 const checkDate = async (req, res) => {
+  // Обьявляем массив доступных номеров
+  const aviableRooms = [];
+  const unAviableRooms = [];
   const {
     checkInDate,
     checkOutDate,
     guestsNumber,
   } = req.body;
 
-  const bookss = await Book.findAll({
-    where: {
-      checkInDate: {
-        [Op.gte]: checkInDate,
-      },
-      // checkOutDate: {
-      //   [Op.lte]: checkOutDate,
-      // },
-    },
-  });
+  try {
+    // Список всех комнта
+    const rooms = await Room.findAll();
 
-  const books = await Book.findAll({
-    where: {
-      checkInDate: {
-        [Op.gte]: checkInDate,
+    // Высчитываем количество гостей в номерах на эти даты
+    const occupiedRooms = await Book.findAll({
+      where: {
+        [Op.or]: [{
+          checkInDate: { [Op.lte]: checkInDate },
+          checkOutDate: { [Op.gte]: checkOutDate },
+        },
+        {
+          checkInDate: { [Op.gte]: checkInDate },
+          checkOutDate: { [Op.lte]: checkOutDate },
+        }],
       },
-    },
-    attributes: [
-      [Sequelize.fn('SUM', Sequelize.col('Book.guestsNumber')), 'totalInvoiceAmount'],
-    ],
-    include: [
-      {
-        model: Room,
-      },
-    ],
-    group: ['Room.id'],
-  });
+      attributes: [
+        [Sequelize.fn('SUM', Sequelize.col('Book.guestsNumber')), 'totalGuestsAmount'],
+      ],
+      include: [
+        {
+          model: Room,
+        },
+      ],
+      group: ['Room.id'],
+    });
+    // Проверяем доступность номеров на заданное количество людей
+    occupiedRooms.forEach((book) => {
+      if (Number(book.dataValues.totalGuestsAmount)
+      + Number(guestsNumber)
+      <= Number(book.Room.numberOfBeds)) {
+        aviableRooms.push(book.Room);
+      } else {
+        unAviableRooms.push(book.Room);
+      }
+    });
 
-  // const rooms = await Room.findAll();
+    // Проверяем пустые номера
+    rooms.forEach((room) => {
+      if ((!aviableRooms.find((element) => element.id === room.id))
+     && (!unAviableRooms.find((element) => element.id === room.id))) {
+        aviableRooms.push(room);
+      }
+    });
 
-  // rooms.forEach((room) => {
-  //   let allPeopleLiveInRoom = 0;
-  //   books.forEach((book) => {
-  //     if (room.id === book.RoomId) {
-  //       console.log('Нашлась команата');
-  //       allPeopleLiveInRoom += Number(book.guestsNumber);
-  //     }
-  //   });
-  //   if (allPeopleLiveInRoom + guestsNumber <= room.numberOfBeds) {
-  //     console.log('Добавилась');
-  //     return roomsAviable.push(room);
-  //   }
-  // });
-  // console.log(roomsAviable);
-  return res.status(200).json({ bookss });
-  // if (Number(0) >= Number(allPeopleLive) + Number(guestsNumber)) {
-  //   return res.status(200).json({ message: 'Мы можем подселить вас на эти даты' });
-  // }
-  // res.status(200).json({ message: 'Мы не можем подселить вас на эти даты' });
+    // Отправляем ответ
+    return res.status(200).json({ aviableRooms });
+  } catch (error) {
+    res.status(500).json({ error });
+  }
 };
 
 module.exports = {
