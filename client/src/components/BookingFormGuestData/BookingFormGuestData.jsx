@@ -80,7 +80,8 @@ export default function BookingFormGuestData() {
               {totalSumForBooking(
                 dataAboutBooking.arrivalDate,
                 dataAboutBooking.departureDate,
-                1500,
+                dataAboutBooking.selectedRoom.price,
+                dataAboutBooking.guestNumber,
               )}
             </div>
           </div>
