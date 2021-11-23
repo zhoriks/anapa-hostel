@@ -22,7 +22,7 @@ async function fetchData({
 function* fetchBookings() {
   try {
     const bookings = yield call(fetchData, {
-      url: '/admin/booking',
+      url: 'http://localhost:5001/admin/booking',
     });
     yield put({ type: actionTypesBookings.INIT_BOOKINGS_SUCCESS, payload: bookings });
   } catch (error) {
