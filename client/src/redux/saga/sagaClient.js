@@ -74,7 +74,7 @@ function* fetchBookInDB(action) {
 function* fetchReviews() {
   try {
     const reviews = yield call(fetchData, {
-      url: 'http://localhost:5001/comments',
+      url: 'http://localhost:5001/reviews',
     });
     yield put({ type: actionTypesReviewsTicker.GET_REVIEWS_FROM_DB_SUCCESS, payload: reviews });
   } catch (error) {
@@ -85,7 +85,7 @@ function* fetchReviews() {
 function* newReviewAdd(action) {
   try {
     yield call(fetchData, {
-      url: 'http://localhost:5001/post-new-review',
+      url: 'http://localhost:5001/reviews',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
