@@ -11,7 +11,7 @@ function ReviewTicker() {
 
   return (
     <section>
-      <div className={styles.titleDiv}>
+      <div className={styles.titleDiv} id="reviewTicker">
         <h1 className={styles.titleDivBig}>Что говорят о наше отеле клиенты?</h1>
         <p style={{ fontSize: '1rem', color: 'grey' }}>
           Мы всегда стараемся стать лучше для вас и открыты новому сотрудничеству.
