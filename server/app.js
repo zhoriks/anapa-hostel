@@ -1,4 +1,5 @@
 const express = require('express');
+const helmet = require('helmet');
 const session = require('express-session');
 const SessionFileStore = require('session-file-store')(session);
 const cors = require('cors');
@@ -9,6 +10,7 @@ const indexRouter = require('./routes/index.router');
 const app = express();
 
 dotenv.config();
+app.use(helmet());
 
 const {
   PORT = 5001,
