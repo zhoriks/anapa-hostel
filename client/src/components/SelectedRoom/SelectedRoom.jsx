@@ -1,7 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
 import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
+import lastochkaSliderImages from '../data/helpData/lastochkaSlider';
+import roomSliderSettings from '../data/helpData/roomSliderSettings';
+import PhotoSlider from '../PhotoSlider/PhotoSlider.jsx';
 import styles from './SelectedRoom.module.css';
 
 const SelectedRoom = ({ selectedItem }) => {
@@ -16,7 +20,10 @@ const SelectedRoom = ({ selectedItem }) => {
 
   return (
     <div className={styles.card}>
-      <img src="./room.jpeg" alt="" className={styles.img} />
+      {/* <img src="./room.jpeg" alt="" className={styles.img} /> */}
+      <div className={styles.img}>
+        <PhotoSlider images={lastochkaSliderImages} settings={roomSliderSettings} />
+      </div>
       <div className={styles.text}>
         <div className={styles.topText}> <span>Номер "{selectedItem.type}"&nbsp;</span>&mdash;
           <span className={styles.roomName}>&nbsp;{selectedItem.name}</span>

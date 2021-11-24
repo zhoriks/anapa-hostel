@@ -5,6 +5,7 @@ import PhotoSlider from '../PhotoSlider/PhotoSlider.jsx';
 import styles from './StartScreen.module.css';
 import MapYandex from '../MapYandex/MapYandex.jsx';
 import mainSliderImages from '../data/helpData/mainSlider';
+import mainSliderSettings from '../data/helpData/mainSliderSettings';
 
 export default function StartScreen() {
   return (
@@ -12,7 +13,9 @@ export default function StartScreen() {
       <div className={styles.startLeftContainer}><WelcomeScreen /></div>
 
       <div className={styles.startRightContainer}>
-        <PhotoSlider images={mainSliderImages} />
+        <div className={styles.sliderContainer}>
+          <PhotoSlider images={mainSliderImages} settings={mainSliderSettings} />
+        </div>
         <MapYandex />
       </div>
     </div>
