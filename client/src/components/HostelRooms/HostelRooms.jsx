@@ -69,6 +69,9 @@ function HostelRooms() {
     <div className={styles.container} id="rooms">
       <div className={styles.divTitle}>
         <p className={styles.titleText}>Категории номеров</p>
+        <p className={styles.bodyText}>
+          Ищете место для себя или своих близких - в нашем гостевом доме <br/>
+          Вы обязательно найдете подходящий вариант</p>
       </div>
       <div className={styles.containerCard}>
         {classRooms.length
