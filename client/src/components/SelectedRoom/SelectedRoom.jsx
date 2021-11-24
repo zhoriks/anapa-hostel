@@ -3,17 +3,24 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
+// настройки для слайдеров:
+import roomSliderSettings from '../data/helpData/roomSliderSettings';
+// фотографии для слайдеров
 import lastochkaSliderImages from '../data/helpData/lastochkaSlider';
 import morskoyBrizSliderImages from '../data/helpData/morskoyBrizSlider';
-import roomSliderSettings from '../data/helpData/roomSliderSettings';
+import voshodSliderImages from '../data/helpData/voshodSlider';
+import zakatSliderImages from '../data/helpData/zakatSlider';
+import presidentLuxSliderImages from '../data/helpData/presidentLuxSlider';
+import grandLuxSliderImages from '../data/helpData/grandLuxSlider';
+// компонент стайдера
 import PhotoSlider from '../PhotoSlider/PhotoSlider.jsx';
 import styles from './SelectedRoom.module.css';
+// стили для стрелок на слайдере
 import './CustomSliderStyle.css';
 
 const SelectedRoom = ({ selectedItem }) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  // const [roomImgByName, setRoomImgByName] = useState(lastochkaSliderImages);
 
   const selectThisRoom = (room) => {
     const selectedRoom = room;
@@ -29,14 +36,24 @@ const SelectedRoom = ({ selectedItem }) => {
     case 'Morshoy briz':
       a = morskoyBrizSliderImages;
       break;
+    case 'Voshod':
+      a = voshodSliderImages;
+      break;
+    case 'Zakat':
+      a = zakatSliderImages;
+      break;
+    case 'President lux':
+      a = presidentLuxSliderImages;
+      break;
+    case 'Grand lux':
+      a = grandLuxSliderImages;
+      break;
     default:
       a = lastochkaSliderImages;
   }
-  // console.log(lastochkaSliderImages);
 
   return (
     <div className={styles.card}>
-      {/* <img src="./room.jpeg" alt="" className={styles.img} /> */}
       <div className={styles.img}>
         <PhotoSlider images={a} settings={roomSliderSettings} />
       </div>
