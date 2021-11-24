@@ -35,13 +35,24 @@
   margin-bottom: -2px;
  }
 
-.numberText{
+.numberText a{
   color: #1a1a1a;
   font-size: 1.25rem;
   white-space: nowrap;
   margin-left: 1.25rem; 
   padding: 0 1.25rem 0 0.063rem;
+  text-decoration: none;
+  font-weight: bold;
  }
+ .numberText{
+  transition: .3s;
+ }
+
+ .numberText:hover {
+  transform: scale(1.07);
+  transition: .3s;
+  color: #1a1a1a;
+}
 
 .Messengers{
    display: flex;
