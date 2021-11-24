@@ -12,10 +12,10 @@ function ReviewTicker() {
   return (
     <section>
       <div className={styles.titleDiv} id="reviewTicker">
-        <h1 className={styles.titleDivBig}>Что говорят о наше отеле клиенты?</h1>
-        <p style={{ fontSize: '1rem', color: 'grey' }}>
-          Мы всегда стараемся стать лучше для вас и открыты новому сотрудничеству.
-          Не сдерживайте себя - расскажите
+        <h1 className={styles.titleDivBig}>Что говорят о нашем отеле клиенты?</h1>
+        <p>
+          Мы всегда стараемся стать лучше для вас и открыты к новому <br/>
+           сотрудничеству. Не сдерживайте себя - расскажите
         </p>
       </div>
       <div className={styles.group}>
