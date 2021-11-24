@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -11,6 +11,7 @@ import styles from './BookingWelcomeForm.module.css';
 export default function BookingWelcomeForm() {
   const dispatch = useDispatch();
   const history = useHistory();
+  const [nextDay, setNextDay] = useState(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`);
 
   // отпраляем данные в стейт
   const handleSubmit = (event) => {
@@ -49,13 +50,14 @@ export default function BookingWelcomeForm() {
               <input name="arrivalDate" type="date"
                 defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
                 min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
-                className={styles.bookingWelcomeFormInput} />
+                className={styles.bookingWelcomeFormInput}
+                onChange={(event) => setNextDay(event.target.value)} />
             </div>
             <div className={styles.bookingWelcomeFormElement}>
               <label htmlFor="departureDate">Дата выезда:</label>
               <input name="departureDate" type="date"
                 defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`}
-                min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`}
+                min={`${new Date(nextDay).getFullYear()}-${new Date(nextDay).getMonth() + 1}-${new Date(nextDay).getDate() + 1}`}
                 className={styles.bookingWelcomeFormInput} />
             </div>
             {/* пока стоят минимально возможное число гостей - 1 и максимально возможное - 15 */}

@@ -1,9 +1,13 @@
 const nodemailer = require('nodemailer');
+// нужен для выполнения либо HTTP-запросов в Node.js
 const axios = require('axios');
+// A querystring parsing and stringifying library with some added security.
 const qs = require('qs');
 const { Book } = require('../db/models');
 const { dateToTextFormat } = require('../data/dateToTextFormat');
 
+// токен, чтобы связать наш бэк с PushSMS
+// (если не работают уведомления - скорее всего, у Кати закончились деньги на счете)
 const BEARER = 'eyJhbGciOiJIUzI1NiJ9.eyJjdXN0b21lcl9pZCI6MzI3NSwiZGF0ZXRpbWUiOjE2Mzc3NjcwNzN9.VcWvZZhXN8yCHPVqBoUz4Abxg5UyIv9HUD8U1tuAPjE';
 
 const newBook = async (req, res) => {
@@ -20,7 +24,7 @@ const newBook = async (req, res) => {
     telephone,
     RoomId,
     comment,
-    wantPhoneNotice,
+    wantPhoneNotice, // в базу это не передаем, используем тут
   } = req.body;
 
   const checkInDateToTEXT = dateToTextFormat(checkInDate);
