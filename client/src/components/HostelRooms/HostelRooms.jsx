@@ -51,7 +51,7 @@ function HostelRooms() {
     {
       titleText: 'Делюкс',
       square: 20,
-      places: 4,
+      places: 2,
       id: 3,
       bed: '1 большая двуспальная кровать',
       img: businessImg,
