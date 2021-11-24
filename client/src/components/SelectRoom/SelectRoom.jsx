@@ -16,7 +16,7 @@ const SelectRoom = () => {
   const [showForm, setShowForm] = useState(false);
   // const [wantOtherDates, setWantOtherDates] = useState(false);
   // тут изменение select - катерогии номеров
-  const [typeRoom, setTypeRoom] = useState('Все');
+  const [typeRoom, setTypeRoom] = useState('All');
   // const [hasVacantRooms, setHasVacantRooms] = useState(true);
   const date = useSelector((state) => state.bookingForm.list);
   const vacantRooms = useSelector((state) => state.bookingForm.list.vacantRooms);
@@ -83,19 +83,25 @@ const SelectRoom = () => {
                       selectedItem={room}
                     />)} </>
                     : <>
-                      {!roomsByType.length
-                        ? <div>
-                          <div>К сожалению, номеров категории {typeRoom} не осталось</div>
-                          <div>Выберите, пожалуйста, другую категорию или даты бронирования</div>
-                        </div>
-                        : <>
-                          {
-                            roomsByType.map((room) => <SelectedRoom
-                              key={room.id}
-                              selectedItem={room}
-                            />)
+                      {typeRoom !== 'All'
+                        ? <>
+                          {roomsByType.length
+                            ? <>{
+                              roomsByType.map((room) => <SelectedRoom
+                                key={room.id}
+                                selectedItem={room}
+                              />)
+                            }</>
+                            : <>
+                              <div>
+                                <div>К сожалению, номеров категории {typeRoom} не осталось</div>
+                                <div>Выберите, пожалуйста, другую категорию
+                                  или даты бронирования</div>
+                              </div>
+                            </>
                           }
                         </>
+                        : <></>
                       }
                     </>
                   }
