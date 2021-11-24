@@ -5,7 +5,7 @@
   align-items: center;
   justify-content:space-evenly;
   margin: 1% auto;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
 }
 .nav{
   width: 50%;
@@ -26,8 +26,11 @@
   display: block; /* Блочная ссылка */
   white-space: nowrap; /* Запрещаем перенос текста */
   color: #1a1a1a;
-  font-size: 1.25rem;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
+  color: #1a1a1a;
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 400;
  }
  .nav a:hover {
   color:#757575; 
@@ -36,13 +39,14 @@
  }
 
 .numberText a{
-  color: #1a1a1a;
-  font-size: 1.25rem;
   white-space: nowrap;
   margin-left: 1.25rem; 
   padding: 0 1.25rem 0 0.063rem;
   text-decoration: none;
-  font-weight: bold;
+  color: #1a1a1a;
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 500;
  }
 
  .numberText:hover{
