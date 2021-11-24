@@ -160,7 +160,7 @@
   align-items: center;
 }
 
-.bookingWelcomeForm {
+.bookingSelectRoomForm {
   display: flex;
   justify-content: center;
   margin-top: 0.625rem;
@@ -168,7 +168,7 @@
   width: 60%;
 }
 
-.bookingWelcomeFormInput {
+.bookingSelectFormInput {
   color:#757575;
   border:1px solid #f0f0f0; 
   background-color:#fff; 
@@ -183,7 +183,7 @@
   padding: 0 7% 0 10%;
 }
 
-.bookingWelcomeFormInputPerson {
+.bookingSelectFormInputPerson {
   color:#757575;
   border:1px solid #f0f0f0; 
   background-color:#fff; 
@@ -198,7 +198,7 @@
   padding: 0 7% 0 15%;
 }
 
-.bookingWelcomeFormButton{
+.bookingSelectFormButton{
   color:#fff;
   background-color:#009bac;
   border-radius:1.25rem;
@@ -212,11 +212,11 @@
   margin: 5px 5px 0 5px;
 }
 
-.bookingWelcomeFormButton:hover{
+.bookingSelectFormButton:hover{
   background: linear-gradient(to top right, #2e387f, #009bac);
 }
 
-.bookingWelcomeFormElement {
+.bookingSelectFormElement {
   position: relative;
   max-width: 200px;
 }
@@ -225,7 +225,7 @@
   visibility: hidden;
 }
 
-.bookingWelcomeFormElement label {
+.bookingSelectFormElement label {
   position: absolute;
   font-size: 1rem;
   bottom: 105%;

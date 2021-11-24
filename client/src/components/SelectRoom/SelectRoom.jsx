@@ -29,33 +29,33 @@ const SelectRoom = () => {
         <header className={styles.header}>
           <div className={styles.title}><h2>Бронирование</h2></div>
           <div className={styles.inlineDiv}>
-          <form onSubmit={() => {}} className={styles.bookingWelcomeForm}>
-            <div className={styles.bookingWelcomeFormElement}>
+          <form onSubmit={() => {}} className={styles.bookingSelectRoomForm}>
+            <div className={styles.bookingSelectFormElement}>
               {/* default value для даты заезда и выезда - неоптимальное решение,
           ** не сработает при переходе c 30/31 дня на 1 день месяца и с декабря на январь */}
               <label htmlFor="arrivalDate">Дата заезда:</label>
               <input name="arrivalDate" type="date"
                 defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
                 min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
-                className={styles.bookingWelcomeFormInput} />
+                className={styles.bookingSelectFormInput} />
             </div>
-            <div className={styles.bookingWelcomeFormElement}>
+            <div className={styles.bookingSelectFormElement}>
               <label htmlFor="departureDate">Дата выезда:</label>
               <input name="departureDate" type="date"
                 defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`}
                 min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`}
-                className={styles.bookingWelcomeFormInput} />
+                className={styles.bookingSelectFormInput} />
             </div>
             {/* пока стоят минимально возможное число гостей - 1 и максимально возможное - 15 */}
-            <div className={styles.bookingWelcomeFormElement}>
+            <div className={styles.bookingSelectFormElement}>
               <label htmlFor="guestNumber" className={styles.icon} style={{ marginLeft: '7px' }}>Гости:</label>
               <input name="guestNumber" type="number"
                 max="15" min="1" defaultValue="2"
-                className={styles.bookingWelcomeFormInputPerson} />
+                className={styles.bookingSelectFormInputPerson} />
             </div>
-            <div className={styles.bookingWelcomeFormElement}>
+            <div className={styles.bookingSelectFormElement}>
               <label htmlFor="bookingWelcomeFormButton" className={styles.hidden}>This is a button</label>
-              <button type="submit" className={styles.bookingWelcomeFormButton}>
+              <button type="submit" className={styles.bookingSelectFormButton}>
                 Изменить данные
               </button>
             </div>
