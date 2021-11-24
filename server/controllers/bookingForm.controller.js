@@ -1,6 +1,10 @@
 const nodemailer = require('nodemailer');
+const axios = require('axios');
+const qs = require('qs');
 const { Book } = require('../db/models');
 const { dateToTextFormat } = require('../data/dateToTextFormat');
+
+const BEARER = 'eyJhbGciOiJIUzI1NiJ9.eyJjdXN0b21lcl9pZCI6MzI3NSwiZGF0ZXRpbWUiOjE2Mzc3NjcwNzN9.VcWvZZhXN8yCHPVqBoUz4Abxg5UyIv9HUD8U1tuAPjE';
 
 const newBook = async (req, res) => {
   // вытаскиваем данные из тела fetch-запроса fetchBookInDB, отправленного с sagaClient
@@ -60,6 +64,24 @@ const newBook = async (req, res) => {
     };
 
     transporter.sendMail(mailOptions);
+
+    // подключаем уведомления по телефону
+    const data = qs.stringify({
+      phone: telephone,
+      text: `Вы забронировали ${guestsNumber} места с ${checkInDateToTEXT} по ${checkOutDateToTEXT} в Anapa Guest House`,
+    });
+
+    const config = {
+      method: 'post',
+      url: 'https://api.pushsms.ru/api/v1/delivery',
+      headers: {
+        Authorization: BEARER,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      data,
+    };
+
+    await axios(config);
 
     res.status(200).json({ success: true });
   } catch (error) {
