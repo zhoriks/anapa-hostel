@@ -2,7 +2,7 @@ import React from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 import styles from './LowerBlockWithStock.module.css';
 // import imgLeft from './imgLowerBlock/angelina_jolie.png';
-import imgLeft from './imgLowerBlock/olegleft.PNG';
+import imgLeft from './imgLowerBlock/olegOnUnicorn.PNG';
 import MapYandexLower from '../MapYandexLower/MapYandexLover.jsx';
 
 function LowerBlockWithStock() {

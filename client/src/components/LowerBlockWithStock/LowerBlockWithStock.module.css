@@ -11,7 +11,7 @@
   width: 28.8%;
   /* height: 600px; */
   height: 430px;
-  background-color:red;
+  background-color:#2e387f;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   background-attachment: fixed;
@@ -48,7 +48,7 @@
 .mapBlock{
   width: 14.9%;
   height: 430px;
-  background-color:green;
+  background-color:#009bac;
   border-radius: 30px;
   transition: .7s;
 }
@@ -62,7 +62,7 @@
 .rightBlock{
   width: 12.5%;
   height: 430px;
-  background-color:pink;
+  background-color:#009bac;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   background-attachment: fixed;
