@@ -53,7 +53,8 @@ const checkDate = async (req, res) => {
     // Проверяем пустые номера
     rooms.forEach((room) => {
       if ((!aviableRooms.find((element) => element.id === room.id))
-        && (!unAviableRooms.find((element) => element.id === room.id))) {
+        && (!unAviableRooms.find((element) => element.id === room.id))
+        && (room.numberOfBeds >= guestsNumber)) {
         aviableRooms.push(room);
       }
     });
