@@ -8,6 +8,7 @@ import morskoyBrizSliderImages from '../data/helpData/morskoyBrizSlider';
 import roomSliderSettings from '../data/helpData/roomSliderSettings';
 import PhotoSlider from '../PhotoSlider/PhotoSlider.jsx';
 import styles from './SelectedRoom.module.css';
+import './CustomSliderStyle.css';
 
 const SelectedRoom = ({ selectedItem }) => {
   const dispatch = useDispatch();
