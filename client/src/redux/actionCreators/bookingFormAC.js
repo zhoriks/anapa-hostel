@@ -6,6 +6,11 @@ const bookingFormAction = {
     payload,
   }),
 
+  includeNewDataFromSelectForm: (payload) => ({
+    type: actionTypesBookingForm.INCLUDE_NEWDATA_FROM_SELECT_FORM,
+    payload,
+  }),
+
   addDataFromPersonalInfForm: (payload) => ({
     type: actionTypesBookingForm.ADD_DATA_FROM_PERSONAL_INF_FORM,
     payload,

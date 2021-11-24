@@ -50,6 +50,17 @@ const bookingFormReducer = (state = initialState, action) => {
         },
       };
 
+    case actionTypesBookingForm.INCLUDE_NEWDATA_FROM_SELECT_FORM:
+      return {
+        ...state,
+        list: {
+          ...state.list,
+          arrivalDate: action.payload.arrivalDate,
+          departureDate: action.payload.departureDate,
+          guestNumber: action.payload.guestNumber,
+        },
+      };
+
     case actionTypesBookingForm.ADD_SELECTED_ROOM_FROM_FORM:
       return {
         ...state,
