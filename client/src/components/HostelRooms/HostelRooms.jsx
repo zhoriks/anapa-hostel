@@ -53,7 +53,7 @@ function HostelRooms() {
       square: 20,
       places: 4,
       id: 3,
-      bed: '1 большая двуспальная кровать и 1 диван-кровать',
+      bed: '1 большая двуспальная кровать',
       img: businessImg,
       imgSlider: [
         { src: businessImg },

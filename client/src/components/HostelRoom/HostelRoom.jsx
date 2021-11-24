@@ -21,7 +21,7 @@ function HostelRoom({ item }) {
           >
             {(close) => (
               <div className={styles.modalMain}>
-                <div className={styles.imageDiv}></div>
+                {/* <div className={styles.imageDiv}></div> */}
                 <div className={styles.modal}>
                   <button className={styles.close} onClick={close}>
                     &times;
@@ -54,7 +54,7 @@ function HostelRoom({ item }) {
                       </div>
                       <div className={styles.oneCriterion}>
                         <img className={styles.iconOne} alt="1" src="https://static.tildacdn.com/tild6435-3633-4565-b661-393835636664/bath.svg"></img>
-                        <p>Собственная ванная комната</p>
+                        <p>Собственная ванная</p>
                       </div>
                       <div className={styles.oneCriterion}>
                         <img className={styles.iconOne} alt="1" src="https://static.tildacdn.com/tild3139-3066-4465-a536-346663663535/kitchen.svg"></img>
