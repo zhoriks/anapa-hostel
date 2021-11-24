@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import actionTypesBookings from '../../redux/actionTypes/bookingsAT';
 import s from './GuestListNavbar.module.css';
-import logo from './img/logo.png';
+import logo from './img/logo2.png';
 
 const currentDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
 
