@@ -20,6 +20,7 @@ const newBook = async (req, res) => {
     telephone,
     RoomId,
     comment,
+    wantPhoneNotice,
   } = req.body;
 
   const checkInDateToTEXT = dateToTextFormat(checkInDate);
@@ -65,23 +66,26 @@ const newBook = async (req, res) => {
 
     transporter.sendMail(mailOptions);
 
-    // подключаем уведомления по телефону
-    const data = qs.stringify({
-      phone: telephone,
-      text: `Вы забронировали ${guestsNumber} места с ${checkInDateToTEXT} по ${checkOutDateToTEXT} в Anapa Guest House`,
-    });
+    // подключаем уведомления по телефону, если гость выбрал соответсвующий чек-бокс
+    if (wantPhoneNotice) {
+      const data = qs.stringify({
+        phone: telephone,
+        text: `Вы забронировали ${guestsNumber} места с
+      ${checkInDateToTEXT} по ${checkOutDateToTEXT} в Anapa Guest House`,
+      });
 
-    const config = {
-      method: 'post',
-      url: 'https://api.pushsms.ru/api/v1/delivery',
-      headers: {
-        Authorization: BEARER,
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      data,
-    };
+      const config = {
+        method: 'post',
+        url: 'https://api.pushsms.ru/api/v1/delivery',
+        headers: {
+          Authorization: BEARER,
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        data,
+      };
 
-    await axios(config);
+      await axios(config);
+    }
 
     res.status(200).json({ success: true });
   } catch (error) {

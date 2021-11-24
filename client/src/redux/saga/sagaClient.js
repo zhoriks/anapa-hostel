@@ -62,6 +62,7 @@ function* fetchBookInDB(action) {
         telephone: action.payload.searchData.phone,
         RoomId: action.payload.dataAboutBooking.selectedRoom.id,
         comment: action.payload.searchData.guestComment,
+        wantPhoneNotice: action.payload.searchData.wantPhoneNotice,
       }),
     });
     // при успешном добавлении нового бронирования в bookingForm.controller получим это
