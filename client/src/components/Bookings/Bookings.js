@@ -48,7 +48,8 @@ const Bookings = () => {
           <div>{el.categoryRoom}</div>
           {!editForm ? <div>{el.comment}</div>
             : <input type='text' name='comment' required className={s.formInput} defaultValue={findCurrentBookingComment(el.id)} ></input>}
-          {!editForm ? <div className={s.pending}>{el.status}</div>
+          {// eslint-disable-next-line no-nested-ternary
+          !editForm ? <div className={el.status === 'Проживает' ? `${s.status} ${s.lives}` : (el.status === 'Подтверждено' ? `${s.status} ${s.booked}` : `${s.status} ${s.pending}`)}>{el.status}</div>
             : <select className={s.select} name='status' aria-label="Default select example" defaultValue={findCurrentBookingStatus(el.id)}>
               <option value="Проживает">Проживает</option>
               <option value="Подтверждено">Подтверждено</option>

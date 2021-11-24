@@ -22,7 +22,7 @@ const Guest = () => {
           <div>{el.telephone}</div>
           <div>{el.email}</div>
           <div>{el.comment}</div>
-          <div>{el.status}</div>
+          <div className={`${s.status} ${s.lives}`}>{el.status}</div>
         </form>
       ))}
     </div>
