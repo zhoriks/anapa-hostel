@@ -1,0 +1,136 @@
+.containerMain{
+  display: flex;
+  flex-direction: column;
+}
+.containerFooter{
+  width: 80%;
+  margin: 5% auto 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+
+.containerContacts{
+  width: 20%;
+}
+
+.containerNavigation{
+  width: 20%;
+}
+
+.containerLinks{
+  width: 20%;
+}
+
+.numberText a{
+  color: #1a1a1a;
+  font-size: 25px;
+  white-space: nowrap;
+  margin-left: 1.25rem; 
+  padding: 0 1.25rem 0 0.063rem;
+  text-decoration: none;
+  font-weight: bold;
+  text-align:left;
+  margin: 0;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+ }
+
+ .titleText{
+  color: #1a1a1a;
+  font-size: 13px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+  font-weight: 100;
+ }
+
+ .bodyText{
+  color: #1a1a1a;
+  font-size: 15px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+  font-weight: bold;
+ }
+
+ .numberText{
+  transition: .3s;
+  margin-bottom: 10%;
+ }
+
+ .numberText:hover {
+  transform: scale(1.07);
+  transition: .3s;
+  color: #1a1a1a;
+}
+.imgIcons{
+  width: 30px;
+  height: 30px;
+  margin-right: 6%;
+}
+
+.nav{
+  width: 50%;
+  padding: 0;
+}
+.nav ul {
+  list-style-type: none;
+  margin: auto;
+  justify-content: center;
+  padding: 0;
+  color: #1a1a1a;
+  font-size: 15px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+  font-weight: bold;
+}
+
+.nav a {
+  padding: 0.625rem 1.875rem 0.688rem; /* Поля вокруг текста */
+  text-decoration: none; /* Убираем подчёркивание */
+  display: block; /* Блочная ссылка */
+  white-space: nowrap; /* Запрещаем перенос текста */
+  color: #1a1a1a;
+  font-size: 15px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+ }
+
+ .nav a:hover {
+  color:#757575; 
+ }
+
+ .titleLink{
+  color: #1a1a1a;
+  font-size: 16px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+  font-weight: bold;
+  margin-bottom: 11%;
+ }
+
+ .rights{
+   margin: auto;
+ }
+
+ .line{
+  width: 80%;
+  height: 0.5px;
+  opacity: 0.2;
+  background-color: #1a1a1a;
+  margin: auto;
+ }
+
+ .rights{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-between;
+  margin: 1% auto;
+ }
+
+ .rightsText{
+  color: #737b61;
+  font-size: 10px;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+ }

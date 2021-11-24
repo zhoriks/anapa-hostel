@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 250px 0;
+  margin-top: 5%;
 }
 
 .leftBlock{
@@ -52,7 +52,6 @@
 }
 
 .mapBlock:hover {
-  margin-bottom: 25px; 
   transform: translate(0, -5%);
   transition: .7s;
  }
