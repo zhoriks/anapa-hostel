@@ -22,46 +22,50 @@ const SelectedRoom = ({ selectedItem }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  // отправляем в стейт информацию о выбранном номере
   const selectThisRoom = (room) => {
     const selectedRoom = room;
     dispatch(bookingFormAction.addSelectedRoomFromForm(selectedRoom));
     history.push('/final-booking');
   };
 
-  let a = {};
+  // подтягиваем разные картинки для слайдеров для разных комнат
+  let sliderByName = {};
   switch (selectedItem.name) {
     case 'Lastochka':
-      a = lastochkaSliderImages;
+      sliderByName = lastochkaSliderImages;
       break;
     case 'Morshoy briz':
-      a = morskoyBrizSliderImages;
+      sliderByName = morskoyBrizSliderImages;
       break;
     case 'Voshod':
-      a = voshodSliderImages;
+      sliderByName = voshodSliderImages;
       break;
     case 'Zakat':
-      a = zakatSliderImages;
+      sliderByName = zakatSliderImages;
       break;
     case 'President lux':
-      a = presidentLuxSliderImages;
+      sliderByName = presidentLuxSliderImages;
       break;
     case 'Grand lux':
-      a = grandLuxSliderImages;
+      sliderByName = grandLuxSliderImages;
       break;
     default:
-      a = lastochkaSliderImages;
+      sliderByName = lastochkaSliderImages;
   }
 
   return (
     <div className={styles.card}>
       <div className={styles.img}>
-        <PhotoSlider images={a} settings={roomSliderSettings} />
+        {/* подтягиваем компонент слайдера и передаем ему пропсами картинки и настройки */}
+        <PhotoSlider images={sliderByName} settings={roomSliderSettings} />
       </div>
       <div className={styles.text}>
         <div className={styles.topText}> <span>Номер "{selectedItem.type}"&nbsp;</span>&mdash;
           <span className={styles.roomName}>&nbsp;{selectedItem.name}</span>
         </div>
         <div>
+          {/* временная заглушка для площади номеров */}
           <span>{selectedItem.price / 75} кв.м.</span>
           <span>до {selectedItem.numberOfBeds} мест</span>
         </div>
@@ -70,6 +74,7 @@ const SelectedRoom = ({ selectedItem }) => {
             <span className={styles.price}>{selectedItem.price}&nbsp;&#x20bd;</span>
             <span className={styles.priceInfo}>1 ночь / 1гость</span>
           </div>
+          {/* по клику выбирается номер и все данные о нем летят в стейт */}
           <button
             className={styles.buttonChoose}
             onClick={() => selectThisRoom(selectedItem)}>
