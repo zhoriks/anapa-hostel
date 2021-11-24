@@ -14,6 +14,7 @@ const Guest = () => {
         <h3>Комментарий</h3>
         <h3>Статус</h3>
       </div>
+      <br />
 
       {guests.map((el) => (
         <form className={s.client_info} key={el.id}>
