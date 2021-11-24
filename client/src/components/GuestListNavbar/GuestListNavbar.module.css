@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   width: 90%;
   margin-right: 30px;
@@ -11,8 +11,10 @@
 
 .navbar h1 {
   font-size: 24px;
+  font-weight: 600;
   margin-right: 30px;
-  border-bottom: 1px solid white;
+  margin-top: 5px;
+  /* border-bottom: 1px solid white; */
   font-family: 'Ubuntu',Arial,sans-serif;
 }
 
@@ -62,4 +64,5 @@
   /* margin-bottom: 10px; */
   width: 170px;
   margin-left: 100px;
+  margin-right: 10px;
 }
