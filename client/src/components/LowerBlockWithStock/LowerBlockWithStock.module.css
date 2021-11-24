@@ -76,7 +76,7 @@
   line-height: 1,7;
   color: #fefcfc;
   font-size: 22px;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
   font-weight: 600;
   text-align: left;
 }
@@ -85,8 +85,8 @@
   margin: 5% 0 0 15%;
   line-height: 2;
   color: #fefcfc;
-  font-size: 15px;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
   text-align: left;
 }
 
@@ -106,7 +106,7 @@
 }
 .buttonText{
   color: #012675;
-  font-size: 15px;
-  font-family: 'Ubuntu',Arial,sans-serif;
-  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
+  font-weight: 500;
 }
