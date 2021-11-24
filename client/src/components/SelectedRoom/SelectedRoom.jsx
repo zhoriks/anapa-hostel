@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import bookingFormAction from '../../redux/actionCreators/bookingFormAC';
 import lastochkaSliderImages from '../data/helpData/lastochkaSlider';
+import morskoyBrizSliderImages from '../data/helpData/morskoyBrizSlider';
 import roomSliderSettings from '../data/helpData/roomSliderSettings';
 import PhotoSlider from '../PhotoSlider/PhotoSlider.jsx';
 import styles from './SelectedRoom.module.css';
@@ -11,6 +12,7 @@ import styles from './SelectedRoom.module.css';
 const SelectedRoom = ({ selectedItem }) => {
   const dispatch = useDispatch();
   const history = useHistory();
+  // const [roomImgByName, setRoomImgByName] = useState(lastochkaSliderImages);
 
   const selectThisRoom = (room) => {
     const selectedRoom = room;
@@ -18,11 +20,24 @@ const SelectedRoom = ({ selectedItem }) => {
     history.push('/final-booking');
   };
 
+  let a = {};
+  switch (selectedItem.name) {
+    case 'Lastochka':
+      a = lastochkaSliderImages;
+      break;
+    case 'Morshoy briz':
+      a = morskoyBrizSliderImages;
+      break;
+    default:
+      a = lastochkaSliderImages;
+  }
+  // console.log(lastochkaSliderImages);
+
   return (
     <div className={styles.card}>
       {/* <img src="./room.jpeg" alt="" className={styles.img} /> */}
       <div className={styles.img}>
-        <PhotoSlider images={lastochkaSliderImages} settings={roomSliderSettings} />
+        <PhotoSlider images={a} settings={roomSliderSettings} />
       </div>
       <div className={styles.text}>
         <div className={styles.topText}> <span>Номер "{selectedItem.type}"&nbsp;</span>&mdash;
@@ -43,19 +58,6 @@ const SelectedRoom = ({ selectedItem }) => {
             Выбрать
           </button>
         </div>
-        {/* <span className={styles.roomName}>{selectedItem.name}</span>
-        <div className={styles.middleText}>
-          <span>{selectedItem.type}</span>
-          <span>до {selectedItem.numberOfBeds} мест</span>
-        </div>
-        <div className={styles.bottomText}>
-          <span>{selectedItem.price}</span>
-          <button
-            className={styles.buttonChoose}
-            onClick={() => selectThisRoom(selectedItem)}>
-            Выбрать
-          </button>
-        </div> */}
       </div>
     </div >
   );
