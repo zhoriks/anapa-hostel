@@ -33,7 +33,7 @@ function Navigation() {
             <div onClick={handelClick} className={styles.phone} id='phone' alt='PH'></div>
           </div>
         </div>
-        <p><a className={styles.numberText} href="tel:+79999999999">+7 (999) 999-99-99</a></p>
+        <p className={styles.numberText}><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
       </div>
     </div>
   );

@@ -56,10 +56,14 @@
   transition: .3s;
 }
 
+.contactDivPhoneNumber:hover{
+  color:#1a1a1a;
+}
+
 .contactDivPhoneNumber {
   display: block;
   text-decoration: none;
-  color: black;
+  color: #1a1a1a;
   font-size: 25px;
   font-weight: bold;
 }
