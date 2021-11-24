@@ -31,7 +31,7 @@ function WhyWe() {
   ];
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="about">
       <div className={styles.leftSide}>
         <h2 className={styles.leftSideTitle}>Почему нас выбирают?</h2>
         <span className={styles.leftSideDescription}>
@@ -42,7 +42,7 @@ function WhyWe() {
       <div className={styles.rightSide}>
         {
           whyWeContent.length
-            ? whyWeContent.map((el) => <WhyWeItem key={el.id} item={el}/>)
+            ? whyWeContent.map((el) => <WhyWeItem key={el.id} item={el} />)
             : <p>Ошибка отображения информации</p>
         }
       </div>
