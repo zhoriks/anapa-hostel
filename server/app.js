@@ -4,11 +4,12 @@ const SessionFileStore = require('session-file-store')(session);
 const cors = require('cors');
 const dotenv = require('dotenv');
 const helmet = require('helmet');
+const path = require('path');
 
 const indexRouter = require('./routes/index.router');
 
 const app = express();
-app.use(helmet());
+// app.use(helmet());
 
 dotenv.config();
 
@@ -41,7 +42,13 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, '../client/build')));
+
 app.use('/', indexRouter);
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Server started on PORT: ${PORT}`);
