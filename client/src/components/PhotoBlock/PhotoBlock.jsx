@@ -61,29 +61,29 @@ const photoBeach = {
 function PhotoBlock() {
   const [visibleBlock, setVisibleBlock] = useState('Beach');
   return (
-    <div className={styles.photoBlockMain}>
-       <div className={styles.photoBlockTitle}>
+    <div className={styles.photoBlockMain} id="gallery">
+      <div className={styles.photoBlockTitle}>
         <h1 className={styles.photoBlockBigTitle}>Фотографии и настроение</h1>
-        </div>
-        <div className={styles.photoBlockTextBody}>
+      </div>
+      <div className={styles.photoBlockTextBody}>
         <p className={styles.photoBlockParagraph}>Мы создаем для наших гостей атмосферу
-         отдыха, <br/> обеспечивая всем необходимым.</p>
-        </div>
-        <div className={styles.photoBlockButtons}>
-          <button onClick={() => setVisibleBlock('GestZone')} className={styles.photoBlockButtonsBig}>
-            <p>Гостевая зона</p></button>
-          <button onClick={() => setVisibleBlock('HoslelRooms')} className={styles.photoBlockButton}><p>Номера</p></button>
-          <button onClick={() => setVisibleBlock('RestZone')} className={styles.photoBlockButtonsBig}><p>Зона отдыха</p></button>
-          <button onClick={() => setVisibleBlock('Kitchen')} className={styles.photoBlockButton}><p>Кухня</p></button>
-          <button onClick={() => setVisibleBlock('Beach')} className={styles.photoBlockButton}><p>Пляж</p>
-          </button>
-        </div>
+          отдыха, <br /> обеспечивая всем необходимым.</p>
+      </div>
+      <div className={styles.photoBlockButtons}>
+        <button onClick={() => setVisibleBlock('GestZone')} className={styles.photoBlockButtonsBig}>
+          <p>Гостевая зона</p></button>
+        <button onClick={() => setVisibleBlock('HoslelRooms')} className={styles.photoBlockButton}><p>Номера</p></button>
+        <button onClick={() => setVisibleBlock('RestZone')} className={styles.photoBlockButtonsBig}><p>Зона отдыха</p></button>
+        <button onClick={() => setVisibleBlock('Kitchen')} className={styles.photoBlockButton}><p>Кухня</p></button>
+        <button onClick={() => setVisibleBlock('Beach')} className={styles.photoBlockButton}><p>Пляж</p>
+        </button>
+      </div>
       <div className={styles.photoBlockCardsPhoto}>
-        {visibleBlock === 'GestZone' && <PhotoBlockGestZone/>}
-        {visibleBlock === 'HoslelRooms' && <PhotoBlockUniversal item={photoHostelRooms}/>}
-        {visibleBlock === 'RestZone' && <PhotoBlockRestZone/>}
-        {visibleBlock === 'Kitchen' && <PhotoBlockUniversal item={photoKitten}/>}
-        {visibleBlock === 'Beach' && <PhotoBlockUniversal item={photoBeach}/>}
+        {visibleBlock === 'GestZone' && <PhotoBlockGestZone />}
+        {visibleBlock === 'HoslelRooms' && <PhotoBlockUniversal item={photoHostelRooms} />}
+        {visibleBlock === 'RestZone' && <PhotoBlockRestZone />}
+        {visibleBlock === 'Kitchen' && <PhotoBlockUniversal item={photoKitten} />}
+        {visibleBlock === 'Beach' && <PhotoBlockUniversal item={photoBeach} />}
       </div>
     </div>
   );
