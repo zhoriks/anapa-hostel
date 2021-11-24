@@ -30,13 +30,13 @@ const Bookings = () => {
   return (
     <div className={s.bookings_main}>
       <div className={s.navbar}>
-        <h3>Guest</h3>
-        <h3>Telephone</h3>
-        <h3>Check in</h3>
-        <h3>Check out</h3>
-        <h3>Room type</h3>
-        <h3>Request</h3>
-        <h3>Status</h3>
+        <h3>Постетитель</h3>
+        <h3>Телефон</h3>
+        <h3>Дата заезда</h3>
+        <h3>Дата выезда</h3>
+        <h3>Тип комнаты</h3>
+        <h3>Комментарий</h3>
+        <h3>Статус</h3>
       </div>
 
       {bookings.map((el) => (
@@ -62,5 +62,3 @@ const Bookings = () => {
 };
 
 export default Bookings;
-// {/* <input type='text' name='status' className={s.formInput} /* value={status}
-//  onChange={handleStatusChange} */></input> */}
