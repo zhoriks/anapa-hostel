@@ -12,7 +12,7 @@
   border-bottom: 1px solid #060b26;
   width: 80%;
   padding: 40px;
-  background-color: #A8AEBF;
+  background-color: white;
 }
 .clientInfo {
   display: flex;
@@ -24,10 +24,14 @@
   margin-right: 20px;
   width: 200px;
   height: 138px;
-  background-color: #F0F0F2;
+  background-color: white;
+  box-shadow: 0 5px 15px rgb(190, 190, 190, 0.5);
+  border-radius: 30px;
 }
 .review {
-  background-color: #F0F0F2;
+  background-color: white;
+  box-shadow: 0 5px 15px rgb(190, 190, 190, 0.5);
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -52,9 +56,12 @@
   color: black
 }
 .buttonDecline {
-  background-color: #eccda9;
+  color: white;
+  background-color: #2e387f;
 }
 .buttonAccept {
-  background-color: #a1c4dd;
+  color: white;
+  background-color: #009bac;
   margin-right: 40px;
 }
+

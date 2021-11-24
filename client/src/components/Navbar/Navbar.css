@@ -5,6 +5,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .menu-bars {
@@ -12,6 +13,7 @@
   margin-bottom: 0.8rem;
   font-size: 2rem;
   background: none;
+  font-family: 'Ubuntu',Arial,sans-serif;
 }
 
 .nav-menu {
@@ -50,6 +52,7 @@
   align-items: center;
   padding: 0 16px;
   border-radius: 4px;
+  font-family: 'Ubuntu',Arial,sans-serif;
 }
 
 .nav-text a:hover {
