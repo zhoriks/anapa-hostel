@@ -3,6 +3,7 @@ import React from 'react';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import { GoCommentDiscussion } from 'react-icons/go';
+import { MdOutlineCleaningServices } from 'react-icons/md';
 
 const SidebarData = [
   {
@@ -27,6 +28,12 @@ const SidebarData = [
     title: 'Отзывы',
     path: '/admin/reviews',
     icon: <GoCommentDiscussion />,
+    cName: 'nav-text',
+  },
+  {
+    title: 'Уборка',
+    path: '/admin/cleaning',
+    icon: <MdOutlineCleaningServices />,
     cName: 'nav-text',
   },
   {
