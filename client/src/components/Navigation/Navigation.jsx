@@ -18,9 +18,9 @@ function Navigation() {
       <div className={styles.logo}><div className={styles.logo} style={{ backgroundImage: `url(${logo})` }} onClick={() => history.push('/')}></div></div>
       <nav className={styles.nav}>
         <ul>
-          <li><a href="#1">О нас</a></li>
-          <li><a href="#1">Номера</a></li>
-          <li><a href="#1">Галерея</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#rooms">Номера</a></li>
+          <li><a href="#gallery">Галерея</a></li>
           <li><a href="#1">Контакты</a></li>
         </ul>
       </nav>

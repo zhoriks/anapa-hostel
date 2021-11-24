@@ -9,8 +9,9 @@
   display: flex;
   align-items: flex-end;
   width: 28.8%;
+  /* height: 600px; */
   height: 430px;
-  background-color:red;
+  background-color:#2e387f;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   background-attachment: fixed;
@@ -19,8 +20,9 @@
   background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
 }
 .imgasLeft{
-  width: 250px;
-  margin-left: 150px;
+  width: 108%;
+  /* width: 100%; */
+  margin-left: 1px;
   background-size: cover;
   background-position: center center;
 }
@@ -46,7 +48,7 @@
 .mapBlock{
   width: 14.9%;
   height: 430px;
-  background-color:green;
+  background-color:#009bac;
   border-radius: 30px;
   transition: .7s;
 }
@@ -59,7 +61,7 @@
 .rightBlock{
   width: 12.5%;
   height: 430px;
-  background-color:pink;
+  background-color:#009bac;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   background-attachment: fixed;

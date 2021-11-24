@@ -85,7 +85,7 @@ const SelectRoom = () => {
             </select>
           </div>
           </div>
-          <hr />
+          <hr style={{ width: '90%', marginLeft: '5%' }}/>
         </header>
 
         <div className={styles.roomContainer}>

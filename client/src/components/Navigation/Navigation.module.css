@@ -26,7 +26,7 @@
   display: block; /* Блочная ссылка */
   white-space: nowrap; /* Запрещаем перенос текста */
   color: #1a1a1a;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-family: 'Ubuntu',Arial,sans-serif;
  }
  .nav a:hover {
@@ -43,6 +43,10 @@
   padding: 0 1.25rem 0 0.063rem;
   text-decoration: none;
   font-weight: bold;
+ }
+
+ .numberText:hover{
+   color:#009bac;
  }
  .numberText{
   transition: .3s;
@@ -104,8 +108,8 @@
 
 .logo{
   padding-left: 0.313rem;
-  width: 12.5rem;
-  height: 6.25rem;
+  width: 9.375rem;
+  height: 4.688rem;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

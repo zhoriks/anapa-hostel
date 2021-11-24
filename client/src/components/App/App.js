@@ -23,6 +23,7 @@ import AdminCreateBookingForm from '../AdminCreateBookingForm/AdminCreateBooking
 import BookingFormGuestData from '../BookingFormGuestData/BookingFormGuestData.jsx';
 import Reviews from '../Reviews/Reviews.jsx';
 import adminReviewsAction from '../../redux/actionCreators/adminReviewsAC';
+import Cleaning from '../Cleaning/Cleaning';
 
 function App() {
   const dispatch = useDispatch();
@@ -59,6 +60,7 @@ function App() {
       <Route path='/admin/logout' exact component={Logout} />
       <Route path='/admin/create-booking' exact component={AdminCreateBookingForm} />
       <Route path='/admin/reviews' exact component={Reviews} />
+      <Route path='/admin/cleaning' exact component={Cleaning} />
     </Switch>
     </BrowserRouter>
   }

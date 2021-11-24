@@ -53,7 +53,7 @@ function HostelRooms() {
       square: 20,
       places: 4,
       id: 3,
-      bed: '1 большая двуспальная кровать и 1 диван-кровать',
+      bed: '1 большая двуспальная кровать',
       img: businessImg,
       imgSlider: [
         { src: businessImg },
@@ -66,13 +66,13 @@ function HostelRooms() {
     },
   ];
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="rooms">
       <div className={styles.divTitle}>
         <p className={styles.titleText}>Категории номеров</p>
       </div>
       <div className={styles.containerCard}>
         {classRooms.length
-          ? classRooms.map((el) => <HostelRoom key={el.id} item={el}/>)
+          ? classRooms.map((el) => <HostelRoom key={el.id} item={el} />)
           : <p>Номера не найдены</p>
         }
       </div>

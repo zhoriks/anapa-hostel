@@ -31,7 +31,7 @@ export default function BookingWelcomeForm() {
       <div className={styles.bookingWelcomeContainer}>
 
         {/* svg-картинка с нетипичной формой нужна для фона формы  */}
-        <svg xmlns="http://www.w3.org/2000/svg" className="bookingWelcomeSvg" viewBox="0 0 871 237">
+        <svg xmlns="http://www.w3.org/2000/svg" className={styles.bookingWelcomeSvg} viewBox="0 0 871 237">
           <path d="M820.786 236.5H50C22.3858 236.5 0 214.114 0 186.5V86.5C0 58.8858 22.3858 36.5 50 36.5H203.5H305.25H339.014C350.042 36.5 360.692 32.4809 368.97 25.1951L386.253 9.98425C412.317 -12.9538 452.782 9.33517 447.325 43.6231C443.743 66.1266 461.13 86.5 483.917 86.5H801.619C822.328 86.5 840.894 99.2663 848.306 118.603L867.473 168.603C880.024 201.345 855.851 236.5 820.786 236.5Z" fill="white" />
         </svg>
 

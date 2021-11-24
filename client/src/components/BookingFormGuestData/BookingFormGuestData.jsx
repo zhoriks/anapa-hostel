@@ -71,7 +71,7 @@ export default function BookingFormGuestData() {
         </div>
 
         : <div className={styles.guestDataContainer}>
-          <div className={styles.guestDataTitle}><h3>Введите данные гостей</h3></div>
+          <div className={styles.guestDataTitle}><h3>Информация о бронировании</h3></div>
 
           <div className={styles.bookingDataFromState}>
             <div className={styles.datesAndGuestsData}>

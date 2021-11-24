@@ -19,7 +19,10 @@ const GuestListNavbar = () => {
         <AiOutlineSearch className={s.icon} />
         <AiFillBell className={s.icon} />
         <p className={s.date}>{currentDate}</p>
-        <button onClick={changeToEditState} className={s.select}>Редактировать</button>
+        {document.location.pathname === '/admin'
+          ? <button onClick={changeToEditState} className={s.select}>Редактировать</button>
+          : null
+          }
         <Link to="/admin/create-booking" className={s.select}>Добавить бронирование</Link>
       </div>
     </div>
