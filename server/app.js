@@ -31,7 +31,7 @@ const sessionConfig = {
 };
 
 const corsOptions = {
-  origin: ['http://localhost:3000'],
+  origin: ['http://localhost:3000', 'https://anapahouse.herokuapp.com'],
   credentials: true,
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, '../client/build')));
 app.use('/', indexRouter);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  res.sendFile(path.resolve('../client/build/index.html'));
 });
 
 app.listen(PORT, () => {
