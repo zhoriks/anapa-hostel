@@ -7,9 +7,10 @@
 .container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   border-bottom: 1px solid #060b26;
-  width: 950px;
+  width: 80%;
   padding: 40px;
   background-color: #A8AEBF;
 }
@@ -18,8 +19,11 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 30px;
+  padding: 25px;
+  margin-bottom: 10px;
+  margin-right: 20px;
   width: 200px;
+  height: 138px;
   background-color: #F0F0F2;
 }
 .review {
@@ -28,8 +32,9 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
-  border-left: 1px solid black;
   padding: 30px;
+  height: 138px;
+  width: 700px;
 }
 .clientInfo span {
   margin: 0;
@@ -37,6 +42,7 @@
 .buttonGroup {
   display: flex;
   flex-direction: row;
+  margin-top: 5px;
 }
 .button {
   border: none;
@@ -46,9 +52,9 @@
   color: black
 }
 .buttonDecline {
-  background-color: #dd6d6d;
+  background-color: #eccda9;
 }
 .buttonAccept {
-  background-color: #d0ec8d;
+  background-color: #a1c4dd;
   margin-right: 40px;
 }

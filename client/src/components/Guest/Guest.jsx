@@ -7,12 +7,12 @@ const Guest = () => {
   return (
     <div className={s.bookings_main}>
       <div className={s.navbar}>
-        <h3>First Name</h3>
-        <h3>Last Name</h3>
-        <h3>Telephone</h3>
+        <h3>Имя</h3>
+        <h3>Фамилия</h3>
+        <h3>Телефон</h3>
         <h3>Email</h3>
-        <h3>Comment</h3>
-        <h3>Status</h3>
+        <h3>Комментарий</h3>
+        <h3>Статус</h3>
       </div>
 
       {guests.map((el) => (
@@ -22,7 +22,7 @@ const Guest = () => {
           <div>{el.telephone}</div>
           <div>{el.email}</div>
           <div>{el.comment}</div>
-          <div>{el.status}</div>
+          <div className={`${s.status} ${s.lives}`}>{el.status}</div>
         </form>
       ))}
     </div>

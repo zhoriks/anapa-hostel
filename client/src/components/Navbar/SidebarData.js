@@ -6,31 +6,31 @@ import { GoCommentDiscussion } from 'react-icons/go';
 
 const SidebarData = [
   {
-    title: 'Bookings',
+    title: 'Бронирования',
     path: '/admin',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text',
   },
   {
-    title: 'Guest',
+    title: 'Посетители',
     path: '/admin/guest',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text',
   },
   {
-    title: 'Rooms',
+    title: 'Комнаты',
     path: '/admin/rooms',
     icon: <AiIcons.AiOutlineKey />,
     cName: 'nav-text',
   },
   {
-    title: 'Reviews',
+    title: 'Отзывы',
     path: '/admin/reviews',
     icon: <GoCommentDiscussion />,
     cName: 'nav-text',
   },
   {
-    title: 'Logout',
+    title: 'Выйти',
     path: '/admin/logout',
     icon: <AiIcons.AiOutlineLogout />,
     cName: 'nav-text',

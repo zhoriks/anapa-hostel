@@ -14,7 +14,7 @@ const GuestListNavbar = () => {
   };
   return (
     <div className={s.navbar}>
-      <h1>GuestList</h1>
+      <h1>Админ панель</h1>
       <div className={s.icon_navbar}>
         <AiOutlineSearch className={s.icon} />
         <AiFillBell className={s.icon} />
