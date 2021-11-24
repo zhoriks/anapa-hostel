@@ -12,7 +12,7 @@ function Benefits() {
     {
       id: 2,
       img: success,
-      description: 'Доступность администратора 24/7',
+      description: 'Администратор 24/7',
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ function Benefits() {
     <>
     <div className={styles.benefitsTitle}>
       <span style={{
-        display: 'block', marginLeft: '2px', marginBottom: '1%', color: 'grey', fontSize: '1rem',
+        display: 'block', marginLeft: '2px', marginBottom: '0.5%',
       }}>Вне зависимости от выбранного номера</span>
       <h1 className={styles.benefitsTitleBig}>Вы получаете</h1>
     </div>
@@ -69,7 +69,7 @@ function Benefits() {
       <div className={styles.contactDiv}>
         <div className={styles.contactDivText}>
           <h3>Есть вопросы?</h3>
-          <span style={{ display: 'block', margin: '0', color: 'grey' }}>Звоните, и мы ответим на них</span>
+          <span style={{ display: 'block', margin: '0' }}>Звоните, и мы ответим на них</span>
         </div>
         <div className={styles.contactDivPhone}><a href="tel:+799999999" className={styles.contactDivPhoneNumber}>+7 (999) 999-99-99</a></div>
       </div>
