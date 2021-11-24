@@ -17,8 +17,10 @@ p {
 }
 
 .popup-content {
-  width: 33.75rem;
+  /* width: 33.75rem; */
+  width: 45.75rem;
   height: 47.75rem;
   padding: 0;
   border: 0;
 }
+

@@ -1,11 +1,13 @@
+.containerMain{
+  position: relative;
+  margin: 1%;
+}
 .container{
-  display: flex;
-  justify-content:center;
-  align-items: flex-end;
   width: 23.75rem;
   height: 23.75rem;
   margin: 1%;
   background-color: burlywood;
+  background-position: center;
   border-radius: 30px;
   transition: .7s;
 }
@@ -16,37 +18,20 @@
 
 .nestedContainer{
   display: flex;
-  flex-direction: column;
-  width: 21.875rem;
-  height: 11.875rem;
-  background-color:white;
-  margin: 5%;
-  border-radius: 30px;
-}
-
-.nestedContainer:hover {
-  transform: translate(0, 0);
-}
-
-.textContainer{
-  margin: 7% 0 0 9%;
-  font-size: 1rem;
-  line-height: 1.55;
-  font-family: 'Ubuntu',Arial,sans-serif;
-}
-
-.textContainerHeader{
-  width: 19.625rem;
-  height: 1.875rem;
-  font-size: 1.125rem;
-  font-weight: bold;
-  margin: 0 auto 3%;
-}
-
-.buttonContainer{
-  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+  width: 21.875rem;
+  height: 5.875rem;
+  background-color:rgba(255, 255, 255, 0.8);
+  margin: 5%;
+  border-radius: 30px;
+  z-index: 10;
+  position: absolute;
+  bottom: 5%;
+}
+.nestedContainer:hover {
+  transform: translate(0, 0);
 }
 
 .buttonHostelRoom{
@@ -58,19 +43,182 @@
   border-radius: 20px;
   width: 7.7rem;
   height: 3.125rem;
-  background-color: #566a6e;
+  background-color: #009bac;
+  border: none;
 }
+.buttonHostelRoom:hover{
+    background: linear-gradient(to top right, #2e387f, #009bac);
+  }
+  
 
-.textContainerPrice{
+.textContainerTitle{
   display: flex;
   align-items: center;
+  font-weight: bold;
   font-family: 'Ubuntu',Arial,sans-serif;
   font-size: 1.25rem;
   width: 35%;
 }
 
-.textContainerBody{
-  width: 18.5rem;
-  height: 2.875rem;
+/* ---  Стили модального окна --- */
+
+.imageDiv {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
+  background-size: cover;
+  height: 1rem;
+  border: 0;
+  padding: 0;
   margin: 0;
 }
+
+.contentMain{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+}
+
+.content{
+  width: 50%;
+}
+
+.oneCriterion{
+  display: flex;
+  width: 80%;
+  align-items: center;
+  margin: 4% 0;
+}
+
+.titleModal{
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.iconOne{
+  width: 25px;
+  height: 25px;
+  margin-right: 6%;
+}
+
+.modal {
+  font-size: 12px;
+  height: 18.75rem;
+}
+.modal > .header {
+  color: #1a1a1a;
+  font-size: 1.563rem;
+  font-weight: bold;
+  font-family: 'Ubuntu',Arial,sans-serif;
+  line-height: 1.55;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.modal > .content {
+  /* width: 100%; */
+  padding: 10px 5px;
+  font-size: 1rem;
+  text-align: center;
+}
+.modal > .actions {
+  /* width: 100%; */
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 1.875rem;
+  right: -10px;
+  top: -10px;
+  font-size: 2.25rem;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid white;
+  z-index: 10;
+}
+
+/* .reviewButton {
+  width: 12.5rem;
+  height: 3.75rem;
+  line-height: 1.55;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-width: 1px;
+  border-radius: 20px;
+  border-color: transparent;
+  border-style: solid;
+  background-color: #e3e3e3;
+  transition: .7s;
+}
+
+.reviewButton:hover {
+  background-color: #009bac;
+  color: white;
+  transform: scale(1.07);
+  transition: .7s;
+} */
+
+
+.button {
+  margin-top: 1.5rem;
+  width: 29.375rem;
+  height: 4.375rem;
+  line-height: 1.55;
+  font-size: 1rem;
+  font-weight: 500;
+  border-width: 1px;
+  border-radius: 20px;
+  border-color: transparent;
+  border-style: solid;
+  background-color: #009bac;
+  color: white;
+  transition: .7s;
+}
+
+.button:hover {
+  background-color: #2e387f;
+  color: white;
+  transition: .7s;
+}
+
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.reviewFormName, .reviewFormPhone {
+  width: 29.375rem;
+  height: 3.75rem;
+  border: 1px solid lightgray;
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.reviewFormTextArea {
+  width: 29.375rem;
+  height: 6.375rem;
+  border: 1px solid lightgray;
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+.reviewFormName:focus, 
+.reviewFormPhone:focus, 
+.reviewFormTextArea:focus{
+  outline: none;
+}
+

@@ -8,7 +8,7 @@
 .leftBlock{
   display: flex;
   align-items: flex-end;
-  width: 415px;
+  width: 28.8%;
   height: 430px;
   background-color:red;
   border-top-right-radius: 30px;
@@ -16,7 +16,7 @@
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-  background-image: url('./imgLowerBlock/fon.jpeg');
+  background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
 }
 .imgasLeft{
   width: 250px;
@@ -33,9 +33,9 @@
 .stockBlock{
   display: flex;
   flex-direction:column;
-  width: 569px;
+  width: 39.51%;
   height: 430px;
-  background-color:#012675;
+  background: linear-gradient(to top right, #009bac, #2e387f);
   border-radius: 30px;
 }
 
@@ -44,7 +44,7 @@
   height: 277px;
 }
 .mapBlock{
-  width: 215px;
+  width: 14.9%;
   height: 430px;
   background-color:green;
   border-radius: 30px;
@@ -58,15 +58,15 @@
  }
 
 .rightBlock{
-  width: 180px;
+  width: 12.5%;
   height: 430px;
   background-color:pink;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   background-attachment: fixed;
   background-size: cover;
-  background-position: center center;
-  background-image: url('./imgLowerBlock/fon.jpeg');
+  background-position: center right;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
 
 }
 
