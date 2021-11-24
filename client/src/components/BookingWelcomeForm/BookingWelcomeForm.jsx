@@ -62,7 +62,7 @@ export default function BookingWelcomeForm() {
             <div className={styles.bookingWelcomeFormElement}>
               <label htmlFor="guestNumber" className={styles.icon}>Гости:</label>
               <input name="guestNumber" type="number"
-                max="15" min="1" defaultValue="2"
+                max="8" min="1" defaultValue="2"
                 className={styles.bookingWelcomeFormInput} />
             </div>
             <div className={styles.bookingWelcomeFormElement}>
