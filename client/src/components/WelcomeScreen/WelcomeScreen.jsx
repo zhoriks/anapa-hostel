@@ -32,8 +32,8 @@ export default function WelcomeScreen() {
       {/* блок со предложением скидки */}
       <div className={styles.offerDiscount}>
         <img src="https://media-cdn.tripadvisor.com/media/photo-s/0e/ef/13/95/utesov-hotel.jpg" alt="" />
-        <h3>Дарим скидку 10%</h3>
-        <p>в честь открытия</p>
+        <h3 className={styles.offerDiscountTitle}>Дарим скидку 10%</h3>
+        <p className={styles.offerDiscountDescription}>в честь открытия</p>
       </div>
 
       {/* вставка элемента формы */}
