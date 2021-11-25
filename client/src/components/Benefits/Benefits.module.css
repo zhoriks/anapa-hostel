@@ -96,3 +96,9 @@
   font-weight: 400;
   opacity: 0.5;
 }
+
+@media (max-width: 450px) {
+  .benefitsTitle, .benefitsContainer {
+    display: none;
+  }
+}

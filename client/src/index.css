@@ -41,3 +41,10 @@ p {
 .slick-slider{
   z-index: 5;
 }
+
+@media (max-width: 450px) {
+  body {
+    width: 90%;
+  }
+}
+

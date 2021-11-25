@@ -81,3 +81,23 @@
 .priceInfo{
   font-size: 0.9rem;
 }
+
+
+@media (max-width: 450px) {
+  .card {
+    margin: 0 1.875rem 1.875rem 1.875rem;
+    border: none;
+    height: 25rem; 
+    width: 100%;
+    position: relative;
+    border-radius: 1.875rem;
+    box-shadow: 0 0 10px rgb(190, 190, 190, 0.5);
+  }
+  .topText{
+    text-align: center;
+    font-size: 1rem;
+  }
+  .adaptive {
+    font-size: 0.9rem;
+  }
+}

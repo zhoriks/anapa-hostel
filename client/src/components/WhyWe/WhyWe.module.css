@@ -42,3 +42,9 @@
   justify-content: flex-end;
   flex-wrap: wrap;
 }
+
+@media (max-width: 450px) {
+  .container {
+    display: none;
+  }
+}

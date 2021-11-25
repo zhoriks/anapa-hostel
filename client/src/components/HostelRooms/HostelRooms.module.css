@@ -34,3 +34,20 @@
   text-align: center;
   margin: 5% 0;
 }
+
+@media (max-width: 450px) {
+  .containerCard{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titleText{
+    font-size: 1.5rem;
+  }
+  
+  .bodyText{
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin: 2% 10%;
+  }
+}
