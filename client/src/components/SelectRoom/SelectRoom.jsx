@@ -21,6 +21,7 @@ const SelectRoom = () => {
   // const [wantOtherDates, setWantOtherDates] = useState(false);
   // тут изменение select - катерогии номеров
   const [typeRoom, setTypeRoom] = useState('All');
+  const [nextDay, setNextDay] = useState(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`);
   // const [hasVacantRooms, setHasVacantRooms] = useState(true);
   const date = useSelector((state) => state.bookingForm.list);
   const vacantRooms = useSelector((state) => state.bookingForm.list.vacantRooms);
@@ -34,7 +35,6 @@ const SelectRoom = () => {
       departureDate: event.target.departureDate.value,
       guestNumber: event.target.guestNumber.value,
     };
-    console.log(newData);
     dispatch(bookingFormAction.includeNewDataFromSelectForm(newData));
     dispatch({ type: actionTypesBookingForm.SEND_DATES_IN_DB_START, payload: newData });
   }
@@ -52,13 +52,15 @@ const SelectRoom = () => {
               <input name="arrivalDate" type="date"
                 defaultValue={date.arrivalDate}
                 min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
-                className={styles.bookingSelectFormInput} />
+                className={styles.bookingSelectFormInput}
+                onChange={(event) => setNextDay(event.target.value)}
+                />
             </div>
             <div className={styles.bookingSelectFormElement}>
               <label htmlFor="departureDate">Дата выезда:</label>
               <input name="departureDate" type="date"
                 defaultValue={date.departureDate}
-                min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`}
+                min={`${new Date(nextDay).getFullYear()}-${new Date(nextDay).getMonth() + 1}-${new Date(nextDay).getDate() + 1}`}
                 className={styles.bookingSelectFormInput} />
             </div>
             <div className={styles.bookingSelectFormElement}>

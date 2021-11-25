@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Room extends Model {
     static associate({ Book, Cleaning }) {
       this.hasOne(Book);
-      this.belongsTo(Cleaning);
+      this.hasOne(Cleaning);
     }
   }
   Room.init({
