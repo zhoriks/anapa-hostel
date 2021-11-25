@@ -5,6 +5,7 @@ import SingleRoomCleaning from '../SingleRoomCleaning/SingleRoomCleaning';
 
 const Cleaning = () => {
   const cleanings = useSelector((state) => state.cleaning.list);
+
   return (
     <div className={s.container}>
       <div className={s.rooms}>

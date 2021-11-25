@@ -1,10 +1,13 @@
-// const { Op } = require('sequelize');
+const { Op } = require('sequelize');
 const { Book } = require('../db/models');
 
 const allBooking = async (req, res) => {
   try {
     const booking = await Book.findAll({
       order: [['updatedAt', 'DESC']],
+      where: {
+        [Op.or]: [{ status: 'Проживает' }, { status: 'Ожидает подтверждения' }, { status: 'Подтверждено' }],
+      },
     });
     res.status(200).json(booking);
   } catch (error) {
@@ -36,6 +39,9 @@ const changeBooking = async (req, res) => {
     );
     const bookings = await Book.findAll({
       order: [['updatedAt', 'DESC']],
+      where: {
+        [Op.or]: [{ status: 'Проживает' }, { status: 'Ожидает подтверждения' }, { status: 'Подтверждено' }],
+      },
     });
     res.status(200).json(bookings);
   } catch (error) {

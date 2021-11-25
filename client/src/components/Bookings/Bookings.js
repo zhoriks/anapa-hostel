@@ -55,6 +55,8 @@ const Bookings = () => {
               <option value="Проживает">Проживает</option>
               <option value="Подтверждено">Подтверждено</option>
               <option value="Ожидает подтвержения">Ожидает подтвержения</option>
+              <option value="Отменено">Отменено</option>
+              <option value="Съехал">Съехал</option>
             </select>}
           {editForm && <button className={s.submitFormButton} type="submit">Отправить</button>}
         </form>
