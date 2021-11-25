@@ -40,7 +40,7 @@ export default function BookingFormGuestData() {
       email: event.target.email.value,
       phone: event.target.phone.value,
       wantPhoneNotice: event.target.wantPhoneNotice.checked,
-      wandGetAds: event.target.wandGetAds.checked,
+      wantGetAds: event.target.wantGetAds.checked,
       guestComment: event.target.guestComment.value,
     };
     dispatch(bookingFormAction.addDataFromPersonalInfForm(searchData));
@@ -128,7 +128,7 @@ export default function BookingFormGuestData() {
                     <span>Я хочу дополнительно получить подтверждение бронирования на телефон</span>
                   </div>
                   <div className={styles.checkboxInfo}>
-                    <input name="wandGetAds" type="checkbox" id="wandAdMessage" />
+                    <input name="wantGetAds" type="checkbox" id="wantAdMessage" />
                     <span>Я хочу узнавать о специальных предложениях и новостях по email или SMS
                     </span>
                   </div>

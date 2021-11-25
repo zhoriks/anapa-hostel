@@ -1,6 +1,14 @@
 const nodemailer = require('nodemailer');
+// нужен для выполнения либо HTTP-запросов в Node.js
+const axios = require('axios');
+// A querystring parsing and stringifying library with some added security.
+const qs = require('qs');
 const { Book } = require('../db/models');
 const { dateToTextFormat } = require('../data/dateToTextFormat');
+
+// токен, чтобы связать наш бэк с PushSMS
+// (если не работают уведомления - скорее всего, у Кати закончились деньги на счете)
+const BEARER = 'eyJhbGciOiJIUzI1NiJ9.eyJjdXN0b21lcl9pZCI6MzI3NSwiZGF0ZXRpbWUiOjE2Mzc3NjcwNzN9.VcWvZZhXN8yCHPVqBoUz4Abxg5UyIv9HUD8U1tuAPjE';
 
 const newBook = async (req, res) => {
   // вытаскиваем данные из тела fetch-запроса fetchBookInDB, отправленного с sagaClient
@@ -16,6 +24,7 @@ const newBook = async (req, res) => {
     telephone,
     RoomId,
     comment,
+    wantPhoneNotice, // в базу это не передаем, используем тут
   } = req.body;
 
   const checkInDateToTEXT = dateToTextFormat(checkInDate);
@@ -60,6 +69,27 @@ const newBook = async (req, res) => {
     };
 
     transporter.sendMail(mailOptions);
+
+    // подключаем уведомления по телефону, если гость выбрал соответсвующий чек-бокс
+    if (wantPhoneNotice) {
+      const data = qs.stringify({
+        phone: telephone,
+        text: `Вы забронировали ${guestsNumber} места с
+      ${checkInDateToTEXT} по ${checkOutDateToTEXT} в Anapa Guest House`,
+      });
+
+      const config = {
+        method: 'post',
+        url: 'https://api.pushsms.ru/api/v1/delivery',
+        headers: {
+          Authorization: BEARER,
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        data,
+      };
+
+      await axios(config);
+    }
 
     res.status(200).json({ success: true });
   } catch (error) {
