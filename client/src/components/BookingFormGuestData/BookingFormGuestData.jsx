@@ -14,6 +14,7 @@ import styles from './BookingFormGuestData.module.css';
 import dateToTextFormat from '../data/functions/dateToTextFormat';
 import totalSumForBooking from '../data/functions/totalSumForBooking';
 import useLocalStorage from '../data/helpData/useLocalStorage';
+import actionTypesRooms from '../../redux/actionTypes/roomsAT';
 
 export default function BookingFormGuestData() {
   const dispatch = useDispatch();
@@ -43,12 +44,22 @@ export default function BookingFormGuestData() {
       wantGetAds: event.target.wantGetAds.checked,
       guestComment: event.target.guestComment.value,
     };
+
     dispatch(bookingFormAction.addDataFromPersonalInfForm(searchData));
 
     // отправляем данные о бронировании из стейта и формы в базу данных
     dispatch({
       type: actionTypesBookingForm.SEND_BOOKINFO_IN_DB_START,
       payload: { dataAboutBooking, searchData },
+    });
+    // отправляем данные о заполненности номера
+    dispatch({
+      type: actionTypesRooms.EDIT_ROOMS_FULLNESS_START,
+      payload: {
+        guestNumber: +dataAboutBooking.guestNumber,
+        roomId: +dataAboutBooking.selectedRoom.id,
+        fullness: +dataAboutBooking.selectedRoom.fullness,
+      },
     });
     localStorage.clear();
   };

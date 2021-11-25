@@ -91,6 +91,26 @@ function* fetchRooms() {
   }
 }
 
+function* editRoomsFullness(action) {
+  try {
+    const rooms = yield call(fetchData, {
+      url: 'http://localhost:5001/admin/rooms',
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        guestNumber: action.payload.guestNumber,
+        roomId: action.payload.roomId,
+        fullness: action.payload.fullness,
+      }),
+    });
+    yield put({ type: actionTypesRooms.EDIT_ROOMS_FULLNESS_SUCCESS, payload: rooms });
+  } catch (error) {
+    yield put({ type: actionTypesRooms.EDIT_ROOMS_FULLNESS_ERROR, payload: error });
+  }
+}
+
 function* fetchCleanings() {
   try {
     const cleaning = yield call(fetchData, {
@@ -223,6 +243,7 @@ function* watchActions() {
   yield takeEvery(actionTypesAdminReviews.EDIT_REVIEWS_START, editReviews);
   yield takeEvery(actionTypesCleaning.INIT_CLEANING_START, fetchCleanings);
   yield takeEvery(actionTypesCleaning.UPDATE_CLEANING_START, updateCleanings);
+  yield takeEvery(actionTypesRooms.EDIT_ROOMS_FULLNESS_START, editRoomsFullness);
 }
 
 export default watchActions;

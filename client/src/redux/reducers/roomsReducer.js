@@ -24,6 +24,22 @@ const roomsReducer = (state = initialState, action) => {
         error: action.payload,
       };
 
+    case actionTypesRooms.EDIT_ROOMS_FULLNESS_START:
+      return {
+        ...state,
+        error: null,
+      };
+    case actionTypesRooms.EDIT_ROOMS_FULLNESS_SUCCESS:
+      return {
+        ...state,
+        list: [...action.payload],
+      };
+    case actionTypesRooms.EDIT_ROOMS_FULLNESS_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+      };
+
     default:
       return state;
   }
