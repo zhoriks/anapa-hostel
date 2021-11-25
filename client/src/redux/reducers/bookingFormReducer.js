@@ -74,6 +74,7 @@ const bookingFormReducer = (state = initialState, action) => {
       return {
         ...state,
         error: null,
+        success: false,
       };
 
     case actionTypesBookingForm.SEND_DATES_IN_DB_SUCCESS:

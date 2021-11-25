@@ -25,8 +25,8 @@ export default function BookingFormGuestData() {
   // local Storage
   const [surname, setSurname] = useLocalStorage('surname', '');
   const [name, setName] = useLocalStorage('name', '');
-  const [patronymic, setPatronymic] = useLocalStorage('patronymic', '');
-  const [email, setEmail] = useLocalStorage('email', '');
+  const [patronymic, setPatronymic] = useLocalStorage('thirdName', '');
+  const [email, setEmail] = useLocalStorage('mail', '');
   const [phone, setPhone] = useLocalStorage('phone', '');
   const [guestComment, setGuestComment] = useLocalStorage('guestComment', '');
 
@@ -61,7 +61,6 @@ export default function BookingFormGuestData() {
         fullness: +dataAboutBooking.selectedRoom.fullness,
       },
     });
-    localStorage.clear();
   };
 
   return (
@@ -75,7 +74,10 @@ export default function BookingFormGuestData() {
           <div className={styles.stockBlock}>
             <p className={styles.title}>Бронирование прошло успешно!</p>
             <p className={styles.bodyText}>Ожидайте звонка менеджера для подтверждения.</p>
-            <button className={styles.button} onClick={() => history.push('/')}>
+            <button className={styles.button} onClick={() => {
+              localStorage.clear();
+              history.push('/');
+            }}>
               <p className={styles.buttonText}>На главную</p>
             </button>
           </div>

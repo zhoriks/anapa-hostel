@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 import actionTypesBookings from '../../redux/actionTypes/bookingsAT';
 import s from './AdminCreateBookingForm.module.css';
 import useLocalStorage from '../data/helpData/useLocalStorage';
+import actionTypesRooms from '../../redux/actionTypes/roomsAT';
 
 const AdminCreateBookingForm = () => {
   const dispatch = useDispatch();
+  const rooms = useSelector((state) => state.room.list);
   const history = useHistory();
   const [firstName, setFirstName] = useLocalStorage('firstName', '');
   const [lastName, setLastName] = useLocalStorage('lastName', '');
@@ -38,7 +40,16 @@ const AdminCreateBookingForm = () => {
       RoomId: e.target.RoomId.value,
       comment: e.target.comment.value,
     };
+    const selectedRoom = rooms.find((el) => el.id === +RoomId);
     dispatch({ type: actionTypesBookings.CREATE_BOOKING_START, payload: clientData });
+    dispatch({
+      type: actionTypesRooms.EDIT_ROOMS_FULLNESS_START,
+      payload: {
+        guestNumber: +guestsNumber,
+        roomId: +RoomId,
+        fullness: +selectedRoom.fullness,
+      },
+    });
     localStorage.clear();
     history.push('/admin');
   };
