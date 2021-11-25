@@ -17,8 +17,8 @@
     transform: translate3d(-25%, 0, 0);
   }
 }
-section {
-  margin-top: 8%;
+.reviewSection {
+  margin-top: 50px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -32,7 +32,7 @@ section {
   font-weight: 600;
 }
 
-section .group {
+.reviewSection .group {
   margin-top: 4.688rem;
   margin-bottom: 3.125rem;
   width: 100vw;
@@ -46,7 +46,7 @@ section .group {
   justify-content: space-evenly;
   overflow: hidden;
 }
-section .group .row {
+.reviewSection .group .row {
   margin-bottom: 1.5rem;
   width: 400vw;
   display: -webkit- flex;
@@ -68,11 +68,11 @@ section .group .row {
           animation-duration: 90s;
 }
 
-section .group .row:nth-child(even) {
+.reviewSection .group .row:nth-child(even) {
   animation-direction: reverse;
 }
 
-section .group .row span {
+.reviewSection .group .row span {
   text-align: start;
 }
 
