@@ -8,21 +8,21 @@ const SingleRoom = ({
     <div className={s.img_container}>
       <img src="/room.jpeg" alt="" className={s.img} />
       {fullness === number
-        ? <span className={`${s.status} ${s.taken}`}>Занята</span>
-        : <span className={`${s.status} ${s.available}`}>Доступна</span>
+        ? <span className={`${s.status} ${s.taken}`}>Занят</span>
+        : <span className={`${s.status} ${s.available}`}>Доступен</span>
       }
       <span className={s.room_name}>{name}</span>
     </div>
     <div className={s.row_container}>
-      <span>Заполненность</span>
+      <span style={{ fontWeight: 'bold' }}>Заполненность</span>
       <span>{fullness}</span>
     </div>
     <div className={s.row_container}>
-      <span>Количество кроватей</span>
+      <span style={{ fontWeight: 'bold' }}>Количество кроватей</span>
       <span>{number}</span>
     </div>
     <div className={s.row_container}>
-      <span>Тип</span>
+      <span style={{ fontWeight: 'bold' }}>Тип</span>
       <span>{type}</span>
     </div>
   </div>

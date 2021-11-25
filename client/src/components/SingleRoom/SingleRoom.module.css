@@ -1,8 +1,8 @@
 .img {
-  width: 200px;
-  height: 250px;
-  border-radius: 20px;
-  margin: 5px;
+  width: 300px;
+  height: 240px;
+  border-radius: 16px;
+  margin: 10px 5px 5px 5px;
   position: relative;
   z-index: -1;
 }
@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  width: 230px;
+  width: 350px;
   height: fit-content;
   margin: 10px 30px;
   padding: 10px 0;
@@ -29,8 +29,9 @@
   position: relative;
 }
 .status {
-  width: 88px;
-  height: 34;
+  font-weight: bold;
+  width: 100px;
+  height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -44,12 +45,14 @@
   color: aliceblue;
 }
 .available {
-  background: #16b455;
+  background: linear-gradient(45deg, #2e387f, #3CB371);
 }
 .taken {
-  background: #EB564C;
+  background: linear-gradient(45deg, #2e387f, #DC143C);
 }
 .room_name {
+  font-size: 20px;
+  font-weight: bold;
   position: absolute;
   bottom: 20px;
   left: 10px;
