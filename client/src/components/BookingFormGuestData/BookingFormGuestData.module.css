@@ -361,4 +361,18 @@
   .addInfoFromGuest textarea {
     overflow: scroll;
   }
+
+  .topStockBlock {
+    width: 20rem;
+  }
+  
+  .stockBlock{
+    width: 20rem;
+  }
+
+  .button{
+    margin-left: 50%;
+    width: 8.75rem;
+    height: 3.375rem;
+  }
 }
