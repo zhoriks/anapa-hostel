@@ -30,6 +30,28 @@
   background: linear-gradient(to top right, #2e387f, #009bac);
   color: white;
 }
+
+.pendingCleaning {
+  width: 150px;
+  height: 50px;
+  padding: 0 10px;
+  border-radius: 15px;
+  border: none;
+  background: #009bac;
+  color: white;
+}
+
+.needCleaning {
+  width: 150px;
+  height: 50px;
+  padding: 0 10px;
+  border-radius: 15px;
+  border: none;
+  background: #2e387f;
+  color: white;
+}
+
+
 .header {
   width: 100px;
   font-size: larger;

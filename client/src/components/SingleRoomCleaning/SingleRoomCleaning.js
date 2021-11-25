@@ -5,13 +5,14 @@ import s from './SingleRoomCleaning.module.css';
 
 const SingleRoomCleaning = ({ name, lastCleaning, RoomId }) => {
   const dispatch = useDispatch();
+  const currentDate = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`;
+  const nextDate = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newDate = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`;
     dispatch({
       type: actionTypesCleaning.UPDATE_CLEANING_START,
-      payload: { RoomId, date: newDate },
+      payload: { RoomId, date: currentDate },
     });
   };
   return (
@@ -24,7 +25,12 @@ const SingleRoomCleaning = ({ name, lastCleaning, RoomId }) => {
         <span className={s.header}>Дата последней убоки</span>
         <span>{lastCleaning}</span>
       </div>
-      <button className={s.cleaned} type='submit'>Убрано</button>
+      {// eslint-disable-next-line no-nested-ternary
+        lastCleaning === currentDate
+          ? <button className={s.cleaned} disabled type='submit'>Убрано</button>
+          : (lastCleaning === nextDate ? <button className={s.pendingCleaning} type='submit'>Уборка завтра</button>
+            : <button className={s.needCleaning} type='submit'>Требуется уборка</button>)
+      }
     </form>
   );
 };
