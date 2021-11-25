@@ -306,4 +306,11 @@
     margin-top: 3%;
     font-size: 1rem;
   }
+
+  .noVacantRoomsForm{
+    position: absolute;
+    top: 80%;
+    width: 80%;
+    margin-top: 4%;
+  }
 }

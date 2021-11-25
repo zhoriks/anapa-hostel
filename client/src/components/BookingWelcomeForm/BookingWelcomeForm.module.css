@@ -163,7 +163,6 @@
 
   .helperForPosition {
     left: 5%;
-    /* bottom: 8%; */
   }
 
   .bookingWelcomeContainer {
@@ -175,7 +174,7 @@
   .flexContainer {
     background: #fff;
     border-radius: 1.25rem;
-    top: -200px;
+    top: -210px;
     width: 100%;
     min-height: 200px;
   }

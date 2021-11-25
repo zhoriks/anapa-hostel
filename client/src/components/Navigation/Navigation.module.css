@@ -147,4 +147,10 @@
   .MessengersNumber {
     display: none;
   }
+  .navigationBlock {
+    margin: 0 auto;
+  }
+  .logo{
+    padding-left: 0;
+  }
 }
