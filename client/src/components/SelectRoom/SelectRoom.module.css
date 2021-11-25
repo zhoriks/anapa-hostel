@@ -295,4 +295,15 @@
     width: 100%;
     margin-left: 0;
   }
+
+  .noVacantRoomsText {
+    margin-top: 13%;
+    margin-left: 3%;
+    font-size: 1rem;
+  }
+
+  .noVacantRoomsLink {
+    margin-top: 3%;
+    font-size: 1rem;
+  }
 }

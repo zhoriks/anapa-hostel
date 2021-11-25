@@ -64,7 +64,7 @@ const SelectedRoom = ({ selectedItem }) => {
         <div className={styles.topText}> <span>Номер "{selectedItem.type}"&nbsp;</span>&mdash;
           <span className={styles.roomName}>&nbsp;{selectedItem.name}</span>
         </div>
-        <div>
+        <div className={styles.adaptive}>
           {/* временная заглушка для площади номеров */}
           <span>{selectedItem.price / 75} кв.м.</span>
           <span>до {selectedItem.numberOfBeds} мест</span>
