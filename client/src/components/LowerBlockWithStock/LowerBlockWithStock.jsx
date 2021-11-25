@@ -10,7 +10,7 @@ function LowerBlockWithStock() {
     <>
       <div className={styles.mainBlock}>
         <div className={styles.leftBlock}>
-          <ScrollAnimation animateIn='animate__slideInLeft' duration='5'>
+          <ScrollAnimation animateIn='animate__slideInLeft' duration={5}>
             <img className={`${styles.imgasLeft}`} src={imgLeft} alt="bow"></img>
           </ScrollAnimation>
         </div>
