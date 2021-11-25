@@ -1,6 +1,6 @@
 .img {
   width: 300px;
-  height: 240px;
+  height: 210px;
   border-radius: 16px;
   margin: 10px 5px 5px 5px;
   position: relative;
@@ -40,7 +40,7 @@
   border-radius: 14px;
   z-index: -1;
   position: absolute;
-  bottom: 60px;
+  bottom: 20px;
   left: 5px;
   color: aliceblue;
 }
@@ -51,11 +51,10 @@
   background: linear-gradient(45deg, #2e387f, #DC143C);
 }
 .room_name {
+  border-bottom: 1px solid black;
+  margin-left: 0;
   font-size: 20px;
-  font-weight: bold;
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
-  color: aliceblue;
-  z-index: -1;
+  padding: 5px;
+  font-weight: 600;
+  color: black;
 }
