@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 .leftBlock{
@@ -72,17 +72,40 @@
 }
 
 .title{
-  margin: 15% 0 0 15%;
+  margin: 12% 0 0 15%;
   line-height: 1,7;
   color: #fefcfc;
-  font-size: 22px;
+  font-size: 35px;
   font-family: 'Formular', sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   text-align: left;
+  text-transform: uppercase;
+}
+
+.titleText{
+  margin: 1% 0 0 15%;
+  line-height: 1,7;
+  color: #fefcfc;
+  font-size: 25px;
+  font-family: 'Formular', sans-serif;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.titleProcent{
+    margin: 1% 0 0 15%;
+    line-height: 1,7;
+    color: #fefcfc;
+    font-size: 35px;
+    font-family: 'Formular', sans-serif;
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
 }
 
 .bodyText{
-  margin: 5% 0 0 15%;
+  margin: 2% 0 0 15%;
   line-height: 2;
   color: #fefcfc;
   font-size: 16px;
@@ -91,21 +114,30 @@
 }
 
 .button{
-  margin: 7% 0 0 15%;
-  width: 220px;
-  height: 70px;
-  border-radius: 30px;
-  background-color: #fefcfc;
-  background-position: center center;
+  margin: 6% 0 0 15%;
+  width: 12.5rem;
+  height: 3.75rem;
+  line-height: 1.55;
+  border-width: 1px;
+  border-radius: 20px;
+  border-color: transparent;
+  border-style: solid;
+  background-color: #e3e3e3;
+  transition: .7s;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Formular', sans-serif;
+  transition: .7s;
   border: none;
 }
+
 .button:hover{
-  background-color:#fefcfcdd;
-  color:#fefcfc;
+  transform: scale(1.07);
+  transition: .7s;
   border: none;
 }
+
 .buttonText{
-  color: #012675;
   font-size: 16px;
   font-family: 'Formular', sans-serif;
   font-weight: 500;

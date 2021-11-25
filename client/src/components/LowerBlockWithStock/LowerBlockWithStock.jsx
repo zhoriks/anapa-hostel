@@ -15,8 +15,10 @@ function LowerBlockWithStock() {
           </ScrollAnimation>
         </div>
         <div className={styles.stockBlock}>
-          <p className={styles.title}>Получи что-то там <br /> за что-то там</p>
-          <p className={styles.bodyText}>Важные условия получения <br /> какой-то скидки</p>
+          <p className={styles.title}>Живи дольше</p>
+          <p className={styles.titleText}>плати меньше</p>
+          <p className={styles.titleProcent}>-15%</p>
+          <p className={styles.bodyText}>Скидка на бронирования от 3 ночей</p>
           <button className={styles.button}>
             <p className={styles.buttonText}>Хочу скидку</p>
           </button>

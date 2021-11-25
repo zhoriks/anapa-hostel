@@ -41,8 +41,8 @@ function HostelRooms() {
       id: 2,
       img: comfortImg,
       imgSlider: [
-        { src: comfortImg },
         { src: comfortImg1 },
+        { src: comfortImg },
         { src: comfortImg2 },
         { src: comfortImg3 },
         { src: comfortImg4 },
