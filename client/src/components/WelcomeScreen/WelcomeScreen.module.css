@@ -130,3 +130,44 @@
     font-size: 1rem;
   }
 }
+
+@media (max-width: 450px) {
+  .welcomeScreenContainer {
+    min-height: 25.438rem;
+    border-radius: 1.25rem;
+  }
+
+  .nameBlock {
+    position: absolute;
+    top: 8%;
+    left: 4%;
+    width: 80%;
+    height: 30%;
+  }
+
+  .containerNameBlock img {
+    display: none;
+  }
+
+  .offerDiscount {
+    display: none;
+  }
+
+  .textNameBlock {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    padding: 0 3%;
+    width: 100%;
+  }
+
+  .textNameBlock h2 {
+    font-size: 1.26rem;
+    color: white;
+  }
+  
+  .textNameBlock p {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+}
