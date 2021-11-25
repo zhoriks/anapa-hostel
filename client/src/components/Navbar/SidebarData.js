@@ -13,7 +13,7 @@ const SidebarData = [
     cName: 'nav-text',
   },
   {
-    title: 'Посетители',
+    title: 'Проживающие',
     path: '/admin/guest',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text',

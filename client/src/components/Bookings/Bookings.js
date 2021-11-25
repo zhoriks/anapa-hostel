@@ -30,7 +30,7 @@ const Bookings = () => {
   return (
     <div className={s.bookings_main}>
       <div className={s.navbar}>
-        <h3>Постетитель</h3>
+        <h3>Посетитель</h3>
         <h3>Телефон</h3>
         <h3>Дата заезда</h3>
         <h3>Дата выезда</h3>
@@ -38,6 +38,7 @@ const Bookings = () => {
         <h3>Комментарий</h3>
         <h3>Статус</h3>
       </div>
+      <br />
 
       {bookings.map((el) => (
         <form className={s.client_info} key={el.id} onSubmit={(e) => handleSubmit(e, el.id)}>
