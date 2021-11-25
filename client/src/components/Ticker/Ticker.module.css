@@ -63,7 +63,17 @@
   font-weight: bold;
   text-transform: uppercase;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: #009bac;
+}
+
+.tickerSection .group .row span:nth-child(odd) {
+  font-family: 'Formular', sans-serif;
+  color: transparent;
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #2e387f;
 }
 
 @media (max-width: 450px) {

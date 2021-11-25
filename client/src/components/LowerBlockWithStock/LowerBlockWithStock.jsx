@@ -20,7 +20,7 @@ function LowerBlockWithStock() {
           <p className={styles.titleProcent}>-15%</p>
           <p className={styles.bodyText}>Скидка на бронирования от 3 ночей</p>
           <button className={styles.stockBlockButton}>
-            <p className={styles.buttonText}>Хочу скидку</p>
+            <p className={styles.buttonText}>Промокод</p>
           </button>
         </div>
         <div className={styles.mapBlock}>

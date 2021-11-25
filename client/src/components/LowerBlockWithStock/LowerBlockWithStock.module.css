@@ -129,6 +129,7 @@
   font-family: 'Formular', sans-serif;
   transition: .7s;
   border: none;
+  cursor:default;
 }
 
 .stockBlockButton:hover{
@@ -137,6 +138,16 @@
   transform: scale(1.06);
   transition: .7s;
   border: none;
+  cursor:default;
+}
+
+.stockBlockButton:hover p {
+  display: none;
+}
+
+.stockBlockButton:hover:before {
+  content: 'YIELD';
+  font-size: 24px;
 }
 
 .buttonText{

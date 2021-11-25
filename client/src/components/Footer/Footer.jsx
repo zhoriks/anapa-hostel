@@ -7,12 +7,12 @@ import instagram from './imgFooter/instagram.png';
 
 function Footer() {
   return (
-    <div className={styles.containerMain}>
+    <div className={styles.containerMain} id='footer'>
       <div className={styles.containerFooter}>
         <div className={styles.containerContacts}>
           <p className={styles.numberText}><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
           <p className={styles.titleText}>Мы находимся тут:</p>
-          <p className={styles.bodyText}>г. Анапа, песчаный пляж</p>
+          <p className={styles.bodyText}>г. Анапа, ул. Тургенева, 112</p>
         </div>
         <div className={styles.containerNavigation}>
           <nav className={styles.nav}>
@@ -35,8 +35,8 @@ function Footer() {
       </div>
       <div className={styles.line}></div>
       <div className={styles.rights}>
-        <p className={styles.rightsText}>ANAPA GUEST-HOUSE. Все права защищены, а как иначе</p>
-        <p className={styles.rightsText}>Сайт запустили ребята из Elbrus Coding Bootcamp</p>
+        <p className={styles.rightsText}>ANAPA GUEST HOUSE. Все права защищены, а как иначе</p>
+        <p className={styles.rightsText}>Сайт запустили ребята из Dream Team</p>
       </div>
     </div>
   );
