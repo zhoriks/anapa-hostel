@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import NumberFormat from 'react-number-format';
@@ -19,6 +19,8 @@ const AdminCreateBookingForm = () => {
   const [status, setStatus] = useLocalStorage('status', '');
   const [RoomId, setRoomiId] = useLocalStorage('RoomId', '');
   const [comment, setComment] = useLocalStorage('comment', '');
+
+  const [nextDay, setNextDay] = useState(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,35 +47,36 @@ const AdminCreateBookingForm = () => {
       <form className={s.form} onSubmit={handleSubmit}>
         <div className={s.row}>
           <span>ФИО</span>
-          <input type="text" name='firstName' placeholder='Имя' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-          <input type="text" name='lastName' placeholder='Фамилия' value={lastName} onChange={(e) => setLastName(e.target.value)} />
-          <input type="text" name='patronymic' placeholder='Отчество' value={patronymic} onChange={(e) => setPatronymic(e.target.value)}/>
+          <input type="text" required name='firstName' placeholder='Имя' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+          <input type="text" required name='lastName' placeholder='Фамилия' value={lastName} onChange={(e) => setLastName(e.target.value)} />
+          <input type="text" required name='patronymic' placeholder='Отчество' value={patronymic} onChange={(e) => setPatronymic(e.target.value)}/>
         </div>
 
         <div className={s.row}>
           <span>Дата заезда</span>
           <input type="date" name='checkInDate' defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
-            min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`} />
+            min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
+            onChange={(event) => setNextDay(event.target.value)} />
         </div>
 
         <div className={s.row}>
           <span>Дата выезда</span>
-          <input type="date" name='checkOutDate' defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}
-            min={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`} />
+          <input type="date" name='checkOutDate' defaultValue={`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`}
+            min={`${new Date(nextDay).getFullYear()}-${new Date(nextDay).getMonth() + 1}-${new Date(nextDay).getDate() + 1}`} />
         </div>
         <div className={s.row}>
           <span>Данные для хостела</span>
-          <input type="number" name='guestsNumber' placeholder='Гости' value={guestsNumber} onChange={(e) => setGuestsNumber(e.target.value)} />
-          <input type="text" name='RoomId' placeholder='Номер комнаты' value={RoomId} onChange={(e) => setRoomiId(e.target.value)} />
+          <input type="number" required name='guestsNumber' placeholder='Гости' value={guestsNumber} onChange={(e) => setGuestsNumber(e.target.value)} />
+          <input type="text" required name='RoomId' placeholder='Номер комнаты' value={RoomId} onChange={(e) => setRoomiId(e.target.value)} />
         </div>
         <div className={s.row}>
-          <select name='categoryRoom' value={categoryRoom} onChange={(e) => setCategoryRoom(e.target.value)}>
+          <select required name='categoryRoom' value={categoryRoom} onChange={(e) => setCategoryRoom(e.target.value)}>
             <option>Категория комнаты</option>
             <option value="Эконом">Эконом</option>
             <option value="Комфорт">Комфорт</option>
             <option value="Люкс">Люкс</option>
           </select>
-          <select name='status' value={status} onChange={(e) => setStatus(e.target.value)}>
+          <select required name='status' value={status} onChange={(e) => setStatus(e.target.value)}>
             <option>Статус</option>
             <option value="Ожидает подтвержения">Ожидает подтвержения</option>
             <option value="Подтверждено">Подтверждено</option>
@@ -82,8 +85,8 @@ const AdminCreateBookingForm = () => {
         </div>
         <div className={s.row}>
           <span>Контактные данные</span>
-          <input type="email" name='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
-          <NumberFormat name="phoneNumber" format="+7 (###) ###-####" mask="_" type="text" placeholder='+ 7 (___) ___-____' value={telephone} onChange={(e) => setTelephone(e.target.value)}/>
+          <input required type="email" name='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+          <NumberFormat required name="phoneNumber" format="+7 (###) ###-####" mask="_" type="text" placeholder='+ 7 (___) ___-____' value={telephone} onChange={(e) => setTelephone(e.target.value)}/>
         </div>
         <div className={s.row}>
           <span>Комментарий</span>

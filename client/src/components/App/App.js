@@ -24,6 +24,7 @@ import BookingFormGuestData from '../BookingFormGuestData/BookingFormGuestData.j
 import Reviews from '../Reviews/Reviews.jsx';
 import adminReviewsAction from '../../redux/actionCreators/adminReviewsAC';
 import Cleaning from '../Cleaning/Cleaning';
+import cleaningAction from '../../redux/actionCreators/cleaningAC';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
     dispatch(bookingsAction.initBookingsStart());
     dispatch(guestAction.initGuestsStart());
     dispatch(roomAction.initRoomStart());
+    dispatch(cleaningAction.initCleaningStart());
     dispatch(adminReviewsAction.initAdminReviewsStart());
     dispatch({ type: actionTypesBookingForm.SEND_DATES_IN_DB_START });
     dispatch(reviewsTickerAction.getReviewsFromDB());

@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Cleaning extends Model {
     static associate({ Room }) {
-      this.hasOne(Room);
+      this.belongsTo(Room);
     }
   }
   Cleaning.init({
