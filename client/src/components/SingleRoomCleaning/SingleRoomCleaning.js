@@ -6,7 +6,7 @@ import s from './SingleRoomCleaning.module.css';
 const SingleRoomCleaning = ({ name, lastCleaning, RoomId }) => {
   const dispatch = useDispatch();
   const currentDate = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`;
-  const nextDate = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`;
+  const nextDate = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() - 1}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
