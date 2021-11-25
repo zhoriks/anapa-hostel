@@ -34,7 +34,6 @@ const SelectRoom = () => {
       departureDate: event.target.departureDate.value,
       guestNumber: event.target.guestNumber.value,
     };
-    console.log(newData);
     dispatch(bookingFormAction.includeNewDataFromSelectForm(newData));
     dispatch({ type: actionTypesBookingForm.SEND_DATES_IN_DB_START, payload: newData });
   }
