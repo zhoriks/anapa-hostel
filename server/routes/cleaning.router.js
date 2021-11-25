@@ -5,6 +5,6 @@ const { allCleanings, updateCleanings } = require('../controllers/cleaning.contr
 router.get('/', allCleanings);
 
 // Обновление даты уборки
-router.post('/update', updateCleanings);
+router.put('/update', updateCleanings);
 
 module.exports = router;

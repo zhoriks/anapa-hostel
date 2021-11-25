@@ -96,9 +96,29 @@ function* fetchCleanings() {
     const cleaning = yield call(fetchData, {
       url: 'http://localhost:5001/admin/cleaning',
     });
-    yield put({ type: actionTypesCleaning.INIT_CLEANING_START, payload: cleaning });
+
+    yield put({ type: actionTypesCleaning.INIT_CLEANING_SUCCESS, payload: cleaning });
   } catch (error) {
     yield put({ type: actionTypesCleaning.INIT_CLEANING_ERROR, payload: error });
+  }
+}
+
+function* updateCleanings(action) {
+  try {
+    const cleanings = yield call(fetchData, {
+      url: 'http://localhost:5001/admin/cleaning/update',
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        RoomId: action.payload.RoomId,
+        date: action.payload.date,
+      }),
+    });
+    yield put({ type: actionTypesCleaning.UPDATE_CLEANING_SUCCESS, payload: cleanings });
+  } catch (error) {
+    yield put({ type: actionTypesCleaning.UPDATE_CLEANING_ERROR, payload: error });
   }
 }
 
@@ -202,6 +222,7 @@ function* watchActions() {
   yield takeEvery(actionTypesAdminReviews.INIT_REVIEWS_START, fetchReviews);
   yield takeEvery(actionTypesAdminReviews.EDIT_REVIEWS_START, editReviews);
   yield takeEvery(actionTypesCleaning.INIT_CLEANING_START, fetchCleanings);
+  yield takeEvery(actionTypesCleaning.UPDATE_CLEANING_START, updateCleanings);
 }
 
 export default watchActions;

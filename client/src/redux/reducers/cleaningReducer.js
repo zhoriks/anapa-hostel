@@ -23,6 +23,21 @@ const cleaningReducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
       };
+    case actionTypesCleaning.UPDATE_CLEANING_START:
+      return {
+        ...state,
+        error: null,
+      };
+    case actionTypesCleaning.UPDATE_CLEANING_SUCCESS:
+      return {
+        ...state,
+        list: [...action.payload],
+      };
+    case actionTypesCleaning.UPDATE_CLEANING_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+      };
 
     default:
       return state;
