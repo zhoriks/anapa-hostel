@@ -1,37 +1,18 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import s from './Cleaning.module.css';
 import SingleRoomCleaning from '../SingleRoomCleaning/SingleRoomCleaning';
 
 const Cleaning = () => {
-  // const cleanings = useSelector((state) => state.cleaning.list);
-  const rooms = [
-    {
-      id: 1,
-      name: 'Lastochka',
-      lastCleaning: '22-11-2021',
-    },
-    {
-      id: 2,
-      name: 'Morshoy briz',
-      lastCleaning: '22-11-2021',
-    },
-    {
-      id: 3,
-      name: 'Voshod',
-      lastCleaning: '22-11-2021',
-    },
-    {
-      id: 4,
-      name: 'Zakat',
-      lastCleaning: '22-11-2021',
-    },
-  ];
+  const cleanings = useSelector((state) => state.cleaning.list);
   return (
     <div className={s.container}>
       <div className={s.rooms}>
-        {rooms.map((el) => <SingleRoomCleaning
-         key={el.id} name={el.name} lastCleaning={el.lastCleaning} />)}
+        {cleanings.map((cleaning) => (
+          <SingleRoomCleaning
+          key={cleaning.id} RoomId={cleaning.RoomId}
+          name={cleaning.Room.name} lastCleaning={cleaning.dateOfCleaning} />
+        ))}
       </div>
     </div>
   );
