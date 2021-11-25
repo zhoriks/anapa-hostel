@@ -133,7 +133,7 @@
 
 @media (max-width: 450px) {
   .welcomeScreenContainer {
-    min-height: 25.438rem;
+    min-height: 20.438rem;
     border-radius: 1.25rem;
   }
 
@@ -142,7 +142,7 @@
     top: 8%;
     left: 4%;
     width: 80%;
-    height: 30%;
+    height: fit-content;
   }
 
   .containerNameBlock img {
@@ -165,9 +165,8 @@
     font-size: 1.26rem;
     color: white;
   }
-  
+
   .textNameBlock p {
-    font-size: 0.9rem;
-    line-height: 1.2;
+    display: none;
   }
 }

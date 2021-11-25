@@ -138,11 +138,23 @@
  }
 
  @media (max-width: 450px) {
-  .containerFooter {
+  .containerNavigation {
+    display: none;
+  }
+
+  .containerLinks {
     display: none;
   }
 
   .line {
     margin-top: 5%;
+  }
+
+  .containerContacts {
+    width: 100%;
+  }
+
+  .numberText a {
+    font-size: 1rem;
   }
 }
