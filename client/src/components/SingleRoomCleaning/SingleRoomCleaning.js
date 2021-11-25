@@ -15,7 +15,7 @@ const SingleRoomCleaning = ({ name, lastCleaning, RoomId }) => {
     });
   };
   return (
-    <form className={s.container} onSubmit={handleSubmit}>
+    <form className={s.container} onSubmit={handleSubmit} >
       <div className={s.row_container}>
         <span className={s.header}>Название</span>
         <span>{name}</span>
