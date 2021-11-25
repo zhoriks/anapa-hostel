@@ -327,3 +327,38 @@
   font-family: 'Ubuntu',Arial,sans-serif;
   font-weight: 600;
 }
+
+@media (max-width: 450px) {
+  .guestDataTitle h3 {
+    font-size: 1.05rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .guestDataTitle::before, .guestDataTitle::after {
+    display: none;
+  }
+
+  .bookingDataFromState {
+    font-size: 0.7rem;
+    font-weight: bold;
+    background-color: #009bac3a;
+  }
+  
+  .datesAndGuestsData {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .datesAndGuestsData div {
+    min-width: 5rem;
+  }
+
+  .alertBooking {
+    font-size: 0.6rem;
+  }
+
+  .addInfoFromGuest textarea {
+    overflow: scroll;
+  }
+}
