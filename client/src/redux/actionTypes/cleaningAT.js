@@ -1,0 +1,6 @@
+const actionTypesCleaning = {
+  INIT_CLEANING_START: 'INIT_CLEANING_START',
+  INIT_CLEANING_SUCCESS: 'INIT_CLEANING_SUCCESS',
+  INIT_CLEANING_ERROR: 'INIT_CLEANING_ERROR',
+};
+export default actionTypesCleaning;

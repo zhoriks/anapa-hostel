@@ -1,6 +1,7 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
 import actionTypesAdminReviews from '../actionTypes/adminReviewsAT';
 import actionTypesBookings from '../actionTypes/bookingsAT';
+import actionTypesCleaning from '../actionTypes/cleaningAT';
 import actionTypesGuest from '../actionTypes/guestAT';
 import actionTypesLogin from '../actionTypes/loginAT';
 import actionTypesLogout from '../actionTypes/logoutAT';
@@ -87,6 +88,17 @@ function* fetchRooms() {
     yield put({ type: actionTypesRooms.INIT_ROOMS_SUCCESS, payload: rooms });
   } catch (error) {
     yield put({ type: actionTypesRooms.INIT_ROOMS_ERROR, payload: error });
+  }
+}
+
+function* fetchCleanings() {
+  try {
+    const cleaning = yield call(fetchData, {
+      url: 'http://localhost:5001/admin/cleaning',
+    });
+    yield put({ type: actionTypesCleaning.INIT_CLEANING_START, payload: cleaning });
+  } catch (error) {
+    yield put({ type: actionTypesCleaning.INIT_CLEANING_ERROR, payload: error });
   }
 }
 
@@ -189,6 +201,7 @@ function* watchActions() {
   yield takeEvery(actionTypesBookings.CREATE_BOOKING_START, createBooking);
   yield takeEvery(actionTypesAdminReviews.INIT_REVIEWS_START, fetchReviews);
   yield takeEvery(actionTypesAdminReviews.EDIT_REVIEWS_START, editReviews);
+  yield takeEvery(actionTypesCleaning.INIT_CLEANING_START, fetchCleanings);
 }
 
 export default watchActions;

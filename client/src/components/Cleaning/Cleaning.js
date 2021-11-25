@@ -1,8 +1,10 @@
 import React from 'react';
+// import { useSelector } from 'react-redux';
 import s from './Cleaning.module.css';
 import SingleRoomCleaning from '../SingleRoomCleaning/SingleRoomCleaning';
 
 const Cleaning = () => {
+  // const cleanings = useSelector((state) => state.cleaning.list);
   const rooms = [
     {
       id: 1,
