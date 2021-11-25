@@ -7,7 +7,6 @@ const session = async (req, res) => {
       res.json({ isAdmin: false, session: {} });
     }
   } catch (error) {
-    console.log(error);
     res.json({ isAdmin: false, session: {} });
   }
 };
