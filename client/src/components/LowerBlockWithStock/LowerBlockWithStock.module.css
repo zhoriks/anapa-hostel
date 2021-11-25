@@ -110,3 +110,9 @@
   font-family: 'Formular', sans-serif;
   font-weight: 500;
 }
+
+@media (max-width: 450px) {
+  .mainBlock {
+    display: none;
+  }
+}

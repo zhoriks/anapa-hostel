@@ -136,3 +136,13 @@
   line-height: 1.55;
   font-weight: 400;
  }
+
+ @media (max-width: 450px) {
+  .containerFooter {
+    display: none;
+  }
+
+  .line {
+    margin-top: 5%;
+  }
+}
