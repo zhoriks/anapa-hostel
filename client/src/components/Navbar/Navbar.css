@@ -16,6 +16,12 @@
   font-size: 2rem;
   background: none;
   font-family: 'Ubuntu',Arial,sans-serif;
+  transition: 0.5s;
+}
+
+.menu-bars:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 .nav-menu {
