@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 10%;
+  margin-top: 80px;
 }
 
 .leftBlock{
@@ -113,7 +113,7 @@
   text-align: left;
 }
 
-.button{
+.stockBlockButton{
   margin: 6% 0 0 15%;
   width: 12.5rem;
   height: 3.75rem;
@@ -129,12 +129,25 @@
   font-family: 'Formular', sans-serif;
   transition: .7s;
   border: none;
+  cursor:default;
 }
 
-.button:hover{
-  transform: scale(1.07);
+.stockBlockButton:hover{
+  background: linear-gradient(to top right, #2e387f, #009bac);
+  color: white;
+  transform: scale(1.06);
   transition: .7s;
   border: none;
+  cursor:default;
+}
+
+.stockBlockButton:hover p {
+  display: none;
+}
+
+.stockBlockButton:hover:before {
+  content: 'YIELD';
+  font-size: 24px;
 }
 
 .buttonText{

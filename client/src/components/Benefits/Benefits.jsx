@@ -55,7 +55,7 @@ function Benefits() {
     <>
     <div className={styles.benefitsTitle}>
       <span style={{
-        display: 'block', marginLeft: '2px', marginBottom: '0.5%',
+        display: 'block', marginLeft: '2px', marginBottom: '0.5%', opacity: '0.6',
       }}>Вне зависимости от выбранного номера</span>
       <h1 className={styles.benefitsTitleBig}>Вы получаете</h1>
     </div>
@@ -75,8 +75,8 @@ function Benefits() {
         }
       <div className={styles.contactDiv}>
         <div className={styles.contactDivText}>
-          <h3>Есть вопросы?</h3>
-          <span style={{ display: 'block', margin: '0' }}>Звоните, и мы ответим на них</span>
+          <h3 style={{ display: 'block', marginLeft: '30px' }}>Есть вопросы?</h3>
+          <span style={{ display: 'block', margin: '0', opacity: '0.6' }}>Звоните, и мы ответим на них</span>
         </div>
         <div className={styles.contactDivPhone}><a href="tel:+799999999" className={styles.contactDivPhoneNumber}>+7 (999) 999-99-99</a></div>
       </div>

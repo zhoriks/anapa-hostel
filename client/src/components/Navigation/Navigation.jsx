@@ -21,7 +21,7 @@ function Navigation() {
           <li><a href="#about">О нас</a></li>
           <li><a href="#rooms">Номера</a></li>
           <li><a href="#gallery">Галерея</a></li>
-          <li><a href="#1">Контакты</a></li>
+          <li><a href="#footer">Контакты</a></li>
         </ul>
       </nav>
       <div className={styles.MessengersNumber}>

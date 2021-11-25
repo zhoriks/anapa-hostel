@@ -74,9 +74,10 @@
 }
 
 .reviewButton:hover {
+  border: 0;
   background: linear-gradient(to top right, #2e387f, #009bac);
   color: white;
-  transform: scale(1.07);
+  transform: scale(1.05);
   transition: .7s;
 }
 

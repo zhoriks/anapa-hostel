@@ -51,26 +51,23 @@
   width: 60%;
 }
 
-.textNameBlock h2 {
+.textNameBlockTitle {
   font-size: 2.1rem;
-  /* color: rgb(29, 165, 175); */
+  color: rgb(29, 165, 175);
   font-family: 'Formular', sans-serif;
-  color: #1a1a1a;
   line-height: 1.2;
   font-weight: 700;
 }
 
-.textNameBlock p {
+.textNameBlockDescription {
   margin-top: 5%;
   width: 100%;
-  /* font-size: 1.1rem;
-  line-height: 1.2rem; */
   color: #1a1a1a;
   font-size: 16px;
   font-family: 'Formular', sans-serif;
   line-height: 1.55;
   font-weight: 400;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 /* стили блока со предложением скидки */
@@ -92,33 +89,30 @@
   width: 85%;
   height: 65%;
   border-radius: 15px;
-  margin: 15px 18px 5px 19px;
+  margin: 15px 18px 0px 19px;
 }
 
-.offerDiscount h3 {
-  margin: 0.5% 11% 0;
+.offerDiscountTitle {
+  /* margin: 0.5% 11% 0; */
   font-size: 16px;
-  /* color: dimgray; */
   white-space: nowrap;
   font-family: 'Formular', sans-serif;
-  color: #1a1a1a;
+  color: #2e387f;
   font-weight: 600;
+  border-bottom: 0;
+  padding: 0;
+  margin: 5px 0 0 20px;
 }
 
-.offerDiscount p {
-  margin: 0 11%;
-  /* font-size: 16px;
-  font-family: 'Formular', sans-serif;
-  color: #1a1a1a;
-  font-weight: 200; */
-
-  /* color: dimgray; */
+.offerDiscountDescription {
   color: #1a1a1a;
   font-size: 14px;
   font-family: 'Formular', sans-serif;
   line-height: 1.55;
   font-weight: 400;
-  opacity: 0.5;
+  opacity: 0.6;
+  padding: 0;
+  margin: 0 20px;
 }
 
 @media (max-width: 1425px) {
