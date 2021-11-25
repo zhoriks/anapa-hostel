@@ -125,12 +125,12 @@
 .icon:before {
   content: '';
   position: absolute;
-  top: 5rem;
+  top: 78px;
   bottom: 0;
-  right: 0.35rem;
+  left: 1.8rem;
   margin: auto 0;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   background: url('https://cdn-icons-png.flaticon.com/512/74/74472.png') no-repeat;
   background-size: cover;
 }
