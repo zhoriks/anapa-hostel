@@ -1,32 +1,39 @@
 import styles from './Benefits.module.css';
 import OneBenefit from '../OneBenefit/OneBenefit.jsx';
-import success from './img/success.png';
+
+import admin from './img/24.png';
+import cleaning from './img/cleaning.png';
+import game from './img/game.png';
+import label from './img/label.png';
+import tea from './img/tea.png';
+import wifi from './img/wifi.png';
+import lock from './img/lock.png';
 
 function Benefits() {
   const benefitsContentTop = [
     {
       id: 1,
-      img: success,
+      img: tea,
       description: 'Чай и кофе без ограничений',
     },
     {
       id: 2,
-      img: success,
+      img: admin,
       description: 'Администратор 24/7',
     },
     {
       id: 3,
-      img: success,
+      img: cleaning,
       description: 'Ежедневный клининг номеров',
     },
     {
       id: 4,
-      img: success,
+      img: lock,
       description: 'Охраняемая территория',
     },
     {
       id: 5,
-      img: success,
+      img: game,
       description: 'Зона отдыха и развлечений',
     },
   ];
@@ -34,12 +41,12 @@ function Benefits() {
   const benefitsContentBottom = [
     {
       id: 1,
-      img: success,
+      img: wifi,
       description: 'Высокоскоростной интернет',
     },
     {
       id: 2,
-      img: success,
+      img: label,
       description: 'Расположение рядом с морем',
     },
   ];
