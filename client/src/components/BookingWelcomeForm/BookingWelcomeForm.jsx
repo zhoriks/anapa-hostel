@@ -13,7 +13,7 @@ export default function BookingWelcomeForm() {
   const history = useHistory();
   // добавляю useState для контролируемого инпута, чтобы всегда учитывать,
   // что гость вводит в arrivalDate и устанавливать минимальную departureDate хотя бы на день позже
-  const [nextDay, setNextDay] = useState(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate() + 1}`);
+  const [nextDay, setNextDay] = useState(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`);
 
   // отпраляем данные в стейт
   const handleSubmit = (event) => {
