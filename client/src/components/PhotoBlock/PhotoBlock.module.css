@@ -39,6 +39,23 @@
   color:white;
  }
 
+ .photoBlockButtonLast{
+  color: #1a1a1a;
+  font-weight: 400;
+  font-size: 13px;
+  font-family: 'Formular', sans-serif;
+  border-radius: 0.938rem;
+  border:0;
+  margin: 0 0.469rem 0;
+  background-color: #e3e3e3;
+  width: 8.125rem;
+  height: 3.125rem;
+}
+.photoBlockButtonLast:hover {
+  background: linear-gradient(to bottom left, #2e387f, #009bac);
+  color:white;
+ }
+
 .photoBlockButton p{
   margin: 0;
 }
@@ -82,7 +99,7 @@
   font-family: 'Formular', sans-serif;
   line-height: 1.55;
   font-weight: 400;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 @media (max-width: 450px) {

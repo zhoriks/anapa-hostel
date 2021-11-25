@@ -76,12 +76,12 @@
   text-align: start;
 }
 
-.titleDiv p{
+.titleDivDescription {
   color: #1a1a1a;
   font-size: 16px;
   font-family: 'Formular', sans-serif;
   line-height: 1.55;
   font-weight: 400;
-  opacity: 0.5;
+  opacity: 0.6;
   margin-top: 2%;
 }

@@ -25,7 +25,7 @@
 .leftSideDescription {
   width: 18.75rem;
   height: 6rem;
-  /* text-align: justify; */
+  text-align: justify;
   margin: 5% 0;
   color: #1a1a1a;
   font-size: 16px;

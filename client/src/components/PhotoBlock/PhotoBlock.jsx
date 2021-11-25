@@ -75,7 +75,7 @@ function PhotoBlock() {
         <button onClick={() => setVisibleBlock('HoslelRooms')} className={styles.photoBlockButton}><p>Номера</p></button>
         <button onClick={() => setVisibleBlock('RestZone')} className={styles.photoBlockButtonsBig}><p>Зона отдыха</p></button>
         <button onClick={() => setVisibleBlock('Kitchen')} className={styles.photoBlockButton}><p>Кухня</p></button>
-        <button onClick={() => setVisibleBlock('Beach')} className={styles.photoBlockButton}><p>Пляж</p>
+        <button onClick={() => setVisibleBlock('Beach')} className={styles.photoBlockButtonLast}><p>Пляж</p>
         </button>
       </div>
       <div className={styles.photoBlockCardsPhoto}>

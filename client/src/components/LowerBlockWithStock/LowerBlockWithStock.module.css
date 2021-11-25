@@ -113,7 +113,7 @@
   text-align: left;
 }
 
-.button{
+.stockBlockButton{
   margin: 6% 0 0 15%;
   width: 12.5rem;
   height: 3.75rem;
@@ -131,8 +131,10 @@
   border: none;
 }
 
-.button:hover{
-  transform: scale(1.07);
+.stockBlockButton:hover{
+  background: linear-gradient(to top right, #2e387f, #009bac);
+  color: white;
+  transform: scale(1.06);
   transition: .7s;
   border: none;
 }

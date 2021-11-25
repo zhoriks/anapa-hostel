@@ -43,7 +43,7 @@
   /* font-weight: bolder; */
   white-space: nowrap;
   font-family: 'Formular', sans-serif;
-  color: #1a1a1a;
+  color: #2e387f;
   font-weight: 600;
 }
 
@@ -56,7 +56,7 @@
   font-family: 'Formular', sans-serif;
   line-height: 1.55;
   font-weight: 400;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 /* стили формы */

@@ -13,7 +13,7 @@ function ReviewTicker() {
     <section className={styles.reviewSection}>
       <div className={styles.titleDiv} id="reviewTicker">
         <h1 className={styles.titleDivBig}>Что говорят о нашем отеле клиенты?</h1>
-        <p>
+        <p className={styles.titleDivDescription}>
           Мы всегда стараемся стать лучше для вас и открыты к новому <br/>
            сотрудничеству. Не сдерживайте себя - расскажите
         </p>

@@ -12,7 +12,7 @@ function Footer() {
         <div className={styles.containerContacts}>
           <p className={styles.numberText}><a href="tel:+79999999999">+7 (999) 999-99-99</a></p>
           <p className={styles.titleText}>Мы находимся тут:</p>
-          <p className={styles.bodyText}>ул. Александра-Невского 9В</p>
+          <p className={styles.bodyText}>г. Анапа, песчаный пляж</p>
         </div>
         <div className={styles.containerNavigation}>
           <nav className={styles.nav}>

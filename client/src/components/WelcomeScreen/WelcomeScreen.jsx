@@ -22,8 +22,10 @@ export default function WelcomeScreen() {
             <img src="https://static.tildacdn.com/tild3865-3761-4365-b163-656664386539/Rectangle_86.svg"
               alt="block" />
             <div className={styles.textNameBlock}>
-              <h2>Мини-отель на берегу черного моря</h2>
-              <p>То самое место, которое станет для вас самым любимым</p>
+              <h2 className={styles.textNameBlockTitle}>Мини-отель на берегу черного моря</h2>
+              <p className={styles.textNameBlockDescription}>
+                То самое место, которое станет для вас самым любимым
+              </p>
             </div>
           </ScrollAnimation>
         </div>
