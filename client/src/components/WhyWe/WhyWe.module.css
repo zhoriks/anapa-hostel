@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  margin: 5% auto;
+  margin: 10% auto;
   display: flex;
   justify-content: space-evenly;
 }
