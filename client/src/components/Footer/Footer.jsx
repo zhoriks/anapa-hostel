@@ -17,10 +17,10 @@ function Footer() {
         <div className={styles.containerNavigation}>
           <nav className={styles.nav}>
             <ul>
-              <li><a href="#1">О нас</a></li>
-              <li><a href="#1">Номера</a></li>
-              <li><a href="#1">Галерея</a></li>
-              <li><a href="#1">Отзывы</a></li>
+              <li><a href="#about">О нас</a></li>
+              <li><a href="#rooms">Номера</a></li>
+              <li><a href="#gallery">Галерея</a></li>
+              <li><a href="#reviewTicker">Отзывы</a></li>
             </ul>
           </nav>
         </div>

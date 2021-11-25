@@ -38,16 +38,25 @@
 }
 
 .bookingLabelTitle {
-  font-size: 1.2rem;
-  color: #2e387f;
-  font-weight: bolder;
+  font-size: 18px;
+  /* color: #2e387f; */
+  /* font-weight: bolder; */
   white-space: nowrap;
+  font-family: 'Formular', sans-serif;
+  color: #1a1a1a;
+  font-weight: 600;
 }
 
 .bookingLabelSubTitle {
-  font-size: 1rem;
+  /* font-size: 1rem;
   white-space: nowrap;
-  color: #757575;
+  color: #757575; */
+  color: #1a1a1a;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 0.5;
 }
 
 /* стили формы */
@@ -76,8 +85,9 @@
   background-color:#009bac;
   border-radius:1.25rem;
   border: none;
-  font-weight:600;
-  font-size:1rem;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
   width:100%;
   height:3.125rem;
   padding:0 0.938rem;
@@ -102,8 +112,13 @@
 .bookingWelcomeFormElement label {
   position: absolute;
   bottom: 105%;
-  left: 10%;
-  color: grey;
+  left: 5%;
+  color: #1a1a1a;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 0.5;
 }
 
 /* добавляет иконку с человеком в инпут кол-ва гостей */

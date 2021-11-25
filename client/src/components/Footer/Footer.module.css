@@ -29,17 +29,17 @@
   margin-left: 1.25rem; 
   padding: 0 1.25rem 0 0.063rem;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
   text-align:left;
   margin: 0;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
   line-height: 1.55;
  }
 
  .titleText{
   color: #1a1a1a;
   font-size: 13px;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
   line-height: 1.55;
   font-weight: 100;
  }
@@ -47,9 +47,9 @@
  .bodyText{
   color: #1a1a1a;
   font-size: 15px;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
   line-height: 1.55;
-  font-weight: bold;
+  font-weight: 500;
  }
 
  .numberText{
@@ -79,9 +79,9 @@
   padding: 0;
   color: #1a1a1a;
   font-size: 15px;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
   line-height: 1.55;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .nav a {
@@ -91,7 +91,9 @@
   white-space: nowrap; /* Запрещаем перенос текста */
   color: #1a1a1a;
   font-size: 15px;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 500;
  }
 
  .nav a:hover {
@@ -101,9 +103,9 @@
  .titleLink{
   color: #1a1a1a;
   font-size: 16px;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
   line-height: 1.55;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 11%;
  }
 
@@ -130,7 +132,7 @@
  .rightsText{
   color: #737b61;
   font-size: 10px;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
   line-height: 1.55;
   font-weight: 400;
  }

@@ -51,7 +51,7 @@ function HostelRooms() {
     {
       titleText: 'Делюкс',
       square: 20,
-      places: 4,
+      places: 2,
       id: 3,
       bed: '1 большая двуспальная кровать',
       img: businessImg,
@@ -69,6 +69,9 @@ function HostelRooms() {
     <div className={styles.container} id="rooms">
       <div className={styles.divTitle}>
         <p className={styles.titleText}>Категории номеров</p>
+        <p className={styles.bodyText}>
+          Ищете место для себя или своих близких - в нашем гостевом доме <br/>
+          Вы обязательно найдете подходящий вариант</p>
       </div>
       <div className={styles.containerCard}>
         {classRooms.length

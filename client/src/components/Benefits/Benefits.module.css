@@ -1,16 +1,17 @@
 .benefitsTitle {
-  margin-top: 1.5rem;
+  margin-top: 5%;
   margin-left: 11%;
   display: flex;
   flex-direction: column;
 }
 
 .benefitsTitleBig {
+  margin: 0;
   color: #1a1a1a;
-  font-size: 2.188rem;
-  font-weight: bold;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-size: 35px;
+  font-family: 'Formular', sans-serif;
   line-height: 1.55;
+  font-weight: 600;
 }
 
 .benefitsContainer {
@@ -65,5 +66,33 @@
   text-decoration: none;
   color: #1a1a1a;
   font-size: 25px;
-  font-weight: bold;
+  font-family: 'Formular', sans-serif;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.benefitsTitle span{
+  color: #1a1a1a;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.contactDivText h3{
+  color: #1a1a1a;
+  font-size: 18px;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.contactDivText span{
+  color: #1a1a1a;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 0.5;
 }
