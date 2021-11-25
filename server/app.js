@@ -41,7 +41,6 @@ app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-console.log(path.resolve('../client/build'));
 app.use(express.static(path.resolve('../client/build')));
 
 app.use('/', indexRouter);
