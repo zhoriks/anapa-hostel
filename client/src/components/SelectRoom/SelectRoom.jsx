@@ -103,7 +103,7 @@ const SelectRoom = () => {
                   </div>
                   {showForm
                     ? <div className={styles.noVacantRoomsForm}>
-                      <BookingWelcomeForm />
+                      <BookingWelcomeForm/>
                     </div>
                     : <></>}
                 </div>
