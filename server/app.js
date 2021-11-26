@@ -3,13 +3,11 @@ const session = require('express-session');
 const SessionFileStore = require('session-file-store')(session);
 const cors = require('cors');
 const dotenv = require('dotenv');
-const helmet = require('helmet');
 const path = require('path');
 
 const indexRouter = require('./routes/index.router');
 
 const app = express();
-app.use(helmet());
 
 dotenv.config();
 
