@@ -25,6 +25,7 @@ import Reviews from '../Reviews/Reviews.jsx';
 import adminReviewsAction from '../../redux/actionCreators/adminReviewsAC';
 import Cleaning from '../Cleaning/Cleaning';
 import cleaningAction from '../../redux/actionCreators/cleaningAC';
+import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ function App() {
       <Route path='/admin' exact component={Admin} />
       <Route path='/select-room' exact component={SelectRoom} />
       <Route path='/final-booking' exact component={BookingFormGuestData} />
+      <Route component={ErrorPage} />
     </Switch>
     </BrowserRouter>
       : <BrowserRouter>
