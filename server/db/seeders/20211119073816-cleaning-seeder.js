@@ -20,19 +20,19 @@ module.exports = {
     },
     {
       RoomId: '4',
-      dateOfCleaning: '2021-11-12',
+      dateOfCleaning: '2021-11-24',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       RoomId: '5',
-      dateOfCleaning: '2021-11-12',
+      dateOfCleaning: '2021-11-23',
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
       RoomId: '6',
-      dateOfCleaning: '2021-11-12',
+      dateOfCleaning: '2021-11-25',
       createdAt: new Date(),
       updatedAt: new Date(),
     },

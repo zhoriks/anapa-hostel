@@ -3,7 +3,7 @@ module.exports = {
     await queryInterface.bulkInsert('Reviews', [{
       guestName: 'Лена',
       guestTelephone: '+78005553535',
-      comment: 'Первый отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: 'ФРОНТЕНД!!!!!!',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -11,7 +11,7 @@ module.exports = {
     {
       guestName: 'Олег',
       guestTelephone: '78005553535',
-      comment: 'Второй отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: 'Ищите пасхалку на сайте',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -19,7 +19,7 @@ module.exports = {
     {
       guestName: 'Юра',
       guestTelephone: '78005553535',
-      comment: 'Третий отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: 'Заполните форму обратной связи',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -27,7 +27,7 @@ module.exports = {
     {
       guestName: 'Надя',
       guestTelephone: '78005553535',
-      comment: 'Четвертый отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: 'Я люблю оферы',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -35,7 +35,7 @@ module.exports = {
     {
       guestName: 'Георгий',
       guestTelephone: '78005553535',
-      comment: 'Пятый отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: '*!&$%#*',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -43,7 +43,7 @@ module.exports = {
     {
       guestName: 'Екатерина',
       guestTelephone: '78005553535',
-      comment: 'Шестой отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: 'QUEEN OF FULL-STACK',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -51,7 +51,7 @@ module.exports = {
     {
       guestName: 'Кристина',
       guestTelephone: '78005553535',
-      comment: 'Седьмой отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: 'Сайт крутой',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -59,7 +59,7 @@ module.exports = {
     {
       guestName: 'Эдуард',
       guestTelephone: '78005553535',
-      comment: 'Восьмой отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: '',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -67,7 +67,7 @@ module.exports = {
     {
       guestName: 'Алексей',
       guestTelephone: '78005553535',
-      comment: 'Девятый отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: 'Не корона бро',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -75,7 +75,7 @@ module.exports = {
     {
       guestName: 'Денис',
       guestTelephone: '78005553535',
-      comment: 'Десятый отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: 'Я не Боку, а Боку',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
@@ -83,15 +83,15 @@ module.exports = {
     {
       guestName: 'Аюша',
       guestTelephone: '78005553535',
-      comment: 'Одиннадцатый отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: 'Если тебе где-то не рады в рванных носках, то и в целых туда идти не стоит',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),
     },
     {
-      guestName: 'Дина',
+      guestName: 'Сергей',
       guestTelephone: '78005553535',
-      comment: 'Двенадцатый отзыв, почему так хорошо, а не иначе, или да, или нет, хорошо, а не иначе',
+      comment: 'Внатуре четко',
       moderate: true,
       createdAt: new Date(),
       updatedAt: new Date(),

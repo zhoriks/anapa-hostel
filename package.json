@@ -1,0 +1,19 @@
+{
+  "name": "anapa-hostel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "cd server && npm install && npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all && npm run seed admin 123456zxc && node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhoriks/anapa-hostel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhoriks/anapa-hostel/issues"
+  },
+  "homepage": "https://github.com/zhoriks/anapa-hostel#readme"
+}
