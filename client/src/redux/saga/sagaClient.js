@@ -19,7 +19,7 @@ async function fetchData({
 function* fetchRooms(action) {
   try {
     const vacantRooms = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/checkdate',
+      url: '/admin/checkdate',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ function* fetchRooms(action) {
 function* fetchBookInDB(action) {
   try {
     yield call(fetchData, {
-      url: 'http://localhost:5001/post-new-booking',
+      url: '/post-new-booking',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ function* fetchBookInDB(action) {
 function* fetchReviews() {
   try {
     const reviews = yield call(fetchData, {
-      url: 'http://localhost:5001/reviews',
+      url: '/reviews',
     });
     yield put({ type: actionTypesReviewsTicker.GET_REVIEWS_FROM_DB_SUCCESS, payload: reviews });
   } catch (error) {
@@ -86,7 +86,7 @@ function* fetchReviews() {
 function* newReviewAdd(action) {
   try {
     yield call(fetchData, {
-      url: 'http://localhost:5001/reviews',
+      url: '/reviews',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

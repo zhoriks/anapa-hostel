@@ -24,7 +24,7 @@ async function fetchData({
 function* fetchBookings() {
   try {
     const bookings = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/booking',
+      url: '/admin/booking',
     });
     yield put({ type: actionTypesBookings.INIT_BOOKINGS_SUCCESS, payload: bookings });
   } catch (error) {
@@ -35,7 +35,7 @@ function* fetchBookings() {
 function* changeBookings(action) {
   try {
     const bookings = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/booking/change',
+      url: '/admin/booking/change',
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ function* changeBookings(action) {
 function* createBooking(action) {
   try {
     const bookings = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/booking',
+      url: '/admin/booking',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ function* createBooking(action) {
 function* fetchRooms() {
   try {
     const rooms = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/rooms',
+      url: '/admin/rooms',
     });
     yield put({ type: actionTypesRooms.INIT_ROOMS_SUCCESS, payload: rooms });
   } catch (error) {
@@ -94,7 +94,7 @@ function* fetchRooms() {
 function* editRoomsFullness(action) {
   try {
     const rooms = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/rooms',
+      url: '/admin/rooms',
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ function* editRoomsFullness(action) {
 function* fetchCleanings() {
   try {
     const cleaning = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/cleaning',
+      url: '/admin/cleaning',
     });
 
     yield put({ type: actionTypesCleaning.INIT_CLEANING_SUCCESS, payload: cleaning });
@@ -126,7 +126,7 @@ function* fetchCleanings() {
 function* updateCleanings(action) {
   try {
     const cleanings = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/cleaning/update',
+      url: '/admin/cleaning/update',
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -145,7 +145,7 @@ function* updateCleanings(action) {
 function* fetchGuests() {
   try {
     const bookings = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/booking/now',
+      url: '/admin/booking/now',
     });
     yield put({ type: actionTypesGuest.INIT_GUESTS_SUCCESS, payload: bookings });
   } catch (error) {
@@ -155,7 +155,7 @@ function* fetchGuests() {
 function* fetchReviews() {
   try {
     const reviews = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/review',
+      url: '/admin/review',
     });
     yield put({ type: actionTypesAdminReviews.INIT_REVIEWS_SUCCESS, payload: reviews });
   } catch (error) {
@@ -166,7 +166,7 @@ function* fetchReviews() {
 function* editReviews(action) {
   try {
     const reviews = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/review',
+      url: '/admin/review',
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -185,7 +185,7 @@ function* editReviews(action) {
 function* fetchLogin(action) {
   try {
     const { isAdmin, session } = yield call(fetchData, {
-      url: 'http://localhost:5001/admin',
+      url: '/admin',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -203,7 +203,7 @@ function* fetchLogin(action) {
 function* fetchLogout() {
   try {
     const { isAdmin } = yield call(fetchData, {
-      url: 'http://localhost:5001/admin/logout',
+      url: '/admin/logout',
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -218,7 +218,7 @@ function* fetchLogout() {
 function* checkSession() {
   try {
     const { isAdmin, session } = yield call(fetchData, {
-      url: 'http://localhost:5001/session',
+      url: '/session',
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
