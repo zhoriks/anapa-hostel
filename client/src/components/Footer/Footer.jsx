@@ -15,12 +15,12 @@ function Footer() {
           <p className={styles.bodyText}>г. Анапа, ул. Тургенева, 112</p>
         </div>
         <div className={styles.containerNavigation}>
-          <nav className={styles.nav}>
-            <ul>
-              <li><a href="#about">О нас</a></li>
-              <li><a href="#rooms">Номера</a></li>
-              <li><a href="#gallery">Галерея</a></li>
-              <li><a href="#reviewTicker">Отзывы</a></li>
+          <nav className={styles.navFooter}>
+            <ul className={styles.navFooterUl}>
+              <li><a href="#about" className={styles.navFooterLink}>О нас</a></li>
+              <li><a href="#rooms" className={styles.navFooterLink}>Номера</a></li>
+              <li><a href="#gallery" className={styles.navFooterLink}>Галерея</a></li>
+              <li><a href="#reviewTicker" className={styles.navFooterLink}>Отзывы</a></li>
             </ul>
           </nav>
         </div>
@@ -36,7 +36,7 @@ function Footer() {
       <div className={styles.line}></div>
       <div className={styles.rights}>
         <p className={styles.rightsText}>ANAPA GUEST HOUSE. Все права защищены, а как иначе</p>
-        <p className={styles.rightsText}>Сайт запустили ребята из Dream Team</p>
+        <p className={styles.rightsText}>Сайт запустили ребята из Whale Team</p>
       </div>
     </div>
   );
