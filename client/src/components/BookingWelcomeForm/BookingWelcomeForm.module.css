@@ -9,14 +9,14 @@
 .helperForPosition {
   width: 100%;
   position: absolute;
-  left: 9%;
+  left: 15%;
   bottom: 8%;
 }
 
 /* форма для формы бронирования */
 .bookingWelcomeSvg {
   fill:none; 
-  transform: scale(1.1);
+  transform: scale(0.9);
   max-width: 62.188rem;
   max-height: 29.625rem;
 }
