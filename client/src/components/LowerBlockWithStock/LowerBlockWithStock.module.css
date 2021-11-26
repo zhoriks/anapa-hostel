@@ -2,25 +2,27 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 250px 0;
+  margin-top: 80px;
 }
 
 .leftBlock{
   display: flex;
   align-items: flex-end;
-  width: 415px;
+  width: 28.8%;
+  /* height: 600px; */
   height: 430px;
-  background-color:red;
+  background-color:#2e387f;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-  background-image: url('./imgLowerBlock/fon.jpeg');
+  background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
 }
 .imgasLeft{
-  width: 250px;
-  margin-left: 150px;
+  width: 108%;
+  /* width: 100%; */
+  margin-left: 1px;
   background-size: cover;
   background-position: center center;
 }
@@ -33,9 +35,9 @@
 .stockBlock{
   display: flex;
   flex-direction:column;
-  width: 569px;
+  width: 39.51%;
   height: 430px;
-  background-color:#012675;
+  background: linear-gradient(to top right, #009bac, #2e387f);
   border-radius: 30px;
 }
 
@@ -44,68 +46,118 @@
   height: 277px;
 }
 .mapBlock{
-  width: 215px;
+  width: 14.9%;
   height: 430px;
-  background-color:green;
+  background-color:#009bac;
   border-radius: 30px;
   transition: .7s;
 }
 
 .mapBlock:hover {
-  margin-bottom: 25px; 
   transform: translate(0, -5%);
   transition: .7s;
  }
 
 .rightBlock{
-  width: 180px;
+  width: 12.5%;
   height: 430px;
-  background-color:pink;
+  background-color:#009bac;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   background-attachment: fixed;
   background-size: cover;
-  background-position: center center;
-  background-image: url('./imgLowerBlock/fon.jpeg');
+  background-position: center right;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/001/933/301/original/abstract-fluid-waves-blue-background-vector.jpg');
 
 }
 
 .title{
-  margin: 15% 0 0 15%;
+  margin: 12% 0 0 15%;
   line-height: 1,7;
   color: #fefcfc;
-  font-size: 22px;
-  font-family: 'Ubuntu',Arial,sans-serif;
-  font-weight: 600;
+  font-size: 35px;
+  font-family: 'Formular', sans-serif;
+  font-weight: 500;
   text-align: left;
+  text-transform: uppercase;
+}
+
+.titleText{
+  margin: 1% 0 0 15%;
+  line-height: 1,7;
+  color: #fefcfc;
+  font-size: 25px;
+  font-family: 'Formular', sans-serif;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.titleProcent{
+    margin: 1% 0 0 15%;
+    line-height: 1,7;
+    color: #fefcfc;
+    font-size: 35px;
+    font-family: 'Formular', sans-serif;
+    font-weight: 500;
+    text-align: left;
+    text-transform: uppercase;
 }
 
 .bodyText{
-  margin: 5% 0 0 15%;
+  margin: 2% 0 0 15%;
   line-height: 2;
   color: #fefcfc;
-  font-size: 15px;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
   text-align: left;
 }
 
-.button{
-  margin: 7% 0 0 15%;
-  width: 220px;
-  height: 70px;
-  border-radius: 30px;
-  background-color: #fefcfc;
-  background-position: center center;
+.stockBlockButton{
+  margin: 6% 0 0 15%;
+  width: 12.5rem;
+  height: 3.75rem;
+  line-height: 1.55;
+  border-width: 1px;
+  border-radius: 20px;
+  border-color: transparent;
+  border-style: solid;
+  background-color: #e3e3e3;
+  transition: .7s;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Formular', sans-serif;
+  transition: .7s;
   border: none;
+  cursor:default;
 }
-.button:hover{
-  background-color:#fefcfcdd;
-  color:#fefcfc;
+
+.stockBlockButton:hover{
+  background: linear-gradient(to top right, #2e387f, #009bac);
+  color: white;
+  transform: scale(1.06);
+  transition: .7s;
   border: none;
+  cursor:default;
 }
+
+.stockBlockButton:hover p {
+  display: none;
+}
+
+.stockBlockButton:hover:before {
+  content: 'YIELD';
+  font-size: 24px;
+}
+
 .buttonText{
-  color: #012675;
-  font-size: 15px;
-  font-family: 'Ubuntu',Arial,sans-serif;
-  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
+  font-weight: 500;
+}
+
+@media (max-width: 450px) {
+  .mainBlock {
+    display: none;
+  }
 }

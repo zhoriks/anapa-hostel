@@ -1,0 +1,22 @@
+.slick-list {
+  position: relative;
+  z-index: -1;
+}
+
+.slick-next::before {
+  content: '→';
+  color: white;
+  position: absolute;
+  left: -40px;
+  font-size: 2rem;
+  z-index: 100;
+}
+
+.slick-prev::before {
+  content: '←';
+  color: white;
+  position: absolute;
+  right: -40px;
+  font-size: 2rem;
+  z-index: 100;
+}

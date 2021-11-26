@@ -4,8 +4,8 @@
   display: flex;
   align-items: center;
   justify-content:space-evenly;
-  margin: 1% auto;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  margin: 1% auto 0.5%;
+  font-family: 'Formular', sans-serif;
 }
 .nav{
   width: 50%;
@@ -26,8 +26,11 @@
   display: block; /* Блочная ссылка */
   white-space: nowrap; /* Запрещаем перенос текста */
   color: #1a1a1a;
-  font-size: 1.125rem;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-family: 'Formular', sans-serif;
+  color: #1a1a1a;
+  font-size: 18px;
+  line-height: 1.55;
+  font-weight: 400;
  }
  .nav a:hover {
   color:#757575; 
@@ -35,13 +38,29 @@
   margin-bottom: -2px;
  }
 
-.numberText{
-  color: #1a1a1a;
-  font-size: 1.25rem;
+.numberText a{
   white-space: nowrap;
   margin-left: 1.25rem; 
   padding: 0 1.25rem 0 0.063rem;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 500;
  }
+
+ .numberText:hover{
+   color:#009bac;
+ }
+ .numberText{
+  transition: .3s;
+ }
+
+ .numberText:hover {
+  transform: scale(1.07);
+  transition: .3s;
+  color: #1a1a1a;
+}
 
 .Messengers{
    display: flex;
@@ -93,8 +112,8 @@
 
 .logo{
   padding-left: 0.313rem;
-  width: 12.5rem;
-  height: 6.25rem;
+  width: 9.375rem;
+  height: 4.688rem;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -119,4 +138,19 @@
 .MessengersNumber{
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 450px) {
+  .nav {
+    display: none;
+  }
+  .MessengersNumber {
+    display: none;
+  }
+  .navigationBlock {
+    margin: 0 auto;
+  }
+  .logo{
+    padding-left: 0;
+  }
 }

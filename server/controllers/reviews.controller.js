@@ -57,7 +57,6 @@ const editReview = async (req, res) => {
     const reviews = await Review.findAll({
       order: [['updatedAt', 'DESC']],
     });
-    console.log(reviews);
     res.status(200).json(reviews);
   } catch (error) {
     res.status(404).json({ error: error.message });

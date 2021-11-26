@@ -2,12 +2,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 50px auto;
   align-items: center;
 }
 
 .containerCard{
-  margin: 3.125rem auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -16,8 +16,38 @@
 
 .titleText{
   color: #1a1a1a;
-  font-size: 2.188rem;
-  font-weight: bold;
-  font-family: 'Ubuntu',Arial,sans-serif;
+  font-size: 35px;
+  font-family: 'Formular', sans-serif;
   line-height: 1.55;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+.bodyText{
+  color: #1a1a1a;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 0.6;
+  text-align: center;
+  margin: 5% 0;
+}
+
+@media (max-width: 450px) {
+  .containerCard{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titleText{
+    font-size: 1.5rem;
+  }
+  
+  .bodyText{
+    font-size: 0.9rem;
+    line-height: 1.2;
+    margin: 2% 10%;
+  }
 }

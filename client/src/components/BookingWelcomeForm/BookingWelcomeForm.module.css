@@ -16,6 +16,7 @@
 /* форма для формы бронирования */
 .bookingWelcomeSvg {
   fill:none; 
+  transform: scale(1.1);
   max-width: 62.188rem;
   max-height: 29.625rem;
 }
@@ -26,27 +27,36 @@
   position: absolute;
   top: 21%;
   width: 100%;
-  margin-left: 3%;
 }
 
 /* стили заголовков формы */
 .bookingLabel {
   width: 45%;
+  margin-top: 1%;
   margin-bottom: 5%;
   margin-left: 1%;
 }
 
 .bookingLabelTitle {
-  font-size: 1.3rem;
-  color: #2e387f;
-  font-weight: bolder;
+  font-size: 18px;
+  /* color: #2e387f; */
+  /* font-weight: bolder; */
   white-space: nowrap;
+  font-family: 'Formular', sans-serif;
+  color: #2e387f;
+  font-weight: 600;
 }
 
 .bookingLabelSubTitle {
-  font-size: 1rem;
+  /* font-size: 1rem;
   white-space: nowrap;
-  color: #757575;
+  color: #757575; */
+  color: #1a1a1a;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 0.6;
 }
 
 /* стили формы */
@@ -75,8 +85,9 @@
   background-color:#009bac;
   border-radius:1.25rem;
   border: none;
-  font-weight:600;
-  font-size:0.9rem;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
   width:100%;
   height:3.125rem;
   padding:0 0.938rem;
@@ -101,20 +112,25 @@
 .bookingWelcomeFormElement label {
   position: absolute;
   bottom: 105%;
-  left: 10%;
-  color: grey;
+  left: 5%;
+  color: #1a1a1a;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 0.5;
 }
 
 /* добавляет иконку с человеком в инпут кол-ва гостей */
 .icon:before {
   content: '';
   position: absolute;
-  top: 5rem;
+  top: 78px;
   bottom: 0;
-  right: 0.35rem;
+  left: 1.8rem;
   margin: auto 0;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   background: url('https://cdn-icons-png.flaticon.com/512/74/74472.png') no-repeat;
   background-size: cover;
 }
@@ -137,5 +153,93 @@
 
   .bookingWelcomeFormButton{
     height:2.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .bookingWelcomeSvg {
+    display: none;
+  }
+
+  .helperForPosition {
+    left: 5%;
+  }
+
+  .bookingWelcomeContainer {
+    position: relative;
+    max-width: 22.188rem;
+    width: 90%;
+  }
+
+  .flexContainer {
+    background: #fff;
+    border-radius: 1.25rem;
+    top: -210px;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .bookingWelcomeForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items:center;
+    width: 100%;
+  }
+
+  .bookingLabel {
+    width: 90%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+  }
+  
+  .bookingLabelTitle {
+    font-size: 0.9rem;
+    white-space:normal;
+  }
+
+  .bookingWelcomeFormElement {
+    position: relative;
+    max-width: 120px;
+    margin-top: 8%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .bookingWelcomeFormInput {
+    font-size:0.8rem;
+    font-weight:400;
+    height:2rem;
+    min-width: 3.375rem;
+    max-width: 8.1rem;
+    padding: 0 8% 0 7%;
+  }
+
+  .bookingWelcomeFormElement label {
+    font-size: 0.7rem;
+  }
+
+  .bookingWelcomeFormButton{
+    font-weight: 400;
+    font-size: 0.7rem;
+    width:100%;
+    height:2rem;
+    padding:0 0.938rem;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .icon:before {
+    top: 3.5rem;
+    bottom: 0;
+    right: 0.15rem;
+    width: 20px;
+    height: 20px;
   }
 }

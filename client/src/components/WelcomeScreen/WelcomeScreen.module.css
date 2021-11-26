@@ -45,22 +45,29 @@
 
 .textNameBlock {
   position: absolute;
-  top: 10%;
+  top: 12%;
   left: 9.5%;
   padding: 0 3%;
   width: 60%;
 }
 
-.textNameBlock h2 {
+.textNameBlockTitle {
   font-size: 2.1rem;
   color: rgb(29, 165, 175);
+  font-family: 'Formular', sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
 }
 
-.textNameBlock p {
+.textNameBlockDescription {
   margin-top: 5%;
   width: 100%;
-  font-size: 1.1rem;
-  line-height: 1.2rem;
+  color: #1a1a1a;
+  font-size: 16px;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 0.6;
 }
 
 /* стили блока со предложением скидки */
@@ -75,26 +82,37 @@
   position: absolute;
   top: 17%;
   right: 10%;
+  transform: scale(1.1);
 }
 
 .offerDiscount img {
   width: 85%;
   height: 65%;
-  border-radius: 25px;
-  margin: 15px 18px 5px 18px;
+  border-radius: 15px;
+  margin: 15px 18px 0px 19px;
 }
 
-.offerDiscount h3 {
-  margin: 0 11%;
-  font-size: 1rem;
-  font-weight: bold;
-  color: dimgray;
+.offerDiscountTitle {
+  /* margin: 0.5% 11% 0; */
+  font-size: 16px;
+  white-space: nowrap;
+  font-family: 'Formular', sans-serif;
+  color: #2e387f;
+  font-weight: 600;
+  border-bottom: 0;
+  padding: 0;
+  margin: 5px 0 0 20px;
 }
 
-.offerDiscount p {
-  margin: 0 11%;
-  font-size: 0.8rem;
-  color: dimgray;
+.offerDiscountDescription {
+  color: #1a1a1a;
+  font-size: 14px;
+  font-family: 'Formular', sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 0.6;
+  padding: 0;
+  margin: 0 20px;
 }
 
 @media (max-width: 1425px) {
@@ -104,5 +122,45 @@
   
   .textNameBlock p {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .welcomeScreenContainer {
+    min-height: 20.438rem;
+    border-radius: 1.25rem;
+  }
+
+  .nameBlock {
+    position: absolute;
+    top: 8%;
+    left: 4%;
+    width: 80%;
+    height: fit-content;
+  }
+
+  .containerNameBlock img {
+    display: none;
+  }
+
+  .offerDiscount {
+    display: none;
+  }
+
+  .textNameBlock {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    padding: 0 3%;
+    width: 100%;
+  }
+
+  .textNameBlock h2 {
+    font-size: 1.26rem;
+    color: white;
+  }
+
+  .textNameBlock p {
+    display: none;
   }
 }

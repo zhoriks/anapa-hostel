@@ -4,7 +4,7 @@ import styles from './Ticker.module.css';
 
 function Ticker() {
   return (
-    <section>
+    <section className={styles.tickerSection}>
       <div className={styles.group}>
         <div className={styles.row}>
           <span>Море, горы, свежий воздух</span>

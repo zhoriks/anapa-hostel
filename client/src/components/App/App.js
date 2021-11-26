@@ -23,6 +23,9 @@ import AdminCreateBookingForm from '../AdminCreateBookingForm/AdminCreateBooking
 import BookingFormGuestData from '../BookingFormGuestData/BookingFormGuestData.jsx';
 import Reviews from '../Reviews/Reviews.jsx';
 import adminReviewsAction from '../../redux/actionCreators/adminReviewsAC';
+import Cleaning from '../Cleaning/Cleaning';
+import cleaningAction from '../../redux/actionCreators/cleaningAC';
+import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +36,7 @@ function App() {
     dispatch(bookingsAction.initBookingsStart());
     dispatch(guestAction.initGuestsStart());
     dispatch(roomAction.initRoomStart());
+    dispatch(cleaningAction.initCleaningStart());
     dispatch(adminReviewsAction.initAdminReviewsStart());
     dispatch({ type: actionTypesBookingForm.SEND_DATES_IN_DB_START });
     dispatch(reviewsTickerAction.getReviewsFromDB());
@@ -48,6 +52,7 @@ function App() {
       <Route path='/admin' exact component={Admin} />
       <Route path='/select-room' exact component={SelectRoom} />
       <Route path='/final-booking' exact component={BookingFormGuestData} />
+      <Route component={ErrorPage} />
     </Switch>
     </BrowserRouter>
       : <BrowserRouter>
@@ -59,6 +64,7 @@ function App() {
       <Route path='/admin/logout' exact component={Logout} />
       <Route path='/admin/create-booking' exact component={AdminCreateBookingForm} />
       <Route path='/admin/reviews' exact component={Reviews} />
+      <Route path='/admin/cleaning' exact component={Cleaning} />
     </Switch>
     </BrowserRouter>
   }

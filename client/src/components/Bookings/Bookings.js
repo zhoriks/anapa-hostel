@@ -30,14 +30,15 @@ const Bookings = () => {
   return (
     <div className={s.bookings_main}>
       <div className={s.navbar}>
-        <h3>Guest</h3>
-        <h3>Telephone</h3>
-        <h3>Check in</h3>
-        <h3>Check out</h3>
-        <h3>Room type</h3>
-        <h3>Request</h3>
-        <h3>Status</h3>
+        <h3>Посетитель</h3>
+        <h3>Телефон</h3>
+        <h3>Дата заезда</h3>
+        <h3>Дата выезда</h3>
+        <h3>Тип комнаты</h3>
+        <h3>Комментарий</h3>
+        <h3>Статус</h3>
       </div>
+      <br />
 
       {bookings.map((el) => (
         <form className={s.client_info} key={el.id} onSubmit={(e) => handleSubmit(e, el.id)}>
@@ -48,11 +49,14 @@ const Bookings = () => {
           <div>{el.categoryRoom}</div>
           {!editForm ? <div>{el.comment}</div>
             : <input type='text' name='comment' required className={s.formInput} defaultValue={findCurrentBookingComment(el.id)} ></input>}
-          {!editForm ? <div className={s.pending}>{el.status}</div>
+          {// eslint-disable-next-line no-nested-ternary
+          !editForm ? <div className={el.status === 'Проживает' ? `${s.status} ${s.lives}` : (el.status === 'Подтверждено' ? `${s.status} ${s.booked}` : `${s.status} ${s.pending}`)}>{el.status}</div>
             : <select className={s.select} name='status' aria-label="Default select example" defaultValue={findCurrentBookingStatus(el.id)}>
               <option value="Проживает">Проживает</option>
               <option value="Подтверждено">Подтверждено</option>
               <option value="Ожидает подтвержения">Ожидает подтвержения</option>
+              <option value="Отменено">Отменено</option>
+              <option value="Съехал">Съехал</option>
             </select>}
           {editForm && <button className={s.submitFormButton} type="submit">Отправить</button>}
         </form>
@@ -62,5 +66,3 @@ const Bookings = () => {
 };
 
 export default Bookings;
-// {/* <input type='text' name='status' className={s.formInput} /* value={status}
-//  onChange={handleStatusChange} */></input> */}

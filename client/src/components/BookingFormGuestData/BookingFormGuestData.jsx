@@ -14,6 +14,7 @@ import styles from './BookingFormGuestData.module.css';
 import dateToTextFormat from '../data/functions/dateToTextFormat';
 import totalSumForBooking from '../data/functions/totalSumForBooking';
 import useLocalStorage from '../data/helpData/useLocalStorage';
+import actionTypesRooms from '../../redux/actionTypes/roomsAT';
 
 export default function BookingFormGuestData() {
   const dispatch = useDispatch();
@@ -24,8 +25,8 @@ export default function BookingFormGuestData() {
   // local Storage
   const [surname, setSurname] = useLocalStorage('surname', '');
   const [name, setName] = useLocalStorage('name', '');
-  const [patronymic, setPatronymic] = useLocalStorage('patronymic', '');
-  const [email, setEmail] = useLocalStorage('email', '');
+  const [patronymic, setPatronymic] = useLocalStorage('thirdName', '');
+  const [email, setEmail] = useLocalStorage('mail', '');
   const [phone, setPhone] = useLocalStorage('phone', '');
   const [guestComment, setGuestComment] = useLocalStorage('guestComment', '');
 
@@ -40,9 +41,10 @@ export default function BookingFormGuestData() {
       email: event.target.email.value,
       phone: event.target.phone.value,
       wantPhoneNotice: event.target.wantPhoneNotice.checked,
-      wandGetAds: event.target.wandGetAds.checked,
+      wantGetAds: event.target.wantGetAds.checked,
       guestComment: event.target.guestComment.value,
     };
+
     dispatch(bookingFormAction.addDataFromPersonalInfForm(searchData));
 
     // отправляем данные о бронировании из стейта и формы в базу данных
@@ -50,7 +52,15 @@ export default function BookingFormGuestData() {
       type: actionTypesBookingForm.SEND_BOOKINFO_IN_DB_START,
       payload: { dataAboutBooking, searchData },
     });
-    localStorage.clear();
+    // отправляем данные о заполненности номера
+    dispatch({
+      type: actionTypesRooms.EDIT_ROOMS_FULLNESS_START,
+      payload: {
+        guestNumber: +dataAboutBooking.guestNumber,
+        roomId: +dataAboutBooking.selectedRoom.id,
+        fullness: +dataAboutBooking.selectedRoom.fullness,
+      },
+    });
   };
 
   return (
@@ -64,14 +74,17 @@ export default function BookingFormGuestData() {
           <div className={styles.stockBlock}>
             <p className={styles.title}>Бронирование прошло успешно!</p>
             <p className={styles.bodyText}>Ожидайте звонка менеджера для подтверждения.</p>
-            <button className={styles.button} onClick={() => history.push('/')}>
+            <button className={styles.button} onClick={() => {
+              localStorage.clear();
+              history.push('/');
+            }}>
               <p className={styles.buttonText}>На главную</p>
             </button>
           </div>
         </div>
 
         : <div className={styles.guestDataContainer}>
-          <div className={styles.guestDataTitle}><h3>Введите данные гостей</h3></div>
+          <div className={styles.guestDataTitle}><h3>Информация о бронировании</h3></div>
 
           <div className={styles.bookingDataFromState}>
             <div className={styles.datesAndGuestsData}>
@@ -128,7 +141,7 @@ export default function BookingFormGuestData() {
                     <span>Я хочу дополнительно получить подтверждение бронирования на телефон</span>
                   </div>
                   <div className={styles.checkboxInfo}>
-                    <input name="wandGetAds" type="checkbox" id="wandAdMessage" />
+                    <input name="wantGetAds" type="checkbox" id="wantAdMessage" />
                     <span>Я хочу узнавать о специальных предложениях и новостях по email или SMS
                     </span>
                   </div>

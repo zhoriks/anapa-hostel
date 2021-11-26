@@ -4,13 +4,12 @@ import styles from './MapYandex.module.css';
 
 export default function MapYandex() {
   const mapData = {
-    center: [44.89091166, 37.31396083],
-    zoom: 10,
+    center: [44.88930040823357, 37.31494665078738],
+    zoom: 14,
   };
 
   const coordinates = [
-    [44.89091166, 37.31396083],
-    // [57.684758, 39.738521],
+    [44.88868644843722, 37.31441020898438],
   ];
 
   return (
@@ -23,6 +22,3 @@ export default function MapYandex() {
     </div >
   );
 }
-
-// eslint-disable-next-line no-lone-blocks
-{ /* <img src="https://anapatoday.com/f/2016/03/29/1603290024od.jpg" alt="map" /> */ }

@@ -1,37 +1,47 @@
 .card {
-  margin: 1.875rem;
-  border: 1px solid rgb(180, 179, 179);
-  height: 55vh; 
-  width: 45vh;
+  margin: 0 1.875rem 1.875rem 1.875rem;
+  border: none;
+  height: 25rem; 
+  width: 28rem;
   position: relative;
-  border-radius: 0.313rem;
+  border-radius: 1.875rem;
+  box-shadow: 0 0 10px rgb(190, 190, 190, 0.5);
 }
-.card:hover {
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
+
 .img {
   margin: 0;
-  width: 45vh;
-  height: 27vh; 
-  border-radius: 0.313rem 0.313rem 0 0;
+  width: 100%;
+  height: 60%; 
+}
+
+.img div {
+  height: 100%;
+  border-radius: 0;
+}
+.img img{
+    width: 100%;
+    /* height: 280px; */
+    height: 100%;
+    border-radius: 1.875rem 1.875rem 0 0;
 }
 .bottomText {
   display: flex;
   position: absolute;
   bottom: 0;
-  padding-bottom: 1.25rem;
-  display: flex;
+  padding-bottom: 1.20rem;
+  padding-right: 1.5rem; 
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 30vh;
+  width: 100%;
 }
 .text {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
-  font-size: 1.25rem;
+  align-items: flex-start;
+  padding: 3% 0 0 1%;
+  font-size: 1.125rem;
 }
 .middleText {
   display: flex;
@@ -40,12 +50,54 @@
 }
 .roomName {
   margin: 1.25rem 0 0.938rem 0;
-  font-weight: bolder
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 .buttonChoose {
   border: none;
-  background-color: #626262;
+  background-color: #009bac;
   color: white;
   padding: 0.625rem;
-  border-radius: 0.313rem;
+  border-radius: 20px;
+  width: 40%;
+  height: 3.125rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.buttonChoose:hover {
+  background: linear-gradient(to top right, #2e387f, #009bac);
+}
+
+.priceContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.price{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.priceInfo{
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 450px) {
+  .card {
+    margin: 0 1.875rem 1.875rem 1.875rem;
+    border: none;
+    height: 25rem; 
+    width: 100%;
+    position: relative;
+    border-radius: 1.875rem;
+    box-shadow: 0 0 10px rgb(190, 190, 190, 0.5);
+  }
+  .topText{
+    text-align: center;
+    font-size: 1rem;
+  }
+  .adaptive {
+    font-size: 0.9rem;
+  }
 }

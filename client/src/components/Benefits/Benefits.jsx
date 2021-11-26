@@ -1,32 +1,39 @@
 import styles from './Benefits.module.css';
 import OneBenefit from '../OneBenefit/OneBenefit.jsx';
-import success from './img/success.png';
+
+import admin from './img/24.png';
+import cleaning from './img/cleaning.png';
+import game from './img/game.png';
+import label from './img/label.png';
+import tea from './img/tea.png';
+import wifi from './img/wifi.png';
+import lock from './img/lock.png';
 
 function Benefits() {
   const benefitsContentTop = [
     {
       id: 1,
-      img: success,
+      img: tea,
       description: 'Чай и кофе без ограничений',
     },
     {
       id: 2,
-      img: success,
-      description: 'Доступность администратора 24/7',
+      img: admin,
+      description: 'Администратор 24/7',
     },
     {
       id: 3,
-      img: success,
+      img: cleaning,
       description: 'Ежедневный клининг номеров',
     },
     {
       id: 4,
-      img: success,
+      img: lock,
       description: 'Охраняемая территория',
     },
     {
       id: 5,
-      img: success,
+      img: game,
       description: 'Зона отдыха и развлечений',
     },
   ];
@@ -34,12 +41,12 @@ function Benefits() {
   const benefitsContentBottom = [
     {
       id: 1,
-      img: success,
+      img: wifi,
       description: 'Высокоскоростной интернет',
     },
     {
       id: 2,
-      img: success,
+      img: label,
       description: 'Расположение рядом с морем',
     },
   ];
@@ -48,7 +55,7 @@ function Benefits() {
     <>
     <div className={styles.benefitsTitle}>
       <span style={{
-        display: 'block', marginLeft: '2px', marginBottom: '1%', color: 'grey', fontSize: '1rem',
+        display: 'block', marginLeft: '2px', marginBottom: '0.5%', opacity: '0.6',
       }}>Вне зависимости от выбранного номера</span>
       <h1 className={styles.benefitsTitleBig}>Вы получаете</h1>
     </div>
@@ -68,8 +75,8 @@ function Benefits() {
         }
       <div className={styles.contactDiv}>
         <div className={styles.contactDivText}>
-          <h3>Есть вопросы?</h3>
-          <span style={{ display: 'block', margin: '0', color: 'grey' }}>Звоните, и мы ответим на них</span>
+          <h3 style={{ display: 'block', marginLeft: '30px' }}>Есть вопросы?</h3>
+          <span style={{ display: 'block', margin: '0', opacity: '0.6' }}>Звоните, и мы ответим на них</span>
         </div>
         <div className={styles.contactDivPhone}><a href="tel:+799999999" className={styles.contactDivPhoneNumber}>+7 (999) 999-99-99</a></div>
       </div>

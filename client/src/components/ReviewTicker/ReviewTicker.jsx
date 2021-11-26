@@ -10,12 +10,12 @@ function ReviewTicker() {
   const reviewsFromDB = useSelector((state) => state.reviews.list);
 
   return (
-    <section>
-      <div className={styles.titleDiv}>
-        <h1 className={styles.titleDivBig}>Что говорят о наше отеле клиенты?</h1>
-        <p style={{ fontSize: '1rem', color: 'grey' }}>
-          Мы всегда стараемся стать лучше для вас и открыты новому сотрудничеству.
-          Не сдерживайте себя - расскажите
+    <section className={styles.reviewSection}>
+      <div className={styles.titleDiv} id="reviewTicker">
+        <h1 className={styles.titleDivBig}>Что говорят о нашем отеле клиенты?</h1>
+        <p className={styles.titleDivDescription}>
+          Мы всегда стараемся стать лучше для вас и открыты к новому <br/>
+           сотрудничеству. Не сдерживайте себя - расскажите
         </p>
       </div>
       <div className={styles.group}>
