@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: row;
   justify-content:space-between;
+  align-items: center;
 }
 
 .containerContacts{
@@ -68,13 +69,14 @@
   margin-right: 6%;
 }
 
-.nav{
+.navFooter{
   width: 50%;
   padding: 0;
 }
-.nav ul {
+.navFooterUl {
   list-style-type: none;
   margin: auto;
+  display: flex;
   justify-content: center;
   padding: 0;
   color: #1a1a1a;
@@ -84,7 +86,7 @@
   font-weight: 500;
 }
 
-.nav a {
+.navFooterLink {
   padding: 0.625rem 1.875rem 0.688rem; /* Поля вокруг текста */
   text-decoration: none; /* Убираем подчёркивание */
   display: block; /* Блочная ссылка */
@@ -96,7 +98,7 @@
   font-weight: 500;
  }
 
- .nav a:hover {
+ .navFooterLink:hover {
   color:#757575; 
  }
 
