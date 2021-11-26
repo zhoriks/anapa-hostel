@@ -21,10 +21,12 @@ import businessImg4 from './img/deluxeRoom4.jpeg';
 function HostelRooms() {
   const classRooms = [
     {
-      titleText: 'Стандарт',
-      square: 12,
-      places: 2,
-      bed: '1 большая двуспальная кровать',
+      titleText: 'Эконом',
+      square: 20,
+      places: 'до 8-ми',
+      bed: '4 двухъярусных кровати',
+      bath: 'Общий душ',
+      kitchen: 'Общая кухня',
       id: 1,
       img: economyImg,
       imgSlider: [
@@ -35,9 +37,11 @@ function HostelRooms() {
     },
     {
       titleText: 'Комфорт',
-      square: 17,
-      places: 2,
-      bed: '1 большая двуспальная кровать',
+      square: 40,
+      places: 'до 4-х',
+      bed: '2 двухъярусных кровати',
+      bath: 'Душ в номере',
+      kitchen: 'Собственная мини-кухня',
       id: 2,
       img: comfortImg,
       imgSlider: [
@@ -49,9 +53,11 @@ function HostelRooms() {
       ],
     },
     {
-      titleText: 'Делюкс',
-      square: 20,
-      places: 2,
+      titleText: 'Люкс',
+      square: 80,
+      places: 'до 2-х',
+      bath: 'Душ в номере',
+      kitchen: 'Полноценная кухня',
       id: 3,
       bed: '1 большая двуспальная кровать',
       img: businessImg,

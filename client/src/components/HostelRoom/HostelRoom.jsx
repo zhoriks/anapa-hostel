@@ -40,7 +40,7 @@ function HostelRoom({ item }) {
                       </div>
                       <div className={styles.oneCriterion}>
                         <img className={styles.iconOne} alt="1" src="https://static.tildacdn.com/tild6630-3233-4064-a138-373864633963/user_3.svg"></img>
-                        <p>Кол-во мест: {item.places} человека</p>
+                        <p>Кол-во мест: {item.places} человек</p>
                       </div>
                       <div className={styles.oneCriterion}>
                         <img className={styles.iconOne} alt="1" src="https://static.tildacdn.com/tild3834-6661-4461-b563-646466396464/bed.svg"></img>
@@ -54,11 +54,11 @@ function HostelRoom({ item }) {
                       </div>
                       <div className={styles.oneCriterion}>
                         <img className={styles.iconOne} alt="1" src="https://static.tildacdn.com/tild6435-3633-4565-b661-393835636664/bath.svg"></img>
-                        <p>Собственная ванная</p>
+                        <p>{item.bath}</p>
                       </div>
                       <div className={styles.oneCriterion}>
                         <img className={styles.iconOne} alt="1" src="https://static.tildacdn.com/tild3139-3066-4465-a536-346663663535/kitchen.svg"></img>
-                        <p>Мини-кухня</p>
+                        <p>{item.kitchen}</p>
                       </div>
                     </div>
                   </div>
