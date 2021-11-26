@@ -27,9 +27,9 @@ function Footer() {
         <div className={styles.containerLinks}>
           <p className={styles.titleLink}>Мы в социальных сетях</p>
           <div className={styles.iconsLinks}>
-            <img className={styles.imgIcons} src={facebook} alt='facebook'></img>
-            <img className={styles.imgIcons} src={instagram} alt='instagram'></img>
-            <img className={styles.imgIcons} src={vk} alt='vk'></img>
+          <a href="https://www.facebook.com/"><img className={styles.imgIcons} src={facebook} alt='facebook'></img></a>
+          <a href="https://www.instagram.com/"><img className={styles.imgIcons} src={instagram} alt='instagram'></img></a>
+          <a href="https://vk.com/"><img className={styles.imgIcons} src={vk} alt='vk'></img></a>
           </div>
         </div>
       </div>
