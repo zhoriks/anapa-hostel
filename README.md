@@ -47,7 +47,7 @@
 ![](/readme/navigation.png)
 - Навигация по админ-панели
 
-![](/readme/admin_reviews.png)
+![](/readme/admin_review.png)
 - Cтраница модерирования отзывов
 
 
