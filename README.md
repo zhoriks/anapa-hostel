@@ -20,10 +20,10 @@
 ![](/readme/modal.png)
 
 - Подвал сайта с анимированными компонентами
-![](/readme/header.png)
+![](/readme/footer.png)
 
 - Компонент с отзывами прошедшими модерацию
-![](/readme/reviewsr.png)
+![](/readme/reviews.png)
 
 - Страница выбора номера на свободные даты
 ![](/readme/search.png)
